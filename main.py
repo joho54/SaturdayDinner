@@ -80,15 +80,21 @@ def preprocess_landmarks(landmarks_list):
     processed_frames = []
     for frame in landmarks_list:
         combined = []
-        for key in ["pose", "left_hand", "right_hand", "face"]:
+        # 얼굴 랜드마크 제외
+        for key in ["pose", "left_hand", "right_hand"]:
             lm = frame[key]
             if lm:
                 combined.extend([[l.x, l.y, l.z] for l in lm.landmark])
             else:
-                num_points = {"pose": 33, "left_hand": 21, "right_hand": 21, "face": 468}[key]
+                num_points = {"pose": 33, "left_hand": 21, "right_hand": 21}[key]
                 combined.extend([[0,0,0]] * num_points)
                 
         arr = np.array(combined)
+        # 랜드마크가 하나도 없는 경우에 대한 예외 처리
+        if arr.shape[0] == 0:
+            # 포즈(33) + 왼손(21) + 오른손(21) = 75개의 랜드마크
+            return np.zeros((len(landmarks_list), 75 * 3))
+            
         root = arr[0].copy()
         arr -= root
         
