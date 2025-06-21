@@ -16,6 +16,9 @@ holistic = mp_holistic.Holistic()
 # 경로 및 상수 설정
 VIDEO_ROOT = "/Volumes/Sub_Storage/수어 데이터셋/0001~3000(영상)"
 MAX_SEQ_LENGTH = 100  # 최대 프레임 길이 (패딩에 사용)
+AUGMENTATIONS_PER_VIDEO = 9 # 원본 1개당 생성할 증강 데이터 수
+DATA_CACHE_PATH = 'preprocessed_data.npz'
+MODEL_SAVE_PATH = 'lstm_model.keras'
 
 label_dict = {
     # 화재
@@ -35,6 +38,20 @@ label_dict = {
     "KETI_SL_0000002450.MP4": "화장실",
     "KETI_SL_0000002931.MOV": "화장실"
 }
+
+def augment_sequence(sequence, noise_level=0.005, scale_range=0.05):
+    """랜드마크 시퀀스에 노이즈 추가 및 크기 조절을 적용하여 증강합니다."""
+    augmented_sequence = sequence.copy()
+
+    # 1. 노이즈 추가
+    noise = np.random.normal(0, noise_level, augmented_sequence.shape)
+    augmented_sequence += noise
+
+    # 2. 크기 조절
+    scale_factor = 1.0 + np.random.uniform(-scale_range, scale_range)
+    augmented_sequence *= scale_factor
+
+    return augmented_sequence
 
 def extract_landmarks(video_path):
     cap = cv2.VideoCapture(video_path)
@@ -83,46 +100,62 @@ def preprocess_landmarks(landmarks_list):
         
     return np.array(processed_frames)
 
-X = []
-y = []
-
-for filename, label in tqdm(label_dict.items()):
-    file_id = filename.split(".")[0]
-    actual_path = os.path.join(VIDEO_ROOT, f"{file_id}.avi")
-    
-    if not os.path.exists(actual_path):
-        print(f"⚠️ 파일 없음: {actual_path}")
-        continue
-    
-    landmarks = extract_landmarks(actual_path)
-    if not landmarks:
-        continue
-        
-    processed_sequence = preprocess_landmarks(landmarks)
-    
-    X.append(processed_sequence)
-    y.append(1 if label == "화재" else 0)
-
-print(f"✅ 추출 완료: {len(X)}개 샘플")
-
-if len(X) < 2:
-    print("⚠️ 데이터가 부족하여 모델을 학습할 수 없습니다.")
+# --- 1. 데이터 로딩 또는 추출 ---
+if os.path.exists(DATA_CACHE_PATH):
+    print(f"💾 캐시에서 전처리된 데이터 로딩: {DATA_CACHE_PATH}")
+    cached_data = np.load(DATA_CACHE_PATH)
+    X_padded = cached_data['X']
+    y_np = cached_data['y']
 else:
-    # 데이터 패딩
+    print("✨ 데이터 캐시 없음. 비디오에서 랜드마크 추출 및 증강을 시작합니다.")
+    X = []
+    y = []
+
+    for filename, label in tqdm(label_dict.items()):
+        file_id = filename.split(".")[0]
+        actual_path = os.path.join(VIDEO_ROOT, f"{file_id}.avi")
+        
+        if not os.path.exists(actual_path):
+            print(f"⚠️ 파일 없음: {actual_path}")
+            continue
+        
+        landmarks = extract_landmarks(actual_path)
+        if not landmarks:
+            continue
+            
+        processed_sequence = preprocess_landmarks(landmarks)
+        
+        # 원본 데이터 추가
+        X.append(processed_sequence)
+        y.append(1 if label == "화재" else 0)
+
+        # 증강 데이터 추가
+        for _ in range(AUGMENTATIONS_PER_VIDEO):
+            augmented = augment_sequence(processed_sequence)
+            X.append(augmented)
+            y.append(1 if label == "화재" else 0)
+
     X_padded = pad_sequences(X, maxlen=MAX_SEQ_LENGTH, padding='post', truncating='post', dtype='float32')
     y_np = np.array(y)
-
-    # 데이터셋 차원 확인
-    print(f"Padded X shape: {X_padded.shape}")
-    print(f"y shape: {y_np.shape}")
     
-    if X_padded.shape[0] == 0:
-        print("⚠️ 처리된 데이터가 없어 모델 학습을 건너뜁니다.")
-    else:
-        X_train, X_test, y_train, y_test = train_test_split(
-            X_padded, y_np, test_size=0.2, random_state=42, stratify=y_np
-        )
+    print(f"💾 전처리된 데이터 캐시 저장: {DATA_CACHE_PATH}")
+    np.savez(DATA_CACHE_PATH, X=X_padded, y=y_np)
 
+print(f"✅ 데이터 준비 완료: {X_padded.shape[0]}개 샘플")
+
+# --- 2. 모델 학습 또는 로딩 ---
+if X_padded.shape[0] < 2:
+    print("⚠️ 데이터가 부족하여 모델을 학습할 수 없습니다.")
+else:
+    X_train, X_test, y_train, y_test = train_test_split(
+        X_padded, y_np, test_size=0.2, random_state=42, stratify=y_np
+    )
+
+    if os.path.exists(MODEL_SAVE_PATH):
+        print(f"🧠 저장된 모델 로딩: {MODEL_SAVE_PATH}")
+        model = tf.keras.models.load_model(MODEL_SAVE_PATH)
+    else:
+        print("🏋️‍♀️ 저장된 모델 없음. 새로운 모델 학습을 시작합니다.")
         # LSTM 모델 정의
         model = Sequential([
             LSTM(64, return_sequences=True, input_shape=(MAX_SEQ_LENGTH, X_padded.shape[2])),
@@ -140,17 +173,21 @@ else:
         print("\n--- 모델 학습 시작 ---")
         model.summary()
 
-        history = model.fit(X_train, y_train, epochs=30, batch_size=4, validation_split=0.2)
+        history = model.fit(X_train, y_train, epochs=50, batch_size=16, validation_data=(X_test, y_test))
         
-        print("\n--- 모델 평가 ---")
-        loss, accuracy = model.evaluate(X_test, y_test)
-        print(f"🚀 테스트 정확도: {accuracy * 100:.2f}%")
+        print(f"🧠 학습된 모델 저장: {MODEL_SAVE_PATH}")
+        model.save(MODEL_SAVE_PATH)
 
-        # 예측 결과 확인
-        print("\n--- 테스트 샘플 예측 결과 ---")
-        y_pred_prob = model.predict(X_test)
-        for i, (pred_prob, actual) in enumerate(zip(y_pred_prob, y_test)):
-            pred_label = "화재" if pred_prob[0] > 0.5 else "화장실"
-            actual_label = "화재" if actual == 1 else "화장실"
-            result = "✅" if (pred_prob[0] > 0.5) == actual else "❌"
-            print(f"샘플 {i+1}: 예측={pred_label} (신뢰도: {pred_prob[0]:.2f}), 실제={actual_label} {result}")
+    # --- 3. 모델 평가 ---
+    print("\n--- 모델 평가 ---")
+    loss, accuracy = model.evaluate(X_test, y_test)
+    print(f"🚀 테스트 정확도: {accuracy * 100:.2f}%")
+
+    # 예측 결과 확인
+    print("\n--- 테스트 샘플 예측 결과 ---")
+    y_pred_prob = model.predict(X_test)
+    for i, (pred_prob, actual) in enumerate(zip(y_pred_prob, y_test)):
+        pred_label = "화재" if pred_prob[0] > 0.5 else "화장실"
+        actual_label = "화재" if actual == 1 else "화장실"
+        result = "✅" if (pred_prob[0] > 0.5) == actual else "❌"
+        print(f"샘플 {i+1}: 예측={pred_label} (신뢰도: {pred_prob[0]:.2f}), 실제={actual_label} {result}")
