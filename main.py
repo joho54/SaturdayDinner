@@ -8,6 +8,7 @@ import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense, Dropout
 from tensorflow.keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.utils import to_categorical
 
 # MediaPipe 초기화
 mp_holistic = mp.solutions.holistic
@@ -17,26 +18,27 @@ holistic = mp_holistic.Holistic()
 VIDEO_ROOT = "/Volumes/Sub_Storage/수어 데이터셋/0001~3000(영상)"
 MAX_SEQ_LENGTH = 100  # 최대 프레임 길이 (패딩에 사용)
 AUGMENTATIONS_PER_VIDEO = 9 # 원본 1개당 생성할 증강 데이터 수
-DATA_CACHE_PATH = 'preprocessed_data.npz'
-MODEL_SAVE_PATH = 'lstm_model.keras'
+DATA_CACHE_PATH = 'preprocessed_data_multiclass.npz'
+MODEL_SAVE_PATH = 'lstm_model_multiclass.keras'
+ACTIONS = ["Fire", "Toilet", "None"]
 
 label_dict = {
-    # 화재
-    "KETI_SL_0000000419.MOV": "화재",
-    "KETI_SL_0000000838.MTS": "화재",
-    "KETI_SL_0000001255.MTS": "화재",
-    "KETI_SL_0000001674.MTS": "화재",
-    "KETI_SL_0000002032.MOV": "화재",
-    "KETI_SL_0000002451.MP4": "화재",
-    "KETI_SL_0000002932.MOV": "화재",
-    # 화장실
-    "KETI_SL_0000000418.MOV": "화장실",
-    "KETI_SL_0000000837.MTS": "화장실",
-    "KETI_SL_0000001254.MTS": "화장실",
-    "KETI_SL_0000001673.MTS": "화장실",
-    "KETI_SL_0000002031.MOV": "화장실",
-    "KETI_SL_0000002450.MP4": "화장실",
-    "KETI_SL_0000002931.MOV": "화장실"
+    # Fire
+    "KETI_SL_0000000419.MOV": "Fire",
+    "KETI_SL_0000000838.MTS": "Fire",
+    "KETI_SL_0000001255.MTS": "Fire",
+    "KETI_SL_0000001674.MTS": "Fire",
+    "KETI_SL_0000002032.MOV": "Fire",
+    "KETI_SL_0000002451.MP4": "Fire",
+    "KETI_SL_0000002932.MOV": "Fire",
+    # Toilet
+    "KETI_SL_0000000418.MOV": "Toilet",
+    "KETI_SL_0000000837.MTS": "Toilet",
+    "KETI_SL_0000001254.MTS": "Toilet",
+    "KETI_SL_0000001673.MTS": "Toilet",
+    "KETI_SL_0000002031.MOV": "Toilet",
+    "KETI_SL_0000002450.MP4": "Toilet",
+    "KETI_SL_0000002931.MOV": "Toilet"
 }
 
 def augment_sequence(sequence, noise_level=0.005, scale_range=0.05):
@@ -69,7 +71,6 @@ def extract_landmarks(video_path):
             "pose": results.pose_landmarks,
             "left_hand": results.left_hand_landmarks,
             "right_hand": results.right_hand_landmarks,
-            "face": results.face_landmarks
         }
         landmarks_list.append(frame_data)
     
@@ -111,7 +112,7 @@ if os.path.exists(DATA_CACHE_PATH):
     print(f"💾 캐시에서 전처리된 데이터 로딩: {DATA_CACHE_PATH}")
     cached_data = np.load(DATA_CACHE_PATH)
     X_padded = cached_data['X']
-    y_np = cached_data['y']
+    y_one_hot = cached_data['y']
 else:
     print("✨ 데이터 캐시 없음. 비디오에서 랜드마크 추출 및 증강을 시작합니다.")
     X = []
@@ -133,19 +134,38 @@ else:
         
         # 원본 데이터 추가
         X.append(processed_sequence)
-        y.append(1 if label == "화재" else 0)
+        y.append(ACTIONS.index(label))
 
         # 증강 데이터 추가
         for _ in range(AUGMENTATIONS_PER_VIDEO):
             augmented = augment_sequence(processed_sequence)
             X.append(augmented)
-            y.append(1 if label == "화재" else 0)
+            y.append(ACTIONS.index(label))
+
+    # 2. 'None' 데이터 인공적으로 생성
+    print("\n✨ 'None' 클래스 데이터 생성 중...")
+    # '화재' 첫번째 영상을 기반으로 '가만히 있는' 데이터 생성
+    base_video_path = os.path.join(VIDEO_ROOT, f"{list(label_dict.keys())[0].split('.')[0]}.avi")
+    if os.path.exists(base_video_path):
+        landmarks = extract_landmarks(base_video_path)
+        if landmarks:
+            # 첫 프레임만 사용
+            first_frame_landmarks = preprocess_landmarks([landmarks[0]])
+            # 100프레임 동안 가만히 있는 시퀀스 생성
+            still_sequence = np.tile(first_frame_landmarks, (MAX_SEQ_LENGTH, 1))
+            
+            # 원본 및 증강 데이터 추가 (총 10 * 7 = 70개)
+            none_label_index = ACTIONS.index("None")
+            for _ in range(10 * len(ACTIONS)): # 다른 클래스 수와 비슷하게 생성
+                augmented = augment_sequence(still_sequence)
+                X.append(augmented)
+                y.append(none_label_index)
 
     X_padded = pad_sequences(X, maxlen=MAX_SEQ_LENGTH, padding='post', truncating='post', dtype='float32')
-    y_np = np.array(y)
+    y_one_hot = to_categorical(y, num_classes=len(ACTIONS))
     
-    print(f"💾 전처리된 데이터 캐시 저장: {DATA_CACHE_PATH}")
-    np.savez(DATA_CACHE_PATH, X=X_padded, y=y_np)
+    print(f"💾 다중 클래스 데이터 캐시 저장: {DATA_CACHE_PATH}")
+    np.savez(DATA_CACHE_PATH, X=X_padded, y=y_one_hot)
 
 print(f"✅ 데이터 준비 완료: {X_padded.shape[0]}개 샘플")
 
@@ -154,26 +174,25 @@ if X_padded.shape[0] < 2:
     print("⚠️ 데이터가 부족하여 모델을 학습할 수 없습니다.")
 else:
     X_train, X_test, y_train, y_test = train_test_split(
-        X_padded, y_np, test_size=0.2, random_state=42, stratify=y_np
+        X_padded, y_one_hot, test_size=0.2, random_state=42, stratify=y_one_hot
     )
 
     if os.path.exists(MODEL_SAVE_PATH):
         print(f"🧠 저장된 모델 로딩: {MODEL_SAVE_PATH}")
         model = tf.keras.models.load_model(MODEL_SAVE_PATH)
     else:
-        print("🏋️‍♀️ 저장된 모델 없음. 새로운 모델 학습을 시작합니다.")
-        # LSTM 모델 정의
+        print("🏋️‍♀️ 저장된 모델 없음. 다중 클래스 분류 모델 학습을 시작합니다.")
         model = Sequential([
             LSTM(64, return_sequences=True, input_shape=(MAX_SEQ_LENGTH, X_padded.shape[2])),
             Dropout(0.5),
             LSTM(32),
             Dropout(0.5),
             Dense(16, activation='relu'),
-            Dense(1, activation='sigmoid')
+            Dense(len(ACTIONS), activation='softmax') # 3개의 클래스, softmax 활성화
         ])
 
         model.compile(optimizer='adam',
-                      loss='binary_crossentropy',
+                      loss='categorical_crossentropy', # 다중 클래스 손실 함수
                       metrics=['accuracy'])
 
         print("\n--- 모델 학습 시작 ---")
@@ -190,10 +209,14 @@ else:
     print(f"🚀 테스트 정확도: {accuracy * 100:.2f}%")
 
     # 예측 결과 확인
-    print("\n--- 테스트 샘플 예측 결과 ---")
+    print("\n--- Test Sample Predictions ---")
     y_pred_prob = model.predict(X_test)
-    for i, (pred_prob, actual) in enumerate(zip(y_pred_prob, y_test)):
-        pred_label = "화재" if pred_prob[0] > 0.5 else "화장실"
-        actual_label = "화재" if actual == 1 else "화장실"
-        result = "✅" if (pred_prob[0] > 0.5) == actual else "❌"
-        print(f"샘플 {i+1}: 예측={pred_label} (신뢰도: {pred_prob[0]:.2f}), 실제={actual_label} {result}")
+    y_pred_classes = np.argmax(y_pred_prob, axis=1)
+    y_true_classes = np.argmax(y_test, axis=1)
+
+    for i, (pred_class, true_class) in enumerate(zip(y_pred_classes, y_true_classes)):
+        pred_label = ACTIONS[pred_class]
+        actual_label = ACTIONS[true_class]
+        result = "✅" if pred_class == true_class else "❌"
+        confidence = y_pred_prob[i][pred_class]
+        print(f"Sample {i+1}: Prediction={pred_label} (Confidence: {confidence:.2f}), Actual={actual_label} {result}")

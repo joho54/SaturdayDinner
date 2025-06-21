@@ -7,7 +7,8 @@ from PIL import ImageFont, ImageDraw, Image
 
 # --- 설정값 ---
 MAX_SEQ_LENGTH = 100
-MODEL_SAVE_PATH = 'lstm_model.keras'
+MODEL_SAVE_PATH = 'lstm_model_multiclass.keras'
+ACTIONS = ["Fire", "Toilet", "None"]
 
 # --- 한글 폰트 설정 ---
 FONT_PATH = "/System/Library/Fonts/Supplemental/AppleGothic.ttf"
@@ -79,6 +80,8 @@ if not cap.isOpened():
 sequence = deque(maxlen=MAX_SEQ_LENGTH)
 current_prediction = ""
 confidence = 0.0
+pred_probs = np.zeros(len(ACTIONS))
+pred_class_index = -1 # 예측 클래스 인덱스 초기화
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -112,25 +115,51 @@ while cap.isOpened():
 
     # 시퀀스가 꽉 찼을 때만 예측
     if len(sequence) == MAX_SEQ_LENGTH:
-        # 전처리
         processed_sequence = preprocess_landmarks(list(sequence))
         input_data = np.expand_dims(processed_sequence, axis=0)
         
         # 예측
-        pred_prob = model.predict(input_data, verbose=0)[0][0]
-        confidence = pred_prob if pred_prob > 0.5 else 1 - pred_prob
+        pred_probs = model.predict(input_data, verbose=0)[0]
+        pred_class_index = np.argmax(pred_probs)
         
-        if pred_prob > 0.5:
-            current_prediction = "화재"
-        else:
-            current_prediction = "화장실"
+        current_prediction = ACTIONS[pred_class_index]
+        confidence = pred_probs[pred_class_index]
 
-    # 결과 텍스트 표시
-    text = f"예측: {current_prediction} (신뢰도: {confidence:.2f})"
-    frame = draw_korean_text(frame, text, (20, 30), font, (0, 255, 0))
+    # --- 결과 시각화 ---
     
+    # 1. 예측 결과 텍스트 (기존과 동일)
+    display_label = {"Fire": "화재", "Toilet": "화장실", "None": "없음"}.get(current_prediction, "")
+    if current_prediction == 'None' and confidence < 0.8:
+        display_text = "..."
+    else:
+        display_text = f"예측: {display_label} (신뢰도: {confidence:.2f})"
+        
+    frame = draw_korean_text(frame, display_text, (20, 30), font, (0, 255, 0))
+
+    # 2. 확률 막대그래프
+    bar_start_x = frame.shape[1] - 300  # 막대그래프 시작 X 좌표
+
+    for i, prob in enumerate(pred_probs):
+        action_korean = {"Fire": "화재", "Toilet": "화장실", "None": "없음"}.get(ACTIONS[i])
+        y_pos = 50 + i * 40
+
+        # 막대그래프 배경
+        cv2.rectangle(frame, (bar_start_x, y_pos), (bar_start_x + 250, y_pos + 30), (200, 200, 200), -1)
+        
+        # 확률 막대
+        bar_width = int(prob * 250)
+        bar_color = (100, 100, 100) # 기본 회색
+        if i == pred_class_index:
+            bar_color = (0, 255, 0) # 예측된 클래스는 녹색으로 강조
+
+        cv2.rectangle(frame, (bar_start_x, y_pos), (bar_start_x + bar_width, y_pos + 30), bar_color, -1)
+        
+        # 텍스트
+        text_on_bar = f"{action_korean}: {prob*100:.1f}%"
+        frame = draw_korean_text(frame, text_on_bar, (bar_start_x + 5, y_pos), font, (0, 0, 0)) # 검정색 텍스트
+
     # 화면에 출력
-    cv2.imshow('실시간 수어 인식', frame)
+    cv2.imshow('실시간 수어 인식 (다중 클래스)', frame)
 
     if cv2.waitKey(5) & 0xFF == ord('q'):
         break
