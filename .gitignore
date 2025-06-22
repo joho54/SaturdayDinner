@@ -1,2 +1,6 @@
 .DS_Store
 test-success.mov
+fixed_preprocessed_data.npz
+preprocessed_data_multiclass.npz
+*.npz
+preprocessed_data_multiclass.npz
