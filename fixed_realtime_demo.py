@@ -8,7 +8,7 @@ from PIL import ImageFont, ImageDraw, Image
 # --- 설정값 ---
 MAX_SEQ_LENGTH = 30
 MODEL_SAVE_PATH = 'fixed_transformer_model.keras'
-ACTIONS = ["Fire", "Toilet", "None"]
+ACTIONS = ["화재", "화장실", "화요일", "화약", "화상", "None"]
 
 # --- 한글 폰트 설정 ---
 FONT_PATH = "/System/Library/Fonts/Supplemental/AppleGothic.ttf"
@@ -172,6 +172,9 @@ pred_probs = np.zeros(len(ACTIONS))
 pred_class_index = -1
 prediction_count = 0
 
+# None 클래스명 자동 추출
+NONE_CLASS = ACTIONS[-1]
+
 print("🚀 수정된 실시간 수어 인식 시작!")
 print("📝 사용법: 'q' 키를 눌러 종료")
 
@@ -237,16 +240,17 @@ while cap.isOpened():
         confidence = pred_probs[pred_class_index]
 
         print(f"✅ 예측 #{prediction_count}: {current_prediction} (신뢰도: {confidence:.3f})")
-        print(f"📈 확률 분포: Fire={pred_probs[0]:.3f}, Toilet={pred_probs[1]:.3f}, None={pred_probs[2]:.3f}")
+        print(f"📈 확률 분포: {', '.join([f'{ACTIONS[i]}={pred_probs[i]:.3f}' for i in range(len(ACTIONS))])}")
 
     # --- 결과 시각화 ---
     
     # 1. 예측 결과 텍스트
-    display_label = {"Fire": "화재", "Toilet": "화장실", "None": "없음"}.get(current_prediction, "")
-    if current_prediction == 'None' and confidence < 0.8:
+    display_label = {a: a for a in ACTIONS}
+    label_text = display_label.get(current_prediction, "")
+    if current_prediction == NONE_CLASS and confidence < 0.8:
         display_text = "..."
     else:
-        display_text = f"예측: {display_label} (신뢰도: {confidence:.2f})"
+        display_text = f"예측: {label_text} (신뢰도: {confidence:.2f})"
         
     frame = draw_korean_text(frame, display_text, (20, 30), font, (0, 255, 0))
 
@@ -254,7 +258,7 @@ while cap.isOpened():
     bar_start_x = frame.shape[1] - 300
 
     for i, prob in enumerate(pred_probs):
-        action_korean = {"Fire": "화재", "Toilet": "화장실", "None": "없음"}.get(ACTIONS[i])
+        action_korean = ACTIONS
         y_pos = 50 + i * 40
 
         # 막대그래프 배경
@@ -269,7 +273,7 @@ while cap.isOpened():
         cv2.rectangle(frame, (bar_start_x, y_pos), (bar_start_x + bar_width, y_pos + 30), bar_color, -1)
         
         # 텍스트
-        text_on_bar = f"{action_korean}: {prob*100:.1f}%"
+        text_on_bar = f"{action_korean[i]}: {prob*100:.1f}%"
         frame = draw_korean_text(frame, text_on_bar, (bar_start_x + 5, y_pos), font, (0, 0, 0))
 
     # 화면에 출력

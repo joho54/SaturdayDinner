@@ -380,6 +380,19 @@ def extract_landmarks(video_path):
     return landmarks_list
 
 
+def get_action_index(label):
+    """ACTIONS에 없는 라벨은 -1 반환"""
+    try:
+        return ACTIONS.index(label)
+    except ValueError:
+        print(f"⚠️ ACTIONS에 없는 라벨: {label}")
+        return -1
+
+
+# None 클래스명 자동 추출
+NONE_CLASS = ACTIONS[-1]
+
+
 if __name__ == "__main__":
     print("🔧 학습 데이터 문제 해결 및 모델 재학습 시작")
 
@@ -388,6 +401,9 @@ if __name__ == "__main__":
     y = []
 
     for filename, label in tqdm(label_dict.items(), desc="데이터 추출"):
+        if label not in ACTIONS:
+            print(f"⚠️ ACTIONS에 없는 라벨: {label}, 파일: {filename} -> 건너뜀")
+            continue
         actual_path = get_video_root_and_path(filename)
         if actual_path is None or not os.path.exists(actual_path):
             print(f"⚠️ 파일 없음: {actual_path}")
@@ -406,7 +422,7 @@ if __name__ == "__main__":
 
         # 원본 데이터 추가
         X.append(processed_sequence)
-        y.append(ACTIONS.index(label))
+        y.append(get_action_index(label))
 
         # 더 많은 증강 데이터 추가
         for _ in range(AUGMENTATIONS_PER_VIDEO):
@@ -414,13 +430,13 @@ if __name__ == "__main__":
                 augmented = augment_sequence_improved(processed_sequence)
                 if augmented.shape == (TARGET_SEQ_LENGTH, 675):
                     X.append(augmented)
-                    y.append(ACTIONS.index(label))
+                    y.append(get_action_index(label))
             except Exception as e:
                 print(f"⚠️ 증강 중 오류: {e}")
                 continue
 
-    # 'None' 클래스 데이터 생성 (더 다양하게)
-    print("\n✨ 'None' 클래스 데이터 대폭 강화 중...")
+    # None 클래스 데이터 생성 (더 다양하게)
+    print(f"\n✨ '{NONE_CLASS}' 클래스 데이터 대폭 강화 중...")
     none_samples = []
 
     # 전략 1: 더 많은 비디오에서, 더 다양한 프레임을 소스로 사용
@@ -510,7 +526,7 @@ if __name__ == "__main__":
         none_samples.append(np.zeros((TARGET_SEQ_LENGTH, 675)))
 
     # None 클래스 데이터 추가
-    none_label_index = ACTIONS.index("None")
+    none_label_index = get_action_index(NONE_CLASS)
     for sample in none_samples:
         X.append(sample)
         y.append(none_label_index)
@@ -521,7 +537,10 @@ if __name__ == "__main__":
     # 클래스별 샘플 수 확인
     unique, counts = np.unique(y, return_counts=True)
     for class_idx, count in zip(unique, counts):
-        print(f"클래스 {class_idx} ({ACTIONS[class_idx]}): {count}개")
+        if 0 <= class_idx < len(ACTIONS):
+            print(f"클래스 {class_idx} ({ACTIONS[class_idx]}): {count}개")
+        else:
+            print(f"클래스 {class_idx} (Unknown): {count}개")
 
     X_padded = np.array(X)
     y_one_hot = to_categorical(y, num_classes=len(ACTIONS))
