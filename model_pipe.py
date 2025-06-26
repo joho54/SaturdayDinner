@@ -109,10 +109,12 @@ def get_video_root_and_path(filename):
         return None
 
     base_name = "_".join(filename.split("_")[:-1]) + f"_{num_str}"
-    for ext in [".MOV", ".MTS", ".AVI"]:
-        candidate = os.path.join(root, base_name + ext)
-        if os.path.exists(candidate):
-            return candidate
+    for ext in [".MOV", ".MTS", ".AVI", ".MP4"]:
+        # 대문자와 소문자 모두 시도
+        for case_ext in [ext, ext.lower()]:
+            candidate = os.path.join(root, base_name + case_ext)
+            if os.path.exists(candidate):
+                return candidate
     return None
 
 def normalize_sequence_length(sequence, target_length=30):
