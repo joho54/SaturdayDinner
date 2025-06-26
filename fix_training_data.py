@@ -141,7 +141,7 @@ label_dict = {
     "KETI_SL_0000007119.MOV": "화상",
     "KETI_SL_0000007538.MTS": "화상",
     "KETI_SL_0000007957.MOV": "화상",
-    "KETI_SL_0000008376.MTS": "화상"
+    "KETI_SL_0000008376.MTS": "화상",
 }
 
 
@@ -569,7 +569,14 @@ if __name__ == "__main__":
     model.summary()
 
     # 학습
+    checkpoint_dir = "checkpoints"
+    os.makedirs(checkpoint_dir, exist_ok=True)
+    checkpoint_path = os.path.join(checkpoint_dir, "model-epoch-{epoch:02d}.keras")
+
     callbacks = [
+        tf.keras.callbacks.ModelCheckpoint(
+            filepath=checkpoint_path, save_best_only=False, verbose=1
+        ),
         tf.keras.callbacks.EarlyStopping(patience=15, restore_best_weights=True),
         tf.keras.callbacks.ReduceLROnPlateau(factor=0.5, patience=8, min_lr=1e-6),
     ]

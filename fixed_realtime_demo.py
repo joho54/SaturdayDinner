@@ -15,8 +15,8 @@ FONT_PATH = "/System/Library/Fonts/Supplemental/AppleGothic.ttf"
 try:
     font = ImageFont.truetype(FONT_PATH, 30)
 except IOError:
-    print(f"❌ 폰트를 찾을 수 없습니다: {FONT_PATH}")
-    print("다른 경로의 한글 폰트를 지정해주세요.")
+    # print(f"❌ 폰트를 찾을 수 없습니다: {FONT_PATH}")
+    # print("다른 경로의 한글 폰트를 지정해주세요.")
     font = ImageFont.load_default()
 
 # MediaPipe 초기화
@@ -27,12 +27,12 @@ mp_drawing = mp.solutions.drawing_utils
 # 학습된 모델 로드
 try:
     model = tf.keras.models.load_model(MODEL_SAVE_PATH)
-    print(f"✅ 수정된 모델 로딩 성공: {MODEL_SAVE_PATH}")
-    print("모델 구조:")
+    # print(f"✅ 수정된 모델 로딩 성공: {MODEL_SAVE_PATH}")
+    # print("모델 구조:")
     model.summary()
 except Exception as e:
-    print(f"❌ 모델 로딩 실패: {e}")
-    print("먼저 fix_training_data.py를 실행하여 모델을 학습하고 저장해주세요.")
+    # print(f"❌ 모델 로딩 실패: {e}")
+    # print("먼저 fix_training_data.py를 실행하여 모델을 학습하고 저장해주세요.")
     exit()
 
 def draw_korean_text(img, text, pos, font, color=(0, 255, 0)):
@@ -154,7 +154,7 @@ def improved_preprocess_landmarks(landmarks_list):
             
             return sequence
         except Exception as e:
-            print(f"⚠️ 시퀀스 처리 중 오류 발생: {e}")
+            # print(f"⚠️ 시퀀스 처리 중 오류 발생: {e}")
             return np.zeros((MAX_SEQ_LENGTH, 675))
     
     return np.zeros((MAX_SEQ_LENGTH, 675))
@@ -162,7 +162,7 @@ def improved_preprocess_landmarks(landmarks_list):
 # 웹캠 실행
 cap = cv2.VideoCapture(0)
 if not cap.isOpened():
-    print("❌ 웹캠을 열 수 없습니다.")
+    # print("❌ 웹캠을 열 수 없습니다.")
     exit()
 
 sequence = deque(maxlen=MAX_SEQ_LENGTH)
@@ -175,8 +175,8 @@ prediction_count = 0
 # None 클래스명 자동 추출
 NONE_CLASS = ACTIONS[-1]
 
-print("🚀 수정된 실시간 수어 인식 시작!")
-print("📝 사용법: 'q' 키를 눌러 종료")
+# print("🚀 수정된 실시간 수어 인식 시작!")
+# print("📝 사용법: 'q' 키를 눌러 종료")
 
 while cap.isOpened():
     ret, frame = cap.read()
@@ -221,26 +221,26 @@ while cap.isOpened():
         input_data = np.expand_dims(processed_sequence, axis=0)
         
         # 예측 전 상태 출력
-        print(f"\n🔍 예측 시도 #{prediction_count}: 시퀀스 길이 {len(sequence)}")
-        print(f"📊 랜드마크 통계: 포즈={pose_count}, 왼손={left_hand_count}, 오른손={right_hand_count}")
-        print(f"📊 전처리된 시퀀스 형태: {processed_sequence.shape}")
-        print(f"📈 시퀀스 통계: 평균={np.mean(processed_sequence):.6f}, 표준편차={np.std(processed_sequence):.6f}")
-        print(f"🎯 모델 입력 형태: {input_data.shape}")
-        print(f"실제 입력 shape: {input_data.shape}")
-        print(f"processed_sequence[0, :10]: {processed_sequence[0, :10]}")
-        print(f"예측 전 pred_probs: {pred_probs}")
+        # print(f"\n🔍 예측 시도 #{prediction_count}: 시퀀스 길이 {len(sequence)}")
+        # print(f"📊 랜드마크 통계: 포즈={pose_count}, 왼손={left_hand_count}, 오른손={right_hand_count}")
+        # print(f"📊 전처리된 시퀀스 형태: {processed_sequence.shape}")
+        # print(f"📈 시퀀스 통계: 평균={np.mean(processed_sequence):.6f}, 표준편차={np.std(processed_sequence):.6f}")
+        # print(f"🎯 모델 입력 형태: {input_data.shape}")
+        # print(f"실제 입력 shape: {input_data.shape}")
+        # print(f"processed_sequence[0, :10]: {processed_sequence[0, :10]}")
+        # print(f"예측 전 pred_probs: {pred_probs}")
         
         # 예측
         pred_probs = model.predict(input_data, verbose=0)[0]
         pred_class_index = np.argmax(pred_probs)
         
-        print(f"예측 후 pred_probs: {pred_probs}")
+        # print(f"예측 후 pred_probs: {pred_probs}")
         
         current_prediction = ACTIONS[pred_class_index]
         confidence = pred_probs[pred_class_index]
 
-        print(f"✅ 예측 #{prediction_count}: {current_prediction} (신뢰도: {confidence:.3f})")
-        print(f"📈 확률 분포: {', '.join([f'{ACTIONS[i]}={pred_probs[i]:.3f}' for i in range(len(ACTIONS))])}")
+        # print(f"✅ 예측 #{prediction_count}: {current_prediction} (신뢰도: {confidence:.3f})")
+        # print(f"📈 확률 분포: {', '.join([f'{ACTIONS[i]}={pred_probs[i]:.3f}' for i in range(len(ACTIONS))])}")
 
     # --- 결과 시각화 ---
     
