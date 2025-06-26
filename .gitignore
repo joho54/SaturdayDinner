@@ -3,4 +3,4 @@ test-success.mov
 *.npz
 *.pkl
 *.keras
-*.csv
+# *.csv
