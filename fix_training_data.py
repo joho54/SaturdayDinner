@@ -18,160 +18,454 @@ from tensorflow.keras.layers import (
     LayerNormalization,
     MultiHeadAttention,
     Add,
+    BatchNormalization,
+    Lambda,
 )
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.utils import to_categorical
 from scipy.interpolate import interp1d
 import sys
+import json
+import pandas as pd
+import pickle
+from datetime import datetime
+import logging
+from collections import defaultdict
+
+# MediaPipe 및 TensorFlow 로깅 완전 억제
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # ERROR만 출력
+os.environ['CUDA_VISIBLE_DEVICES'] = ''  # GPU 비활성화 (CPU만 사용)
+logging.getLogger('mediapipe').setLevel(logging.CRITICAL)
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+logging.getLogger('absl').setLevel(logging.ERROR)
+
+# 설정 파일에서 파라미터 import
+from config import *
 
 # MediaPipe 초기화
 mp_holistic = mp.solutions.holistic
-holistic = mp_holistic.Holistic()
 
-# 경로 및 상수 설정
-VIDEO_ROOT1 = "/Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/0001~3000(영상)"
-VIDEO_ROOT2 = "/Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/3001~6000(영상)"
-VIDEO_ROOT3 = "/Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/6001~8280(영상)"
-VIDEO_ROOT4 = "/Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/8381~9000(영상)"
-VIDEO_ROOT5 = "/Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9001~9600(영상)"
+class MediaPipeManager:
+    """MediaPipe 객체를 안전하게 관리하는 컨텍스트 매니저"""
+    
+    _instance = None
+    _holistic = None
+    
+    def __new__(cls):
+        if cls._instance is None:
+            cls._instance = super(MediaPipeManager, cls).__new__(cls)
+        return cls._instance
+    
+    def __init__(self):
+        if self._holistic is None:
+            self._holistic = mp_holistic.Holistic(
+                static_image_mode=MEDIAPIPE_STATIC_IMAGE_MODE,
+                model_complexity=MEDIAPIPE_MODEL_COMPLEXITY,
+                smooth_landmarks=MEDIAPIPE_SMOOTH_LANDMARKS,
+                enable_segmentation=MEDIAPIPE_ENABLE_SEGMENTATION,
+                smooth_segmentation=MEDIAPIPE_SMOOTH_SEGMENTATION,
+                min_detection_confidence=MEDIAPIPE_MIN_DETECTION_CONFIDENCE,
+                min_tracking_confidence=MEDIAPIPE_MIN_TRACKING_CONFIDENCE,
+            )
+    
+    def __enter__(self):
+        return self._holistic
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        # 전역 객체는 유지하고 정리만
+        pass
+    
+    @classmethod
+    def cleanup(cls):
+        """전역 MediaPipe 객체 정리"""
+        if cls._holistic:
+            cls._holistic.close()
+            cls._holistic = None
 
-TARGET_SEQ_LENGTH = 30
-AUGMENTATIONS_PER_VIDEO = 20  # 증강 횟수 증가
+# 디렉토리 생성
+os.makedirs(MODELS_DIR, exist_ok=True)
+os.makedirs(INFO_DIR, exist_ok=True)
+
+# 고유한 모델 이름 생성
+timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+MODEL_SAVE_PATH = f"{MODELS_DIR}/sign_language_model_{timestamp}.keras"
+MODEL_INFO_PATH = f"{INFO_DIR}/model-info-{timestamp}.json"
+
+# 캐시 디렉토리 설정
+os.makedirs(CACHE_DIR, exist_ok=True)
+
 DATA_CACHE_PATH = "fixed_preprocessed_data.npz"
-MODEL_SAVE_PATH = "fixed_transformer_model.keras"
-ACTIONS = ["화재", "화장실", "화요일", "화약", "화상", "None"]
 
-label_dict = {
-    "KETI_SL_0000000419.MOV": "화재",
-    "KETI_SL_0000000838.MTS": "화재",
-    "KETI_SL_0000001255.MTS": "화재",
-    "KETI_SL_0000001674.MTS": "화재",
-    "KETI_SL_0000002032.MOV": "화재",
-    "KETI_SL_0000002451.MP4": "화재",
-    "KETI_SL_0000002932.MOV": "화재",
-    "KETI_SL_0000003351.MTS": "화재",
-    "KETI_SL_0000003760.MOV": "화재",
-    "KETI_SL_0000004178.MTS": "화재",
-    "KETI_SL_0000004607.MOV": "화재",
-    "KETI_SL_0000005026.MTS": "화재",
-    "KETI_SL_0000005445.MOV": "화재",
-    "KETI_SL_0000005862.MTS": "화재",
-    "KETI_SL_0000006284.MOV": "화재",
-    "KETI_SL_0000006703.MTS": "화재",
-    "KETI_SL_0000007123.MOV": "화재",
-    "KETI_SL_0000007542.MTS": "화재",
-    "KETI_SL_0000007961.MOV": "화재",
-    "KETI_SL_0000008380.MTS": "화재",
-    "KETI_SL_0000000418.MOV": "화장실",
-    "KETI_SL_0000000837.MTS": "화장실",
-    "KETI_SL_0000001254.MTS": "화장실",
-    "KETI_SL_0000001673.MTS": "화장실",
-    "KETI_SL_0000002031.MOV": "화장실",
-    "KETI_SL_0000002450.MP4": "화장실",
-    "KETI_SL_0000002931.MOV": "화장실",
-    "KETI_SL_0000003350.MTS": "화장실",
-    "KETI_SL_0000003759.MOV": "화장실",
-    "KETI_SL_0000004177.MTS": "화장실",
-    "KETI_SL_0000004606.MOV": "화장실",
-    "KETI_SL_0000005025.MTS": "화장실",
-    "KETI_SL_0000005444.MOV": "화장실",
-    "KETI_SL_0000005861.MTS": "화장실",
-    "KETI_SL_0000006283.MOV": "화장실",
-    "KETI_SL_0000006702.MTS": "화장실",
-    "KETI_SL_0000007122.MOV": "화장실",
-    "KETI_SL_0000007541.MTS": "화장실",
-    "KETI_SL_0000007960.MOV": "화장실",
-    "KETI_SL_0000008379.MTS": "화장실",
-    "KETI_SL_0000000417.MOV": "화요일",
-    "KETI_SL_0000000836.MTS": "화요일",
-    "KETI_SL_0000001253.MTS": "화요일",
-    "KETI_SL_0000001672.MTS": "화요일",
-    "KETI_SL_0000002030.MOV": "화요일",
-    "KETI_SL_0000002449.MP4": "화요일",
-    "KETI_SL_0000002930.MOV": "화요일",
-    "KETI_SL_0000003349.MTS": "화요일",
-    "KETI_SL_0000003758.MOV": "화요일",
-    "KETI_SL_0000004176.MTS": "화요일",
-    "KETI_SL_0000004605.MOV": "화요일",
-    "KETI_SL_0000005024.MTS": "화요일",
-    "KETI_SL_0000005443.MOV": "화요일",
-    "KETI_SL_0000005860.MTS": "화요일",
-    "KETI_SL_0000006282.MOV": "화요일",
-    "KETI_SL_0000006701.MTS": "화요일",
-    "KETI_SL_0000007121.MOV": "화요일",
-    "KETI_SL_0000007540.MTS": "화요일",
-    "KETI_SL_0000007959.MOV": "화요일",
-    "KETI_SL_0000008378.MTS": "화요일",
-    "KETI_SL_0000000416.MOV": "화약",
-    "KETI_SL_0000000835.MTS": "화약",
-    "KETI_SL_0000001252.MTS": "화약",
-    "KETI_SL_0000001671.MTS": "화약",
-    "KETI_SL_0000002029.MOV": "화약",
-    "KETI_SL_0000002448.MP4": "화약",
-    "KETI_SL_0000002929.MOV": "화약",
-    "KETI_SL_0000003348.MTS": "화약",
-    "KETI_SL_0000003757.MOV": "화약",
-    "KETI_SL_0000004175.MTS": "화약",
-    "KETI_SL_0000004604.MOV": "화약",
-    "KETI_SL_0000005023.MTS": "화약",
-    "KETI_SL_0000005442.MOV": "화약",
-    "KETI_SL_0000005859.MTS": "화약",
-    "KETI_SL_0000006281.MOV": "화약",
-    "KETI_SL_0000006700.MTS": "화약",
-    "KETI_SL_0000007120.MOV": "화약",
-    "KETI_SL_0000007539.MTS": "화약",
-    "KETI_SL_0000007958.MOV": "화약",
-    "KETI_SL_0000008377.MTS": "화약",
-    "KETI_SL_0000000415.MOV": "화상",
-    "KETI_SL_0000000834.MTS": "화상",
-    "KETI_SL_0000001251.MTS": "화상",
-    "KETI_SL_0000001670.MTS": "화상",
-    "KETI_SL_0000002028.MOV": "화상",
-    "KETI_SL_0000002447.MP4": "화상",
-    "KETI_SL_0000002928.MOV": "화상",
-    "KETI_SL_0000003347.MTS": "화상",
-    "KETI_SL_0000003756.MOV": "화상",
-    "KETI_SL_0000004174.MTS": "화상",
-    "KETI_SL_0000004603.MOV": "화상",
-    "KETI_SL_0000005022.MTS": "화상",
-    "KETI_SL_0000005441.MOV": "화상",
-    "KETI_SL_0000005858.MTS": "화상",
-    "KETI_SL_0000006280.MOV": "화상",
-    "KETI_SL_0000006699.MTS": "화상",
-    "KETI_SL_0000007119.MOV": "화상",
-    "KETI_SL_0000007538.MTS": "화상",
-    "KETI_SL_0000007957.MOV": "화상",
-    "KETI_SL_0000008376.MTS": "화상",
-}
+# 라벨별 캐시 파일 경로 생성 함수
+def get_label_cache_path(label):
+    """라벨별 캐시 파일 경로를 반환합니다. 주요 파라미터를 파일명에 포함시켜 캐시 무효화가 자동으로 되도록 합니다."""
+    safe_label = label.replace(" ", "_").replace("/", "_")
+    return os.path.join(
+        CACHE_DIR,
+        f"{safe_label}_seq{TARGET_SEQ_LENGTH}_aug{AUGMENTATIONS_PER_VIDEO}.pkl"
+    )
 
+def save_label_cache(label, data):
+    """라벨별 데이터를 캐시에 저장합니다."""
+    cache_path = get_label_cache_path(label)
+    
+    # 캐시에 저장할 데이터와 파라미터 정보
+    cache_data = {
+        'data': data,
+        'parameters': {
+            'TARGET_SEQ_LENGTH': TARGET_SEQ_LENGTH,
+            'AUGMENTATIONS_PER_VIDEO': AUGMENTATIONS_PER_VIDEO,
+            'AUGMENTATION_NOISE_LEVEL': AUGMENTATION_NOISE_LEVEL,
+            'AUGMENTATION_SCALE_RANGE': AUGMENTATION_SCALE_RANGE,
+            'AUGMENTATION_ROTATION_RANGE': AUGMENTATION_ROTATION_RANGE,
+            'NONE_CLASS_NOISE_LEVEL': NONE_CLASS_NOISE_LEVEL,
+            'NONE_CLASS_AUGMENTATIONS_PER_FRAME': NONE_CLASS_AUGMENTATIONS_PER_FRAME,
+        }
+    }
+    
+    # 임시 파일에 먼저 저장 (원자적 쓰기)
+    temp_path = cache_path + '.tmp'
+    
+    try:
+        with open(temp_path, 'wb') as f:
+            pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+        
+        # 성공적으로 저장되면 최종 위치로 이동
+        os.replace(temp_path, cache_path)
+        print(f"💾 {label} 라벨 데이터 캐시 저장: {cache_path} ({len(data)}개 샘플)")
+        
+    except Exception as e:
+        # 오류 발생 시 임시 파일 정리
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+        raise e
+
+def load_label_cache(label):
+    """라벨별 데이터를 캐시에서 로드합니다."""
+    cache_path = get_label_cache_path(label)
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, 'rb') as f:
+                cache_data = pickle.load(f)
+            
+            # 캐시 형식 확인 (구버전 호환성)
+            if isinstance(cache_data, dict) and 'data' in cache_data and 'parameters' in cache_data:
+                # 새 형식: 파라미터 검증
+                cached_params = cache_data['parameters']
+                current_params = {
+                    'TARGET_SEQ_LENGTH': TARGET_SEQ_LENGTH,
+                    'AUGMENTATIONS_PER_VIDEO': AUGMENTATIONS_PER_VIDEO,
+                    'AUGMENTATION_NOISE_LEVEL': AUGMENTATION_NOISE_LEVEL,
+                    'AUGMENTATION_SCALE_RANGE': AUGMENTATION_SCALE_RANGE,
+                    'AUGMENTATION_ROTATION_RANGE': AUGMENTATION_ROTATION_RANGE,
+                    'NONE_CLASS_NOISE_LEVEL': NONE_CLASS_NOISE_LEVEL,
+                    'NONE_CLASS_AUGMENTATIONS_PER_FRAME': NONE_CLASS_AUGMENTATIONS_PER_FRAME,
+                }
+                
+                # 파라미터 비교
+                if cached_params != current_params:
+                    print(f"⚠️ {label} 캐시 파라미터가 다릅니다. 캐시 무효화.")
+                    print(f"   캐시된 파라미터: {cached_params}")
+                    print(f"   현재 파라미터: {current_params}")
+                    os.remove(cache_path)
+                    return None
+                
+                data = cache_data['data']
+            else:
+                # 구버전: 리스트 형태 (파라미터 검증 없이 사용)
+                print(f"⚠️ {label} 구버전 캐시 형식입니다. 파라미터 검증을 건너뜁니다.")
+                data = cache_data
+            
+            # 데이터 검증
+            if isinstance(data, list) and len(data) > 0:
+                print(f"📂 {label} 라벨 데이터 캐시 로드: {cache_path} ({len(data)}개 샘플)")
+                return data
+            else:
+                print(f"⚠️ {label} 캐시 데이터가 비어있거나 잘못된 형식입니다.")
+                return None
+                
+        except Exception as e:
+            print(f"⚠️ {label} 캐시 로드 실패: {e}")
+            # 손상된 캐시 파일 삭제
+            try:
+                os.remove(cache_path)
+                print(f"🗑️ 손상된 캐시 파일 삭제: {cache_path}")
+            except:
+                pass
+            return None
+    return None
+
+def process_data_in_batches(file_mapping, batch_size=100):
+    """메모리 효율성을 위해 데이터를 배치 단위로 처리합니다."""
+    all_files = list(file_mapping.items())
+    total_files = len(all_files)
+    
+    print(f"📊 총 {total_files}개 파일을 {batch_size}개씩 배치 처리합니다.")
+    
+    # 진행률 표시 설정에 따라 tqdm 사용
+    if ENABLE_PROGRESS_BAR:
+        iterator = tqdm(range(0, total_files, batch_size), desc="배치 처리")
+    else:
+        iterator = range(0, total_files, batch_size)
+    
+    # MediaPipe 객체 재사용
+    try:
+        with MediaPipeManager() as holistic:
+            print("✅ MediaPipe 객체 초기화 완료")
+            
+            for i in iterator:
+                batch_files = all_files[i:i + batch_size]
+                batch_data = []
+                
+                print(f"🔄 배치 {i//batch_size + 1} 처리 중... ({len(batch_files)}개 파일)")
+                
+                for filename, info in batch_files:
+                    try:
+                        print(f"  📹 {filename} 처리 중...")
+                        landmarks = extract_landmarks_with_holistic(info['path'], holistic)
+                        if not landmarks:
+                            print(f"    ⚠️ 랜드마크 추출 실패: {filename}")
+                            continue
+                        
+                        processed_sequence = improved_preprocess_landmarks(landmarks)
+                        if processed_sequence.shape != (TARGET_SEQ_LENGTH, 675):
+                            print(f"    ⚠️ 시퀀스 형태 불일치: {filename} - {processed_sequence.shape}")
+                            continue
+                        
+                        batch_data.append({
+                            'sequence': processed_sequence,
+                            'label': info['label'],
+                            'filename': filename
+                        })
+                        print(f"    ✅ 성공: {filename}")
+                        
+                    except Exception as e:
+                        print(f"    ❌ 오류: {filename} - {e}")
+                        continue
+                
+                print(f"✅ 배치 {i//batch_size + 1} 완료: {len(batch_data)}개 성공")
+                yield batch_data
+                
+    except Exception as e:
+        print(f"❌ MediaPipe 처리 중 오류: {e}")
+        yield []
+
+def extract_and_cache_label_data_optimized(file_mapping, label):
+    """메모리 효율적인 라벨별 데이터 추출 및 캐싱"""
+    print(f"\n🔄 {label} 라벨 데이터 추출 중...")
+    
+    # 캐시 확인
+    cached_data = load_label_cache(label)
+    if cached_data:
+        print(f"✅ {label} 라벨 캐시 데이터 사용: {len(cached_data)}개 샘플")
+        return cached_data
+    
+    # 해당 라벨의 파일들만 필터링
+    label_files = {filename: info for filename, info in file_mapping.items() 
+                  if info['label'] == label}
+    
+    if not label_files:
+        print(f"⚠️ {label} 라벨에 해당하는 파일이 없습니다.")
+        return []
+    
+    label_data = []
+    
+    # 배치 단위로 처리
+    for batch in process_data_in_batches(label_files, batch_size=BATCH_SIZE_FOR_PROCESSING):
+        for item in batch:
+            if item['label'] == label:
+                # 원본 데이터 추가
+                label_data.append(item['sequence'])
+                
+                # 증강 데이터 추가
+                for _ in range(AUGMENTATIONS_PER_VIDEO):
+                    try:
+                        augmented = augment_sequence_improved(item['sequence'])
+                        if augmented.shape == (TARGET_SEQ_LENGTH, 675):
+                            label_data.append(augmented)
+                    except Exception as e:
+                        print(f"⚠️ 증강 중 오류: {e}")
+                        continue
+    
+    print(f"✅ {label} 라벨 데이터 추출 완료: {len(label_data)}개 샘플")
+    
+    # 캐시에 저장
+    save_label_cache(label, label_data)
+    
+    return label_data
+
+def generate_none_class_data(file_mapping, none_class):
+    """None 클래스 데이터를 생성하고 캐시에 저장합니다."""
+    print(f"\n✨ '{none_class}' 클래스 데이터 생성 중...")
+    
+    # 기존 캐시 확인
+    cached_none_data = load_label_cache(none_class)
+    if cached_none_data:
+        print(f"✅ {none_class} 클래스 캐시 데이터 사용: {len(cached_none_data)}개 샘플")
+        return cached_none_data
+    
+    none_samples = []
+    source_videos = list(file_mapping.keys())
+
+    # MediaPipe 객체 재사용
+    with MediaPipeManager() as holistic:
+        for filename in tqdm(source_videos, desc="None 클래스 데이터 생성"):
+            file_path = file_mapping[filename]['path']
+            
+            try:
+                landmarks = extract_landmarks_with_holistic(file_path, holistic)
+                if landmarks and len(landmarks) > 10:
+                    # 영상의 시작, 1/4, 1/2, 3/4, 끝 지점에서 프레임 추출
+                    frame_indices = [
+                        0,
+                        len(landmarks) // 4,
+                        len(landmarks) // 2,
+                        3 * len(landmarks) // 4,
+                        -1,
+                    ]
+
+                    for idx in frame_indices:
+                        static_landmarks = [landmarks[idx]] * TARGET_SEQ_LENGTH
+                        static_sequence = improved_preprocess_landmarks(static_landmarks)
+
+                        if static_sequence.shape != (TARGET_SEQ_LENGTH, 675):
+                            continue
+
+                        # 정적 시퀀스 추가
+                        none_samples.append(static_sequence)
+
+                        # 미세한 움직임 추가 (노이즈)
+                        for _ in range(NONE_CLASS_AUGMENTATIONS_PER_FRAME):
+                            augmented = augment_sequence_improved(
+                                static_sequence, noise_level=NONE_CLASS_NOISE_LEVEL
+                            )
+                            if augmented.shape == (TARGET_SEQ_LENGTH, 675):
+                                none_samples.append(augmented)
+
+                    # 느린 전환 데이터 생성
+                    start_frame_lm = landmarks[0]
+                    middle_frame_lm = landmarks[len(landmarks) // 2]
+
+                    transition_landmarks = []
+                    for i in range(TARGET_SEQ_LENGTH):
+                        alpha = i / (TARGET_SEQ_LENGTH - 1)
+                        interp_frame = {}
+                        for key in ["pose", "left_hand", "right_hand"]:
+                            if start_frame_lm.get(key) and middle_frame_lm.get(key):
+                                interp_lm = []
+                                start_lms = start_frame_lm[key].landmark
+                                mid_lms = middle_frame_lm[key].landmark
+                                for j in range(len(start_lms)):
+                                    new_x = (
+                                        start_lms[j].x * (1 - alpha) + mid_lms[j].x * alpha
+                                    )
+                                    new_y = (
+                                        start_lms[j].y * (1 - alpha) + mid_lms[j].y * alpha
+                                    )
+                                    new_z = (
+                                        start_lms[j].z * (1 - alpha) + mid_lms[j].z * alpha
+                                    )
+                                    interp_lm.append(
+                                        type(
+                                            "obj",
+                                            (object,),
+                                            {"x": new_x, "y": new_y, "z": new_z},
+                                        )
+                                    )
+                                interp_frame[key] = type(
+                                    "obj", (object,), {"landmark": interp_lm}
+                                )
+                            else:
+                                interp_frame[key] = None
+                        transition_landmarks.append(interp_frame)
+
+                    transition_sequence = improved_preprocess_landmarks(
+                        transition_landmarks
+                    )
+                    if transition_sequence.shape == (TARGET_SEQ_LENGTH, 675):
+                        none_samples.append(transition_sequence)
+            except Exception as e:
+                print(f"⚠️ None 클래스 데이터 생성 중 오류: {filename}, 오류: {e}")
+                continue
+
+    print(f"✅ {none_class} 클래스 데이터 생성 완료: {len(none_samples)}개 샘플")
+    
+    # 캐시에 저장
+    save_label_cache(none_class, none_samples)
+    
+    return none_samples
+
+def validate_video_roots():
+    """VIDEO_ROOTS의 모든 디렉토리가 존재하는지 확인합니다."""
+    print("🔍 비디오 루트 디렉토리 검증 중...")
+    valid_roots = []
+    
+    for (range_start, range_end), root_path in VIDEO_ROOTS:
+        if os.path.exists(root_path):
+            valid_roots.append(((range_start, range_end), root_path))
+            print(f"✅ {range_start}~{range_end}: {root_path}")
+        else:
+            print(f"❌ {range_start}~{range_end}: {root_path} (존재하지 않음)")
+    
+    return valid_roots
+
+def find_file_in_directory(directory, filename_pattern):
+    """디렉토리에서 파일 패턴에 맞는 파일을 찾습니다."""
+    if not os.path.exists(directory):
+        return None
+    
+    # 파일명에서 확장자 제거
+    base_name = filename_pattern.split('.')[0]
+    
+    # 가능한 확장자들 (config에서 가져옴)
+    for ext in VIDEO_EXTENSIONS:
+        candidate = os.path.join(directory, base_name + ext)
+        if os.path.exists(candidate):
+            return candidate
+    
+    return None
 
 def get_video_root_and_path(filename):
     """파일명에서 번호를 추출해 올바른 VIDEO_ROOT 경로와 실제 파일 경로를 반환합니다."""
     try:
-        num_str = filename.split("_")[-1].split(".")[0]
-        num = int(num_str)
-    except Exception:
+        # 파일 확장자 제거
+        file_id = filename.split(".")[0]
+        
+        # KETI_SL_ 형식 확인
+        if not file_id.startswith('KETI_SL_'):
+            print(f"⚠️ KETI_SL_ 형식이 아닌 파일명: {filename}")
+            return None
+        
+        # 숫자 부분 추출
+        number_str = file_id.replace('KETI_SL_', '')
+        if not number_str.isdigit():
+            print(f"⚠️ 숫자가 아닌 파일명: {filename}")
+            return None
+        
+        num = int(number_str)
+        
+        # 적절한 디렉토리 찾기
+        target_root = None
+        for (range_start, range_end), root_path in VIDEO_ROOTS:
+            if range_start <= num <= range_end:
+                target_root = root_path
+                break
+        
+        if target_root is None:
+            print(f"⚠️ 번호 {num}에 해당하는 디렉토리를 찾을 수 없음: {filename}")
+            return None
+        
+        # 파일 찾기
+        file_path = find_file_in_directory(target_root, filename)
+        if file_path:
+            return file_path
+        
+        print(f"⚠️ 파일을 찾을 수 없음: {filename} (디렉토리: {target_root})")
         return None
-
-    if 1 <= num <= 3000:
-        root = VIDEO_ROOT1
-    elif 3001 <= num <= 6000:
-        root = VIDEO_ROOT2
-    elif 6001 <= num <= 8280:
-        root = VIDEO_ROOT3
-    elif 8381 <= num <= 9000:
-        root = VIDEO_ROOT4
-    elif 9001 <= num <= 9600:
-        root = VIDEO_ROOT5
-    else:
+        
+    except Exception as e:
+        print(f"⚠️ 파일명 파싱 오류: {filename}, 오류: {e}")
         return None
-
-    base_name = "_".join(filename.split("_")[:-1]) + f"_{num_str}"
-    for ext in [".MOV", ".MTS", ".AVI"]:
-        candidate = os.path.join(root, base_name + ext)
-        if os.path.exists(candidate):
-            return candidate
-    return None
 
 
 def normalize_sequence_length(sequence, target_length=30):
@@ -302,38 +596,84 @@ def improved_preprocess_landmarks(landmarks_list):
 
 
 def create_simple_model(input_shape, num_classes):
-    """간단하고 효과적인 모델을 생성합니다."""
-    inputs = Input(shape=input_shape)
-
-    # 1D CNN
-    x = Conv1D(64, kernel_size=3, activation="relu", padding="same")(inputs)
-    x = MaxPooling1D(pool_size=2)(x)
-    x = Dropout(0.3)(x)
-
-    x = Conv1D(128, kernel_size=3, activation="relu", padding="same")(x)
-    x = MaxPooling1D(pool_size=2)(x)
-    x = Dropout(0.3)(x)
-
-    # LSTM
-    x = Bidirectional(LSTM(64, return_sequences=True))(x)
-    x = Dropout(0.3)(x)
-    x = Bidirectional(LSTM(32))(x)
-    x = Dropout(0.3)(x)
-
-    # Dense layers
-    x = Dense(64, activation="relu")(x)
-    x = Dropout(0.3)(x)
-    x = Dense(32, activation="relu")(x)
-    x = Dropout(0.3)(x)
-
-    outputs = Dense(num_classes, activation="softmax")(x)
-
-    model = Model(inputs=inputs, outputs=outputs)
+    """과적합 방지 기능이 추가된 모델을 생성합니다."""
+    
+    # L2 정규화 설정
+    if USE_L2_REGULARIZATION:
+        regularizer = tf.keras.regularizers.l2(L2_REGULARIZATION_FACTOR)
+    else:
+        regularizer = None
+    
+    model = tf.keras.Sequential([
+        # 첫 번째 LSTM 레이어
+        tf.keras.layers.LSTM(
+            MODEL_LSTM_UNITS_1, 
+            return_sequences=True, 
+            input_shape=input_shape,
+            kernel_regularizer=regularizer
+        ),
+        tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
+        
+        # 배치 정규화 (선택적)
+        tf.keras.layers.BatchNormalization() if USE_BATCH_NORMALIZATION else tf.keras.layers.Lambda(lambda x: x),
+        
+        # 두 번째 LSTM 레이어
+        tf.keras.layers.LSTM(
+            MODEL_LSTM_UNITS_2, 
+            return_sequences=False,
+            kernel_regularizer=regularizer
+        ),
+        tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
+        
+        # 배치 정규화 (선택적)
+        tf.keras.layers.BatchNormalization() if USE_BATCH_NORMALIZATION else tf.keras.layers.Lambda(lambda x: x),
+        
+        # Dense 레이어
+        tf.keras.layers.Dense(
+            MODEL_DENSE_UNITS, 
+            activation='relu',
+            kernel_regularizer=regularizer
+        ),
+        tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
+        
+        # 출력 레이어
+        tf.keras.layers.Dense(num_classes, activation='softmax')
+    ])
     return model
 
 
+def load_model_info():
+    """기존 모델 정보를 로드합니다."""
+    try:
+        if os.path.exists(MODEL_INFO_PATH):
+            with open(MODEL_INFO_PATH, 'r', encoding='utf-8') as f:
+                return json.load(f)
+    except Exception as e:
+        print(f"⚠️ 모델 정보 로드 중 오류: {e}")
+    return None
+
+def save_model_info(actions, model_path, info_path, training_stats):
+    """모델 정보를 JSON 파일로 저장합니다."""
+    model_info = {
+        "model_path": model_path,
+        "created_at": datetime.now().isoformat(),
+        "labels": actions,
+        "label_mapping": {label: idx for idx, label in enumerate(actions)},
+        "num_classes": len(actions),
+        "input_shape": [TARGET_SEQ_LENGTH, 675],  # 시퀀스 길이, 특징 수
+        "training_stats": training_stats,
+        "model_type": "LSTM",
+        "description": "수어 인식 모델 - LSTM 기반"
+    }
+    
+    with open(info_path, 'w', encoding='utf-8') as f:
+        json.dump(model_info, f, ensure_ascii=False, indent=2)
+    
+    print(f"📄 모델 정보 저장: {info_path}")
+
+
 def augment_sequence_improved(
-    sequence, noise_level=0.05, scale_range=0.2, rotation_range=0.1
+    sequence, noise_level=AUGMENTATION_NOISE_LEVEL, scale_range=AUGMENTATION_SCALE_RANGE, rotation_range=AUGMENTATION_ROTATION_RANGE
 ):
     """개선된 시퀀스 증강."""
     augmented = sequence.copy()
@@ -356,184 +696,245 @@ def augment_sequence_improved(
     return augmented
 
 
-def extract_landmarks(video_path):
-    """비디오에서 랜드마크를 추출합니다."""
-    cap = cv2.VideoCapture(video_path)
-    landmarks_list = []
-
-    while cap.isOpened():
-        ret, frame = cap.read()
-        if not ret:
-            break
-
-        rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        results = holistic.process(rgb_frame)
-
-        frame_data = {
-            "pose": results.pose_landmarks,
-            "left_hand": results.left_hand_landmarks,
-            "right_hand": results.right_hand_landmarks,
-        }
-        landmarks_list.append(frame_data)
-
-    cap.release()
-    return landmarks_list
-
-
-def get_action_index(label):
-    """ACTIONS에 없는 라벨은 -1 반환"""
+def extract_landmarks_with_holistic(video_path, holistic):
+    """전달받은 MediaPipe 객체를 사용하여 랜드마크를 추출합니다."""
     try:
-        return ACTIONS.index(label)
-    except ValueError:
-        print(f"⚠️ ACTIONS에 없는 라벨: {label}")
-        return -1
+        cap = cv2.VideoCapture(video_path)
+        if not cap.isOpened():
+            print(f"⚠️ 비디오 파일을 열 수 없음: {video_path}")
+            return None
+        
+        # 비디오 정보 확인
+        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+        fps = cap.get(cv2.CAP_PROP_FPS)
+        print(f"    📊 비디오 정보: {total_frames}프레임, {fps:.1f}fps")
+        
+        landmarks_list = []
+        frame_count = 0
+        
+        while cap.isOpened():
+            ret, frame = cap.read()
+            if not ret:
+                break
+
+            # 프레임 처리
+            rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            results = holistic.process(rgb_frame)
+
+            frame_data = {
+                "pose": results.pose_landmarks,
+                "left_hand": results.left_hand_landmarks,
+                "right_hand": results.right_hand_landmarks,
+            }
+            landmarks_list.append(frame_data)
+            frame_count += 1
+            
+            # 진행상황 표시 (10프레임마다)
+            if frame_count % 10 == 0:
+                print(f"      📹 프레임 {frame_count}/{total_frames} 처리 중...")
+
+        cap.release()
+        print(f"    ✅ 랜드마크 추출 완료: {len(landmarks_list)}프레임")
+        return landmarks_list
+        
+    except (cv2.error, OSError) as e:
+        print(f"⚠️ 비디오 파일 읽기 오류: {video_path}, 오류: {e}")
+        return None
+    except Exception as e:
+        print(f"⚠️ 랜드마크 추출 중 예상치 못한 오류: {video_path}, 오류: {e}")
+        return None
 
 
-# None 클래스명 자동 추출
-NONE_CLASS = ACTIONS[-1]
+def get_action_index(label, actions):
+    """라벨의 인덱스를 반환합니다."""
+    return actions.index(label)
 
+def get_all_video_paths():
+    video_paths = []
 
-if __name__ == "__main__":
-    print("🔧 학습 데이터 문제 해결 및 모델 재학습 시작")
+    return video_paths
 
-    # 데이터 추출
+def cleanup_old_checkpoints(checkpoint_dir="checkpoints", keep_best=True):
+    """오래된 체크포인트 파일들을 정리합니다."""
+    if not os.path.exists(checkpoint_dir):
+        return
+    
+    print(f"🧹 체크포인트 디렉토리 정리 중: {checkpoint_dir}")
+    
+    # 에폭별 체크포인트 파일들 찾기
+    epoch_files = []
+    for file in os.listdir(checkpoint_dir):
+        if file.startswith("model-epoch-") and file.endswith(".keras"):
+            epoch_files.append(file)
+    
+    if not epoch_files:
+        print("   📁 정리할 에폭 체크포인트가 없습니다.")
+        return
+    
+    # 파일 삭제
+    deleted_count = 0
+    for file in epoch_files:
+        file_path = os.path.join(checkpoint_dir, file)
+        try:
+            os.remove(file_path)
+            deleted_count += 1
+        except Exception as e:
+            print(f"   ⚠️ 파일 삭제 실패: {file} - {e}")
+    
+    print(f"   ✅ {deleted_count}개 에폭 체크포인트 파일 삭제됨")
+    
+    # 최고 성능 모델은 유지
+    if keep_best and os.path.exists(os.path.join(checkpoint_dir, "best_model.keras")):
+        print("   💎 최고 성능 모델 유지됨")
+
+class CheckpointInfoCallback(tf.keras.callbacks.Callback):
+    """첫 체크포인트 생성 시 모델 정보를 함께 저장하는 콜백"""
+    
+    def __init__(self, actions, checkpoint_dir, training_stats):
+        super().__init__()
+        self.actions = actions
+        self.checkpoint_dir = checkpoint_dir
+        self.training_stats = training_stats
+        self.first_checkpoint_saved = False
+    
+    def on_epoch_end(self, epoch, logs=None):
+        # 첫 번째 체크포인트가 저장되었는지 확인
+        checkpoint_files = [f for f in os.listdir(self.checkpoint_dir) 
+                          if f.startswith("model-epoch-") and f.endswith(".keras")]
+        
+        if checkpoint_files and not self.first_checkpoint_saved:
+            # 가장 최근 체크포인트 파일 찾기
+            latest_checkpoint = max(checkpoint_files, key=lambda x: int(x.split('-')[2].split('.')[0]))
+            checkpoint_path = os.path.join(self.checkpoint_dir, latest_checkpoint)
+            
+            # 체크포인트별 모델 정보 생성
+            checkpoint_info = {
+                "checkpoint_path": checkpoint_path,
+                "epoch": epoch + 1,
+                "created_at": datetime.now().isoformat(),
+                "labels": self.actions,
+                "label_mapping": {label: idx for idx, label in enumerate(self.actions)},
+                "num_classes": len(self.actions),
+                "input_shape": [TARGET_SEQ_LENGTH, 675],
+                "training_stats": {
+                    **self.training_stats,
+                    "checkpoint_epoch": epoch + 1,
+                    "checkpoint_accuracy": logs.get('accuracy', 0),
+                    "checkpoint_val_accuracy": logs.get('val_accuracy', 0),
+                    "checkpoint_loss": logs.get('loss', 0),
+                    "checkpoint_val_loss": logs.get('val_loss', 0),
+                },
+                "model_type": "LSTM",
+                "description": f"수어 인식 모델 - LSTM 기반 (Epoch {epoch + 1} 체크포인트)"
+            }
+            
+            # 체크포인트별 info 파일 저장
+            checkpoint_info_path = checkpoint_path.replace('.keras', '_info.json')
+            with open(checkpoint_info_path, 'w', encoding='utf-8') as f:
+                json.dump(checkpoint_info, f, ensure_ascii=False, indent=2)
+            
+            print(f"📄 체크포인트별 모델 정보 저장: {checkpoint_info_path}")
+            self.first_checkpoint_saved = True
+
+def main():
+    """메인 실행 함수"""
+    params = sys.argv[1]
+    with open(params, "r") as f:
+        params = json.load(f)
+    label_dict = params["label_dict"]
+    
+    ACTIONS = list(label_dict.keys())
+    NONE_CLASS = ACTIONS[-1]
+    
+    print(f"🔧 라벨 목록: {ACTIONS}")
+    # 1. 비디오 루트 디렉토리 검증
+    valid_roots = validate_video_roots()
+    if not valid_roots:
+        print("❌ 유효한 비디오 루트 디렉토리가 없습니다.")
+        sys.exit(1)
+    
+    # 2. labels.csv 파일 읽기 및 검증
+    if not os.path.exists('labels.csv'):
+        print("❌ labels.csv 파일이 없습니다.")
+        sys.exit(1)
+    
+    labels_df = pd.read_csv('labels.csv')
+    print(f"📊 labels.csv 로드 완료: {len(labels_df)}개 항목")
+    print(labels_df.head())
+    
+    # 3. 파일명에서 비디오 루트 경로 추출 (개선된 방식)
+    print("\n🔍 파일명 분석 및 경로 매핑 중...")
+    file_mapping = {}
+    found_files = 0
+    missing_files = 0
+    filtered_files = 0
+    
+    # 라벨별로 파일을 모아서 최대 개수만큼만 샘플링
+    label_to_files = defaultdict(list)
+    for idx, row in labels_df.iterrows():
+        filename = row['파일명']
+        label = row['한국어']
+        if label not in ACTIONS:
+            continue
+        file_path = get_video_root_and_path(filename)
+        if file_path:
+            label_to_files[label].append((filename, file_path))
+            found_files += 1
+            filtered_files += 1
+        else:
+            missing_files += 1
+    
+    # 최대 개수만큼만 샘플링
+    from config import LABEL_MAX_SAMPLES_PER_CLASS
+    for label in ACTIONS:
+        files = label_to_files[label]
+        if LABEL_MAX_SAMPLES_PER_CLASS is not None:
+            files = files[:LABEL_MAX_SAMPLES_PER_CLASS]
+        for filename, file_path in files:
+            file_mapping[filename] = {
+                'path': file_path,
+                'label': label
+            }
+    
+    print(f"\n📊 파일 매핑 결과:")
+    print(f"   ✅ 찾은 파일: {found_files}개")
+    print(f"   ❌ 누락된 파일: {missing_files}개")
+    print(f"   🎯 ACTIONS 라벨에 해당하는 파일: {filtered_files}개")
+    print(f"   ⚡ 라벨별 최대 {LABEL_MAX_SAMPLES_PER_CLASS}개 파일만 사용")
+    
+    if len(file_mapping) == 0:
+        print("❌ 찾을 수 있는 파일이 없습니다.")
+        sys.exit(1)
+    
+    # 4. 라벨별 데이터 추출 및 캐싱 (개별 처리)
+    print("\n🚀 라벨별 데이터 추출 및 캐싱 시작...")
+    
     X = []
     y = []
-
-    for filename, label in tqdm(label_dict.items(), desc="데이터 추출"):
-        if label not in ACTIONS:
-            print(f"⚠️ ACTIONS에 없는 라벨: {label}, 파일: {filename} -> 건너뜀")
-            continue
-        actual_path = get_video_root_and_path(filename)
-        if actual_path is None or not os.path.exists(actual_path):
-            print(f"⚠️ 파일 없음: {actual_path}")
-            continue
-
-        landmarks = extract_landmarks(actual_path)
-        if not landmarks:
-            print(f"⚠️ 랜드마크 추출 실패: {actual_path}")
-            continue
-
-        processed_sequence = improved_preprocess_landmarks(landmarks)
-
-        if processed_sequence.shape != (TARGET_SEQ_LENGTH, 675):
-            print(f"⚠️ 시퀀스 형태 오류: {processed_sequence.shape}")
-            continue
-
-        # 원본 데이터 추가
-        X.append(processed_sequence)
-        y.append(get_action_index(label))
-
-        # 더 많은 증강 데이터 추가
-        for _ in range(AUGMENTATIONS_PER_VIDEO):
-            try:
-                augmented = augment_sequence_improved(processed_sequence)
-                if augmented.shape == (TARGET_SEQ_LENGTH, 675):
-                    X.append(augmented)
-                    y.append(get_action_index(label))
-            except Exception as e:
-                print(f"⚠️ 증강 중 오류: {e}")
-                continue
-
-    # None 클래스 데이터 생성 (더 다양하게)
-    print(f"\n✨ '{NONE_CLASS}' 클래스 데이터 대폭 강화 중...")
-    none_samples = []
-
-    # 전략 1: 더 많은 비디오에서, 더 다양한 프레임을 소스로 사용
-    source_videos = list(label_dict.keys())
-
-    for filename in source_videos:
-        file_id = filename.split(".")[0]
-        actual_path = get_video_root_and_path(filename)
-
-        if actual_path and os.path.exists(actual_path):
-            landmarks = extract_landmarks(actual_path)
-            if landmarks and len(landmarks) > 10:  # 충분한 길이의 영상만 사용
-                # 영상의 시작, 1/4, 1/2, 3/4, 끝 지점에서 프레임 추출
-                frame_indices = [
-                    0,
-                    len(landmarks) // 4,
-                    len(landmarks) // 2,
-                    3 * len(landmarks) // 4,
-                    -1,
-                ]
-
-                for idx in frame_indices:
-                    static_landmarks = [landmarks[idx]] * TARGET_SEQ_LENGTH
-                    static_sequence = improved_preprocess_landmarks(static_landmarks)
-
-                    if static_sequence.shape != (TARGET_SEQ_LENGTH, 675):
-                        continue
-
-                    # 전략 1-1: 정적 시퀀스 자체를 추가
-                    none_samples.append(static_sequence)
-
-                    # 전략 1-2: 미세한 움직임 추가 (노이즈)
-                    for _ in range(3):
-                        augmented = augment_sequence_improved(
-                            static_sequence, noise_level=0.01
-                        )
-                        if augmented.shape == (TARGET_SEQ_LENGTH, 675):
-                            none_samples.append(augmented)
-
-                # 전략 2: 느린 전환 데이터 생성 (두 프레임 보간)
-                start_frame_lm = landmarks[0]
-                middle_frame_lm = landmarks[len(landmarks) // 2]
-
-                transition_landmarks = []
-                for i in range(TARGET_SEQ_LENGTH):
-                    alpha = i / (TARGET_SEQ_LENGTH - 1)
-                    interp_frame = {}
-                    for key in ["pose", "left_hand", "right_hand"]:
-                        if start_frame_lm.get(key) and middle_frame_lm.get(key):
-                            interp_lm = []
-                            start_lms = start_frame_lm[key].landmark
-                            mid_lms = middle_frame_lm[key].landmark
-                            for j in range(len(start_lms)):
-                                new_x = (
-                                    start_lms[j].x * (1 - alpha) + mid_lms[j].x * alpha
-                                )
-                                new_y = (
-                                    start_lms[j].y * (1 - alpha) + mid_lms[j].y * alpha
-                                )
-                                new_z = (
-                                    start_lms[j].z * (1 - alpha) + mid_lms[j].z * alpha
-                                )
-                                # MediaPipe Landmark-like object
-                                interp_lm.append(
-                                    type(
-                                        "obj",
-                                        (object,),
-                                        {"x": new_x, "y": new_y, "z": new_z},
-                                    )
-                                )
-                            # MediaPipe LandmarkList-like object
-                            interp_frame[key] = type(
-                                "obj", (object,), {"landmark": interp_lm}
-                            )
-                        else:
-                            interp_frame[key] = None
-                    transition_landmarks.append(interp_frame)
-
-                transition_sequence = improved_preprocess_landmarks(
-                    transition_landmarks
-                )
-                if transition_sequence.shape == (TARGET_SEQ_LENGTH, 675):
-                    none_samples.append(transition_sequence)
-
-    # 전략 3: 완전한 정지(zero) 데이터 추가
-    for _ in range(len(source_videos) * 5):  # 다른 클래스와 수량 맞추기
-        none_samples.append(np.zeros((TARGET_SEQ_LENGTH, 675)))
-
-    # None 클래스 데이터 추가
-    none_label_index = get_action_index(NONE_CLASS)
-    for sample in none_samples:
-        X.append(sample)
-        y.append(none_label_index)
-
+    
+    for label in ACTIONS:
+        print(f"\n{'='*50}")
+        print(f"📋 {label} 라벨 처리 중...")
+        print(f"{'='*50}")
+        
+        if label == NONE_CLASS:
+            label_data = generate_none_class_data(file_mapping, NONE_CLASS)
+        else:
+            label_data = extract_and_cache_label_data_optimized(file_mapping, label)
+        
+        if label_data:
+            label_index = get_action_index(label, ACTIONS)
+            X.extend(label_data)
+            y.extend([label_index] * len(label_data))
+            print(f"✅ {label}: {len(label_data)}개 샘플 추가됨")
+        else:
+            print(f"⚠️ {label}: 데이터가 없습니다.")
+    
+    print(f"\n{'='*50}")
     print(f"📊 최종 데이터 통계:")
+    print(f"{'='*50}")
     print(f"총 샘플 수: {len(X)}")
-
+    
     # 클래스별 샘플 수 확인
     unique, counts = np.unique(y, return_counts=True)
     for class_idx, count in zip(unique, counts):
@@ -541,51 +942,109 @@ if __name__ == "__main__":
             print(f"클래스 {class_idx} ({ACTIONS[class_idx]}): {count}개")
         else:
             print(f"클래스 {class_idx} (Unknown): {count}개")
-
-    X_padded = np.array(X)
-    y_one_hot = to_categorical(y, num_classes=len(ACTIONS))
+    
+    X = np.array(X)
+    y = np.array(y)
 
     # 데이터 저장
     print(f"💾 수정된 데이터 저장: {DATA_CACHE_PATH}")
-    np.savez(DATA_CACHE_PATH, X=X_padded, y=y_one_hot)
+    np.savez(DATA_CACHE_PATH, X=X, y=y)
 
     # 모델 학습
-    print("\n🏋️‍♀️ 간단한 모델 학습 시작")
+    print("\n🏋️‍♀️ 모델 학습 시작")
+    print(f"   📊 Early Stopping: patience={EARLY_STOPPING_PATIENCE}, min_delta={EARLY_STOPPING_MIN_DELTA}")
+    print(f"   📊 Learning Rate: patience={REDUCE_LR_PATIENCE}, min_lr={MIN_LR}")
+    print(f"   📊 정규화: L2={USE_L2_REGULARIZATION}, BatchNorm={USE_BATCH_NORMALIZATION}")
+    
     X_train, X_test, y_train, y_test = train_test_split(
-        X_padded, y_one_hot, test_size=0.2, random_state=42, stratify=y_one_hot
+        X, y, test_size=TEST_SIZE, random_state=RANDOM_STATE, stratify=y
     )
 
     model = create_simple_model(
-        input_shape=(X_padded.shape[1], X_padded.shape[2]), num_classes=len(ACTIONS)
+        input_shape=(X.shape[1], X.shape[2]), num_classes=len(ACTIONS)
     )
 
     model.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=0.001),
-        loss="categorical_crossentropy",
+        optimizer=tf.keras.optimizers.Adam(learning_rate=LEARNING_RATE),
+        loss="sparse_categorical_crossentropy",
         metrics=["accuracy"],
     )
 
     print("\n--- 모델 구조 ---")
     model.summary()
-
-    # 학습
-    checkpoint_dir = "checkpoints"
-    os.makedirs(checkpoint_dir, exist_ok=True)
-    checkpoint_path = os.path.join(checkpoint_dir, "model-epoch-{epoch:02d}.keras")
-
+    
+    # 체크포인트용 training_stats 미리 정의
+    training_stats = {
+        "total_samples": len(X),
+        "train_samples": len(X_train),
+        "test_samples": len(X_test),
+        "augmentations_per_video": AUGMENTATIONS_PER_VIDEO,
+        "target_sequence_length": TARGET_SEQ_LENGTH,
+        "model_parameters": {
+            "lstm_units_1": MODEL_LSTM_UNITS_1,
+            "lstm_units_2": MODEL_LSTM_UNITS_2,
+            "dense_units": MODEL_DENSE_UNITS,
+            "dropout_rate": MODEL_DROPOUT_RATE,
+            "l2_regularization": USE_L2_REGULARIZATION,
+            "batch_normalization": USE_BATCH_NORMALIZATION,
+        },
+        "training_parameters": {
+            "learning_rate": LEARNING_RATE,
+            "batch_size": BATCH_SIZE,
+            "early_stopping_patience": EARLY_STOPPING_PATIENCE,
+            "early_stopping_min_delta": EARLY_STOPPING_MIN_DELTA,
+            "reduce_lr_patience": REDUCE_LR_PATIENCE,
+        }
+    }
+    
+    os.makedirs(CHECKPOINT_DIR, exist_ok=True)
+    
+    # 개선된 체크포인트 정책
+    best_checkpoint_path = os.path.join(CHECKPOINT_DIR, "best_model.keras")
+    latest_checkpoint_path = os.path.join(CHECKPOINT_DIR, "latest_model.keras")
+    
     callbacks = [
+        # 최고 성능 모델만 저장 (Early Stopping과 연동)
         tf.keras.callbacks.ModelCheckpoint(
-            filepath=checkpoint_path, save_best_only=False, verbose=1
+            filepath=best_checkpoint_path,
+            save_best_only=True,
+            monitor='val_accuracy',
+            mode='max',
+            verbose=1
         ),
-        tf.keras.callbacks.EarlyStopping(patience=15, restore_best_weights=True),
-        tf.keras.callbacks.ReduceLROnPlateau(factor=0.5, patience=8, min_lr=1e-6),
+        # 주기적으로 최신 모델 저장 (5 에폭마다)
+        tf.keras.callbacks.ModelCheckpoint(
+            filepath=latest_checkpoint_path,
+            save_best_only=False,
+            save_freq=5,
+            verbose=0
+        ),
+        # 개선된 Early Stopping
+        tf.keras.callbacks.EarlyStopping(
+            monitor='val_accuracy',
+            mode='max',
+            patience=EARLY_STOPPING_PATIENCE,
+            min_delta=EARLY_STOPPING_MIN_DELTA,
+            restore_best_weights=True,
+            verbose=1
+        ),
+        # Learning Rate 감소
+        tf.keras.callbacks.ReduceLROnPlateau(
+            monitor='val_accuracy',
+            mode='max',
+            factor=0.5,
+            patience=REDUCE_LR_PATIENCE,
+            min_lr=MIN_LR,
+            verbose=1
+        ),
+        CheckpointInfoCallback(ACTIONS, CHECKPOINT_DIR, training_stats)
     ]
 
     history = model.fit(
         X_train,
         y_train,
-        epochs=200,
-        batch_size=8,
+        epochs=EPOCHS,
+        batch_size=BATCH_SIZE,
         validation_data=(X_test, y_test),
         callbacks=callbacks,
         verbose=1,
@@ -602,15 +1061,56 @@ if __name__ == "__main__":
     # 예측 결과 확인
     y_pred_prob = model.predict(X_test)
     y_pred_classes = np.argmax(y_pred_prob, axis=1)
-    y_true_classes = np.argmax(y_test, axis=1)
+    y_true_classes = y_test
 
     print("\n--- 클래스별 정확도 ---")
+    class_accuracies = {}
     for i in range(len(ACTIONS)):
         class_mask = y_true_classes == i
         if np.sum(class_mask) > 0:
             class_accuracy = np.mean(
                 y_pred_classes[class_mask] == y_true_classes[class_mask]
             )
+            class_accuracies[ACTIONS[i]] = class_accuracy
             print(f"{ACTIONS[i]}: {class_accuracy:.4f}")
 
-    holistic.close()
+    # 모델 정보 저장 (최종 결과 추가)
+    training_stats.update({
+        "test_loss": float(loss),
+        "test_accuracy": float(accuracy),
+        "class_accuracies": class_accuracies,
+    })
+    save_model_info(ACTIONS, MODEL_SAVE_PATH, MODEL_INFO_PATH, training_stats)
+
+    print("\n✅ 모든 작업 완료!")
+    print(f"📁 모델 저장 위치: {MODEL_SAVE_PATH}")
+    print(f"📄 모델 정보 위치: {MODEL_INFO_PATH}")
+
+    # 오래된 체크포인트 정리
+    cleanup_old_checkpoints(checkpoint_dir=CHECKPOINT_DIR, keep_best=True)
+
+if __name__ == "__main__":
+    print("🔧 학습 데이터 문제 해결 및 모델 재학습 시작")
+    
+    try:
+        # 기존 모델 정보 로드
+        model_info = load_model_info()
+        if model_info:
+            print(f"📋 기존 모델 정보 로드됨: {model_info['model_name']}")
+            print(f"   - 정확도: {model_info['test_accuracy']:.4f}")
+            print(f"   - 손실: {model_info['test_loss']:.4f}")
+            print(f"   - 훈련 시간: {model_info['training_time']:.2f}초")
+        
+        # 데이터 처리 및 모델 재학습
+        main()
+        
+    except KeyboardInterrupt:
+        print("\n⚠️ 사용자에 의해 중단됨")
+    except Exception as e:
+        print(f"\n❌ 예상치 못한 오류 발생: {e}")
+        import traceback
+        traceback.print_exc()
+    finally:
+        # MediaPipe 객체 정리
+        MediaPipeManager.cleanup()
+        print("\n🧹 리소스 정리 완료")

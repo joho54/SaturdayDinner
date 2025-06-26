@@ -3,14 +3,53 @@ import numpy as np
 import mediapipe as mp
 import tensorflow as tf
 import random
+import json
+import sys
+import os
 from collections import deque
 from PIL import ImageFont, ImageDraw, Image
 
+def load_model_info(model_info_path):
+    """모델 정보 파일을 로드합니다."""
+    try:
+        with open(model_info_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"❌ 모델 정보 파일 로드 실패: {e}")
+        return None
+
+def validate_args():
+    """명령행 인자를 검증합니다."""
+    if len(sys.argv) != 2:
+        print("사용법: python3 sign_quiz.py <model_info.json>")
+        print("예시: python3 sign_quiz.py info/model-info-20250626_220849.json")
+        sys.exit(1)
+    
+    model_info_path = sys.argv[1]
+    if not os.path.exists(model_info_path):
+        print(f"❌ 모델 정보 파일을 찾을 수 없습니다: {model_info_path}")
+        sys.exit(1)
+    
+    return model_info_path
+
+# --- 모델 정보 로드 ---
+model_info_path = validate_args()
+model_info = load_model_info(model_info_path)
+
+if not model_info:
+    print("❌ 모델 정보를 로드할 수 없습니다.")
+    sys.exit(1)
+
 # --- 설정값 ---
-MAX_SEQ_LENGTH = 30
-MODEL_SAVE_PATH = 'fixed_transformer_model.keras'
-ACTIONS = ["화재", "화장실", "화요일", "화약", "화상", "None"]
-QUIZ_LABELS = [a for a in ACTIONS if a != "None"]
+MAX_SEQ_LENGTH = model_info['input_shape'][0]  # JSON에서 시퀀스 길이 로드
+MODEL_SAVE_PATH = model_info['model_path']  # JSON에서 모델 경로 로드
+ACTIONS = model_info['labels']  # JSON에서 라벨 로드
+QUIZ_LABELS = [a for a in ACTIONS if a != "None"]  # None 제외한 퀴즈 라벨
+
+print(f"📋 로드된 라벨: {ACTIONS}")
+print(f"🎯 퀴즈 라벨: {QUIZ_LABELS}")
+print(f"📊 모델 경로: {MODEL_SAVE_PATH}")
+print(f"⏱️ 시퀀스 길이: {MAX_SEQ_LENGTH}")
 
 # --- 한글 폰트 설정 ---
 FONT_PATH = "/System/Library/Fonts/Supplemental/AppleGothic.ttf"
@@ -27,6 +66,7 @@ mp_drawing = mp.solutions.drawing_utils
 # 모델 로드
 try:
     model = tf.keras.models.load_model(MODEL_SAVE_PATH)
+    print(f"✅ 모델 로드 성공: {MODEL_SAVE_PATH}")
 except Exception as e:
     print(f"❌ 모델 로딩 실패: {e}")
     exit()
@@ -204,6 +244,12 @@ while cap.isOpened():
             text = f"{label}: {prob*100:.1f}%"
             frame = draw_korean_text(frame, text, (20, 110 + i*30), font, (0, 0, 0))
 
+    # 4. 모델 정보 표시 (우측 상단)
+    info_text = f"모델: {model_info['model_type']}"
+    frame = draw_korean_text(frame, info_text, (frame.shape[1] - 300, 30), font, (0, 0, 0))
+    info_text2 = f"정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%"
+    frame = draw_korean_text(frame, info_text2, (frame.shape[1] - 300, 60), font, (0, 0, 0))
+
     cv2.imshow('수어 퀴즈', frame)
     key = cv2.waitKey(5) & 0xFF
     if key == ord('q'):
@@ -219,4 +265,9 @@ while cap.isOpened():
 
 cap.release()
 cv2.destroyAllWindows()
-holistic.close() 
+holistic.close()
+
+print(f"\n✅ 퀴즈 종료")
+print(f"📊 사용된 모델: {model_info['model_type']}")
+print(f"🎯 퀴즈 라벨 수: {len(QUIZ_LABELS)}")
+print(f"📈 모델 정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%") 
