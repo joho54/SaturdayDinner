@@ -1,0 +1,23 @@
+{
+  "model_name": "custom_model",
+  "description": "사용자 정의 수어 인식 모델",
+  "labels": [
+    "화재",
+    "계단", 
+    "고장",
+    "부러지다",
+    "곰"
+  ],
+  "training_config": {
+    "sequence_length": 30,
+    "augmentations_per_video": 20,
+    "test_split": 0.2,
+    "random_state": 42
+  },
+  "model_config": {
+    "learning_rate": 0.001,
+    "batch_size": 32,
+    "epochs": 100,
+    "early_stopping_patience": 10
+  }
+} 
