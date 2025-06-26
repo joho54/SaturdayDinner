@@ -309,6 +309,85 @@ def get_model_number():
     now = datetime.datetime.now()
     return now.strftime("%Y%m%d_%H%M%S")
 
+def generate_cache_filename(labels, target_seq_length, augmentations_per_video):
+    """캐시 파일명을 생성합니다."""
+    labels_str = "_".join(sorted(labels))
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    return f"landmarks_cache_{labels_str}_seq{target_seq_length}_aug{augmentations_per_video}_{timestamp}.npz"
+
+def find_latest_cache(labels, target_seq_length, augmentations_per_video):
+    """가장 최근의 캐시 파일을 찾습니다."""
+    npz_dir = "npzs"
+    if not os.path.exists(npz_dir):
+        return None
+    
+    labels_str = "_".join(sorted(labels))
+    pattern = f"landmarks_cache_{labels_str}_seq{target_seq_length}_aug{augmentations_per_video}_*.npz"
+    
+    import glob
+    cache_files = glob.glob(os.path.join(npz_dir, pattern))
+    
+    if not cache_files:
+        return None
+    
+    # 가장 최근 파일 반환
+    latest_cache = max(cache_files, key=os.path.getctime)
+    return latest_cache
+
+def load_cached_landmarks(cache_path):
+    """캐시된 랜드마크 데이터를 로드합니다."""
+    try:
+        if os.path.exists(cache_path):
+            file_size_mb = os.path.getsize(cache_path) / (1024 * 1024)
+            print(f"📂 캐시된 데이터 로드 중: {cache_path} ({file_size_mb:.1f}MB)")
+            data = np.load(cache_path, allow_pickle=True)
+            X = data['X']
+            y = data['y']
+            filenames = data['filenames']
+            
+            # 메타데이터 출력
+            if 'metadata' in data:
+                metadata = data['metadata'].item()
+                print(f"📊 캐시 메타데이터:")
+                print(f"   - 라벨: {metadata.get('labels', [])}")
+                print(f"   - 시퀀스 길이: {metadata.get('sequence_length', 'N/A')}")
+                print(f"   - 증강 수: {metadata.get('augmentations_per_video', 'N/A')}")
+                print(f"   - 생성일: {metadata.get('created_at', 'N/A')}")
+                print(f"   - 총 샘플: {metadata.get('total_samples', 'N/A')}")
+            
+            print(f"✅ 캐시 로드 완료: {len(X)}개 샘플")
+            return X, y, filenames
+        return None, None, None
+    except Exception as e:
+        print(f"⚠️ 캐시 로드 실패: {e}")
+        return None, None, None
+
+def save_cached_landmarks(X, y, filenames, cache_path, spec, target_seq_length, augmentations_per_video):
+    """랜드마크 데이터를 캐시에 저장합니다."""
+    try:
+        print(f"💾 캐시 저장 중: {cache_path}")
+        
+        # 메타데이터 추가
+        metadata = {
+            'labels': spec.get('labels', []),
+            'sequence_length': target_seq_length,
+            'augmentations_per_video': augmentations_per_video,
+            'created_at': datetime.datetime.now().isoformat(),
+            'total_samples': len(X),
+            'model_name': spec.get('model_name', 'custom_model')
+        }
+        
+        np.savez_compressed(
+            cache_path, 
+            X=X, 
+            y=y, 
+            filenames=filenames,
+            metadata=metadata
+        )
+        print(f"✅ 캐시 저장 완료: {len(X)}개 샘플")
+    except Exception as e:
+        print(f"⚠️ 캐시 저장 실패: {e}")
+
 def save_model_info(model, model_path, spec, model_number):
     """모델 정보를 JSON 파일로 저장합니다."""
     model_info = {
@@ -325,20 +404,27 @@ def save_model_info(model, model_path, spec, model_number):
         "created_at": datetime.datetime.now().isoformat()
     }
     
-    info_path = f"model-info-{model_number}.json"
+    # models 디렉토리에 저장
+    models_dir = "models"
+    os.makedirs(models_dir, exist_ok=True)
+    info_path = os.path.join(models_dir, f"model-info-{model_number}.json")
     with open(info_path, 'w', encoding='utf-8') as f:
         json.dump(model_info, f, indent=2, ensure_ascii=False)
     
     print(f"✅ 모델 정보 저장: {info_path}")
 
 def main():
-    if len(sys.argv) != 2:
-        print("사용법: python3 model_pipe.py spec.json")
+    if len(sys.argv) < 2:
+        print("사용법: python3 model_pipe.py spec.json [--no-cache]")
+        print("  --no-cache: 캐시를 무시하고 새로 추출")
         sys.exit(1)
     
     spec_path = sys.argv[1]
+    use_cache = "--no-cache" not in sys.argv
+    
     print(f"🚀 모델 학습 파이프라인 시작")
     print(f"📋 명세 파일: {spec_path}")
+    print(f"💾 캐시 사용: {'예' if use_cache else '아니오'}")
     
     # 1. spec.json 로드
     spec = load_spec(spec_path)
@@ -371,48 +457,85 @@ def main():
     
     # 5. 데이터 추출 및 전처리
     print("\n📊 데이터 추출 및 전처리 중...")
-    X = []
-    y = []
     
-    for filename, label in tqdm(filtered_dict.items(), desc="데이터 추출"):
-        actual_path = get_video_root_and_path(filename)
-        if actual_path is None or not os.path.exists(actual_path):
-            print(f"⚠️ 파일 없음: {filename}")
-            continue
-
-        landmarks = extract_landmarks(actual_path)
-        if not landmarks:
-            print(f"⚠️ 랜드마크 추출 실패: {filename}")
-            continue
-
-        processed_sequence = improved_preprocess_landmarks(landmarks, TARGET_SEQ_LENGTH)
-        if processed_sequence is None or processed_sequence.shape != (TARGET_SEQ_LENGTH, 675):
-            print(f"⚠️ 시퀀스 형태 오류: {filename}")
-            continue
-
-        # 원본 데이터 추가
-        X.append(processed_sequence)
-        y.append(target_labels.index(label))
-
-        # 증강 데이터 추가
-        for _ in range(AUGMENTATIONS_PER_VIDEO):
-            try:
-                augmented = augment_sequence(processed_sequence)
-                if augmented.shape == (TARGET_SEQ_LENGTH, 675):
-                    X.append(augmented)
-                    y.append(target_labels.index(label))
-            except Exception as e:
-                print(f"⚠️ 증강 중 오류: {e}")
+    # 캐시 파일 경로 설정
+    npz_dir = "npzs"
+    os.makedirs(npz_dir, exist_ok=True)
+    
+    # 최신 캐시 파일 찾기 (캐시 사용이 활성화된 경우에만)
+    latest_cache_path = None
+    if use_cache:
+        latest_cache_path = find_latest_cache(target_labels, TARGET_SEQ_LENGTH, AUGMENTATIONS_PER_VIDEO)
+        if latest_cache_path:
+            print(f"📂 최신 캐시 파일 발견: {os.path.basename(latest_cache_path)}")
+    
+    # 캐시된 데이터 확인
+    X, y, cached_filenames = load_cached_landmarks(latest_cache_path) if latest_cache_path else (None, None, None)
+    
+    if X is not None and use_cache:
+        # 캐시된 데이터가 있으면 사용
+        print(f"✅ 캐시된 데이터 사용: {len(X)}개 샘플")
+        y_one_hot = to_categorical(y, num_classes=len(target_labels))
+    else:
+        # 캐시된 데이터가 없거나 캐시 사용이 비활성화된 경우 새로 추출
+        if not use_cache:
+            print("🔄 캐시 무효화 옵션이 활성화되어 새로 추출합니다...")
+        else:
+            print("🔄 캐시된 데이터가 없어 새로 추출합니다...")
+            
+        cache_filename = generate_cache_filename(target_labels, TARGET_SEQ_LENGTH, AUGMENTATIONS_PER_VIDEO)
+        cache_path = os.path.join(npz_dir, cache_filename)
+        
+        X = []
+        y = []
+        filenames = []
+        
+        for filename, label in tqdm(filtered_dict.items(), desc="데이터 추출"):
+            actual_path = get_video_root_and_path(filename)
+            if actual_path is None or not os.path.exists(actual_path):
+                print(f"⚠️ 파일 없음: {filename}")
                 continue
-    
-    if len(X) == 0:
-        print("❌ 오류: 처리된 데이터가 없습니다.")
-        sys.exit(1)
+
+            landmarks = extract_landmarks(actual_path)
+            if not landmarks:
+                print(f"⚠️ 랜드마크 추출 실패: {filename}")
+                continue
+
+            processed_sequence = improved_preprocess_landmarks(landmarks, TARGET_SEQ_LENGTH)
+            if processed_sequence is None or processed_sequence.shape != (TARGET_SEQ_LENGTH, 675):
+                print(f"⚠️ 시퀀스 형태 오류: {filename}")
+                continue
+
+            # 원본 데이터 추가
+            X.append(processed_sequence)
+            y.append(target_labels.index(label))
+            filenames.append(filename)
+
+            # 증강 데이터 추가
+            for _ in range(AUGMENTATIONS_PER_VIDEO):
+                try:
+                    augmented = augment_sequence(processed_sequence)
+                    if augmented.shape == (TARGET_SEQ_LENGTH, 675):
+                        X.append(augmented)
+                        y.append(target_labels.index(label))
+                        filenames.append(f"{filename}_aug_{_}")
+                except Exception as e:
+                    print(f"⚠️ 증강 중 오류: {e}")
+                    continue
+        
+        if len(X) == 0:
+            print("❌ 오류: 처리된 데이터가 없습니다.")
+            sys.exit(1)
+        
+        # 캐시에 저장
+        X = np.array(X)
+        y = np.array(y)
+        filenames = np.array(filenames)
+        save_cached_landmarks(X, y, filenames, cache_path, spec, TARGET_SEQ_LENGTH, AUGMENTATIONS_PER_VIDEO)
+        
+        y_one_hot = to_categorical(y, num_classes=len(target_labels))
     
     # 6. 데이터 준비
-    X = np.array(X)
-    y_one_hot = to_categorical(y, num_classes=len(target_labels))
-    
     print(f"📊 최종 데이터 통계:")
     print(f"총 샘플 수: {len(X)}")
     print(f"입력 형태: {X.shape}")
@@ -452,7 +575,9 @@ def main():
     early_stopping = tf.keras.callbacks.EarlyStopping(
         monitor='val_loss',
         patience=EARLY_STOPPING_PATIENCE,
-        restore_best_weights=True
+        min_delta=0.0001,  # 최소 개선 임계값 (0.0001 = 0.01%)
+        restore_best_weights=True,
+        verbose=1  # Early stopping 발생 시 메시지 출력
     )
     
     # 체크포인트 콜백
