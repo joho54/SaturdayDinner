@@ -1,31 +1,29 @@
 {
-  "model_path": "checkpoints/model-epoch-23.keras",
-  "created_at": "2025-06-27T15:14:03.254629",
+  "model_path": "checkpoints/model-epoch-31.keras",
+  "created_at": "2025-06-27T16:44:46.799156",
   "labels": [
-    "팔",
-    "등",
-    "배",
-    "목",
+    "진통제",
+    "질식",
+    "침수",
     "화상",
     "None"
   ],
   "label_mapping": {
-    "팔": 0,
-    "등": 1,
-    "배": 2,
-    "목": 3,
-    "화상": 4,
-    "None": 5
+    "진통제": 0,
+    "질식": 1,
+    "침수": 2,
+    "화상": 3,
+    "None": 4
   },
-  "num_classes": 6,
+  "num_classes": 5,
   "input_shape": [
     30,
     675
   ],
   "training_stats": {
-    "total_samples": 960,
-    "train_samples": 768,
-    "test_samples": 192,
+    "total_samples": 800,
+    "train_samples": 640,
+    "test_samples": 160,
     "augmentations_per_video": 3,
     "target_sequence_length": 30,
     "model_parameters": {
@@ -43,12 +41,12 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 23,
-    "checkpoint_accuracy": 0.5677083134651184,
-    "checkpoint_val_accuracy": 0.9895833134651184,
-    "checkpoint_loss": 1.4108389616012573,
-    "checkpoint_val_loss": 0.09566760808229446
+    "checkpoint_epoch": 31,
+    "checkpoint_accuracy": 0.36406248807907104,
+    "checkpoint_val_accuracy": 0.800000011920929,
+    "checkpoint_loss": 3.7513039112091064,
+    "checkpoint_val_loss": 0.40240079164505005
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 23, Val Acc: 0.9896)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 31, Val Acc: 0.8000)"
 }

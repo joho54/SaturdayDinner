@@ -98,7 +98,7 @@ current_label = QUIZ_LABELS[quiz_index]
 feedback = ""
 feedback_timer = 0
 FEEDBACK_DURATION = 30  # 프레임 단위
-CORRECT_HOLD_FRAMES = 15  # 0.5초(30fps 기준)
+CORRECT_HOLD_FRAMES = 10  # 0.5초(30fps 기준)
 hold_counter = 0
 quiz_number = 1
 
@@ -228,7 +228,7 @@ while cap.isOpened():
 
         # 정답 판정(1초 연속 유지 필요)
         if not feedback:  # 피드백 표시 중이 아닐 때만 판정
-            if current_prediction == current_label and confidence > 0.9:
+            if current_prediction == current_label and confidence > 0.7:
                 hold_counter += 1
             else:
                 hold_counter = 0
