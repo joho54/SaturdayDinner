@@ -77,11 +77,11 @@ VIDEO_ROOTS = [
     ((30593, 33106), f"{IDENTICAL_VIDEO_ROOT}/30593~33106"),
     ((33107, 35620), f"{IDENTICAL_VIDEO_ROOT}/33107~35620"),
     ((36878, 40027), f"{IDENTICAL_VIDEO_ROOT}/36878~40027"),
-    ((40028, 43177), f"{IDENTICAL_VIDEO_ROOT}/40028~43177")
+    ((40028, 43177), f"{IDENTICAL_VIDEO_ROOT}/40028~43177"),
 ]
 
 # 지원하는 비디오 확장자
-VIDEO_EXTENSIONS = ['.MOV', '.MTS', '.MP4', '.AVI', '.mov', '.mts', '.mp4', '.avi']
+VIDEO_EXTENSIONS = [".MOV", ".MTS", ".MP4", ".AVI", ".mov", ".mts", ".mp4", ".avi"]
 
 # 로깅 설정
 LOG_LEVEL = "INFO"
@@ -94,10 +94,11 @@ ENABLE_PROGRESS_BAR = True
 BATCH_SIZE_FOR_PROCESSING = 50
 
 # 라벨별 최대 파일 수 제한 (None이면 제한 없음)
-LABEL_MAX_SAMPLES_PER_CLASS = 40  # 예: 10개로 제한, None이면 무제한 
+LABEL_MAX_SAMPLES_PER_CLASS = 40  # 예: 10개로 제한, None이면 무제한
 
 # 라벨별 최소 샘플 수 제한 (이 미만이면 학습 중단)
 MIN_SAMPLES_PER_CLASS = 40  # 예: 10개 미만 라벨이 있으면 학습 중단
 
+
 def get_action_index(label, actions):
-    return actions.index(label) 
+    return actions.index(label)

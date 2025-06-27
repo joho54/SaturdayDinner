@@ -9,14 +9,16 @@ import os
 from collections import deque
 from PIL import ImageFont, ImageDraw, Image
 
+
 def load_model_info(model_info_path):
     """모델 정보 파일을 로드합니다."""
     try:
-        with open(model_info_path, 'r', encoding='utf-8') as f:
+        with open(model_info_path, "r", encoding="utf-8") as f:
             return json.load(f)
     except Exception as e:
         print(f"❌ 모델 정보 파일 로드 실패: {e}")
         return None
+
 
 def validate_args():
     """명령행 인자를 검증합니다."""
@@ -24,13 +26,14 @@ def validate_args():
         print("사용법: python3 sign_quiz.py <model_info.json>")
         print("예시: python3 sign_quiz.py info/model-info-20250626_220849.json")
         sys.exit(1)
-    
+
     model_info_path = sys.argv[1]
     if not os.path.exists(model_info_path):
         print(f"❌ 모델 정보 파일을 찾을 수 없습니다: {model_info_path}")
         sys.exit(1)
-    
+
     return model_info_path
+
 
 # --- 모델 정보 로드 ---
 model_info_path = validate_args()
@@ -41,9 +44,9 @@ if not model_info:
     sys.exit(1)
 
 # --- 설정값 ---
-MAX_SEQ_LENGTH = model_info['input_shape'][0]  # JSON에서 시퀀스 길이 로드
-MODEL_SAVE_PATH = model_info['model_path']  # JSON에서 모델 경로 로드
-ACTIONS = model_info['labels']  # JSON에서 라벨 로드
+MAX_SEQ_LENGTH = model_info["input_shape"][0]  # JSON에서 시퀀스 길이 로드
+MODEL_SAVE_PATH = model_info["model_path"]  # JSON에서 모델 경로 로드
+ACTIONS = model_info["labels"]  # JSON에서 라벨 로드
 QUIZ_LABELS = [a for a in ACTIONS if a != "None"]  # None 제외한 퀴즈 라벨
 
 print(f"📋 로드된 라벨: {ACTIONS}")
@@ -71,6 +74,7 @@ except Exception as e:
     print(f"❌ 모델 로딩 실패: {e}")
     exit()
 
+
 # --- 유틸 함수 ---
 def draw_korean_text(img, text, pos, font, color=(0, 255, 0)):
     img_pil = Image.fromarray(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
@@ -78,19 +82,21 @@ def draw_korean_text(img, text, pos, font, color=(0, 255, 0)):
     draw.text(pos, text, font=font, fill=color)
     return cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
 
+
 def cleanup_resources():
     """5문제마다 리소스를 정리합니다."""
     global sequence, hold_counter, feedback, feedback_timer
-    
+
     # 시퀀스 버퍼 초기화
     sequence.clear()
-    
+
     # 상태 변수 초기화
     hold_counter = 0
     feedback = ""
     feedback_timer = 0
-    
+
     print(f"🧹 리소스 정리 완료 (퀴즈 {quiz_number})")
+
 
 # --- 퀴즈 상태 변수 ---
 quiz_index = 0
@@ -110,6 +116,7 @@ if not cap.isOpened():
 
 sequence = deque(maxlen=MAX_SEQ_LENGTH)
 
+
 # --- 전처리 함수들 (fixed_realtime_demo.py에서 복사) ---
 def normalize_sequence_length(sequence, target_length=30):
     current_length = len(sequence)
@@ -123,11 +130,13 @@ def normalize_sequence_length(sequence, target_length=30):
         normalized_sequence.append(f)
     return np.array(normalized_sequence).T
 
+
 def extract_dynamic_features(sequence):
     velocity = np.diff(sequence, axis=0, prepend=sequence[0:1])
     acceleration = np.diff(velocity, axis=0, prepend=velocity[0:1])
     dynamic_features = np.concatenate([sequence, velocity, acceleration], axis=1)
     return dynamic_features
+
 
 def convert_to_relative_coordinates(landmarks_list):
     relative_landmarks = []
@@ -167,6 +176,7 @@ def convert_to_relative_coordinates(landmarks_list):
         relative_landmarks.append(new_frame)
     return relative_landmarks
 
+
 def improved_preprocess_landmarks(landmarks_list):
     if not landmarks_list:
         return np.zeros((MAX_SEQ_LENGTH, 675))
@@ -182,7 +192,7 @@ def improved_preprocess_landmarks(landmarks_list):
                     combined.extend([[l.x, l.y, l.z] for l in frame[key].landmark])
             else:
                 num_points = {"pose": 33, "left_hand": 21, "right_hand": 21}[key]
-                combined.extend([[0,0,0]] * num_points)
+                combined.extend([[0, 0, 0]] * num_points)
         if combined:
             processed_frames.append(np.array(combined).flatten())
         else:
@@ -200,6 +210,7 @@ def improved_preprocess_landmarks(landmarks_list):
             return np.zeros((MAX_SEQ_LENGTH, 675))
     return np.zeros((MAX_SEQ_LENGTH, 675))
 
+
 while cap.isOpened():
     ret, frame = cap.read()
     if not ret:
@@ -213,7 +224,7 @@ while cap.isOpened():
         "pose": results.pose_landmarks,
         "left_hand": results.left_hand_landmarks,
         "right_hand": results.right_hand_landmarks,
-        "face": results.face_landmarks
+        "face": results.face_landmarks,
     }
     sequence.append(frame_data)
 
@@ -240,7 +251,9 @@ while cap.isOpened():
 
     # --- UI 표시 ---
     # 1. 현재 문제 라벨 (문제 번호 포함, 검은색)
-    frame = draw_korean_text(frame, f"퀴즈 {quiz_number}: {current_label}", (20, 30), font, (0, 0, 0))
+    frame = draw_korean_text(
+        frame, f"퀴즈 {quiz_number}: {current_label}", (20, 30), font, (0, 0, 0)
+    )
     # 2. 피드백
     if feedback:
         frame = draw_korean_text(frame, feedback, (20, 70), font, (0, 0, 0))
@@ -250,36 +263,43 @@ while cap.isOpened():
             quiz_index = (quiz_index + 1) % len(QUIZ_LABELS)
             current_label = QUIZ_LABELS[quiz_index]
             quiz_number += 1
-            
+
             # 5문제마다 리소스 정리
             if quiz_number % 5 == 0:
                 cleanup_resources()
 
     # 3. 모델 판정 확률 표시 (개발용, 검정색)
-    if 'pred_probs' in locals():
+    if "pred_probs" in locals():
         for i, prob in enumerate(pred_probs):
             label = ACTIONS[i]
             text = f"{label}: {prob*100:.1f}%"
-            frame = draw_korean_text(frame, text, (20, 110 + i*30), font, (0, 0, 0))
+            frame = draw_korean_text(frame, text, (20, 110 + i * 30), font, (0, 0, 0))
 
     # 4. 모델 정보 표시 (우측 상단)
     info_text = f"모델: {model_info['model_type']}"
-    frame = draw_korean_text(frame, info_text, (frame.shape[1] - 300, 30), font, (0, 0, 0))
-    
-    # test_accuracy가 있을 때만 표시
-    if 'training_stats' in model_info and 'test_accuracy' in model_info['training_stats']:
-        info_text2 = f"정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%"
-        frame = draw_korean_text(frame, info_text2, (frame.shape[1] - 300, 60), font, (0, 0, 0))
+    frame = draw_korean_text(
+        frame, info_text, (frame.shape[1] - 300, 30), font, (0, 0, 0)
+    )
 
-    cv2.imshow('수어 퀴즈', frame)
+    # test_accuracy가 있을 때만 표시
+    if (
+        "training_stats" in model_info
+        and "test_accuracy" in model_info["training_stats"]
+    ):
+        info_text2 = f"정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%"
+        frame = draw_korean_text(
+            frame, info_text2, (frame.shape[1] - 300, 60), font, (0, 0, 0)
+        )
+
+    cv2.imshow("수어 퀴즈", frame)
     key = cv2.waitKey(5) & 0xFF
-    if key == ord('q'):
+    if key == ord("q"):
         break
-    elif key == ord('n'):
+    elif key == ord("n"):
         # 'n' 키로 정답 라벨 넘기기
         quiz_index = (quiz_index + 1) % len(QUIZ_LABELS)
         current_label = QUIZ_LABELS[quiz_index]
-        feedback = ''
+        feedback = ""
         feedback_timer = 0
         hold_counter = 0
         quiz_number += 1
@@ -293,7 +313,7 @@ print(f"📊 사용된 모델: {model_info['model_type']}")
 print(f"🎯 퀴즈 라벨 수: {len(QUIZ_LABELS)}")
 
 # test_accuracy가 있을 때만 표시
-if 'training_stats' in model_info and 'test_accuracy' in model_info['training_stats']:
+if "training_stats" in model_info and "test_accuracy" in model_info["training_stats"]:
     print(f"📈 모델 정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%")
 else:
-    print("📈 모델 정확도: 정보 없음") 
+    print("📈 모델 정확도: 정보 없음")

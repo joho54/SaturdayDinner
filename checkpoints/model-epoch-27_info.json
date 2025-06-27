@@ -1,18 +1,18 @@
 {
   "model_path": "checkpoints/model-epoch-27.keras",
-  "created_at": "2025-06-27T16:48:13.853263",
+  "created_at": "2025-06-27T21:07:32.723859",
   "labels": [
-    "진통제",
-    "질식",
-    "침수",
+    "골절",
+    "추락",
     "화상",
+    "탈골",
     "None"
   ],
   "label_mapping": {
-    "진통제": 0,
-    "질식": 1,
-    "침수": 2,
-    "화상": 3,
+    "골절": 0,
+    "추락": 1,
+    "화상": 2,
+    "탈골": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -42,11 +42,11 @@
       "reduce_lr_patience": 3
     },
     "checkpoint_epoch": 27,
-    "checkpoint_accuracy": 0.3765625059604645,
-    "checkpoint_val_accuracy": 0.699999988079071,
-    "checkpoint_loss": 3.5115303993225098,
-    "checkpoint_val_loss": 0.9222533106803894
+    "checkpoint_accuracy": 0.30781251192092896,
+    "checkpoint_val_accuracy": 0.581250011920929,
+    "checkpoint_loss": 3.8112053871154785,
+    "checkpoint_val_loss": 1.0525377988815308
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 27, Val Acc: 0.7000)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 27, Val Acc: 0.5813)"
 }

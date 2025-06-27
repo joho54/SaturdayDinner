@@ -1,18 +1,18 @@
 {
-  "model_path": "checkpoints/model-epoch-02.keras",
-  "created_at": "2025-06-27T16:48:22.429872",
+  "model_path": "models/sign_language_model_20250627_203504.keras",
+  "created_at": "2025-06-27T20:48:15.435323",
   "labels": [
-    "진통제",
-    "질식",
-    "침수",
-    "화상",
+    "학생",
+    "선생님",
+    "학교",
+    "친구",
     "None"
   ],
   "label_mapping": {
-    "진통제": 0,
-    "질식": 1,
-    "침수": 2,
-    "화상": 3,
+    "학생": 0,
+    "선생님": 1,
+    "학교": 2,
+    "친구": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -41,12 +41,16 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 2,
-    "checkpoint_accuracy": 0.625,
-    "checkpoint_val_accuracy": 0.8500000238418579,
-    "checkpoint_loss": 1.5072249174118042,
-    "checkpoint_val_loss": 0.33542656898498535
+    "test_loss": 0.0002782690280582756,
+    "test_accuracy": 1.0,
+    "class_accuracies": {
+      "학생": 1.0,
+      "선생님": 1.0,
+      "학교": 1.0,
+      "친구": 1.0,
+      "None": 1.0
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 2, Val Acc: 0.8500)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }
