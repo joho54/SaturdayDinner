@@ -8,13 +8,13 @@ TARGET_SEQ_LENGTH = 30  # 시퀀스 길이 (프레임 수)
 AUGMENTATIONS_PER_VIDEO = 3  # 비디오당 증강 데이터 수
 
 # 모델 학습 파라미터
-LEARNING_RATE = 0.001
+LEARNING_RATE = 0.001  # 0.0001에서 0.001로 증가 (10배 증가)
 BATCH_SIZE = 8
 EPOCHS = 200
 EARLY_STOPPING_PATIENCE = 10
 EARLY_STOPPING_MIN_DELTA = 0.001
-REDUCE_LR_PATIENCE = 5
-MIN_LR = 1e-6
+REDUCE_LR_PATIENCE = 3  # 5에서 3으로 단축 (더 빠른 학습률 감소)
+MIN_LR = 1e-5  # 1e-6에서 1e-5로 증가
 
 # 모델 구조 파라미터
 MODEL_LSTM_UNITS_1 = 128
@@ -94,10 +94,10 @@ ENABLE_PROGRESS_BAR = True
 BATCH_SIZE_FOR_PROCESSING = 50
 
 # 라벨별 최대 파일 수 제한 (None이면 제한 없음)
-LABEL_MAX_SAMPLES_PER_CLASS = 12  # 예: 10개로 제한, None이면 무제한 
+LABEL_MAX_SAMPLES_PER_CLASS = 40  # 예: 10개로 제한, None이면 무제한 
 
 # 라벨별 최소 샘플 수 제한 (이 미만이면 학습 중단)
-MIN_SAMPLES_PER_CLASS = 10  # 예: 10개 미만 라벨이 있으면 학습 중단
+MIN_SAMPLES_PER_CLASS = 40  # 예: 10개 미만 라벨이 있으면 학습 중단
 
 def get_action_index(label, actions):
     return actions.index(label) 

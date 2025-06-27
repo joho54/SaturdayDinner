@@ -1,6 +1,6 @@
 {
-  "model_path": "checkpoints/model-epoch-15.keras",
-  "created_at": "2025-06-27T15:14:03.255311",
+  "model_path": "models/sign_language_model_20250627_151349.keras",
+  "created_at": "2025-06-27T15:15:41.281017",
   "labels": [
     "팔",
     "등",
@@ -43,12 +43,17 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 15,
-    "checkpoint_accuracy": 0.5677083134651184,
-    "checkpoint_val_accuracy": 0.9895833134651184,
-    "checkpoint_loss": 1.4108389616012573,
-    "checkpoint_val_loss": 0.09566760808229446
+    "test_loss": 0.006529421079903841,
+    "test_accuracy": 1.0,
+    "class_accuracies": {
+      "팔": 1.0,
+      "등": 1.0,
+      "배": 1.0,
+      "목": 1.0,
+      "화상": 1.0,
+      "None": 1.0
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 15, Val Acc: 0.9896)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }

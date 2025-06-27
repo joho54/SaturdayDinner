@@ -1,6 +1,6 @@
 {
-  "model_path": "checkpoints/model-epoch-15.keras",
-  "created_at": "2025-06-27T15:14:03.255311",
+  "model_path": "checkpoints/model-epoch-23.keras",
+  "created_at": "2025-06-27T15:14:03.254629",
   "labels": [
     "팔",
     "등",
@@ -43,12 +43,12 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 15,
+    "checkpoint_epoch": 23,
     "checkpoint_accuracy": 0.5677083134651184,
     "checkpoint_val_accuracy": 0.9895833134651184,
     "checkpoint_loss": 1.4108389616012573,
     "checkpoint_val_loss": 0.09566760808229446
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 15, Val Acc: 0.9896)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 23, Val Acc: 0.9896)"
 }

@@ -78,6 +78,20 @@ def draw_korean_text(img, text, pos, font, color=(0, 255, 0)):
     draw.text(pos, text, font=font, fill=color)
     return cv2.cvtColor(np.array(img_pil), cv2.COLOR_RGB2BGR)
 
+def cleanup_resources():
+    """5문제마다 리소스를 정리합니다."""
+    global sequence, hold_counter, feedback, feedback_timer
+    
+    # 시퀀스 버퍼 초기화
+    sequence.clear()
+    
+    # 상태 변수 초기화
+    hold_counter = 0
+    feedback = ""
+    feedback_timer = 0
+    
+    print(f"🧹 리소스 정리 완료 (퀴즈 {quiz_number})")
+
 # --- 퀴즈 상태 변수 ---
 quiz_index = 0
 current_label = QUIZ_LABELS[quiz_index]
@@ -214,7 +228,7 @@ while cap.isOpened():
 
         # 정답 판정(1초 연속 유지 필요)
         if not feedback:  # 피드백 표시 중이 아닐 때만 판정
-            if current_prediction == current_label and confidence > 0.8:
+            if current_prediction == current_label and confidence > 0.9:
                 hold_counter += 1
             else:
                 hold_counter = 0
@@ -236,6 +250,10 @@ while cap.isOpened():
             quiz_index = (quiz_index + 1) % len(QUIZ_LABELS)
             current_label = QUIZ_LABELS[quiz_index]
             quiz_number += 1
+            
+            # 5문제마다 리소스 정리
+            if quiz_number % 5 == 0:
+                cleanup_resources()
 
     # 3. 모델 판정 확률 표시 (개발용, 검정색)
     if 'pred_probs' in locals():

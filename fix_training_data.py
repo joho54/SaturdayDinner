@@ -645,52 +645,81 @@ def improved_preprocess_landmarks(landmarks_list):
     return np.zeros((TARGET_SEQ_LENGTH, 675))
 
 
-def create_simple_model(input_shape, num_classes):
-    """과적합 방지 기능이 추가된 모델을 생성합니다."""
+# def create_simple_model(input_shape, num_classes):
+#     """과적합 방지 기능이 추가된 모델을 생성합니다."""
     
-    # L2 정규화 설정
-    if USE_L2_REGULARIZATION:
-        regularizer = tf.keras.regularizers.l2(L2_REGULARIZATION_FACTOR)
-    else:
-        regularizer = None
+#     # L2 정규화 설정
+#     if USE_L2_REGULARIZATION:
+#         regularizer = tf.keras.regularizers.l2(L2_REGULARIZATION_FACTOR)
+#     else:
+#         regularizer = None
     
-    model = tf.keras.Sequential([
-        # 첫 번째 LSTM 레이어
-        tf.keras.layers.LSTM(
-            MODEL_LSTM_UNITS_1, 
-            return_sequences=True, 
-            input_shape=input_shape,
-            kernel_regularizer=regularizer
-        ),
-        tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
+#     model = tf.keras.Sequential([
+#         # 첫 번째 LSTM 레이어
+#         tf.keras.layers.LSTM(
+#             MODEL_LSTM_UNITS_1, 
+#             return_sequences=True, 
+#             input_shape=input_shape,
+#             kernel_regularizer=regularizer
+#         ),
+#         tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
         
-        # 배치 정규화 (선택적)
-        tf.keras.layers.BatchNormalization() if USE_BATCH_NORMALIZATION else tf.keras.layers.Lambda(lambda x: x),
+#         # 배치 정규화 (선택적)
+#         tf.keras.layers.BatchNormalization() if USE_BATCH_NORMALIZATION else tf.keras.layers.Lambda(lambda x: x),
         
-        # 두 번째 LSTM 레이어
-        tf.keras.layers.LSTM(
-            MODEL_LSTM_UNITS_2, 
-            return_sequences=False,
-            kernel_regularizer=regularizer
-        ),
-        tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
+#         # 두 번째 LSTM 레이어
+#         tf.keras.layers.LSTM(
+#             MODEL_LSTM_UNITS_2, 
+#             return_sequences=False,
+#             kernel_regularizer=regularizer
+#         ),
+#         tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
         
-        # 배치 정규화 (선택적)
-        tf.keras.layers.BatchNormalization() if USE_BATCH_NORMALIZATION else tf.keras.layers.Lambda(lambda x: x),
+#         # 배치 정규화 (선택적)
+#         tf.keras.layers.BatchNormalization() if USE_BATCH_NORMALIZATION else tf.keras.layers.Lambda(lambda x: x),
         
-        # Dense 레이어
-        tf.keras.layers.Dense(
-            MODEL_DENSE_UNITS, 
-            activation='relu',
-            kernel_regularizer=regularizer
-        ),
-        tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
+#         # Dense 레이어
+#         tf.keras.layers.Dense(
+#             MODEL_DENSE_UNITS, 
+#             activation='relu',
+#             kernel_regularizer=regularizer
+#         ),
+#         tf.keras.layers.Dropout(MODEL_DROPOUT_RATE),
         
-        # 출력 레이어
-        tf.keras.layers.Dense(num_classes, activation='softmax')
-    ])
-    return model
+#         # 출력 레이어
+#         tf.keras.layers.Dense(num_classes, activation='softmax')
+#     ])
+#     return model
 
+def create_simple_model(input_shape, num_classes):
+    """간단하고 효과적인 모델을 생성합니다."""
+    inputs = Input(shape=input_shape)
+
+    # 1D CNN
+    x = Conv1D(64, kernel_size=3, activation="relu", padding="same")(inputs)
+    x = MaxPooling1D(pool_size=2)(x)
+    x = Dropout(0.3)(x)
+
+    x = Conv1D(128, kernel_size=3, activation="relu", padding="same")(x)
+    x = MaxPooling1D(pool_size=2)(x)
+    x = Dropout(0.3)(x)
+
+    # LSTM
+    x = Bidirectional(LSTM(64, return_sequences=True))(x)
+    x = Dropout(0.3)(x)
+    x = Bidirectional(LSTM(32))(x)
+    x = Dropout(0.3)(x)
+
+    # Dense layers
+    x = Dense(64, activation="relu")(x)
+    x = Dropout(0.3)(x)
+    x = Dense(32, activation="relu")(x)
+    x = Dropout(0.3)(x)
+    
+    outputs = Dense(num_classes, activation="softmax")(x)
+
+    model = Model(inputs=inputs, outputs=outputs)
+    return model
 
 def load_model_info():
     """기존 모델 정보를 로드합니다."""
@@ -985,7 +1014,9 @@ class ImprovedCheckpointInfoCallback(tf.keras.callbacks.Callback):
                     with open(checkpoint_info_path, 'w', encoding='utf-8') as f:
                         json.dump(checkpoint_info, f, ensure_ascii=False, indent=2)
                     
-                    print(f"📄 체크포인트 정보 저장: {checkpoint_info_path}")
+                    # 출력을 줄여서 중첩 방지 (에폭 끝에만 출력)
+                    if epoch_num % 5 == 0:  # 5 에폭마다만 출력
+                        print(f"📄 체크포인트 정보 저장: Epoch {epoch_num}")
                     self.saved_checkpoints.add(checkpoint_file)
                     
                     # 메모리 최적화: 세트 크기 제한
@@ -1361,7 +1392,10 @@ def main():
     )
 
     model.compile(
-        optimizer=tf.keras.optimizers.Adam(learning_rate=LEARNING_RATE),
+        optimizer=tf.keras.optimizers.Adam(
+            learning_rate=LEARNING_RATE,
+            clipnorm=1.0  # 그래디언트 클리핑 추가
+        ),
         loss="sparse_categorical_crossentropy",
         metrics=["accuracy"],
     )
@@ -1427,7 +1461,7 @@ def main():
             filepath=os.path.join(CHECKPOINT_DIR, "model-epoch-{epoch:02d}.keras"),
             save_best_only=False,
             save_freq=5,  # 5 에폭마다
-            verbose=1
+            verbose=0  # 출력 중첩 방지를 위해 0으로 변경
         ),
         # 개선된 Early Stopping
         tf.keras.callbacks.EarlyStopping(
@@ -1458,7 +1492,7 @@ def main():
         batch_size=BATCH_SIZE,
         validation_data=(X_test, y_test),
         callbacks=callbacks,
-        verbose=1,
+        verbose=2,  # 더 깔끔한 진행률 표시
         initial_epoch=initial_epoch,  # 체크포인트에서 재개
     )
 

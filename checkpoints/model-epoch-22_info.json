@@ -1,20 +1,20 @@
 {
-  "model_path": "checkpoints/model-epoch-13.keras",
-  "created_at": "2025-06-27T12:16:01.455767",
+  "model_path": "checkpoints/model-epoch-22.keras",
+  "created_at": "2025-06-27T15:14:03.254974",
   "labels": [
-    "화재",
-    "화요일",
-    "화약",
-    "화상",
     "팔",
+    "등",
+    "배",
+    "목",
+    "화상",
     "None"
   ],
   "label_mapping": {
-    "화재": 0,
-    "화요일": 1,
-    "화약": 2,
-    "화상": 3,
-    "팔": 4,
+    "팔": 0,
+    "등": 1,
+    "배": 2,
+    "목": 3,
+    "화상": 4,
     "None": 5
   },
   "num_classes": 6,
@@ -23,9 +23,9 @@
     675
   ],
   "training_stats": {
-    "total_samples": 288,
-    "train_samples": 230,
-    "test_samples": 58,
+    "total_samples": 960,
+    "train_samples": 768,
+    "test_samples": 192,
     "augmentations_per_video": 3,
     "target_sequence_length": 30,
     "model_parameters": {
@@ -41,14 +41,14 @@
       "batch_size": 8,
       "early_stopping_patience": 10,
       "early_stopping_min_delta": 0.001,
-      "reduce_lr_patience": 5
+      "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 13,
-    "checkpoint_accuracy": 0.8782608509063721,
-    "checkpoint_val_accuracy": 1.0,
-    "checkpoint_loss": 2.161654472351074,
-    "checkpoint_val_loss": 1.8253039121627808
+    "checkpoint_epoch": 22,
+    "checkpoint_accuracy": 0.5677083134651184,
+    "checkpoint_val_accuracy": 0.9895833134651184,
+    "checkpoint_loss": 1.4108389616012573,
+    "checkpoint_val_loss": 0.09566760808229446
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 13, Val Acc: 1.0000)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 22, Val Acc: 0.9896)"
 }
