@@ -247,8 +247,11 @@ while cap.isOpened():
     # 4. 모델 정보 표시 (우측 상단)
     info_text = f"모델: {model_info['model_type']}"
     frame = draw_korean_text(frame, info_text, (frame.shape[1] - 300, 30), font, (0, 0, 0))
-    info_text2 = f"정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%"
-    frame = draw_korean_text(frame, info_text2, (frame.shape[1] - 300, 60), font, (0, 0, 0))
+    
+    # test_accuracy가 있을 때만 표시
+    if 'training_stats' in model_info and 'test_accuracy' in model_info['training_stats']:
+        info_text2 = f"정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%"
+        frame = draw_korean_text(frame, info_text2, (frame.shape[1] - 300, 60), font, (0, 0, 0))
 
     cv2.imshow('수어 퀴즈', frame)
     key = cv2.waitKey(5) & 0xFF
@@ -270,4 +273,9 @@ holistic.close()
 print(f"\n✅ 퀴즈 종료")
 print(f"📊 사용된 모델: {model_info['model_type']}")
 print(f"🎯 퀴즈 라벨 수: {len(QUIZ_LABELS)}")
-print(f"📈 모델 정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%") 
+
+# test_accuracy가 있을 때만 표시
+if 'training_stats' in model_info and 'test_accuracy' in model_info['training_stats']:
+    print(f"📈 모델 정확도: {model_info['training_stats']['test_accuracy']*100:.1f}%")
+else:
+    print("📈 모델 정확도: 정보 없음") 

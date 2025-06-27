@@ -31,6 +31,7 @@ import pickle
 from datetime import datetime
 import logging
 from collections import defaultdict
+from config import LABEL_MAX_SAMPLES_PER_CLASS, MIN_SAMPLES_PER_CLASS
 
 # MediaPipe 및 TensorFlow 로깅 완전 억제
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'  # ERROR만 출력
@@ -100,9 +101,14 @@ DATA_CACHE_PATH = "fixed_preprocessed_data.npz"
 def get_label_cache_path(label):
     """라벨별 캐시 파일 경로를 반환합니다. 주요 파라미터를 파일명에 포함시켜 캐시 무효화가 자동으로 되도록 합니다."""
     safe_label = label.replace(" ", "_").replace("/", "_")
+    
+    # 데이터 개수 관련 파라미터들을 파일명에 포함
+    max_samples_str = f"max{LABEL_MAX_SAMPLES_PER_CLASS}" if LABEL_MAX_SAMPLES_PER_CLASS else "maxNone"
+    min_samples_str = f"min{MIN_SAMPLES_PER_CLASS}"
+    
     return os.path.join(
         CACHE_DIR,
-        f"{safe_label}_seq{TARGET_SEQ_LENGTH}_aug{AUGMENTATIONS_PER_VIDEO}.pkl"
+        f"{safe_label}_seq{TARGET_SEQ_LENGTH}_aug{AUGMENTATIONS_PER_VIDEO}_{max_samples_str}_{min_samples_str}.pkl"
     )
 
 def save_label_cache(label, data):
@@ -120,6 +126,9 @@ def save_label_cache(label, data):
             'AUGMENTATION_ROTATION_RANGE': AUGMENTATION_ROTATION_RANGE,
             'NONE_CLASS_NOISE_LEVEL': NONE_CLASS_NOISE_LEVEL,
             'NONE_CLASS_AUGMENTATIONS_PER_FRAME': NONE_CLASS_AUGMENTATIONS_PER_FRAME,
+            # 데이터 개수 관련 파라미터 추가
+            'LABEL_MAX_SAMPLES_PER_CLASS': LABEL_MAX_SAMPLES_PER_CLASS,
+            'MIN_SAMPLES_PER_CLASS': MIN_SAMPLES_PER_CLASS,
         }
     }
     
@@ -160,6 +169,9 @@ def load_label_cache(label):
                     'AUGMENTATION_ROTATION_RANGE': AUGMENTATION_ROTATION_RANGE,
                     'NONE_CLASS_NOISE_LEVEL': NONE_CLASS_NOISE_LEVEL,
                     'NONE_CLASS_AUGMENTATIONS_PER_FRAME': NONE_CLASS_AUGMENTATIONS_PER_FRAME,
+                    # 데이터 개수 관련 파라미터 추가
+                    'LABEL_MAX_SAMPLES_PER_CLASS': LABEL_MAX_SAMPLES_PER_CLASS,
+                    'MIN_SAMPLES_PER_CLASS': MIN_SAMPLES_PER_CLASS,
                 }
                 
                 # 파라미터 비교
@@ -294,26 +306,55 @@ def extract_and_cache_label_data_optimized(file_mapping, label):
     
     return label_data
 
-def generate_none_class_data(file_mapping, none_class):
-    """None 클래스 데이터를 생성하고 캐시에 저장합니다."""
+def generate_balanced_none_class_data(file_mapping, none_class, target_count=None):
+    """다른 클래스와 균형있는 None 클래스 데이터를 생성하고 캐시에 저장합니다."""
     print(f"\n✨ '{none_class}' 클래스 데이터 생성 중...")
     
-    # 기존 캐시 확인
-    cached_none_data = load_label_cache(none_class)
+    # 기존 캐시 확인 (target_count 정보 포함)
+    if target_count is not None:
+        cached_none_data = load_none_class_cache(none_class, target_count)
+    else:
+        cached_none_data = load_label_cache(none_class)  # 기존 방식으로 폴백
+    
     if cached_none_data:
         print(f"✅ {none_class} 클래스 캐시 데이터 사용: {len(cached_none_data)}개 샘플")
         return cached_none_data
     
+    # 목표 개수 계산 (다른 클래스의 평균 개수)
+    if target_count is None:
+        # 다른 클래스들의 원본 파일 개수 계산
+        other_class_counts = []
+        for filename, info in file_mapping.items():
+            if info['label'] != none_class:
+                other_class_counts.append(info['label'])
+        
+        # 라벨별 개수 집계
+        from collections import Counter
+        label_counts = Counter(other_class_counts)
+        
+        if label_counts:
+            # 다른 클래스들의 평균 개수 계산 (증강 후 예상 개수)
+            avg_original_count = sum(label_counts.values()) / len(label_counts)
+            target_count = int(avg_original_count * (1 + AUGMENTATIONS_PER_VIDEO))
+            print(f"📊 다른 클래스 평균: {avg_original_count:.1f}개 → 목표 None 클래스: {target_count}개")
+        else:
+            target_count = 100  # 기본값
+            print(f"📊 기본 목표 None 클래스: {target_count}개")
+    
     none_samples = []
     source_videos = list(file_mapping.keys())
-
-    # MediaPipe 객체 재사용
-    with MediaPipeManager() as holistic:
-        for filename in tqdm(source_videos, desc="None 클래스 데이터 생성"):
-            file_path = file_mapping[filename]['path']
-            
-            try:
+    
+    # 목표 개수에 도달할 때까지 반복
+    video_index = 0
+    while len(none_samples) < target_count and video_index < len(source_videos):
+        filename = source_videos[video_index % len(source_videos)]  # 순환 사용
+        file_path = file_mapping[filename]['path']
+        
+        try:
+            # MediaPipe 객체 재사용 (한 번에 하나씩 처리)
+            with MediaPipeManager() as holistic:
                 landmarks = extract_landmarks_with_holistic(file_path, holistic)
+                
                 if landmarks and len(landmarks) > 10:
                     # 영상의 시작, 1/4, 1/2, 3/4, 끝 지점에서 프레임 추출
                     frame_indices = [
@@ -325,6 +366,9 @@ def generate_none_class_data(file_mapping, none_class):
                     ]
 
                     for idx in frame_indices:
+                        if len(none_samples) >= target_count:
+                            break
+                            
                         static_landmarks = [landmarks[idx]] * TARGET_SEQ_LENGTH
                         static_sequence = improved_preprocess_landmarks(static_landmarks)
 
@@ -334,64 +378,70 @@ def generate_none_class_data(file_mapping, none_class):
                         # 정적 시퀀스 추가
                         none_samples.append(static_sequence)
 
-                        # 미세한 움직임 추가 (노이즈)
-                        for _ in range(NONE_CLASS_AUGMENTATIONS_PER_FRAME):
+                        # 미세한 움직임 추가 (노이즈) - 목표 개수 제한
+                        for _ in range(min(NONE_CLASS_AUGMENTATIONS_PER_FRAME, 
+                                         target_count - len(none_samples))):
+                            if len(none_samples) >= target_count:
+                                break
                             augmented = augment_sequence_improved(
                                 static_sequence, noise_level=NONE_CLASS_NOISE_LEVEL
                             )
                             if augmented.shape == (TARGET_SEQ_LENGTH, 675):
                                 none_samples.append(augmented)
 
-                    # 느린 전환 데이터 생성
-                    start_frame_lm = landmarks[0]
-                    middle_frame_lm = landmarks[len(landmarks) // 2]
+                    # 느린 전환 데이터 생성 (목표 개수 제한)
+                    if len(none_samples) < target_count:
+                        start_frame_lm = landmarks[0]
+                        middle_frame_lm = landmarks[len(landmarks) // 2]
 
-                    transition_landmarks = []
-                    for i in range(TARGET_SEQ_LENGTH):
-                        alpha = i / (TARGET_SEQ_LENGTH - 1)
-                        interp_frame = {}
-                        for key in ["pose", "left_hand", "right_hand"]:
-                            if start_frame_lm.get(key) and middle_frame_lm.get(key):
-                                interp_lm = []
-                                start_lms = start_frame_lm[key].landmark
-                                mid_lms = middle_frame_lm[key].landmark
-                                for j in range(len(start_lms)):
-                                    new_x = (
-                                        start_lms[j].x * (1 - alpha) + mid_lms[j].x * alpha
-                                    )
-                                    new_y = (
-                                        start_lms[j].y * (1 - alpha) + mid_lms[j].y * alpha
-                                    )
-                                    new_z = (
-                                        start_lms[j].z * (1 - alpha) + mid_lms[j].z * alpha
-                                    )
-                                    interp_lm.append(
-                                        type(
-                                            "obj",
-                                            (object,),
-                                            {"x": new_x, "y": new_y, "z": new_z},
+                        transition_landmarks = []
+                        for i in range(TARGET_SEQ_LENGTH):
+                            alpha = i / (TARGET_SEQ_LENGTH - 1)
+                            interp_frame = {}
+                            for key in ["pose", "left_hand", "right_hand"]:
+                                if start_frame_lm.get(key) and middle_frame_lm.get(key):
+                                    interp_lm = []
+                                    start_lms = start_frame_lm[key].landmark
+                                    mid_lms = middle_frame_lm[key].landmark
+                                    for j in range(len(start_lms)):
+                                        new_x = (
+                                            start_lms[j].x * (1 - alpha) + mid_lms[j].x * alpha
                                         )
+                                        new_y = (
+                                            start_lms[j].y * (1 - alpha) + mid_lms[j].y * alpha
+                                        )
+                                        new_z = (
+                                            start_lms[j].z * (1 - alpha) + mid_lms[j].z * alpha
+                                        )
+                                        interp_lm.append(
+                                            type(
+                                                "obj",
+                                                (object,),
+                                                {"x": new_x, "y": new_y, "z": new_z},
+                                            )
+                                        )
+                                    interp_frame[key] = type(
+                                        "obj", (object,), {"landmark": interp_lm}
                                     )
-                                interp_frame[key] = type(
-                                    "obj", (object,), {"landmark": interp_lm}
-                                )
-                            else:
-                                interp_frame[key] = None
-                        transition_landmarks.append(interp_frame)
+                                else:
+                                    interp_frame[key] = None
+                            transition_landmarks.append(interp_frame)
 
-                    transition_sequence = improved_preprocess_landmarks(
-                        transition_landmarks
-                    )
-                    if transition_sequence.shape == (TARGET_SEQ_LENGTH, 675):
-                        none_samples.append(transition_sequence)
-            except Exception as e:
-                print(f"⚠️ None 클래스 데이터 생성 중 오류: {filename}, 오류: {e}")
-                continue
-
-    print(f"✅ {none_class} 클래스 데이터 생성 완료: {len(none_samples)}개 샘플")
+                        transition_sequence = improved_preprocess_landmarks(
+                            transition_landmarks
+                        )
+                        if transition_sequence.shape == (TARGET_SEQ_LENGTH, 675):
+                            none_samples.append(transition_sequence)
+                            
+        except Exception as e:
+            print(f"⚠️ None 클래스 데이터 생성 중 오류: {filename}, 오류: {e}")
+        
+        video_index += 1
+    
+    print(f"✅ {none_class} 클래스 데이터 생성 완료: {len(none_samples)}개 샘플 (목표: {target_count}개)")
     
     # 캐시에 저장
-    save_label_cache(none_class, none_samples)
+    save_none_class_cache(none_class, none_samples, target_count)
     
     return none_samples
 
@@ -754,87 +804,404 @@ def get_all_video_paths():
 
     return video_paths
 
-def cleanup_old_checkpoints(checkpoint_dir="checkpoints", keep_best=True):
-    """오래된 체크포인트 파일들을 정리합니다."""
+def cleanup_old_checkpoints(checkpoint_dir="checkpoints", keep_best=True, max_checkpoints=10):
+    """개선된 체크포인트 정리 함수 - 완전하고 안전한 정리"""
     if not os.path.exists(checkpoint_dir):
         return
     
     print(f"🧹 체크포인트 디렉토리 정리 중: {checkpoint_dir}")
     
-    # 에폭별 체크포인트 파일들 찾기
-    epoch_files = []
-    for file in os.listdir(checkpoint_dir):
-        if file.startswith("model-epoch-") and file.endswith(".keras"):
-            epoch_files.append(file)
-    
-    if not epoch_files:
-        print("   📁 정리할 에폭 체크포인트가 없습니다.")
-        return
-    
-    # 파일 삭제
-    deleted_count = 0
-    for file in epoch_files:
-        file_path = os.path.join(checkpoint_dir, file)
-        try:
-            os.remove(file_path)
-            deleted_count += 1
-        except Exception as e:
-            print(f"   ⚠️ 파일 삭제 실패: {file} - {e}")
-    
-    print(f"   ✅ {deleted_count}개 에폭 체크포인트 파일 삭제됨")
-    
-    # 최고 성능 모델은 유지
-    if keep_best and os.path.exists(os.path.join(checkpoint_dir, "best_model.keras")):
-        print("   💎 최고 성능 모델 유지됨")
+    try:
+        # 디스크 공간 확인
+        import shutil
+        total, used, free = shutil.disk_usage(checkpoint_dir)
+        free_gb = free / (1024**3)
+        print(f"   💾 사용 가능한 디스크 공간: {free_gb:.2f}GB")
+        
+        if free_gb < 0.5:  # 500MB 미만
+            print("   ⚠️ 디스크 공간이 부족합니다. 더 적극적인 정리를 수행합니다.")
+            max_checkpoints = 5
+        
+        # 에폭별 체크포인트 파일들 찾기 (에폭 기반 파일명)
+        checkpoint_files = []
+        for file in os.listdir(checkpoint_dir):
+            if file.startswith("model-epoch-") and file.endswith(".keras"):
+                checkpoint_files.append(file)
+        
+        if not checkpoint_files:
+            print("   📁 정리할 에폭 체크포인트가 없습니다.")
+            return
+        
+        print(f"   📊 발견된 체크포인트: {len(checkpoint_files)}개")
+        
+        # 에폭 기준으로 정렬 (가장 최근이 마지막)
+        def extract_epoch(filename):
+            try:
+                epoch_part = filename.split('-')[2].split('.')[0]  # "05"
+                return int(epoch_part)
+            except:
+                return 0
+        
+        checkpoint_files.sort(key=extract_epoch)
+        
+        # 보존할 체크포인트 수 결정
+        files_to_keep = checkpoint_files[-max_checkpoints:] if len(checkpoint_files) > max_checkpoints else []
+        files_to_delete = [f for f in checkpoint_files if f not in files_to_keep]
+        
+        print(f"   🎯 보존할 체크포인트: {len(files_to_keep)}개")
+        print(f"   🗑️ 삭제할 체크포인트: {len(files_to_delete)}개")
+        
+        # 파일 삭제 (체크포인트와 info 파일 모두)
+        deleted_count = 0
+        for file in files_to_delete:
+            try:
+                # 체크포인트 파일 삭제
+                checkpoint_path = os.path.join(checkpoint_dir, file)
+                if os.path.exists(checkpoint_path):
+                    os.remove(checkpoint_path)
+                    deleted_count += 1
+                
+                # 해당하는 info 파일도 삭제
+                info_path = checkpoint_path.replace('.keras', '_info.json')
+                if os.path.exists(info_path):
+                    os.remove(info_path)
+                    deleted_count += 1
+                    
+            except Exception as e:
+                print(f"   ⚠️ 파일 삭제 실패: {file} - {e}")
+        
+        print(f"   ✅ {deleted_count}개 파일 삭제됨")
+        
+        # 최고 성능 모델은 유지
+        if keep_best and os.path.exists(os.path.join(checkpoint_dir, "best_model.keras")):
+            print("   💎 최고 성능 모델 유지됨")
+            
+            # best_model_info.json도 확인
+            best_info_path = os.path.join(checkpoint_dir, "best_model_info.json")
+            if not os.path.exists(best_info_path):
+                print("   ⚠️ best_model_info.json이 없습니다.")
+        
+        # 정리 후 디스크 사용량 확인
+        total_after, used_after, free_after = shutil.disk_usage(checkpoint_dir)
+        freed_gb = (free_after - free) / (1024**3)
+        if freed_gb > 0:
+            print(f"   💾 정리로 {freed_gb:.2f}GB 공간 확보됨")
+        
+    except Exception as e:
+        print(f"   ❌ 체크포인트 정리 중 오류: {e}")
+        import traceback
+        traceback.print_exc()
 
-class CheckpointInfoCallback(tf.keras.callbacks.Callback):
-    """첫 체크포인트 생성 시 모델 정보를 함께 저장하는 콜백"""
+class ImprovedCheckpointInfoCallback(tf.keras.callbacks.Callback):
+    """개선된 체크포인트 정보 저장 콜백 - 효율적이고 안전한 처리"""
     
     def __init__(self, actions, checkpoint_dir, training_stats):
         super().__init__()
         self.actions = actions
         self.checkpoint_dir = checkpoint_dir
         self.training_stats = training_stats
-        self.first_checkpoint_saved = False
+        self.saved_checkpoints = set()  # 이미 저장한 체크포인트 추적
+        self.last_scan_time = 0  # 마지막 스캔 시간
+        self.scan_interval = 5  # 스캔 간격 (초)
+        
+        # 디스크 공간 확인
+        self._check_disk_space()
+    
+    def _check_disk_space(self):
+        """디스크 공간 확인"""
+        try:
+            import shutil
+            total, used, free = shutil.disk_usage(self.checkpoint_dir)
+            free_gb = free / (1024**3)
+            if free_gb < 1.0:  # 1GB 미만
+                print(f"⚠️ 디스크 공간 부족: {free_gb:.2f}GB 남음")
+        except Exception as e:
+            print(f"⚠️ 디스크 공간 확인 실패: {e}")
+    
+    def _should_scan_directory(self):
+        """디렉토리 스캔이 필요한지 확인"""
+        import time
+        current_time = time.time()
+        if current_time - self.last_scan_time > self.scan_interval:
+            self.last_scan_time = current_time
+            return True
+        return False
     
     def on_epoch_end(self, epoch, logs=None):
-        # 첫 번째 체크포인트가 저장되었는지 확인
-        checkpoint_files = [f for f in os.listdir(self.checkpoint_dir) 
+        # 스캔 간격 제어로 성능 최적화
+        if not self._should_scan_directory():
+            return
+            
+        try:
+            # 에폭별 체크포인트 파일들 확인 (에폭 기반 파일명)
+            checkpoint_files = [f for f in os.listdir(self.checkpoint_dir) 
+                              if f.startswith("model-epoch-") and f.endswith(".keras")]
+            
+            for checkpoint_file in checkpoint_files:
+                # 이미 처리한 체크포인트는 건너뛰기
+                if checkpoint_file in self.saved_checkpoints:
+                    continue
+                    
+                checkpoint_path = os.path.join(self.checkpoint_dir, checkpoint_file)
+                
+                # 파일명에서 에폭 정보 추출
+                try:
+                    # "model-epoch-05.keras" -> epoch=5
+                    parts = checkpoint_file.split('-')
+                    epoch_part = parts[2].split('.')[0]  # "05"
+                    epoch_num = int(epoch_part)
+                    
+                    # 성능 정보는 logs에서 가져오기
+                    val_accuracy = logs.get('val_accuracy', 0) if logs else 0
+                    
+                except (IndexError, ValueError) as e:
+                    print(f"⚠️ 파일명 파싱 실패: {checkpoint_file} - {e}")
+                    epoch_num = epoch + 1
+                    val_accuracy = logs.get('val_accuracy', 0) if logs else 0
+                
+                # 체크포인트별 모델 정보 생성 (최종 결과 양식과 일치)
+                checkpoint_info = {
+                    "model_path": checkpoint_path,
+                    "created_at": datetime.now().isoformat(),
+                    "labels": self.actions,
+                    "label_mapping": {label: idx for idx, label in enumerate(self.actions)},
+                    "num_classes": len(self.actions),
+                    "input_shape": [TARGET_SEQ_LENGTH, 675],
+                    "training_stats": {
+                        **self.training_stats,
+                        "checkpoint_epoch": epoch_num,
+                        "checkpoint_accuracy": logs.get('accuracy', 0) if logs else 0,
+                        "checkpoint_val_accuracy": val_accuracy,
+                        "checkpoint_loss": logs.get('loss', 0) if logs else 0,
+                        "checkpoint_val_loss": logs.get('val_loss', 0) if logs else 0,
+                    },
+                    "model_type": "LSTM",
+                    "description": f"수어 인식 모델 - LSTM 기반 (Epoch {epoch_num}, Val Acc: {val_accuracy:.4f})"
+                }
+                
+                # 체크포인트별 info 파일 저장
+                checkpoint_info_path = checkpoint_path.replace('.keras', '_info.json')
+                try:
+                    with open(checkpoint_info_path, 'w', encoding='utf-8') as f:
+                        json.dump(checkpoint_info, f, ensure_ascii=False, indent=2)
+                    
+                    print(f"📄 체크포인트 정보 저장: {checkpoint_info_path}")
+                    self.saved_checkpoints.add(checkpoint_file)
+                    
+                    # 메모리 최적화: 세트 크기 제한
+                    if len(self.saved_checkpoints) > 100:
+                        # 가장 오래된 항목들 제거
+                        oldest_items = list(self.saved_checkpoints)[:20]
+                        for item in oldest_items:
+                            self.saved_checkpoints.remove(item)
+                    
+                except Exception as e:
+                    print(f"⚠️ 체크포인트 정보 저장 실패: {checkpoint_file} - {e}")
+                    
+        except Exception as e:
+            print(f"⚠️ 체크포인트 처리 중 오류: {e}")
+    
+    def on_train_end(self, logs=None):
+        """학습 종료 시 최고 성능 체크포인트 복사"""
+        try:
+            # 가장 높은 성능의 체크포인트 찾기
+            checkpoint_files = [f for f in os.listdir(self.checkpoint_dir) 
+                              if f.startswith("model-epoch-") and f.endswith(".keras")]
+            
+            if checkpoint_files:
+                # 에폭 기준으로 정렬 (가장 최근이 마지막)
+                def extract_epoch(filename):
+                    try:
+                        epoch_part = filename.split('-')[2].split('.')[0]  # "05"
+                        return int(epoch_part)
+                    except:
+                        return 0
+                
+                # 가장 최근 체크포인트를 best로 선택
+                best_checkpoint = max(checkpoint_files, key=extract_epoch)
+                best_path = os.path.join(self.checkpoint_dir, best_checkpoint)
+                best_final_path = os.path.join(self.checkpoint_dir, "best_model.keras")
+                
+                # 최고 성능 모델을 best_model.keras로 복사
+                import shutil
+                shutil.copy2(best_path, best_final_path)
+                
+                # best_model_info.json도 복사
+                best_info_path = best_path.replace('.keras', '_info.json')
+                best_final_info_path = best_final_path.replace('.keras', '_info.json')
+                if os.path.exists(best_info_path):
+                    shutil.copy2(best_info_path, best_final_info_path)
+                
+                print(f"🏆 최신 체크포인트 복사: {best_checkpoint} -> best_model.keras")
+                
+        except Exception as e:
+            print(f"⚠️ 최고 성능 체크포인트 복사 실패: {e}")
+
+def load_latest_checkpoint(checkpoint_dir="checkpoints"):
+    """가장 최근 체크포인트를 로드합니다."""
+    if not os.path.exists(checkpoint_dir):
+        return None, None, 0
+    
+    try:
+        # 체크포인트 파일들 찾기
+        checkpoint_files = [f for f in os.listdir(checkpoint_dir) 
                           if f.startswith("model-epoch-") and f.endswith(".keras")]
         
-        if checkpoint_files and not self.first_checkpoint_saved:
-            # 가장 최근 체크포인트 파일 찾기
-            latest_checkpoint = max(checkpoint_files, key=lambda x: int(x.split('-')[2].split('.')[0]))
-            checkpoint_path = os.path.join(self.checkpoint_dir, latest_checkpoint)
+        if not checkpoint_files:
+            return None, None, 0
+        
+        # 에폭 기준으로 정렬 (가장 최근이 마지막)
+        def extract_epoch(filename):
+            try:
+                epoch_part = filename.split('-')[2]  # "05"
+                return int(epoch_part)
+            except:
+                return 0
+        
+        checkpoint_files.sort(key=extract_epoch)
+        latest_checkpoint = checkpoint_files[-1]
+        latest_path = os.path.join(checkpoint_dir, latest_checkpoint)
+        
+        # 에폭 번호 추출
+        latest_epoch = extract_epoch(latest_checkpoint)
+        
+        # 해당하는 info 파일 로드
+        info_path = latest_path.replace('.keras', '_info.json')
+        checkpoint_info = None
+        if os.path.exists(info_path):
+            try:
+                with open(info_path, 'r', encoding='utf-8') as f:
+                    checkpoint_info = json.load(f)
+            except Exception as e:
+                print(f"⚠️ 체크포인트 정보 로드 실패: {e}")
+        
+        print(f"📂 최신 체크포인트 로드: {latest_checkpoint} (Epoch {latest_epoch})")
+        return latest_path, checkpoint_info, latest_epoch
+        
+    except Exception as e:
+        print(f"⚠️ 체크포인트 로드 중 오류: {e}")
+        return None, None, 0
+
+def resume_training_from_checkpoint(model, checkpoint_path, checkpoint_info, latest_epoch):
+    """체크포인트에서 학습을 재개합니다."""
+    try:
+        print(f"🔄 체크포인트에서 학습 재개: {checkpoint_path}")
+        
+        # 모델 가중치 로드
+        model.load_weights(checkpoint_path)
+        print(f"✅ 모델 가중치 로드 완료 (Epoch {latest_epoch})")
+        
+        # 체크포인트 정보 출력
+        if checkpoint_info:
+            print(f"📊 체크포인트 성능:")
+            print(f"   - 검증 정확도: {checkpoint_info.get('val_accuracy', 'N/A')}")
+            print(f"   - 검증 손실: {checkpoint_info.get('training_stats', {}).get('checkpoint_val_loss', 'N/A')}")
+        
+        return True
+        
+    except Exception as e:
+        print(f"❌ 체크포인트 로드 실패: {e}")
+        return False
+
+def save_none_class_cache(none_class, data, target_count):
+    """None 클래스 데이터를 캐시에 저장합니다. target_count 정보도 포함합니다."""
+    cache_path = get_label_cache_path(none_class)
+    
+    # 캐시에 저장할 데이터와 파라미터 정보
+    cache_data = {
+        'data': data,
+        'parameters': {
+            'TARGET_SEQ_LENGTH': TARGET_SEQ_LENGTH,
+            'AUGMENTATIONS_PER_VIDEO': AUGMENTATIONS_PER_VIDEO,
+            'AUGMENTATION_NOISE_LEVEL': AUGMENTATION_NOISE_LEVEL,
+            'AUGMENTATION_SCALE_RANGE': AUGMENTATION_SCALE_RANGE,
+            'AUGMENTATION_ROTATION_RANGE': AUGMENTATION_ROTATION_RANGE,
+            'NONE_CLASS_NOISE_LEVEL': NONE_CLASS_NOISE_LEVEL,
+            'NONE_CLASS_AUGMENTATIONS_PER_FRAME': NONE_CLASS_AUGMENTATIONS_PER_FRAME,
+            # 데이터 개수 관련 파라미터 추가
+            'LABEL_MAX_SAMPLES_PER_CLASS': LABEL_MAX_SAMPLES_PER_CLASS,
+            'MIN_SAMPLES_PER_CLASS': MIN_SAMPLES_PER_CLASS,
+            # None 클래스 특별 파라미터
+            'TARGET_NONE_COUNT': target_count,
+        }
+    }
+    
+    # 임시 파일에 먼저 저장 (원자적 쓰기)
+    temp_path = cache_path + '.tmp'
+    
+    try:
+        with open(temp_path, 'wb') as f:
+            pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+        
+        # 성공적으로 저장되면 최종 위치로 이동
+        os.replace(temp_path, cache_path)
+        print(f"💾 {none_class} 클래스 데이터 캐시 저장: {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)")
+        
+    except Exception as e:
+        # 오류 발생 시 임시 파일 정리
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+        raise e
+
+def load_none_class_cache(none_class, target_count):
+    """None 클래스 데이터를 캐시에서 로드합니다. target_count 정보도 검증합니다."""
+    cache_path = get_label_cache_path(none_class)
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, 'rb') as f:
+                cache_data = pickle.load(f)
             
-            # 체크포인트별 모델 정보 생성
-            checkpoint_info = {
-                "checkpoint_path": checkpoint_path,
-                "epoch": epoch + 1,
-                "created_at": datetime.now().isoformat(),
-                "labels": self.actions,
-                "label_mapping": {label: idx for idx, label in enumerate(self.actions)},
-                "num_classes": len(self.actions),
-                "input_shape": [TARGET_SEQ_LENGTH, 675],
-                "training_stats": {
-                    **self.training_stats,
-                    "checkpoint_epoch": epoch + 1,
-                    "checkpoint_accuracy": logs.get('accuracy', 0),
-                    "checkpoint_val_accuracy": logs.get('val_accuracy', 0),
-                    "checkpoint_loss": logs.get('loss', 0),
-                    "checkpoint_val_loss": logs.get('val_loss', 0),
-                },
-                "model_type": "LSTM",
-                "description": f"수어 인식 모델 - LSTM 기반 (Epoch {epoch + 1} 체크포인트)"
-            }
+            # 캐시 형식 확인 (구버전 호환성)
+            if isinstance(cache_data, dict) and 'data' in cache_data and 'parameters' in cache_data:
+                # 새 형식: 파라미터 검증
+                cached_params = cache_data['parameters']
+                current_params = {
+                    'TARGET_SEQ_LENGTH': TARGET_SEQ_LENGTH,
+                    'AUGMENTATIONS_PER_VIDEO': AUGMENTATIONS_PER_VIDEO,
+                    'AUGMENTATION_NOISE_LEVEL': AUGMENTATION_NOISE_LEVEL,
+                    'AUGMENTATION_SCALE_RANGE': AUGMENTATION_SCALE_RANGE,
+                    'AUGMENTATION_ROTATION_RANGE': AUGMENTATION_ROTATION_RANGE,
+                    'NONE_CLASS_NOISE_LEVEL': NONE_CLASS_NOISE_LEVEL,
+                    'NONE_CLASS_AUGMENTATIONS_PER_FRAME': NONE_CLASS_AUGMENTATIONS_PER_FRAME,
+                    # 데이터 개수 관련 파라미터 추가
+                    'LABEL_MAX_SAMPLES_PER_CLASS': LABEL_MAX_SAMPLES_PER_CLASS,
+                    'MIN_SAMPLES_PER_CLASS': MIN_SAMPLES_PER_CLASS,
+                    # None 클래스 특별 파라미터
+                    'TARGET_NONE_COUNT': target_count,
+                }
+                
+                # 파라미터 비교
+                if cached_params != current_params:
+                    print(f"⚠️ {none_class} 캐시 파라미터가 다릅니다. 캐시 무효화.")
+                    print(f"   캐시된 파라미터: {cached_params}")
+                    print(f"   현재 파라미터: {current_params}")
+                    os.remove(cache_path)
+                    return None
+                
+                data = cache_data['data']
+            else:
+                # 구버전: 리스트 형태 (파라미터 검증 없이 사용)
+                print(f"⚠️ {none_class} 구버전 캐시 형식입니다. 파라미터 검증을 건너뜁니다.")
+                data = cache_data
             
-            # 체크포인트별 info 파일 저장
-            checkpoint_info_path = checkpoint_path.replace('.keras', '_info.json')
-            with open(checkpoint_info_path, 'w', encoding='utf-8') as f:
-                json.dump(checkpoint_info, f, ensure_ascii=False, indent=2)
-            
-            print(f"📄 체크포인트별 모델 정보 저장: {checkpoint_info_path}")
-            self.first_checkpoint_saved = True
+            # 데이터 검증
+            if isinstance(data, list) and len(data) > 0:
+                print(f"📂 {none_class} 클래스 데이터 캐시 로드: {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)")
+                return data
+            else:
+                print(f"⚠️ {none_class} 캐시 데이터가 비어있거나 잘못된 형식입니다.")
+                return None
+                
+        except Exception as e:
+            print(f"⚠️ {none_class} 캐시 로드 실패: {e}")
+            # 손상된 캐시 파일 삭제
+            try:
+                os.remove(cache_path)
+                print(f"🗑️ 손상된 캐시 파일 삭제: {cache_path}")
+            except:
+                pass
+            return None
+    return None
 
 def main():
     """메인 실행 함수"""
@@ -885,7 +1252,6 @@ def main():
             missing_files += 1
     
     # 최대 개수만큼만 샘플링
-    from config import LABEL_MAX_SAMPLES_PER_CLASS
     for label in ACTIONS:
         files = label_to_files[label]
         if LABEL_MAX_SAMPLES_PER_CLASS is not None:
@@ -895,12 +1261,27 @@ def main():
                 'path': file_path,
                 'label': label
             }
+
+    # [수정] 라벨별 원본 영상 개수 체크 및 최소 개수 미달 시 학습 중단 (None은 예외)
+    insufficient_labels = []
+    for label in ACTIONS:
+        if label == NONE_CLASS:
+            continue  # None 클래스는 예외
+        num_samples = len(label_to_files[label])
+        if num_samples < MIN_SAMPLES_PER_CLASS:
+            insufficient_labels.append((label, num_samples))
+    if insufficient_labels:
+        print("\n❌ 최소 샘플 개수 미달 라벨 발견! 학습을 중단합니다.")
+        for label, count in insufficient_labels:
+            print(f"   - {label}: {count}개 (최소 필요: {MIN_SAMPLES_PER_CLASS}개)")
+        sys.exit(1)
     
     print(f"\n📊 파일 매핑 결과:")
     print(f"   ✅ 찾은 파일: {found_files}개")
     print(f"   ❌ 누락된 파일: {missing_files}개")
     print(f"   🎯 ACTIONS 라벨에 해당하는 파일: {filtered_files}개")
     print(f"   ⚡ 라벨별 최대 {LABEL_MAX_SAMPLES_PER_CLASS}개 파일만 사용")
+    print(f"   ⚡ 라벨별 최소 {MIN_SAMPLES_PER_CLASS}개 파일 필요")
     
     if len(file_mapping) == 0:
         print("❌ 찾을 수 있는 파일이 없습니다.")
@@ -908,6 +1289,21 @@ def main():
     
     # 4. 라벨별 데이터 추출 및 캐싱 (개별 처리)
     print("\n🚀 라벨별 데이터 추출 및 캐싱 시작...")
+    
+    # None 클래스 제외한 다른 클래스들의 평균 개수 계산
+    other_class_counts = {}
+    for filename, info in file_mapping.items():
+        if info['label'] != NONE_CLASS:
+            label = info['label']
+            other_class_counts[label] = other_class_counts.get(label, 0) + 1
+    
+    if other_class_counts:
+        avg_other_class_count = sum(other_class_counts.values()) / len(other_class_counts)
+        target_none_count = int(avg_other_class_count * (1 + AUGMENTATIONS_PER_VIDEO))
+        print(f"📊 다른 클래스 평균: {avg_other_class_count:.1f}개 → None 클래스 목표: {target_none_count}개")
+    else:
+        target_none_count = None
+        print(f"📊 다른 클래스가 없음 → None 클래스 기본값 사용")
     
     X = []
     y = []
@@ -918,7 +1314,7 @@ def main():
         print(f"{'='*50}")
         
         if label == NONE_CLASS:
-            label_data = generate_none_class_data(file_mapping, NONE_CLASS)
+            label_data = generate_balanced_none_class_data(file_mapping, NONE_CLASS, target_none_count)
         else:
             label_data = extract_and_cache_label_data_optimized(file_mapping, label)
         
@@ -999,25 +1395,39 @@ def main():
     
     os.makedirs(CHECKPOINT_DIR, exist_ok=True)
     
-    # 개선된 체크포인트 정책
-    best_checkpoint_path = os.path.join(CHECKPOINT_DIR, "best_model.keras")
-    latest_checkpoint_path = os.path.join(CHECKPOINT_DIR, "latest_model.keras")
+    # 체크포인트 로딩 및 학습 재개
+    best_checkpoint_path, best_checkpoint_info, best_epoch = load_latest_checkpoint(CHECKPOINT_DIR)
     
+    # 체크포인트에서 재개할지 결정
+    resume_from_checkpoint = False
+    if best_checkpoint_path:
+        print(f"📂 발견된 체크포인트: {best_checkpoint_path} (Epoch {best_epoch})")
+        
+        # 사용자 입력 또는 자동 결정 (여기서는 자동으로 재개)
+        resume_from_checkpoint = True
+        
+        if resume_from_checkpoint:
+            if resume_training_from_checkpoint(model, best_checkpoint_path, best_checkpoint_info, best_epoch):
+                print("✅ 체크포인트에서 학습 재개 준비 완료")
+                initial_epoch = best_epoch
+            else:
+                print("❌ 체크포인트 로드 실패, 처음부터 시작")
+                initial_epoch = 0
+        else:
+            print("🔄 처음부터 학습 시작")
+            initial_epoch = 0
+    else:
+        print("🆕 새로운 학습 시작")
+        initial_epoch = 0
+    
+    # 콜백 설정
     callbacks = [
-        # 최고 성능 모델만 저장 (Early Stopping과 연동)
+        # 통합된 체크포인트 저장 (에폭 기반 파일명)
         tf.keras.callbacks.ModelCheckpoint(
-            filepath=best_checkpoint_path,
-            save_best_only=True,
-            monitor='val_accuracy',
-            mode='max',
-            verbose=1
-        ),
-        # 주기적으로 최신 모델 저장 (5 에폭마다)
-        tf.keras.callbacks.ModelCheckpoint(
-            filepath=latest_checkpoint_path,
+            filepath=os.path.join(CHECKPOINT_DIR, "model-epoch-{epoch:02d}.keras"),
             save_best_only=False,
-            save_freq=5,
-            verbose=0
+            save_freq=5,  # 5 에폭마다
+            verbose=1
         ),
         # 개선된 Early Stopping
         tf.keras.callbacks.EarlyStopping(
@@ -1037,9 +1447,10 @@ def main():
             min_lr=MIN_LR,
             verbose=1
         ),
-        CheckpointInfoCallback(ACTIONS, CHECKPOINT_DIR, training_stats)
+        ImprovedCheckpointInfoCallback(ACTIONS, CHECKPOINT_DIR, training_stats)
     ]
 
+    # 모델 학습 (체크포인트에서 재개)
     history = model.fit(
         X_train,
         y_train,
@@ -1048,6 +1459,7 @@ def main():
         validation_data=(X_test, y_test),
         callbacks=callbacks,
         verbose=1,
+        initial_epoch=initial_epoch,  # 체크포인트에서 재개
     )
 
     print(f"🧠 수정된 모델 저장: {MODEL_SAVE_PATH}")
@@ -1086,8 +1498,8 @@ def main():
     print(f"📁 모델 저장 위치: {MODEL_SAVE_PATH}")
     print(f"📄 모델 정보 위치: {MODEL_INFO_PATH}")
 
-    # 오래된 체크포인트 정리
-    cleanup_old_checkpoints(checkpoint_dir=CHECKPOINT_DIR, keep_best=True)
+    # 오래된 체크포인트 정리 (개선된 버전)
+    cleanup_old_checkpoints(checkpoint_dir=CHECKPOINT_DIR, keep_best=True, max_checkpoints=10)
 
 if __name__ == "__main__":
     print("🔧 학습 데이터 문제 해결 및 모델 재학습 시작")

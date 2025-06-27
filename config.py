@@ -94,7 +94,10 @@ ENABLE_PROGRESS_BAR = True
 BATCH_SIZE_FOR_PROCESSING = 50
 
 # 라벨별 최대 파일 수 제한 (None이면 제한 없음)
-LABEL_MAX_SAMPLES_PER_CLASS = None  # 예: 10개로 제한, None이면 무제한 
+LABEL_MAX_SAMPLES_PER_CLASS = 70  # 예: 10개로 제한, None이면 무제한 
+
+# 라벨별 최소 샘플 수 제한 (이 미만이면 학습 중단)
+MIN_SAMPLES_PER_CLASS = 60  # 예: 10개 미만 라벨이 있으면 학습 중단
 
 def get_action_index(label, actions):
     return actions.index(label) 
