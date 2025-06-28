@@ -1,0 +1,26 @@
+{
+  "name": "custom_model",
+  "type": "Functional",
+  "total_params": 606981,
+  "trainable_params": 606981,
+  "input_shape": [
+    null,
+    30,
+    675
+  ],
+  "output_shape": [
+    null,
+    5
+  ],
+  "layers_count": 14,
+  "model_size_mb": 7.034127235412598,
+  "labels": [
+    "화재",
+    "계단",
+    "고장",
+    "부러지다",
+    "곰"
+  ],
+  "model_number": "20250626_112311",
+  "created_at": "2025-06-26T11:23:11.900902"
+}

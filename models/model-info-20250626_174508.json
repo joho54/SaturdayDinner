@@ -1,0 +1,33 @@
+{
+  "name": "model_20250626_174508",
+  "type": "Functional",
+  "total_params": 146244,
+  "trainable_params": 146244,
+  "input_shape": [
+    150,
+    675
+  ],
+  "output_shape": [
+    null,
+    4
+  ],
+  "layers_count": 15,
+  "model_size_mb": 1.7533597946166992,
+  "labels": [
+    "화재",
+    "계단",
+    "고장",
+    "None"
+  ],
+  "model_number": "20250626_174508",
+  "num_classes": 4,
+  "training_date": "2025-06-26T17:45:08.763985",
+  "epochs": 200,
+  "batch_size": 8,
+  "learning_rate": 0.003,
+  "augmentations_per_video": 5,
+  "sequence_length": 150,
+  "cache_dir": "cache",
+  "created_at": "2025-06-26T17:45:08.763991",
+  "model_file": "model_custom_model_20250626_174508.keras"
+}
