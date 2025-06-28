@@ -1,18 +1,18 @@
 {
   "model_path": "checkpoints/model-epoch-31.keras",
-  "created_at": "2025-06-27T21:07:32.726082",
+  "created_at": "2025-06-28T01:04:26.124557",
   "labels": [
-    "골절",
-    "추락",
-    "화상",
-    "탈골",
+    "발",
+    "발가락",
+    "발목",
+    "다리",
     "None"
   ],
   "label_mapping": {
-    "골절": 0,
-    "추락": 1,
-    "화상": 2,
-    "탈골": 3,
+    "발": 0,
+    "발가락": 1,
+    "발목": 2,
+    "다리": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -42,11 +42,11 @@
       "reduce_lr_patience": 3
     },
     "checkpoint_epoch": 31,
-    "checkpoint_accuracy": 0.30781251192092896,
-    "checkpoint_val_accuracy": 0.581250011920929,
-    "checkpoint_loss": 3.8112053871154785,
-    "checkpoint_val_loss": 1.0525377988815308
+    "checkpoint_accuracy": 0.4359374940395355,
+    "checkpoint_val_accuracy": 0.6499999761581421,
+    "checkpoint_loss": 3.8277721405029297,
+    "checkpoint_val_loss": 1.8891007900238037
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 31, Val Acc: 0.5813)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 31, Val Acc: 0.6500)"
 }
