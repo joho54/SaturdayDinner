@@ -1,0 +1,50 @@
+{
+  "model_path": "checkpoints/model-epoch-45.keras",
+  "created_at": "2025-06-28T13:10:51.538755",
+  "labels": [
+    "여학생",
+    "남학생",
+    "운동장",
+    "None"
+  ],
+  "label_mapping": {
+    "여학생": 0,
+    "남학생": 1,
+    "운동장": 2,
+    "None": 3
+  },
+  "num_classes": 4,
+  "input_shape": [
+    30,
+    675
+  ],
+  "training_stats": {
+    "total_samples": 640,
+    "train_samples": 512,
+    "test_samples": 128,
+    "augmentations_per_video": 3,
+    "target_sequence_length": 30,
+    "model_parameters": {
+      "lstm_units_1": 128,
+      "lstm_units_2": 64,
+      "dense_units": 32,
+      "dropout_rate": 0.3,
+      "l2_regularization": true,
+      "batch_normalization": true
+    },
+    "training_parameters": {
+      "learning_rate": 0.001,
+      "batch_size": 8,
+      "early_stopping_patience": 10,
+      "early_stopping_min_delta": 0.001,
+      "reduce_lr_patience": 3
+    },
+    "checkpoint_epoch": 45,
+    "checkpoint_accuracy": 0.48046875,
+    "checkpoint_val_accuracy": 0.7109375,
+    "checkpoint_loss": 1.640816569328308,
+    "checkpoint_val_loss": 0.533649742603302
+  },
+  "model_type": "LSTM",
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 45, Val Acc: 0.7109)"
+}
