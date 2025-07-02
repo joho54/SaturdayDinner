@@ -1,0 +1,10 @@
+{
+    "chapter_name": "chapter_7",
+    "label_dict": {
+      "급류": 0,
+      "물": 1,
+      "배": 2,
+      "수영장": 3,
+      "None": 4
+    }
+  }

@@ -1,6 +1,6 @@
 {
-  "model_path": "checkpoints/model-epoch-55.keras",
-  "created_at": "2025-07-02T21:35:05.984683",
+  "model_path": "models/sign_language_model_20250702_213150.keras",
+  "created_at": "2025-07-02T21:37:34.979377",
   "labels": [
     "급류",
     "물",
@@ -41,12 +41,16 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 55,
-    "checkpoint_accuracy": 0.26875001192092896,
-    "checkpoint_val_accuracy": 0.518750011920929,
-    "checkpoint_loss": 2.551760673522949,
-    "checkpoint_val_loss": 1.0895469188690186
+    "test_loss": 0.12316091358661652,
+    "test_accuracy": 0.987500011920929,
+    "class_accuracies": {
+      "급류": 1.0,
+      "물": 1.0,
+      "배": 0.9375,
+      "수영장": 1.0,
+      "None": 1.0
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 55, Val Acc: 0.5188)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }

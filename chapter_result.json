@@ -1,0 +1,1528 @@
+{
+  "chapters": [
+    {
+      "chapter_name": "chapter_1",
+      "label_dict": {
+        "너무 아파요": 0,
+        "몸에 열이 많이 나고 두통이 심해요": 1,
+        "숨이 안 쉬어져요": 2,
+        "식사를 하다가 목에 음식이 걸렸어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_2",
+      "label_dict": {
+        "복통이 심해요": 0,
+        "어지러워서 서있을 수 없어요": 1,
+        "친구가 숨을 안 쉬는 것 같아요": 2,
+        "호흡곤란": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_3",
+      "label_dict": {
+        "아기가 숨을 안 쉬어요": 0,
+        "주변 구조물이 무너져서 몸이 끼었어요 몸을 움직이지 못하겠어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_4",
+      "label_dict": {
+        "아파서 못 참을것 같아요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_5",
+      "label_dict": {
+        "허리가 아파서 일어날 수 없어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_6",
+      "label_dict": {
+        "강": 0,
+        "계곡": 1,
+        "끓는물": 2,
+        "뜨거운물": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_7",
+      "label_dict": {
+        "급류": 0,
+        "물": 1,
+        "배": 2,
+        "수영장": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_8",
+      "label_dict": {
+        "바다": 0,
+        "파도": 1,
+        "폭우": 2,
+        "홍수": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_9",
+      "label_dict": {
+        "경찰차": 0,
+        "고속도로": 1,
+        "고속도로에서 자동차가 갑자기 멈췄어요": 2,
+        "교통사고": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_10",
+      "label_dict": {
+        "도로": 0,
+        "어떤 사람이 교통사고를 당했어요": 1,
+        "자동차": 2,
+        "차밖": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_11",
+      "label_dict": {
+        "차안": 0,
+        "택시": 1,
+        "통학버스": 2,
+        "트랙터": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_12",
+      "label_dict": {
+        "노원구": 0,
+        "농약": 1,
+        "범람": 2,
+        "복통": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_13",
+      "label_dict": {
+        "빌라": 0,
+        "소방관": 1,
+        "수요일": 2,
+        "장난감": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_14",
+      "label_dict": {
+        "아저씨": 0,
+        "옆집": 1,
+        "출혈": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_15",
+      "label_dict": {
+        "아랫집에 불이 났어요": 0,
+        "옆집에 불이 났어요": 1,
+        "우리 집에 불이 났어요": 2,
+        "윗집에 불이 났어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_16",
+      "label_dict": {
+        "집 벽이 무너질려고 해요": 0,
+        "집에 도둑(강도)이 들어왔어요": 1,
+        "집에 불이 났어요": 2,
+        "홍수가 나서 집이 물에 잠기고 있어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_17",
+      "label_dict": {
+        "집에 모르는 사람이 침입했어요": 0,
+        "집에 전기가 나갔어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_18",
+      "label_dict": {
+        "집이 흔들려요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_19",
+      "label_dict": {
+        "급류에 친구가 휩쓸렸어요": 0,
+        "산에서 야생동물을 만났어요 저를 공격할 것 같아요": 1,
+        "아들이 놀이터에서 놀다가 팔이 부러졌어요": 2,
+        "아이를 공원에서 잃어버렸어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_20",
+      "label_dict": {
+        "독버섯을 먹은 것 같아요": 0,
+        "어떤 사람한테 납치당했어요": 1,
+        "친구가 감전 사고를 당했어요": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_21",
+      "label_dict": {
+        "산에서 뱀에게 물렸어요": 0,
+        "이상한 사람이 저를 쫓아와요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_22",
+      "label_dict": {
+        "어떤 사람이 저를 죽이려고 해요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_23",
+      "label_dict": {
+        "친구가 음식을 먹다가 실수로 방부제를 같이 먹었어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_24",
+      "label_dict": {
+        "계단": 0,
+        "놀이터": 1,
+        "무너지다": 2,
+        "비닐하우스": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_25",
+      "label_dict": {
+        "붕괴": 0,
+        "선반": 1,
+        "엘리베이터": 2,
+        "창문": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_26",
+      "label_dict": {
+        "터널이 무너져 갇혔어요": 0,
+        "폭탄": 1,
+        "함몰되다": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_27",
+      "label_dict": {
+        "가스": 0,
+        "복부": 1,
+        "살충제": 2,
+        "소화기": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_28",
+      "label_dict": {
+        "소화전": 0,
+        "유리": 1,
+        "음식물": 2,
+        "진통제": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_29",
+      "label_dict": {
+        "토하다": 0,
+        "피나다": 1,
+        "화약": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_30",
+      "label_dict": {
+        "근처에 있는 건물이 붕괴되고 있어요": 0,
+        "떨어지다": 1,
+        "배가 침몰하고 있어요": 2,
+        "심장마비": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_31",
+      "label_dict": {
+        "비행기가 추락하고 있어요": 0,
+        "어떤 사람이 건물에서 추락했어요": 1,
+        "어떤 사람이 벼락을 맞았어요": 2,
+        "여기 서대문구 홍제동 한양아파트인데 옥상에서 사람이 떨어지려고해요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_32",
+      "label_dict": {
+        "어떤 사람이 자살을 시도하고 있어요": 0,
+        "자살": 1,
+        "추락": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_33",
+      "label_dict": {
+        "강북구": 0,
+        "구청": 1,
+        "동대문구": 2,
+        "성동구": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_34",
+      "label_dict": {
+        "도봉구": 0,
+        "서대문구": 1,
+        "은평구": 2,
+        "종로구": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_35",
+      "label_dict": {
+        "성북구": 0,
+        "중구": 1,
+        "중랑구": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_36",
+      "label_dict": {
+        "거실": 0,
+        "대문앞": 1,
+        "마당": 2,
+        "안방": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_37",
+      "label_dict": {
+        "부엌": 0,
+        "앞집": 1,
+        "우리집": 2,
+        "집": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_38",
+      "label_dict": {
+        "윗집": 0,
+        "현관": 1,
+        "현관앞": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_39",
+      "label_dict": {
+        "가시": 0,
+        "각목": 1,
+        "고장": 2,
+        "공사장": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_40",
+      "label_dict": {
+        "공장": 0,
+        "부러지다": 1,
+        "이물질": 2,
+        "절단": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_41",
+      "label_dict": {
+        "파편": 0,
+        "협박": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_42",
+      "label_dict": {
+        "갇히다": 0,
+        "걸렸다": 1,
+        "결박": 2,
+        "기절": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_43",
+      "label_dict": {
+        "감금": 0,
+        "몸이 결박 당해있어요": 1,
+        "숨을안쉬다": 2,
+        "화장실": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_44",
+      "label_dict": {
+        "금가다": 0,
+        "사람이 무거운 물건에 깔렸어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_45",
+      "label_dict": {
+        "남자친구": 0,
+        "남학생": 1,
+        "동생": 2,
+        "선생님": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_46",
+      "label_dict": {
+        "아들": 0,
+        "오빠": 1,
+        "친구": 2,
+        "학생": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_47",
+      "label_dict": {
+        "아빠": 0,
+        "형": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_48",
+      "label_dict": {
+        "광진구": 0,
+        "독사": 1,
+        "마포구": 2,
+        "방망이": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_49",
+      "label_dict": {
+        "손목": 0,
+        "약국": 1,
+        "옥상": 2,
+        "욕실": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_50",
+      "label_dict": {
+        "토요일": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_51",
+      "label_dict": {
+        "69": 0,
+        "71": 1,
+        "72": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_52",
+      "label_dict": {
+        "70": 0,
+        "73": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_53",
+      "label_dict": {
+        "74": 0,
+        "할아버지": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_54",
+      "label_dict": {
+        "75": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_55",
+      "label_dict": {
+        "76": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_56",
+      "label_dict": {
+        "(사람)이 갑자기 쓰러졌어요": 0,
+        "기절하다": 1,
+        "남편이 높은데서 떨어져서 머리에서 피나요": 2,
+        "쓰러지다": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_57",
+      "label_dict": {
+        "스키를 타다가 넘어져서 못 일어나겠어요": 0,
+        "아내가 쓰러졌어요": 1,
+        "어떤 사람이 길거리에서 피를 많이 흘리고 있어요": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_58",
+      "label_dict": {
+        "엄마가 신장병에 있는데 쓰러지셨어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_59",
+      "label_dict": {
+        "할머니가 갑자기 쓰러지셨어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_60",
+      "label_dict": {
+        "경운기": 0,
+        "깔리다": 1,
+        "낫": 2,
+        "냄새나다": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_61",
+      "label_dict": {
+        "삼키다": 0,
+        "술취한 사람": 1,
+        "어지러움": 2,
+        "질식": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_62",
+      "label_dict": {
+        "호흡기": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_63",
+      "label_dict": {
+        "다음": 0,
+        "뒤": 1,
+        "아래": 2,
+        "약사": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_64",
+      "label_dict": {
+        "올해": 0,
+        "이번": 1,
+        "자상": 2,
+        "지난": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_65",
+      "label_dict": {
+        "총": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_66",
+      "label_dict": {
+        "무릎": 0,
+        "무릎 인대를 다친 것 같아요": 1,
+        "발목": 2,
+        "발목을 접질렀어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_67",
+      "label_dict": {
+        "어깨": 0,
+        "인대": 1,
+        "팔꿈치": 2,
+        "허리": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_68",
+      "label_dict": {
+        "허벅지": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_69",
+      "label_dict": {
+        "남편": 0,
+        "누나": 1,
+        "딸": 2,
+        "아내": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_70",
+      "label_dict": {
+        "언니": 0,
+        "엄마": 1,
+        "여자친구": 2,
+        "여학생": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_71",
+      "label_dict": {
+        "할머니": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_72",
+      "label_dict": {
+        "구로구": 0,
+        "동작구": 1,
+        "보건소": 2,
+        "연기": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_73",
+      "label_dict": {
+        "영등포구": 0,
+        "용산구": 1,
+        "출산": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_74",
+      "label_dict": {
+        "침수": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_75",
+      "label_dict": {
+        "77": 0,
+        "82": 1,
+        "83": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_76",
+      "label_dict": {
+        "78": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_77",
+      "label_dict": {
+        "79": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_78",
+      "label_dict": {
+        "80": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_79",
+      "label_dict": {
+        "81": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_80",
+      "label_dict": {
+        "84": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_81",
+      "label_dict": {
+        "61": 0,
+        "62": 1,
+        "66": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_82",
+      "label_dict": {
+        "63": 0,
+        "67": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_83",
+      "label_dict": {
+        "64": 0,
+        "68": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_84",
+      "label_dict": {
+        "65": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_85",
+      "label_dict": {
+        "100": 0,
+        "93": 1,
+        "95": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_86",
+      "label_dict": {
+        "94": 0,
+        "96": 1,
+        "97": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_87",
+      "label_dict": {
+        "98": 0,
+        "99": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_88",
+      "label_dict": {
+        "85": 0,
+        "86": 1,
+        "88": 2,
+        "91": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_89",
+      "label_dict": {
+        "87": 0,
+        "90": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_90",
+      "label_dict": {
+        "89": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_91",
+      "label_dict": {
+        "92": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_92",
+      "label_dict": {
+        "개": 0,
+        "광견병에 걸린 개에게 물렸어요": 1,
+        "말벌": 2,
+        "맹견": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_93",
+      "label_dict": {
+        "말벌에게 쏘였어요": 0,
+        "멧돼지": 1,
+        "아이가 말벌에 쏘여서 기절했어요": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_94",
+      "label_dict": {
+        "차 안에 강아지가 방치되어있어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_95",
+      "label_dict": {
+        "고열": 0,
+        "산": 1,
+        "열": 2,
+        "열나다": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_96",
+      "label_dict": {
+        "체온계": 0,
+        "해(연)": 1,
+        "해열제": 2,
+        "화상": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_97",
+      "label_dict": {
+        "강남구": 0,
+        "금천구": 1,
+        "서울시": 2,
+        "서초구": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_98",
+      "label_dict": {
+        "강서구": 0,
+        "송파구": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_99",
+      "label_dict": {
+        "관악구": 0,
+        "양천구": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_100",
+      "label_dict": {
+        "강아지가 뼈를 삼켰어요": 0,
+        "아기가 장난감을 삼켰어요": 1,
+        "아이가 독극물을 삼켰어요": 2,
+        "아이가 방에 갇혔어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_101",
+      "label_dict": {
+        "아기가 갑자기 토해요": 0,
+        "우리아이가 갑자기 의식을 잃었어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_102",
+      "label_dict": {
+        "아이가 장난감을 삼켰어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_103",
+      "label_dict": {
+        "아기": 0,
+        "아기를 낳을것 같아요": 1,
+        "유치원 버스": 2,
+        "임신한아내": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_104",
+      "label_dict": {
+        "아이들": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_105",
+      "label_dict": {
+        "어린이": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_106",
+      "label_dict": {
+        "유치원": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_107",
+      "label_dict": {
+        "강풍": 0,
+        "누출": 1,
+        "뱀": 2,
+        "벼락": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_108",
+      "label_dict": {
+        "누전": 0,
+        "위협": 1,
+        "조난": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_109",
+      "label_dict": {
+        "119": 0,
+        "119 구조대를 불러주세요": 1,
+        "구급대": 2,
+        "응급대원": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_110",
+      "label_dict": {
+        "구급대원": 0,
+        "응급처리": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_111",
+      "label_dict": {
+        "구해주세요": 0,
+        "도와주세요!": 1,
+        "말려주세요": 2,
+        "보내주세요(경찰)": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_112",
+      "label_dict": {
+        "보내주세요(구급차)": 0,
+        "열어주세요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_113",
+      "label_dict": {
+        "(신체부위)가 절단됐어요": 0,
+        "어떤 사람이 칼로 위협하고 있어요": 1,
+        "어떤 사람이 칼에 찔려서 피를 많이 흘리고 있어요": 2,
+        "음식을 하다가 손가락을 칼에 베였어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_114",
+      "label_dict": {
+        "어떤 사람이 무기 흉기를 소지하고 있어요": 0,
+        "칼": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_115",
+      "label_dict": {
+        "낯선남자": 0,
+        "낯선사람": 1,
+        "밖에 모르는 사람이 서성거려요": 2,
+        "아이를 모르는 사람이 데려갔어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_116",
+      "label_dict": {
+        "낯선여자": 0,
+        "이상한사람": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_117",
+      "label_dict": {
+        "52": 0,
+        "54": 1,
+        "56": 2,
+        "57": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_118",
+      "label_dict": {
+        "53": 0,
+        "55": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_119",
+      "label_dict": {
+        "내가 방에 갇혔어요": 0,
+        "동생이 문틈에 손이 끼었어요": 1,
+        "문틈": 2,
+        "서랍": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_120",
+      "label_dict": {
+        "문에 몸이 끼었어요": 0,
+        "작은방": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_121",
+      "label_dict": {
+        "골절": 0,
+        "발": 1,
+        "발가락": 2,
+        "뼈": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_122",
+      "label_dict": {
+        "유리가 깨져서 발을 다쳤어요": 0,
+        "탈골": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_123",
+      "label_dict": {
+        "강도가 들어온것 같아요": 0,
+        "술 취한 사람이 방망이로 사람들을 때리고 있어요": 1,
+        "어떤 사람이 집단폭력을 당하고 있어요": 2,
+        "집단폭행": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_124",
+      "label_dict": {
+        "폭행": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_125",
+      "label_dict": {
+        "1000": 0,
+        "누수": 1,
+        "성폭행": 2,
+        "소방차": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_126",
+      "label_dict": {
+        "아파트": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_127",
+      "label_dict": {
+        "강동구": 0,
+        "금요일": 1,
+        "일요일": 2,
+        "임산부": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_128",
+      "label_dict": {
+        "트럭": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_129",
+      "label_dict": {
+        "불": 0,
+        "어디선가 연기가 나요 불이 나고 있는 것 같아요": 1,
+        "화재": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_130",
+      "label_dict": {
+        "불나다": 0,
+        "지하철 역 안에서 화재가 발생했어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_131",
+      "label_dict": {
+        "112": 0,
+        "112에 신고해주세요": 1,
+        "경찰": 2,
+        "밖에 싸움이 났어요 경찰을 불러주세요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_132",
+      "label_dict": {
+        "신고하세요(경찰)": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_133",
+      "label_dict": {
+        "독버섯": 0,
+        "벌": 1,
+        "엽총": 2,
+        "의사": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_134",
+      "label_dict": {
+        "지혈대": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_135",
+      "label_dict": {
+        "바다에서 조난을 당했어요": 0,
+        "어떤 사람이 바다에 빠졌어요": 1,
+        "해안가에 상어가 나타났어요": 2,
+        "해안가에 해파리가 나타났어요": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_136",
+      "label_dict": {
+        "해파리에게 쏘였어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_137",
+      "label_dict": {
+        "곰": 0,
+        "납치": 1,
+        "도둑": 2,
+        "동전": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_138",
+      "label_dict": {
+        "절도": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_139",
+      "label_dict": {
+        "가렵다": 0,
+        "두드러기생기다": 1,
+        "반점생기다": 2,
+        "창백하다": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_140",
+      "label_dict": {
+        "배고프다": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_141",
+      "label_dict": {
+        "다리": 0,
+        "발작": 1,
+        "병원": 2,
+        "손가락": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_142",
+      "label_dict": {
+        "팔": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_143",
+      "label_dict": {
+        "옆집 아저씨": 0,
+        "옆집 할아버지": 1,
+        "옆집사람": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_144",
+      "label_dict": {
+        "윗집사람": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_145",
+      "label_dict": {
+        "이웃집": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_146",
+      "label_dict": {
+        "눈": 0,
+        "눈에 이물질이 들어갔어요": 1,
+        "오른쪽-눈": 2,
+        "왼쪽-눈": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_147",
+      "label_dict": {
+        "독극물": 0,
+        "비상약": 1,
+        "제초제": 2,
+        "해독제": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_148",
+      "label_dict": {
+        "사이": 0,
+        "앞": 1,
+        "옆쪽": 2,
+        "왼쪽": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_149",
+      "label_dict": {
+        "뒤통수": 0,
+        "머리": 1,
+        "얼굴": 2,
+        "이마": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_150",
+      "label_dict": {
+        "귀": 0,
+        "오른쪽": 1,
+        "왼쪽-귀": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_151",
+      "label_dict": {
+        "오른쪽-귀": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_152",
+      "label_dict": {
+        "10000": 0,
+        "월요일": 1,
+        "작년": 2,
+        "화요일": 3
+      }
+    },
+    {
+      "chapter_name": "chapter_153",
+      "label_dict": {
+        "내년": 0,
+        "내일": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_154",
+      "label_dict": {
+        "어제": 0,
+        "오늘": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_155",
+      "label_dict": {
+        "근처에서 폭탄이 터졌어요": 0,
+        "폭발": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_156",
+      "label_dict": {
+        "폭탄이 터졌어요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_157",
+      "label_dict": {
+        "감전 사고가 났어요": 0,
+        "고압전선": 1,
+        "화상을 입었어요": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_158",
+      "label_dict": {
+        "빨리 도와주세요": 0,
+        "빨리 와주세요": 1,
+        "쫓아오는 것 같아요": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_159",
+      "label_dict": {
+        "58": 0,
+        "59": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_160",
+      "label_dict": {
+        "60": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_161",
+      "label_dict": {
+        "목": 0,
+        "목요일": 1,
+        "주": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_162",
+      "label_dict": {
+        "가슴": 0,
+        "손": 1,
+        "코": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_163",
+      "label_dict": {
+        "밑에": 0,
+        "위": 1,
+        "위에": 2
+      }
+    },
+    {
+      "chapter_name": "chapter_164",
+      "label_dict": {
+        "논": 0,
+        "밭": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_165",
+      "label_dict": {
+        "운동장": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_166",
+      "label_dict": {
+        "공원": 0,
+        "구급차": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_167",
+      "label_dict": {
+        "가스가 새고 있는 것 같아요": 0,
+        "가스가 새고 있어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_168",
+      "label_dict": {
+        "알려주세요": 0,
+        "연락해주세요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_169",
+      "label_dict": {
+        "감전": 0,
+        "고압선이 끊어져 있어요": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_170",
+      "label_dict": {
+        "장단지": 0,
+        "축사": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_171",
+      "label_dict": {
+        "볼": 0,
+        "시청": 1
+      }
+    },
+    {
+      "chapter_name": "chapter_172",
+      "label_dict": {
+        "밖에 불이 났어요. 소방차를 불러주세요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_173",
+      "label_dict": {
+        "아줌마": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_174",
+      "label_dict": {
+        "세브란스 병원 진료 예약을 해주세요": 0
+      }
+    },
+    {
+      "chapter_name": "chapter_175",
+      "label_dict": {
+        "엘리베이터가 갑자기 중간에 멈췄어요": 0,
+        "None": 1
+      }
+    }
+  ],
+  "summary": {
+    "total_chapters": 175,
+    "total_labels": 467,
+    "chapter_sizes": {
+      "chapter_1": 4,
+      "chapter_2": 4,
+      "chapter_3": 2,
+      "chapter_4": 1,
+      "chapter_5": 1,
+      "chapter_6": 4,
+      "chapter_7": 4,
+      "chapter_8": 4,
+      "chapter_9": 4,
+      "chapter_10": 4,
+      "chapter_11": 4,
+      "chapter_12": 4,
+      "chapter_13": 4,
+      "chapter_14": 3,
+      "chapter_15": 4,
+      "chapter_16": 4,
+      "chapter_17": 2,
+      "chapter_18": 1,
+      "chapter_19": 4,
+      "chapter_20": 3,
+      "chapter_21": 2,
+      "chapter_22": 1,
+      "chapter_23": 1,
+      "chapter_24": 4,
+      "chapter_25": 4,
+      "chapter_26": 3,
+      "chapter_27": 4,
+      "chapter_28": 4,
+      "chapter_29": 3,
+      "chapter_30": 4,
+      "chapter_31": 4,
+      "chapter_32": 3,
+      "chapter_33": 4,
+      "chapter_34": 4,
+      "chapter_35": 3,
+      "chapter_36": 4,
+      "chapter_37": 4,
+      "chapter_38": 3,
+      "chapter_39": 4,
+      "chapter_40": 4,
+      "chapter_41": 2,
+      "chapter_42": 4,
+      "chapter_43": 4,
+      "chapter_44": 2,
+      "chapter_45": 4,
+      "chapter_46": 4,
+      "chapter_47": 2,
+      "chapter_48": 4,
+      "chapter_49": 4,
+      "chapter_50": 1,
+      "chapter_51": 3,
+      "chapter_52": 2,
+      "chapter_53": 2,
+      "chapter_54": 1,
+      "chapter_55": 1,
+      "chapter_56": 4,
+      "chapter_57": 3,
+      "chapter_58": 1,
+      "chapter_59": 1,
+      "chapter_60": 4,
+      "chapter_61": 4,
+      "chapter_62": 1,
+      "chapter_63": 4,
+      "chapter_64": 4,
+      "chapter_65": 1,
+      "chapter_66": 4,
+      "chapter_67": 4,
+      "chapter_68": 1,
+      "chapter_69": 4,
+      "chapter_70": 4,
+      "chapter_71": 1,
+      "chapter_72": 4,
+      "chapter_73": 3,
+      "chapter_74": 1,
+      "chapter_75": 3,
+      "chapter_76": 1,
+      "chapter_77": 1,
+      "chapter_78": 1,
+      "chapter_79": 1,
+      "chapter_80": 1,
+      "chapter_81": 3,
+      "chapter_82": 2,
+      "chapter_83": 2,
+      "chapter_84": 1,
+      "chapter_85": 3,
+      "chapter_86": 3,
+      "chapter_87": 2,
+      "chapter_88": 4,
+      "chapter_89": 2,
+      "chapter_90": 1,
+      "chapter_91": 1,
+      "chapter_92": 4,
+      "chapter_93": 3,
+      "chapter_94": 1,
+      "chapter_95": 4,
+      "chapter_96": 4,
+      "chapter_97": 4,
+      "chapter_98": 2,
+      "chapter_99": 2,
+      "chapter_100": 4,
+      "chapter_101": 2,
+      "chapter_102": 1,
+      "chapter_103": 4,
+      "chapter_104": 1,
+      "chapter_105": 1,
+      "chapter_106": 1,
+      "chapter_107": 4,
+      "chapter_108": 3,
+      "chapter_109": 4,
+      "chapter_110": 2,
+      "chapter_111": 4,
+      "chapter_112": 2,
+      "chapter_113": 4,
+      "chapter_114": 2,
+      "chapter_115": 4,
+      "chapter_116": 2,
+      "chapter_117": 4,
+      "chapter_118": 2,
+      "chapter_119": 4,
+      "chapter_120": 2,
+      "chapter_121": 4,
+      "chapter_122": 2,
+      "chapter_123": 4,
+      "chapter_124": 1,
+      "chapter_125": 4,
+      "chapter_126": 1,
+      "chapter_127": 4,
+      "chapter_128": 1,
+      "chapter_129": 3,
+      "chapter_130": 2,
+      "chapter_131": 4,
+      "chapter_132": 1,
+      "chapter_133": 4,
+      "chapter_134": 1,
+      "chapter_135": 4,
+      "chapter_136": 1,
+      "chapter_137": 4,
+      "chapter_138": 1,
+      "chapter_139": 4,
+      "chapter_140": 1,
+      "chapter_141": 4,
+      "chapter_142": 1,
+      "chapter_143": 3,
+      "chapter_144": 1,
+      "chapter_145": 1,
+      "chapter_146": 4,
+      "chapter_147": 4,
+      "chapter_148": 4,
+      "chapter_149": 4,
+      "chapter_150": 3,
+      "chapter_151": 1,
+      "chapter_152": 4,
+      "chapter_153": 2,
+      "chapter_154": 2,
+      "chapter_155": 2,
+      "chapter_156": 1,
+      "chapter_157": 3,
+      "chapter_158": 3,
+      "chapter_159": 2,
+      "chapter_160": 1,
+      "chapter_161": 3,
+      "chapter_162": 3,
+      "chapter_163": 3,
+      "chapter_164": 2,
+      "chapter_165": 1,
+      "chapter_166": 2,
+      "chapter_167": 2,
+      "chapter_168": 2,
+      "chapter_169": 2,
+      "chapter_170": 2,
+      "chapter_171": 2,
+      "chapter_172": 1,
+      "chapter_173": 1,
+      "chapter_174": 1,
+      "chapter_175": 2
+    }
+  }
+}
