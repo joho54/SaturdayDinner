@@ -2,5 +2,6 @@
 test-success.mov
 *.npz
 *.pkl
+/extracted-src/*
 # *.keras
 # *.csv
