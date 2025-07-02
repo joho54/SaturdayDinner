@@ -1,18 +1,18 @@
 {
   "model_path": "checkpoints/model-epoch-56.keras",
-  "created_at": "2025-07-02T21:35:05.984028",
+  "created_at": "2025-07-02T21:52:29.674941",
   "labels": [
-    "급류",
-    "물",
-    "배",
-    "수영장",
+    "부엌",
+    "앞집",
+    "우리집",
+    "집",
     "None"
   ],
   "label_mapping": {
-    "급류": 0,
-    "물": 1,
-    "배": 2,
-    "수영장": 3,
+    "부엌": 0,
+    "앞집": 1,
+    "우리집": 2,
+    "집": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -42,11 +42,11 @@
       "reduce_lr_patience": 3
     },
     "checkpoint_epoch": 56,
-    "checkpoint_accuracy": 0.26875001192092896,
-    "checkpoint_val_accuracy": 0.518750011920929,
-    "checkpoint_loss": 2.551760673522949,
-    "checkpoint_val_loss": 1.0895469188690186
+    "checkpoint_accuracy": 0.28593748807907104,
+    "checkpoint_val_accuracy": 0.5562499761581421,
+    "checkpoint_loss": 2.308579206466675,
+    "checkpoint_val_loss": 0.9651244878768921
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 56, Val Acc: 0.5188)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 56, Val Acc: 0.5562)"
 }
