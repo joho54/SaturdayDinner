@@ -1,0 +1,11 @@
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - VideoClusterCategorizer initialized with: ../categorizer/two-clusters/video_clusters.csv
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Header line: ﻿label_name,cluster_id,filename
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - CSV headers: ['\ufefflabel_name', 'cluster_id', 'filename']
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Successfully loaded with encoding: utf-8
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Loaded 210 clusters
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Total unique labels: 523
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Generating 3 models from 210 suitable clusters
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Generated model 1: model_오교도아_194847
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Generated model 2: model_반함20밖_194847
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Generated model 3: model_학연머술_194847
+2025-07-03 19:48:47 - VideoClusterCategorizer - INFO - Saved 3 models to: cluster_models_20250703_194847.json

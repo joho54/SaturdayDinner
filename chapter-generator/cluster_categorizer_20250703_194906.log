@@ -1,0 +1,18 @@
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - VideoClusterCategorizer initialized with: ../categorizer/two-clusters/video_clusters.csv
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Header line: ﻿label_name,cluster_id,filename
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - CSV headers: ['\ufefflabel_name', 'cluster_id', 'filename']
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Successfully loaded with encoding: utf-8
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Loaded 210 clusters
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Total unique labels: 523
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generating 10 models from 210 suitable clusters
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 1: model_살허인구_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 2: model_산282옆_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 3: model_응82옆뱀_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 4: model_경인작작_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 5: model_어함창학_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 6: model_음집10자_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 7: model_80옆옆연_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 8: model_아독의침_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 9: model_종트성멧_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Generated model 10: model_발옆응곰_194906
+2025-07-03 19:49:06 - VideoClusterCategorizer - INFO - Saved 10 models to: video_cluster_models.json

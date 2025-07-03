@@ -33,6 +33,35 @@ import logging
 from collections import defaultdict
 from config import LABEL_MAX_SAMPLES_PER_CLASS, MIN_SAMPLES_PER_CLASS
 
+# .env 파일 로드 (s3_utils보다 먼저 로드)
+try:
+    from dotenv import load_dotenv
+    # .env 파일이 있는 현재 디렉토리에서 로드
+    env_path = os.path.join(os.path.dirname(__file__), '.env')
+    if os.path.exists(env_path):
+        load_dotenv(env_path)
+        print(f"✅ .env 파일 로드: {env_path}")
+    else:
+        # 현재 작업 디렉토리에서 .env 파일 찾기
+        if os.path.exists('.env'):
+            load_dotenv('.env')
+            print("✅ .env 파일 로드: ./.env")
+        else:
+            print("⚠️ .env 파일을 찾을 수 없습니다.")
+except ImportError:
+    print("⚠️ python-dotenv를 설치하세요: pip install python-dotenv")
+
+# S3 호환 캐시 시스템 import
+from s3_utils import (
+    cache_join,
+    cache_exists,
+    cache_makedirs,
+    cache_save_pickle,
+    cache_load_pickle,
+    cache_remove,
+    is_s3_path
+)
+
 # MediaPipe 및 TensorFlow 로깅 완전 억제
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  # ERROR만 출력
 os.environ["CUDA_VISIBLE_DEVICES"] = ""  # GPU 비활성화 (CPU만 사용)
@@ -95,7 +124,7 @@ MODEL_SAVE_PATH = f"{MODELS_DIR}/sign_language_model_{timestamp}.keras"
 MODEL_INFO_PATH = f"{INFO_DIR}/model-info-{timestamp}.json"
 
 # 캐시 디렉토리 설정
-os.makedirs(CACHE_DIR, exist_ok=True)
+cache_makedirs(CACHE_DIR, exist_ok=True)
 
 DATA_CACHE_PATH = "fixed_preprocessed_data.npz"
 
@@ -113,7 +142,7 @@ def get_label_cache_path(label):
     )
     min_samples_str = f"min{MIN_SAMPLES_PER_CLASS}"
 
-    return os.path.join(
+    return cache_join(
         CACHE_DIR,
         f"{safe_label}_seq{TARGET_SEQ_LENGTH}_aug{AUGMENTATIONS_PER_VIDEO}_{max_samples_str}_{min_samples_str}.pkl",
     )
@@ -140,31 +169,44 @@ def save_label_cache(label, data):
         },
     }
 
-    # 임시 파일에 먼저 저장 (원자적 쓰기)
-    temp_path = cache_path + ".tmp"
-
+    # S3 호환 캐시 저장
     try:
-        with open(temp_path, "wb") as f:
-            pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+        if is_s3_path(cache_path):
+            # S3에서는 put_object가 원자적이므로 직접 저장
+            success = cache_save_pickle(cache_path, cache_data)
+            if success:
+                print(f"💾 {label} 라벨 데이터 캐시 저장 (S3): {cache_path} ({len(data)}개 샘플)")
+            else:
+                raise Exception("S3 캐시 저장 실패")
+        else:
+            # 로컬에서는 임시 파일 방식 사용 (원자적 쓰기)
+            temp_path = cache_path + ".tmp"
+            
+            with open(temp_path, "wb") as f:
+                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
 
-        # 성공적으로 저장되면 최종 위치로 이동
-        os.replace(temp_path, cache_path)
-        print(f"💾 {label} 라벨 데이터 캐시 저장: {cache_path} ({len(data)}개 샘플)")
+            # 성공적으로 저장되면 최종 위치로 이동
+            os.replace(temp_path, cache_path)
+            print(f"💾 {label} 라벨 데이터 캐시 저장 (로컬): {cache_path} ({len(data)}개 샘플)")
 
     except Exception as e:
-        # 오류 발생 시 임시 파일 정리
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
+        # 오류 발생 시 임시 파일 정리 (로컬 파일인 경우만)
+        if not is_s3_path(cache_path):
+            temp_path = cache_path + ".tmp"
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
         raise e
 
 
 def load_label_cache(label):
     """라벨별 데이터를 캐시에서 로드합니다."""
     cache_path = get_label_cache_path(label)
-    if os.path.exists(cache_path):
+    if cache_exists(cache_path):
         try:
-            with open(cache_path, "rb") as f:
-                cache_data = pickle.load(f)
+            # S3 호환 캐시 로드
+            cache_data = cache_load_pickle(cache_path)
+            if cache_data is None:
+                return None
 
             # 캐시 형식 확인 (구버전 호환성)
             if (
@@ -192,7 +234,7 @@ def load_label_cache(label):
                     print(f"⚠️ {label} 캐시 파라미터가 다릅니다. 캐시 무효화.")
                     print(f"   캐시된 파라미터: {cached_params}")
                     print(f"   현재 파라미터: {current_params}")
-                    os.remove(cache_path)
+                    cache_remove(cache_path)
                     return None
 
                 data = cache_data["data"]
@@ -203,8 +245,9 @@ def load_label_cache(label):
 
             # 데이터 검증
             if isinstance(data, list) and len(data) > 0:
+                cache_type = "S3" if is_s3_path(cache_path) else "로컬"
                 print(
-                    f"📂 {label} 라벨 데이터 캐시 로드: {cache_path} ({len(data)}개 샘플)"
+                    f"📂 {label} 라벨 데이터 캐시 로드 ({cache_type}): {cache_path} ({len(data)}개 샘플)"
                 )
                 return data
             else:
@@ -215,7 +258,7 @@ def load_label_cache(label):
             print(f"⚠️ {label} 캐시 로드 실패: {e}")
             # 손상된 캐시 파일 삭제
             try:
-                os.remove(cache_path)
+                cache_remove(cache_path)
                 print(f"🗑️ 손상된 캐시 파일 삭제: {cache_path}")
             except:
                 pass
@@ -1200,33 +1243,48 @@ def save_none_class_cache(none_class, data, target_count):
         },
     }
 
-    # 임시 파일에 먼저 저장 (원자적 쓰기)
-    temp_path = cache_path + ".tmp"
-
+    # S3 호환 캐시 저장
     try:
-        with open(temp_path, "wb") as f:
-            pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+        if is_s3_path(cache_path):
+            # S3에서는 put_object가 원자적이므로 직접 저장
+            success = cache_save_pickle(cache_path, cache_data)
+            if success:
+                print(
+                    f"💾 {none_class} 클래스 데이터 캐시 저장 (S3): {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)"
+                )
+            else:
+                raise Exception("S3 캐시 저장 실패")
+        else:
+            # 로컬에서는 임시 파일 방식 사용 (원자적 쓰기)
+            temp_path = cache_path + ".tmp"
 
-        # 성공적으로 저장되면 최종 위치로 이동
-        os.replace(temp_path, cache_path)
-        print(
-            f"💾 {none_class} 클래스 데이터 캐시 저장: {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)"
-        )
+            with open(temp_path, "wb") as f:
+                pickle.dump(cache_data, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+            # 성공적으로 저장되면 최종 위치로 이동
+            os.replace(temp_path, cache_path)
+            print(
+                f"💾 {none_class} 클래스 데이터 캐시 저장 (로컬): {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)"
+            )
 
     except Exception as e:
-        # 오류 발생 시 임시 파일 정리
-        if os.path.exists(temp_path):
-            os.remove(temp_path)
+        # 오류 발생 시 임시 파일 정리 (로컬 파일인 경우만)
+        if not is_s3_path(cache_path):
+            temp_path = cache_path + ".tmp"
+            if os.path.exists(temp_path):
+                os.remove(temp_path)
         raise e
 
 
 def load_none_class_cache(none_class, target_count):
     """None 클래스 데이터를 캐시에서 로드합니다. target_count 정보도 검증합니다."""
     cache_path = get_label_cache_path(none_class)
-    if os.path.exists(cache_path):
+    if cache_exists(cache_path):
         try:
-            with open(cache_path, "rb") as f:
-                cache_data = pickle.load(f)
+            # S3 호환 캐시 로드
+            cache_data = cache_load_pickle(cache_path)
+            if cache_data is None:
+                return None
 
             # 캐시 형식 확인 (구버전 호환성)
             if (
@@ -1256,7 +1314,7 @@ def load_none_class_cache(none_class, target_count):
                     print(f"⚠️ {none_class} 캐시 파라미터가 다릅니다. 캐시 무효화.")
                     print(f"   캐시된 파라미터: {cached_params}")
                     print(f"   현재 파라미터: {current_params}")
-                    os.remove(cache_path)
+                    cache_remove(cache_path)
                     return None
 
                 data = cache_data["data"]
@@ -1269,8 +1327,9 @@ def load_none_class_cache(none_class, target_count):
 
             # 데이터 검증
             if isinstance(data, list) and len(data) > 0:
+                cache_type = "S3" if is_s3_path(cache_path) else "로컬"
                 print(
-                    f"📂 {none_class} 클래스 데이터 캐시 로드: {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)"
+                    f"📂 {none_class} 클래스 데이터 캐시 로드 ({cache_type}): {cache_path} ({len(data)}개 샘플, 목표: {target_count}개)"
                 )
                 return data
             else:
@@ -1281,7 +1340,7 @@ def load_none_class_cache(none_class, target_count):
             print(f"⚠️ {none_class} 캐시 로드 실패: {e}")
             # 손상된 캐시 파일 삭제
             try:
-                os.remove(cache_path)
+                cache_remove(cache_path)
                 print(f"🗑️ 손상된 캐시 파일 삭제: {cache_path}")
             except:
                 pass

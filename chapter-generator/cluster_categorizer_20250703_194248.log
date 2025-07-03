@@ -1,0 +1,529 @@
+2025-07-03 19:42:48 - VideoClusterCategorizer - INFO - VideoClusterCategorizer initialized with: ../categorizer/two-clusters/video_clusters.csv
+2025-07-03 19:42:48 - VideoClusterCategorizer - INFO - Header line: ﻿label_name,cluster_id,filename
+2025-07-03 19:42:48 - VideoClusterCategorizer - INFO - CSV headers: ['\ufefflabel_name', 'cluster_id', 'filename']
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 1: {'\ufefflabel_name': '가스가 새고 있는 것 같아요', 'cluster_id': '0', 'filename': 'KETI_SL_0000008430.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 2: {'\ufefflabel_name': '어떤 사람이 교통사고를 당했어요', 'cluster_id': '0', 'filename': 'KETI_SL_0000008409.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 3: {'\ufefflabel_name': '어떤 사람이 길거리에서 피를 많이 흘리고 있어요', 'cluster_id': '0', 'filename': 'KETI_SL_0000008419.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 4: {'\ufefflabel_name': '어떤 사람이 자살을 시도하고 있어요', 'cluster_id': '0', 'filename': 'KETI_SL_0000008453.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 5: {'\ufefflabel_name': '집에 모르는 사람이 침입했어요', 'cluster_id': '0', 'filename': 'KETI_SL_0000008445.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 6: {'\ufefflabel_name': '쫓아오는 것 같아요', 'cluster_id': '0', 'filename': 'KETI_SL_0000008399.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 7: {'\ufefflabel_name': '뒤통수', 'cluster_id': '1', 'filename': 'KETI_SL_0000000195.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 8: {'\ufefflabel_name': '60', 'cluster_id': '2', 'filename': 'KETI_SL_0000000061.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 9: {'\ufefflabel_name': '63', 'cluster_id': '2', 'filename': 'KETI_SL_0000000064.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 10: {'\ufefflabel_name': '위', 'cluster_id': '2', 'filename': 'KETI_SL_0000000328.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 11: {'\ufefflabel_name': '호흡기', 'cluster_id': '2', 'filename': 'KETI_SL_0000000413.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 12: {'\ufefflabel_name': '공장', 'cluster_id': '3', 'filename': 'KETI_SL_0000000140.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 13: {'\ufefflabel_name': '밑에', 'cluster_id': '3', 'filename': 'KETI_SL_0000000215.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 14: {'\ufefflabel_name': '심장마비', 'cluster_id': '3', 'filename': 'KETI_SL_0000000274.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 15: {'\ufefflabel_name': '아래', 'cluster_id': '3', 'filename': 'KETI_SL_0000000216.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 16: {'\ufefflabel_name': '뒤', 'cluster_id': '4', 'filename': 'KETI_SL_0000000194.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 17: {'\ufefflabel_name': '77', 'cluster_id': '5', 'filename': 'KETI_SL_0000000078.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 18: {'\ufefflabel_name': '볼', 'cluster_id': '5', 'filename': 'KETI_SL_0000000237.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 19: {'\ufefflabel_name': '도봉구', 'cluster_id': '6', 'filename': 'KETI_SL_0000000185.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 20: {'\ufefflabel_name': '바다', 'cluster_id': '6', 'filename': 'KETI_SL_0000000217.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 21: {'\ufefflabel_name': '호흡곤란', 'cluster_id': '6', 'filename': 'KETI_SL_0000000412.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 22: {'\ufefflabel_name': '강남구', 'cluster_id': '7', 'filename': 'KETI_SL_0000000115.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 23: {'\ufefflabel_name': '강서구', 'cluster_id': '7', 'filename': 'KETI_SL_0000000118.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 24: {'\ufefflabel_name': '고속도로', 'cluster_id': '7', 'filename': 'KETI_SL_0000000129.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 25: {'\ufefflabel_name': '시청', 'cluster_id': '7', 'filename': 'KETI_SL_0000000272.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 26: {'\ufefflabel_name': '성폭행', 'cluster_id': '8', 'filename': 'KETI_SL_0000000259.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 27: {'\ufefflabel_name': '목요일', 'cluster_id': '9', 'filename': 'KETI_SL_0000000209.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 28: {'\ufefflabel_name': '10000', 'cluster_id': '10', 'filename': 'KETI_SL_0000000105.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 29: {'\ufefflabel_name': '냄새나다', 'cluster_id': '10', 'filename': 'KETI_SL_0000000169.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 30: {'\ufefflabel_name': '동생', 'cluster_id': '10', 'filename': 'KETI_SL_0000000190.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 31: {'\ufefflabel_name': '배', 'cluster_id': '10', 'filename': 'KETI_SL_0000000225.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 32: {'\ufefflabel_name': '아들', 'cluster_id': '10', 'filename': 'KETI_SL_0000000279.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 33: {'\ufefflabel_name': '주', 'cluster_id': '10', 'filename': 'KETI_SL_0000000360.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 34: {'\ufefflabel_name': '지난', 'cluster_id': '10', 'filename': 'KETI_SL_0000000363.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 35: {'\ufefflabel_name': '강북구', 'cluster_id': '11', 'filename': 'KETI_SL_0000000117.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 36: {'\ufefflabel_name': '논', 'cluster_id': '11', 'filename': 'KETI_SL_0000000171.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 37: {'\ufefflabel_name': '서울시', 'cluster_id': '11', 'filename': 'KETI_SL_0000000253.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 38: {'\ufefflabel_name': '알려주세요', 'cluster_id': '11', 'filename': 'KETI_SL_0000000286.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 39: {'\ufefflabel_name': '일요일', 'cluster_id': '11', 'filename': 'KETI_SL_0000000346.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 40: {'\ufefflabel_name': '장난감', 'cluster_id': '11', 'filename': 'KETI_SL_0000000354.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 41: {'\ufefflabel_name': '창백하다', 'cluster_id': '11', 'filename': 'KETI_SL_0000000372.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 42: {'\ufefflabel_name': '계곡', 'cluster_id': '12', 'filename': 'KETI_SL_0000000127.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 43: {'\ufefflabel_name': '임신한아내', 'cluster_id': '12', 'filename': 'KETI_SL_0000000348.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 44: {'\ufefflabel_name': '살충제', 'cluster_id': '13', 'filename': 'KETI_SL_0000000248.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 45: {'\ufefflabel_name': '폭발', 'cluster_id': '14', 'filename': 'KETI_SL_0000000394.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 46: {'\ufefflabel_name': '폭탄', 'cluster_id': '14', 'filename': 'KETI_SL_0000000395.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 47: {'\ufefflabel_name': '위에', 'cluster_id': '15', 'filename': 'KETI_SL_0000000329.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 48: {'\ufefflabel_name': '남편', 'cluster_id': '16', 'filename': 'KETI_SL_0000000160.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 49: {'\ufefflabel_name': '아기', 'cluster_id': '16', 'filename': 'KETI_SL_0000000275.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 50: {'\ufefflabel_name': '아이들', 'cluster_id': '16', 'filename': 'KETI_SL_0000000276.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 51: {'\ufefflabel_name': '어린이', 'cluster_id': '16', 'filename': 'KETI_SL_0000000277.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 52: {'\ufefflabel_name': '손', 'cluster_id': '17', 'filename': 'KETI_SL_0000000264.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 53: {'\ufefflabel_name': '조난', 'cluster_id': '18', 'filename': 'KETI_SL_0000000358.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 54: {'\ufefflabel_name': '칼', 'cluster_id': '18', 'filename': 'KETI_SL_0000000382.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 55: {'\ufefflabel_name': '무릎 인대를 다친 것 같아요', 'cluster_id': '19', 'filename': 'KETI_SL_0000008484.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 56: {'\ufefflabel_name': '산에서 야생동물을 만났어요 저를 공격할 것 같아요', 'cluster_id': '19', 'filename': 'KETI_SL_0000008437.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 57: {'\ufefflabel_name': '우리아이가 갑자기 의식을 잃었어요', 'cluster_id': '19', 'filename': 'KETI_SL_0000008468.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 58: {'\ufefflabel_name': '93', 'cluster_id': '20', 'filename': 'KETI_SL_0000002509.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 59: {'\ufefflabel_name': '출혈', 'cluster_id': '21', 'filename': 'KETI_SL_0000000378.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 60: {'\ufefflabel_name': '피나다', 'cluster_id': '21', 'filename': 'KETI_SL_0000000379.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 61: {'\ufefflabel_name': '인대', 'cluster_id': '22', 'filename': 'KETI_SL_0000001536.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 62: {'\ufefflabel_name': '학생', 'cluster_id': '23', 'filename': 'KETI_SL_0000000399.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 63: {'\ufefflabel_name': '아파트', 'cluster_id': '24', 'filename': 'KETI_SL_0000000283.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 64: {'\ufefflabel_name': '무릎', 'cluster_id': '25', 'filename': 'KETI_SL_0000000212.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 65: {'\ufefflabel_name': '함몰되다', 'cluster_id': '26', 'filename': 'KETI_SL_0000000402.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 66: {'\ufefflabel_name': '강도가 들어온것 같아요', 'cluster_id': '27', 'filename': 'KETI_SL_0000008446.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 67: {'\ufefflabel_name': '식사를 하다가 목에 음식이 걸렸어요', 'cluster_id': '27', 'filename': 'KETI_SL_0000008420.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 68: {'\ufefflabel_name': '이상한 사람이 저를 쫓아와요', 'cluster_id': '27', 'filename': 'KETI_SL_0000008397.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 69: {'\ufefflabel_name': '주변 구조물이 무너져서 몸이 끼었어요 몸을 움직이지 못하겠어요', 'cluster_id': '27', 'filename': 'KETI_SL_0000008389.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 70: {'\ufefflabel_name': '교통사고', 'cluster_id': '28', 'filename': 'KETI_SL_0000000143.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 71: {'\ufefflabel_name': '학교', 'cluster_id': '28', 'filename': 'KETI_SL_0000000398.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 72: {'\ufefflabel_name': '아내', 'cluster_id': '29', 'filename': 'KETI_SL_0000000278.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 73: {'\ufefflabel_name': '양천구', 'cluster_id': '30', 'filename': 'KETI_SL_0000000291.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 74: {'\ufefflabel_name': '납치', 'cluster_id': '31', 'filename': 'KETI_SL_0000000162.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 75: {'\ufefflabel_name': '홍수', 'cluster_id': '32', 'filename': 'KETI_SL_0000000414.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 76: {'\ufefflabel_name': '84', 'cluster_id': '33', 'filename': 'KETI_SL_0000000085.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 77: {'\ufefflabel_name': '85', 'cluster_id': '33', 'filename': 'KETI_SL_0000000086.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 78: {'\ufefflabel_name': '99', 'cluster_id': '33', 'filename': 'KETI_SL_0000000100.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 79: {'\ufefflabel_name': '계단', 'cluster_id': '34', 'filename': 'KETI_SL_0000000128.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 80: {'\ufefflabel_name': '갇히다', 'cluster_id': '35', 'filename': 'KETI_SL_0000000111.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 81: {'\ufefflabel_name': '감금', 'cluster_id': '35', 'filename': 'KETI_SL_0000000112.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 82: {'\ufefflabel_name': '기절', 'cluster_id': '36', 'filename': 'KETI_SL_0000000155.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 83: {'\ufefflabel_name': '기절하다', 'cluster_id': '36', 'filename': 'KETI_SL_0000000156.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 84: {'\ufefflabel_name': '무너지다', 'cluster_id': '37', 'filename': 'KETI_SL_0000000210.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 85: {'\ufefflabel_name': '붕괴', 'cluster_id': '37', 'filename': 'KETI_SL_0000000211.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 86: {'\ufefflabel_name': '폭행', 'cluster_id': '38', 'filename': 'KETI_SL_0000000397.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 87: {'\ufefflabel_name': '해독제', 'cluster_id': '39', 'filename': 'KETI_SL_0000000404.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 88: {'\ufefflabel_name': '구급차', 'cluster_id': '40', 'filename': 'KETI_SL_0000000146.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 89: {'\ufefflabel_name': '남학생', 'cluster_id': '40', 'filename': 'KETI_SL_0000000161.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 90: {'\ufefflabel_name': '누수', 'cluster_id': '40', 'filename': 'KETI_SL_0000000174.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 91: {'\ufefflabel_name': '복통', 'cluster_id': '40', 'filename': 'KETI_SL_0000000236.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 92: {'\ufefflabel_name': '은평구', 'cluster_id': '40', 'filename': 'KETI_SL_0000000336.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 93: {'\ufefflabel_name': '영등포구', 'cluster_id': '41', 'filename': 'KETI_SL_0000000307.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 94: {'\ufefflabel_name': '유치원', 'cluster_id': '42', 'filename': 'KETI_SL_0000000334.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 95: {'\ufefflabel_name': '발작', 'cluster_id': '43', 'filename': 'KETI_SL_0000000222.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 96: {'\ufefflabel_name': '남자친구', 'cluster_id': '44', 'filename': 'KETI_SL_0000000159.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 97: {'\ufefflabel_name': '고장', 'cluster_id': '45', 'filename': 'KETI_SL_0000000132.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 98: {'\ufefflabel_name': '부러지다', 'cluster_id': '45', 'filename': 'KETI_SL_0000000133.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 99: {'\ufefflabel_name': '자동차', 'cluster_id': '45', 'filename': 'KETI_SL_0000000349.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 100: {'\ufefflabel_name': '노원구', 'cluster_id': '46', 'filename': 'KETI_SL_0000000170.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 101: {'\ufefflabel_name': '부엌', 'cluster_id': '46', 'filename': 'KETI_SL_0000000238.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 102: {'\ufefflabel_name': '엽총', 'cluster_id': '46', 'filename': 'KETI_SL_0000000306.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 103: {'\ufefflabel_name': '아줌마', 'cluster_id': '47', 'filename': 'KETI_SL_0000000282.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 104: {'\ufefflabel_name': '여자친구', 'cluster_id': '48', 'filename': 'KETI_SL_0000000299.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 105: {'\ufefflabel_name': '위협', 'cluster_id': '48', 'filename': 'KETI_SL_0000000330.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 106: {'\ufefflabel_name': '경찰차', 'cluster_id': '49', 'filename': 'KETI_SL_0000000126.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 107: {'\ufefflabel_name': '대문앞', 'cluster_id': '50', 'filename': 'KETI_SL_0000000181.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 108: {'\ufefflabel_name': '살해', 'cluster_id': '51', 'filename': 'KETI_SL_0000000249.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 109: {'\ufefflabel_name': '도둑', 'cluster_id': '52', 'filename': 'KETI_SL_0000000182.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 110: {'\ufefflabel_name': '절도', 'cluster_id': '52', 'filename': 'KETI_SL_0000000183.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 111: {'\ufefflabel_name': '소방차', 'cluster_id': '53', 'filename': 'KETI_SL_0000000261.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 112: {'\ufefflabel_name': '화상', 'cluster_id': '54', 'filename': 'KETI_SL_0000000415.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 113: {'\ufefflabel_name': '구로구', 'cluster_id': '55', 'filename': 'KETI_SL_0000000147.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 114: {'\ufefflabel_name': '연락해주세요', 'cluster_id': '55', 'filename': 'KETI_SL_0000000302.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 115: {'\ufefflabel_name': '윗집', 'cluster_id': '55', 'filename': 'KETI_SL_0000000331.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 116: {'\ufefflabel_name': '협박', 'cluster_id': '55', 'filename': 'KETI_SL_0000000410.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 117: {'\ufefflabel_name': '내년', 'cluster_id': '56', 'filename': 'KETI_SL_0000000167.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 118: {'\ufefflabel_name': '밭', 'cluster_id': '56', 'filename': 'KETI_SL_0000000224.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 119: {'\ufefflabel_name': '뼈', 'cluster_id': '56', 'filename': 'KETI_SL_0000000245.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 120: {'\ufefflabel_name': '해열제', 'cluster_id': '57', 'filename': 'KETI_SL_0000000405.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 121: {'\ufefflabel_name': '가스', 'cluster_id': '58', 'filename': 'KETI_SL_0000000107.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 122: {'\ufefflabel_name': '숨을안쉬다', 'cluster_id': '58', 'filename': 'KETI_SL_0000000271.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 123: {'\ufefflabel_name': '집', 'cluster_id': '58', 'filename': 'KETI_SL_0000000367.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 124: {'\ufefflabel_name': '택시', 'cluster_id': '58', 'filename': 'KETI_SL_0000000384.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 125: {'\ufefflabel_name': '가슴', 'cluster_id': '59', 'filename': 'KETI_SL_0000000108.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 126: {'\ufefflabel_name': '결박', 'cluster_id': '59', 'filename': 'KETI_SL_0000000123.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 127: {'\ufefflabel_name': '다리', 'cluster_id': '59', 'filename': 'KETI_SL_0000000178.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 128: {'\ufefflabel_name': '머리', 'cluster_id': '59', 'filename': 'KETI_SL_0000000206.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 129: {'\ufefflabel_name': '보내주세요(경찰)', 'cluster_id': '60', 'filename': 'KETI_SL_0000000234.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 130: {'\ufefflabel_name': '벼락', 'cluster_id': '61', 'filename': 'KETI_SL_0000000231.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 131: {'\ufefflabel_name': '성북구', 'cluster_id': '61', 'filename': 'KETI_SL_0000000258.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 132: {'\ufefflabel_name': '열어주세요', 'cluster_id': '61', 'filename': 'KETI_SL_0000000305.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 133: {'\ufefflabel_name': '말려주세요', 'cluster_id': '62', 'filename': 'KETI_SL_0000000203.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 134: {'\ufefflabel_name': '송파구', 'cluster_id': '63', 'filename': 'KETI_SL_0000000267.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 135: {'\ufefflabel_name': '소방관', 'cluster_id': '64', 'filename': 'KETI_SL_0000000260.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 136: {'\ufefflabel_name': '집단폭행', 'cluster_id': '65', 'filename': 'KETI_SL_0000000368.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 137: {'\ufefflabel_name': '방망이', 'cluster_id': '66', 'filename': 'KETI_SL_0000000223.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 138: {'\ufefflabel_name': '눈', 'cluster_id': '67', 'filename': 'KETI_SL_0000000177.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 139: {'\ufefflabel_name': '우리집', 'cluster_id': '67', 'filename': 'KETI_SL_0000000325.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 140: {'\ufefflabel_name': '절단', 'cluster_id': '67', 'filename': 'KETI_SL_0000000356.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 141: {'\ufefflabel_name': '추락', 'cluster_id': '67', 'filename': 'KETI_SL_0000000375.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 142: {'\ufefflabel_name': '허리', 'cluster_id': '68', 'filename': 'KETI_SL_0000000406.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 143: {'\ufefflabel_name': '허벅지', 'cluster_id': '68', 'filename': 'KETI_SL_0000000407.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 144: {'\ufefflabel_name': '유치원 버스', 'cluster_id': '69', 'filename': 'KETI_SL_0000001169.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 145: {'\ufefflabel_name': '감전', 'cluster_id': '70', 'filename': 'KETI_SL_0000000113.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 146: {'\ufefflabel_name': '서랍', 'cluster_id': '71', 'filename': 'KETI_SL_0000000252.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 147: {'\ufefflabel_name': '선생님', 'cluster_id': '71', 'filename': 'KETI_SL_0000000256.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 148: {'\ufefflabel_name': '손목', 'cluster_id': '71', 'filename': 'KETI_SL_0000000266.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 149: {'\ufefflabel_name': '(신체부위)가 절단됐어요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008426.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 150: {'\ufefflabel_name': '고속도로에서 자동차가 갑자기 멈췄어요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008395.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 151: {'\ufefflabel_name': '몸에 열이 많이 나고 두통이 심해요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008466.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 152: {'\ufefflabel_name': '빨리 도와주세요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008457.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 153: {'\ufefflabel_name': '아기가 숨을 안 쉬어요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008449.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 154: {'\ufefflabel_name': '어떤 사람이 저를 죽이려고 해요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008435.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 155: {'\ufefflabel_name': '엘리베이터가 갑자기 중간에 멈췄어요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008442.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 156: {'\ufefflabel_name': '집에 불이 났어요', 'cluster_id': '72', 'filename': 'KETI_SL_0000008381.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 157: {'\ufefflabel_name': '팔', 'cluster_id': '73', 'filename': 'KETI_SL_0000000392.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 158: {'\ufefflabel_name': '관악구', 'cluster_id': '74', 'filename': 'KETI_SL_0000000141.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 159: {'\ufefflabel_name': '음식물', 'cluster_id': '74', 'filename': 'KETI_SL_0000000337.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 160: {'\ufefflabel_name': '트럭', 'cluster_id': '75', 'filename': 'KETI_SL_0000000389.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 161: {'\ufefflabel_name': '세브란스 병원 진료 예약을 해주세요', 'cluster_id': '76', 'filename': 'KETI_SL_0000008467.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 162: {'\ufefflabel_name': '어떤 사람이 건물에서 추락했어요', 'cluster_id': '76', 'filename': 'KETI_SL_0000008413.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 163: {'\ufefflabel_name': '어떤 사람이 칼로 위협하고 있어요', 'cluster_id': '76', 'filename': 'KETI_SL_0000008387.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 164: {'\ufefflabel_name': '폭우', 'cluster_id': '77', 'filename': 'KETI_SL_0000000396.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 165: {'\ufefflabel_name': '윗집사람', 'cluster_id': '78', 'filename': 'KETI_SL_0000000332.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 166: {'\ufefflabel_name': '불', 'cluster_id': '79', 'filename': 'KETI_SL_0000000239.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 167: {'\ufefflabel_name': '불나다', 'cluster_id': '79', 'filename': 'KETI_SL_0000000240.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 168: {'\ufefflabel_name': '이번', 'cluster_id': '80', 'filename': 'KETI_SL_0000000343.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 169: {'\ufefflabel_name': '빌라', 'cluster_id': '81', 'filename': 'KETI_SL_0000000244.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 170: {'\ufefflabel_name': '강풍', 'cluster_id': '82', 'filename': 'KETI_SL_0000000119.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 171: {'\ufefflabel_name': '비닐하우스', 'cluster_id': '82', 'filename': 'KETI_SL_0000000242.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 172: {'\ufefflabel_name': '욕실', 'cluster_id': '82', 'filename': 'KETI_SL_0000000323.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 173: {'\ufefflabel_name': '맹견', 'cluster_id': '83', 'filename': 'KETI_SL_0000000205.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 174: {'\ufefflabel_name': '떨어지다', 'cluster_id': '84', 'filename': 'KETI_SL_0000000198.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 175: {'\ufefflabel_name': '쓰러지다', 'cluster_id': '84', 'filename': 'KETI_SL_0000000199.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 176: {'\ufefflabel_name': '옆집 할아버지', 'cluster_id': '85', 'filename': 'KETI_SL_0000001144.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 177: {'\ufefflabel_name': '응급처리', 'cluster_id': '86', 'filename': 'KETI_SL_0000000339.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 178: {'\ufefflabel_name': '35', 'cluster_id': '87', 'filename': 'KETI_SL_0000000036.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 179: {'\ufefflabel_name': '38', 'cluster_id': '87', 'filename': 'KETI_SL_0000000039.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 180: {'\ufefflabel_name': '79', 'cluster_id': '87', 'filename': 'KETI_SL_0000000080.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 181: {'\ufefflabel_name': '80', 'cluster_id': '87', 'filename': 'KETI_SL_0000000081.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 182: {'\ufefflabel_name': '81', 'cluster_id': '87', 'filename': 'KETI_SL_0000000082.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 183: {'\ufefflabel_name': '87', 'cluster_id': '87', 'filename': 'KETI_SL_0000000088.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 184: {'\ufefflabel_name': '92', 'cluster_id': '87', 'filename': 'KETI_SL_0000000093.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 185: {'\ufefflabel_name': '내일', 'cluster_id': '87', 'filename': 'KETI_SL_0000000168.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 186: {'\ufefflabel_name': '도로', 'cluster_id': '87', 'filename': 'KETI_SL_0000000184.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 187: {'\ufefflabel_name': '총', 'cluster_id': '87', 'filename': 'KETI_SL_0000000374.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 188: {'\ufefflabel_name': '코', 'cluster_id': '87', 'filename': 'KETI_SL_0000000383.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 189: {'\ufefflabel_name': '할아버지', 'cluster_id': '87', 'filename': 'KETI_SL_0000000401.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 190: {'\ufefflabel_name': '소화기', 'cluster_id': '88', 'filename': 'KETI_SL_0000000262.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 191: {'\ufefflabel_name': '보건소', 'cluster_id': '89', 'filename': 'KETI_SL_0000000233.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 192: {'\ufefflabel_name': '어지러움', 'cluster_id': '90', 'filename': 'KETI_SL_0000000294.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 193: {'\ufefflabel_name': '강동구', 'cluster_id': '91', 'filename': 'KETI_SL_0000000116.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 194: {'\ufefflabel_name': '장단지', 'cluster_id': '92', 'filename': 'KETI_SL_0000000355.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 195: {'\ufefflabel_name': '발가락', 'cluster_id': '93', 'filename': 'KETI_SL_0000000220.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 196: {'\ufefflabel_name': '두드러기생기다', 'cluster_id': '94', 'filename': 'KETI_SL_0000000193.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 197: {'\ufefflabel_name': '종로구', 'cluster_id': '95', 'filename': 'KETI_SL_0000000359.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 198: {'\ufefflabel_name': '아저씨', 'cluster_id': '96', 'filename': 'KETI_SL_0000000281.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 199: {'\ufefflabel_name': '임산부', 'cluster_id': '96', 'filename': 'KETI_SL_0000000347.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 200: {'\ufefflabel_name': '작년', 'cluster_id': '96', 'filename': 'KETI_SL_0000000352.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 201: {'\ufefflabel_name': '산', 'cluster_id': '97', 'filename': 'KETI_SL_0000000247.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 202: {'\ufefflabel_name': '옆집 아저씨', 'cluster_id': '98', 'filename': 'KETI_SL_0000001143.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 203: {'\ufefflabel_name': '제초제', 'cluster_id': '99', 'filename': 'KETI_SL_0000000357.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 204: {'\ufefflabel_name': '열', 'cluster_id': '100', 'filename': 'KETI_SL_0000000303.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 205: {'\ufefflabel_name': '독버섯', 'cluster_id': '101', 'filename': 'KETI_SL_0000000187.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 206: {'\ufefflabel_name': '농약', 'cluster_id': '102', 'filename': 'KETI_SL_0000000172.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 207: {'\ufefflabel_name': '용산구', 'cluster_id': '103', 'filename': 'KETI_SL_0000000324.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 208: {'\ufefflabel_name': '오른쪽-눈', 'cluster_id': '104', 'filename': 'KETI_SL_0000006182.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 209: {'\ufefflabel_name': '유리', 'cluster_id': '105', 'filename': 'KETI_SL_0000000333.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 210: {'\ufefflabel_name': '출산', 'cluster_id': '106', 'filename': 'KETI_SL_0000000377.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 211: {'\ufefflabel_name': '어떤 사람이 집단폭력을 당하고 있어요', 'cluster_id': '107', 'filename': 'KETI_SL_0000008400.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 212: {'\ufefflabel_name': '화상을 입었어요', 'cluster_id': '107', 'filename': 'KETI_SL_0000008404.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 213: {'\ufefflabel_name': '금요일', 'cluster_id': '108', 'filename': 'KETI_SL_0000000152.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 214: {'\ufefflabel_name': '오늘', 'cluster_id': '109', 'filename': 'KETI_SL_0000000313.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 215: {'\ufefflabel_name': '119 구조대를 불러주세요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008469.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 216: {'\ufefflabel_name': '남편이 높은데서 떨어져서 머리에서 피나요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008463.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 217: {'\ufefflabel_name': '말벌에게 쏘였어요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008423.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 218: {'\ufefflabel_name': '빨리 와주세요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008386.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 219: {'\ufefflabel_name': '아내가 쓰러졌어요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008476.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 220: {'\ufefflabel_name': '아들이 놀이터에서 놀다가 팔이 부러졌어요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008477.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 221: {'\ufefflabel_name': '아파서 못 참을것 같아요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008456.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 222: {'\ufefflabel_name': '집 벽이 무너질려고 해요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008461.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 223: {'\ufefflabel_name': '허리가 아파서 일어날 수 없어요', 'cluster_id': '110', 'filename': 'KETI_SL_0000008481.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 224: {'\ufefflabel_name': '발목', 'cluster_id': '111', 'filename': 'KETI_SL_0000000221.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 225: {'\ufefflabel_name': '독사', 'cluster_id': '112', 'filename': 'KETI_SL_0000000188.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 226: {'\ufefflabel_name': '통학버스', 'cluster_id': '113', 'filename': 'KETI_SL_0000000387.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 227: {'\ufefflabel_name': '어떤 사람이 무기/흉기를 소지하고 있어요', 'cluster_id': '114', 'filename': 'KETI_SL_0000036899.mp4'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 228: {'\ufefflabel_name': '고열', 'cluster_id': '115', 'filename': 'KETI_SL_0000000131.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 229: {'\ufefflabel_name': '동대문구', 'cluster_id': '115', 'filename': 'KETI_SL_0000000189.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 230: {'\ufefflabel_name': '동작구', 'cluster_id': '115', 'filename': 'KETI_SL_0000000191.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 231: {'\ufefflabel_name': '옆집사람', 'cluster_id': '116', 'filename': 'KETI_SL_0000000311.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 232: {'\ufefflabel_name': '발', 'cluster_id': '117', 'filename': 'KETI_SL_0000000219.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 233: {'\ufefflabel_name': '친구', 'cluster_id': '118', 'filename': 'KETI_SL_0000000380.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 234: {'\ufefflabel_name': '급류', 'cluster_id': '119', 'filename': 'KETI_SL_0000000154.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 235: {'\ufefflabel_name': '엘리베이터', 'cluster_id': '120', 'filename': 'KETI_SL_0000000298.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 236: {'\ufefflabel_name': '운동장', 'cluster_id': '121', 'filename': 'KETI_SL_0000000326.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 237: {'\ufefflabel_name': '자살', 'cluster_id': '122', 'filename': 'KETI_SL_0000000350.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 238: {'\ufefflabel_name': '연기', 'cluster_id': '123', 'filename': 'KETI_SL_0000000301.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 239: {'\ufefflabel_name': '올해', 'cluster_id': '124', 'filename': 'KETI_SL_0000000319.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 240: {'\ufefflabel_name': '선반', 'cluster_id': '125', 'filename': 'KETI_SL_0000000255.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 241: {'\ufefflabel_name': '차안', 'cluster_id': '126', 'filename': 'KETI_SL_0000000370.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 242: {'\ufefflabel_name': '개', 'cluster_id': '127', 'filename': 'KETI_SL_0000000120.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 243: {'\ufefflabel_name': '말벌', 'cluster_id': '128', 'filename': 'KETI_SL_0000000204.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 244: {'\ufefflabel_name': '술취한 사람', 'cluster_id': '129', 'filename': 'KETI_SL_0000000270.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 245: {'\ufefflabel_name': '트랙터', 'cluster_id': '130', 'filename': 'KETI_SL_0000000388.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 246: {'\ufefflabel_name': '근처에서 폭탄이 터졌어요', 'cluster_id': '131', 'filename': 'KETI_SL_0000008390.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 247: {'\ufefflabel_name': '홍수가 나서 집이 물에 잠기고 있어요', 'cluster_id': '131', 'filename': 'KETI_SL_0000008431.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 248: {'\ufefflabel_name': '32', 'cluster_id': '132', 'filename': 'KETI_SL_0000000033.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 249: {'\ufefflabel_name': '40', 'cluster_id': '132', 'filename': 'KETI_SL_0000000041.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 250: {'\ufefflabel_name': '41', 'cluster_id': '132', 'filename': 'KETI_SL_0000000042.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 251: {'\ufefflabel_name': '23', 'cluster_id': '133', 'filename': 'KETI_SL_0000000024.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 252: {'\ufefflabel_name': '30', 'cluster_id': '133', 'filename': 'KETI_SL_0000000031.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 253: {'\ufefflabel_name': '59', 'cluster_id': '133', 'filename': 'KETI_SL_0000000060.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 254: {'\ufefflabel_name': '65', 'cluster_id': '133', 'filename': 'KETI_SL_0000000066.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 255: {'\ufefflabel_name': '72', 'cluster_id': '133', 'filename': 'KETI_SL_0000000073.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 256: {'\ufefflabel_name': '76', 'cluster_id': '133', 'filename': 'KETI_SL_0000000077.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 257: {'\ufefflabel_name': '8', 'cluster_id': '133', 'filename': 'KETI_SL_0000000009.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 258: {'\ufefflabel_name': '96', 'cluster_id': '133', 'filename': 'KETI_SL_0000000097.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 259: {'\ufefflabel_name': '복부', 'cluster_id': '133', 'filename': 'KETI_SL_0000000226.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 260: {'\ufefflabel_name': '옆쪽', 'cluster_id': '133', 'filename': 'KETI_SL_0000000312.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 261: {'\ufefflabel_name': '앞', 'cluster_id': '134', 'filename': 'KETI_SL_0000000287.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 262: {'\ufefflabel_name': '10', 'cluster_id': '135', 'filename': 'KETI_SL_0000000011.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 263: {'\ufefflabel_name': '1000', 'cluster_id': '135', 'filename': 'KETI_SL_0000000104.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 264: {'\ufefflabel_name': '15', 'cluster_id': '135', 'filename': 'KETI_SL_0000000016.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 265: {'\ufefflabel_name': '4', 'cluster_id': '135', 'filename': 'KETI_SL_0000000005.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 266: {'\ufefflabel_name': '42', 'cluster_id': '135', 'filename': 'KETI_SL_0000000043.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 267: {'\ufefflabel_name': '43', 'cluster_id': '135', 'filename': 'KETI_SL_0000000044.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 268: {'\ufefflabel_name': '44', 'cluster_id': '135', 'filename': 'KETI_SL_0000000045.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 269: {'\ufefflabel_name': '64', 'cluster_id': '135', 'filename': 'KETI_SL_0000000065.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 270: {'\ufefflabel_name': '68', 'cluster_id': '135', 'filename': 'KETI_SL_0000000069.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 271: {'\ufefflabel_name': '83', 'cluster_id': '135', 'filename': 'KETI_SL_0000000084.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 272: {'\ufefflabel_name': '경찰', 'cluster_id': '135', 'filename': 'KETI_SL_0000000125.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 273: {'\ufefflabel_name': '누나', 'cluster_id': '135', 'filename': 'KETI_SL_0000000173.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 274: {'\ufefflabel_name': '21', 'cluster_id': '136', 'filename': 'KETI_SL_0000000022.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 275: {'\ufefflabel_name': '2', 'cluster_id': '137', 'filename': 'KETI_SL_0000000003.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 276: {'\ufefflabel_name': '34', 'cluster_id': '137', 'filename': 'KETI_SL_0000000035.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 277: {'\ufefflabel_name': '46', 'cluster_id': '137', 'filename': 'KETI_SL_0000000047.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 278: {'\ufefflabel_name': '50', 'cluster_id': '137', 'filename': 'KETI_SL_0000000051.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 279: {'\ufefflabel_name': '112', 'cluster_id': '138', 'filename': 'KETI_SL_0000000102.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 280: {'\ufefflabel_name': '57', 'cluster_id': '139', 'filename': 'KETI_SL_0000000058.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 281: {'\ufefflabel_name': '75', 'cluster_id': '139', 'filename': 'KETI_SL_0000000076.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 282: {'\ufefflabel_name': '25', 'cluster_id': '140', 'filename': 'KETI_SL_0000000026.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 283: {'\ufefflabel_name': '9', 'cluster_id': '140', 'filename': 'KETI_SL_0000000010.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 284: {'\ufefflabel_name': '98', 'cluster_id': '140', 'filename': 'KETI_SL_0000000099.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 285: {'\ufefflabel_name': '신고하세요(경찰)', 'cluster_id': '140', 'filename': 'KETI_SL_0000000273.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 286: {'\ufefflabel_name': '14', 'cluster_id': '141', 'filename': 'KETI_SL_0000000015.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 287: {'\ufefflabel_name': '31', 'cluster_id': '141', 'filename': 'KETI_SL_0000000032.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 288: {'\ufefflabel_name': '73', 'cluster_id': '141', 'filename': 'KETI_SL_0000000074.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 289: {'\ufefflabel_name': '곰', 'cluster_id': '141', 'filename': 'KETI_SL_0000000136.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 290: {'\ufefflabel_name': '왼쪽-귀', 'cluster_id': '141', 'filename': 'KETI_SL_0000000321.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 291: {'\ufefflabel_name': '0', 'cluster_id': '142', 'filename': 'KETI_SL_0000000001.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 292: {'\ufefflabel_name': '82', 'cluster_id': '143', 'filename': 'KETI_SL_0000000083.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 293: {'\ufefflabel_name': '56', 'cluster_id': '144', 'filename': 'KETI_SL_0000000057.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 294: {'\ufefflabel_name': '51', 'cluster_id': '145', 'filename': 'KETI_SL_0000000052.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 295: {'\ufefflabel_name': '100', 'cluster_id': '146', 'filename': 'KETI_SL_0000000101.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 296: {'\ufefflabel_name': '13', 'cluster_id': '146', 'filename': 'KETI_SL_0000000014.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 297: {'\ufefflabel_name': '26', 'cluster_id': '146', 'filename': 'KETI_SL_0000000027.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 298: {'\ufefflabel_name': '28', 'cluster_id': '146', 'filename': 'KETI_SL_0000000029.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 299: {'\ufefflabel_name': '5', 'cluster_id': '146', 'filename': 'KETI_SL_0000000006.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 300: {'\ufefflabel_name': '7', 'cluster_id': '146', 'filename': 'KETI_SL_0000000008.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 301: {'\ufefflabel_name': '독극물', 'cluster_id': '146', 'filename': 'KETI_SL_0000000186.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 302: {'\ufefflabel_name': '아기가 갑자기 토해요', 'cluster_id': '146', 'filename': 'KETI_SL_0000008448.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 303: {'\ufefflabel_name': '월요일', 'cluster_id': '146', 'filename': 'KETI_SL_0000000327.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 304: {'\ufefflabel_name': '형', 'cluster_id': '146', 'filename': 'KETI_SL_0000000411.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 305: {'\ufefflabel_name': '119', 'cluster_id': '147', 'filename': 'KETI_SL_0000000103.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 306: {'\ufefflabel_name': '61', 'cluster_id': '147', 'filename': 'KETI_SL_0000000062.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 307: {'\ufefflabel_name': '89', 'cluster_id': '147', 'filename': 'KETI_SL_0000000090.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 308: {'\ufefflabel_name': '옆집', 'cluster_id': '148', 'filename': 'KETI_SL_0000000308.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 309: {'\ufefflabel_name': '귀', 'cluster_id': '149', 'filename': 'KETI_SL_0000000150.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 310: {'\ufefflabel_name': '어깨', 'cluster_id': '149', 'filename': 'KETI_SL_0000000292.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 311: {'\ufefflabel_name': '수요일', 'cluster_id': '150', 'filename': 'KETI_SL_0000000269.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 312: {'\ufefflabel_name': '아빠', 'cluster_id': '150', 'filename': 'KETI_SL_0000000280.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 313: {'\ufefflabel_name': '오른쪽-귀', 'cluster_id': '150', 'filename': 'KETI_SL_0000000315.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 314: {'\ufefflabel_name': '앞집', 'cluster_id': '151', 'filename': 'KETI_SL_0000000288.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 315: {'\ufefflabel_name': '안방', 'cluster_id': '152', 'filename': 'KETI_SL_0000000285.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 316: {'\ufefflabel_name': '여학생', 'cluster_id': '152', 'filename': 'KETI_SL_0000000300.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 317: {'\ufefflabel_name': '작은방', 'cluster_id': '152', 'filename': 'KETI_SL_0000000353.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 318: {'\ufefflabel_name': '중구', 'cluster_id': '152', 'filename': 'KETI_SL_0000000361.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 319: {'\ufefflabel_name': '질식', 'cluster_id': '152', 'filename': 'KETI_SL_0000000366.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 320: {'\ufefflabel_name': '창문', 'cluster_id': '152', 'filename': 'KETI_SL_0000000371.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 321: {'\ufefflabel_name': '낫', 'cluster_id': '153', 'filename': 'KETI_SL_0000000163.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 322: {'\ufefflabel_name': '16', 'cluster_id': '154', 'filename': 'KETI_SL_0000000017.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 323: {'\ufefflabel_name': '가시', 'cluster_id': '154', 'filename': 'KETI_SL_0000000109.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 324: {'\ufefflabel_name': '엄마', 'cluster_id': '154', 'filename': 'KETI_SL_0000000297.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 325: {'\ufefflabel_name': '동전', 'cluster_id': '155', 'filename': 'KETI_SL_0000000192.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 326: {'\ufefflabel_name': '물', 'cluster_id': '155', 'filename': 'KETI_SL_0000000214.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 327: {'\ufefflabel_name': '사이', 'cluster_id': '155', 'filename': 'KETI_SL_0000000246.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 328: {'\ufefflabel_name': '삼키다', 'cluster_id': '155', 'filename': 'KETI_SL_0000000250.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 329: {'\ufefflabel_name': '소화전', 'cluster_id': '155', 'filename': 'KETI_SL_0000000263.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 330: {'\ufefflabel_name': '이마', 'cluster_id': '155', 'filename': 'KETI_SL_0000000341.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 331: {'\ufefflabel_name': '파도', 'cluster_id': '155', 'filename': 'KETI_SL_0000000390.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 332: {'\ufefflabel_name': '끓는물', 'cluster_id': '156', 'filename': 'KETI_SL_0000000158.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 333: {'\ufefflabel_name': '누출', 'cluster_id': '156', 'filename': 'KETI_SL_0000000176.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 334: {'\ufefflabel_name': '약국', 'cluster_id': '156', 'filename': 'KETI_SL_0000000289.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 335: {'\ufefflabel_name': '얼굴', 'cluster_id': '156', 'filename': 'KETI_SL_0000000296.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 336: {'\ufefflabel_name': '이상한사람', 'cluster_id': '156', 'filename': 'KETI_SL_0000000344.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 337: {'\ufefflabel_name': '화약', 'cluster_id': '156', 'filename': 'KETI_SL_0000000416.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 338: {'\ufefflabel_name': '거실', 'cluster_id': '157', 'filename': 'KETI_SL_0000000121.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 339: {'\ufefflabel_name': '골절', 'cluster_id': '157', 'filename': 'KETI_SL_0000000134.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 340: {'\ufefflabel_name': '문틈', 'cluster_id': '157', 'filename': 'KETI_SL_0000000213.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 341: {'\ufefflabel_name': '범람', 'cluster_id': '157', 'filename': 'KETI_SL_0000000230.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 342: {'\ufefflabel_name': '탈골', 'cluster_id': '157', 'filename': 'KETI_SL_0000000135.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 343: {'\ufefflabel_name': '구급대원', 'cluster_id': '158', 'filename': 'KETI_SL_0000000145.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 344: {'\ufefflabel_name': '금천구', 'cluster_id': '158', 'filename': 'KETI_SL_0000000153.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 345: {'\ufefflabel_name': '왼쪽', 'cluster_id': '158', 'filename': 'KETI_SL_0000000320.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 346: {'\ufefflabel_name': '17', 'cluster_id': '159', 'filename': 'KETI_SL_0000000018.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 347: {'\ufefflabel_name': '33', 'cluster_id': '159', 'filename': 'KETI_SL_0000000034.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 348: {'\ufefflabel_name': '49', 'cluster_id': '159', 'filename': 'KETI_SL_0000000050.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 349: {'\ufefflabel_name': '71', 'cluster_id': '159', 'filename': 'KETI_SL_0000000072.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 350: {'\ufefflabel_name': '74', 'cluster_id': '159', 'filename': 'KETI_SL_0000000075.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 351: {'\ufefflabel_name': '90', 'cluster_id': '159', 'filename': 'KETI_SL_0000000091.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 352: {'\ufefflabel_name': '94', 'cluster_id': '159', 'filename': 'KETI_SL_0000000095.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 353: {'\ufefflabel_name': '어떤 사람이 바다에 빠졌어요', 'cluster_id': '159', 'filename': 'KETI_SL_0000008464.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 354: {'\ufefflabel_name': '비상약', 'cluster_id': '160', 'filename': 'KETI_SL_0000000243.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 355: {'\ufefflabel_name': '1', 'cluster_id': '161', 'filename': 'KETI_SL_0000000002.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 356: {'\ufefflabel_name': '12', 'cluster_id': '161', 'filename': 'KETI_SL_0000000013.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 357: {'\ufefflabel_name': '18', 'cluster_id': '161', 'filename': 'KETI_SL_0000000019.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 358: {'\ufefflabel_name': '24', 'cluster_id': '161', 'filename': 'KETI_SL_0000000025.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 359: {'\ufefflabel_name': '27', 'cluster_id': '161', 'filename': 'KETI_SL_0000000028.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 360: {'\ufefflabel_name': '29', 'cluster_id': '161', 'filename': 'KETI_SL_0000000030.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 361: {'\ufefflabel_name': '3', 'cluster_id': '161', 'filename': 'KETI_SL_0000000004.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 362: {'\ufefflabel_name': '39', 'cluster_id': '161', 'filename': 'KETI_SL_0000000040.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 363: {'\ufefflabel_name': '88', 'cluster_id': '161', 'filename': 'KETI_SL_0000000089.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 364: {'\ufefflabel_name': '벌', 'cluster_id': '161', 'filename': 'KETI_SL_0000000229.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 365: {'\ufefflabel_name': '언니', 'cluster_id': '161', 'filename': 'KETI_SL_0000000295.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 366: {'\ufefflabel_name': '토하다', 'cluster_id': '161', 'filename': 'KETI_SL_0000000386.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 367: {'\ufefflabel_name': '왼쪽-눈', 'cluster_id': '162', 'filename': 'KETI_SL_0000000322.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 368: {'\ufefflabel_name': '오빠', 'cluster_id': '163', 'filename': 'KETI_SL_0000000317.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 369: {'\ufefflabel_name': '배고프다', 'cluster_id': '164', 'filename': 'KETI_SL_0000000227.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 370: {'\ufefflabel_name': '고압전선', 'cluster_id': '165', 'filename': 'KETI_SL_0000000130.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 371: {'\ufefflabel_name': '보내주세요(구급차)', 'cluster_id': '165', 'filename': 'KETI_SL_0000000235.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 372: {'\ufefflabel_name': '진통제', 'cluster_id': '165', 'filename': 'KETI_SL_0000000365.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 373: {'\ufefflabel_name': '침수', 'cluster_id': '165', 'filename': 'KETI_SL_0000000381.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 374: {'\ufefflabel_name': '도와주세요!', 'cluster_id': '166', 'filename': 'KETI_SL_0000008436.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 375: {'\ufefflabel_name': '독버섯을 먹은 것 같아요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008425.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 376: {'\ufefflabel_name': '동생이 문틈에 손이 끼었어요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008384.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 377: {'\ufefflabel_name': '밖에 싸움이 났어요 경찰을 불러주세요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008474.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 378: {'\ufefflabel_name': '배가 침몰하고 있어요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008396.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 379: {'\ufefflabel_name': '사람이 무거운 물건에 깔렸어요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008465.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 380: {'\ufefflabel_name': '차 안에 강아지가 방치되어있어요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008408.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 381: {'\ufefflabel_name': '터널이 무너져 갇혔어요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008415.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 382: {'\ufefflabel_name': '폭탄이 터졌어요', 'cluster_id': '166', 'filename': 'KETI_SL_0000008422.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 383: {'\ufefflabel_name': '친구가 음식을 먹다가 실수로 방부제를 같이 먹었어요', 'cluster_id': '167', 'filename': 'KETI_SL_0000008405.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 384: {'\ufefflabel_name': '발목을 접질렀어요', 'cluster_id': '168', 'filename': 'KETI_SL_0000008478.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 385: {'\ufefflabel_name': '19', 'cluster_id': '169', 'filename': 'KETI_SL_0000000020.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 386: {'\ufefflabel_name': '45', 'cluster_id': '169', 'filename': 'KETI_SL_0000000046.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 387: {'\ufefflabel_name': '55', 'cluster_id': '169', 'filename': 'KETI_SL_0000000056.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 388: {'\ufefflabel_name': '62', 'cluster_id': '169', 'filename': 'KETI_SL_0000000063.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 389: {'\ufefflabel_name': '66', 'cluster_id': '169', 'filename': 'KETI_SL_0000000067.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 390: {'\ufefflabel_name': '딸', 'cluster_id': '169', 'filename': 'KETI_SL_0000000197.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 391: {'\ufefflabel_name': '11', 'cluster_id': '170', 'filename': 'KETI_SL_0000000012.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 392: {'\ufefflabel_name': '53', 'cluster_id': '170', 'filename': 'KETI_SL_0000000054.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 393: {'\ufefflabel_name': '다음', 'cluster_id': '170', 'filename': 'KETI_SL_0000000179.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 394: {'\ufefflabel_name': '달(월)', 'cluster_id': '170', 'filename': 'KETI_SL_0000000180.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 395: {'\ufefflabel_name': '현관앞', 'cluster_id': '171', 'filename': 'KETI_SL_0000000409.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 396: {'\ufefflabel_name': '91', 'cluster_id': '172', 'filename': 'KETI_SL_0000000092.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 397: {'\ufefflabel_name': '20', 'cluster_id': '173', 'filename': 'KETI_SL_0000000021.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 398: {'\ufefflabel_name': '54', 'cluster_id': '173', 'filename': 'KETI_SL_0000000055.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 399: {'\ufefflabel_name': '58', 'cluster_id': '173', 'filename': 'KETI_SL_0000000059.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 400: {'\ufefflabel_name': '6', 'cluster_id': '173', 'filename': 'KETI_SL_0000000007.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 401: {'\ufefflabel_name': '70', 'cluster_id': '173', 'filename': 'KETI_SL_0000000071.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 402: {'\ufefflabel_name': '78', 'cluster_id': '173', 'filename': 'KETI_SL_0000000079.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 403: {'\ufefflabel_name': '86', 'cluster_id': '173', 'filename': 'KETI_SL_0000000087.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 404: {'\ufefflabel_name': '95', 'cluster_id': '173', 'filename': 'KETI_SL_0000000096.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 405: {'\ufefflabel_name': '97', 'cluster_id': '173', 'filename': 'KETI_SL_0000000098.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 406: {'\ufefflabel_name': '걸렸다', 'cluster_id': '173', 'filename': 'KETI_SL_0000000122.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 407: {'\ufefflabel_name': '광진구', 'cluster_id': '174', 'filename': 'KETI_SL_0000000142.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 408: {'\ufefflabel_name': '22', 'cluster_id': '175', 'filename': 'KETI_SL_0000000023.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 409: {'\ufefflabel_name': '36', 'cluster_id': '175', 'filename': 'KETI_SL_0000000037.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 410: {'\ufefflabel_name': '37', 'cluster_id': '175', 'filename': 'KETI_SL_0000000038.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 411: {'\ufefflabel_name': '47', 'cluster_id': '175', 'filename': 'KETI_SL_0000000048.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 412: {'\ufefflabel_name': '52', 'cluster_id': '175', 'filename': 'KETI_SL_0000000053.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 413: {'\ufefflabel_name': '67', 'cluster_id': '175', 'filename': 'KETI_SL_0000000068.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 414: {'\ufefflabel_name': '69', 'cluster_id': '175', 'filename': 'KETI_SL_0000000070.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 415: {'\ufefflabel_name': '목', 'cluster_id': '176', 'filename': 'KETI_SL_0000000208.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 416: {'\ufefflabel_name': '어제', 'cluster_id': '176', 'filename': 'KETI_SL_0000000293.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 417: {'\ufefflabel_name': '서초구', 'cluster_id': '177', 'filename': 'KETI_SL_0000000254.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 418: {'\ufefflabel_name': '서대문구', 'cluster_id': '178', 'filename': 'KETI_SL_0000000251.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 419: {'\ufefflabel_name': '응급대원', 'cluster_id': '178', 'filename': 'KETI_SL_0000000338.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 420: {'\ufefflabel_name': '토요일', 'cluster_id': '178', 'filename': 'KETI_SL_0000000385.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 421: {'\ufefflabel_name': '뱀', 'cluster_id': '179', 'filename': 'KETI_SL_0000000228.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 422: {'\ufefflabel_name': '구해주세요', 'cluster_id': '180', 'filename': 'KETI_SL_0000000149.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 423: {'\ufefflabel_name': '뜨거운물', 'cluster_id': '180', 'filename': 'KETI_SL_0000000200.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 424: {'\ufefflabel_name': '자상', 'cluster_id': '180', 'filename': 'KETI_SL_0000000351.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 425: {'\ufefflabel_name': '축사', 'cluster_id': '180', 'filename': 'KETI_SL_0000000376.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 426: {'\ufefflabel_name': '파편', 'cluster_id': '180', 'filename': 'KETI_SL_0000000391.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 427: {'\ufefflabel_name': '공원', 'cluster_id': '181', 'filename': 'KETI_SL_0000000138.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 428: {'\ufefflabel_name': '낯선사람', 'cluster_id': '181', 'filename': 'KETI_SL_0000000165.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 429: {'\ufefflabel_name': '놀이터', 'cluster_id': '181', 'filename': 'KETI_SL_0000000139.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 430: {'\ufefflabel_name': '열나다', 'cluster_id': '181', 'filename': 'KETI_SL_0000000304.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 431: {'\ufefflabel_name': '(사람)이 갑자기 쓰러졌어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008392.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 432: {'\ufefflabel_name': '112에 신고해주세요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008473.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 433: {'\ufefflabel_name': '근처에 있는 건물이 붕괴되고 있어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008402.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 434: {'\ufefflabel_name': '바다에서 조난을 당했어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008427.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 435: {'\ufefflabel_name': '산에서 뱀에게 물렸어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008411.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 436: {'\ufefflabel_name': '어디선가 연기가 나요 불이 나고 있는 것 같아요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008416.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 437: {'\ufefflabel_name': '어떤 사람이 무기 흉기를 소지하고 있어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008401.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 438: {'\ufefflabel_name': '어떤 사람이 칼에 찔려서 피를 많이 흘리고 있어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008482.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 439: {'\ufefflabel_name': '집이 흔들려요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008460.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 440: {'\ufefflabel_name': '친구가 감전 사고를 당했어요', 'cluster_id': '182', 'filename': 'KETI_SL_0000008406.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 441: {'\ufefflabel_name': '밖에 불이 났어요. 소방차를 불러주세요', 'cluster_id': '183', 'filename': 'KETI_SL_0000008471.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 442: {'\ufefflabel_name': '밖에 불이 났어요 소방차를 불러주세요', 'cluster_id': '184', 'filename': 'KETI_SL_0000036963.mp4'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 443: {'\ufefflabel_name': '아기가 장난감을 삼켰어요', 'cluster_id': '185', 'filename': 'KETI_SL_0000008394.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 444: {'\ufefflabel_name': '48', 'cluster_id': '186', 'filename': 'KETI_SL_0000002459.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 445: {'\ufefflabel_name': '술 취한 사람이 방망이로 사람들을 때리고 있어요', 'cluster_id': '187', 'filename': 'KETI_SL_0000008388.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 446: {'\ufefflabel_name': '반점생기다', 'cluster_id': '188', 'filename': 'KETI_SL_0000000218.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 447: {'\ufefflabel_name': '밖에 모르는 사람이 서성거려요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008472.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 448: {'\ufefflabel_name': '숨이 안 쉬어져요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008433.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 449: {'\ufefflabel_name': '아이가 방에 갇혔어요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008458.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 450: {'\ufefflabel_name': '아이를 공원에서 잃어버렸어요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008450.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 451: {'\ufefflabel_name': '어떤 사람이 벼락을 맞았어요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008428.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 452: {'\ufefflabel_name': '우리 집에 불이 났어요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008438.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 453: {'\ufefflabel_name': '집에 전기가 나갔어요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008479.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 454: {'\ufefflabel_name': '친구가 숨을 안 쉬는 것 같아요', 'cluster_id': '189', 'filename': 'KETI_SL_0000008407.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 455: {'\ufefflabel_name': '아기가 장난감을 사켰어요', 'cluster_id': '190', 'filename': 'KETI_SL_0000036893.mp4'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 456: {'\ufefflabel_name': '아이가 독극물을 삼켰어요', 'cluster_id': '190', 'filename': 'KETI_SL_0000008452.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 457: {'\ufefflabel_name': '아이가 말벌에 쏘여서 기절했어요', 'cluster_id': '190', 'filename': 'KETI_SL_0000008483.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 458: {'\ufefflabel_name': '집에 도둑(강도)이 들어왔어요', 'cluster_id': '190', 'filename': 'KETI_SL_0000008398.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 459: {'\ufefflabel_name': '해안가에 상어가 나타났어요', 'cluster_id': '190', 'filename': 'KETI_SL_0000008475.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 460: {'\ufefflabel_name': '체온계', 'cluster_id': '191', 'filename': 'KETI_SL_0000000373.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 461: {'\ufefflabel_name': '지혈대', 'cluster_id': '192', 'filename': 'KETI_SL_0000000364.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 462: {'\ufefflabel_name': '멧돼지', 'cluster_id': '193', 'filename': 'KETI_SL_0000000207.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 463: {'\ufefflabel_name': '각목', 'cluster_id': '194', 'filename': 'KETI_SL_0000000110.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 464: {'\ufefflabel_name': '마포구', 'cluster_id': '194', 'filename': 'KETI_SL_0000000202.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 465: {'\ufefflabel_name': '가렵다', 'cluster_id': '195', 'filename': 'KETI_SL_0000000106.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 466: {'\ufefflabel_name': '마당', 'cluster_id': '195', 'filename': 'KETI_SL_0000000201.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 467: {'\ufefflabel_name': '수영장', 'cluster_id': '195', 'filename': 'KETI_SL_0000000268.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 468: {'\ufefflabel_name': '중랑구', 'cluster_id': '195', 'filename': 'KETI_SL_0000000362.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 469: {'\ufefflabel_name': '팔꿈치', 'cluster_id': '195', 'filename': 'KETI_SL_0000000393.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 470: {'\ufefflabel_name': '구급대', 'cluster_id': '196', 'filename': 'KETI_SL_0000000144.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 471: {'\ufefflabel_name': '구청', 'cluster_id': '196', 'filename': 'KETI_SL_0000000148.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 472: {'\ufefflabel_name': '낯선여자', 'cluster_id': '196', 'filename': 'KETI_SL_0000000166.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 473: {'\ufefflabel_name': '누전', 'cluster_id': '196', 'filename': 'KETI_SL_0000000175.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 474: {'\ufefflabel_name': '병원', 'cluster_id': '196', 'filename': 'KETI_SL_0000000232.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 475: {'\ufefflabel_name': '붕대', 'cluster_id': '196', 'filename': 'KETI_SL_0000000241.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 476: {'\ufefflabel_name': '약사', 'cluster_id': '196', 'filename': 'KETI_SL_0000000290.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 477: {'\ufefflabel_name': '오른쪽', 'cluster_id': '196', 'filename': 'KETI_SL_0000000314.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 478: {'\ufefflabel_name': '의사', 'cluster_id': '196', 'filename': 'KETI_SL_0000000340.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 479: {'\ufefflabel_name': '성동구', 'cluster_id': '197', 'filename': 'KETI_SL_0000000257.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 480: {'\ufefflabel_name': '손가락', 'cluster_id': '197', 'filename': 'KETI_SL_0000000265.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 481: {'\ufefflabel_name': '옥상', 'cluster_id': '197', 'filename': 'KETI_SL_0000000318.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 482: {'\ufefflabel_name': '경운기', 'cluster_id': '198', 'filename': 'KETI_SL_0000000124.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 483: {'\ufefflabel_name': '공사장', 'cluster_id': '199', 'filename': 'KETI_SL_0000000137.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 484: {'\ufefflabel_name': '강', 'cluster_id': '200', 'filename': 'KETI_SL_0000000114.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 485: {'\ufefflabel_name': '금가다', 'cluster_id': '200', 'filename': 'KETI_SL_0000000151.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 486: {'\ufefflabel_name': '깔리다', 'cluster_id': '200', 'filename': 'KETI_SL_0000000157.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 487: {'\ufefflabel_name': '낯선남자', 'cluster_id': '200', 'filename': 'KETI_SL_0000000164.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 488: {'\ufefflabel_name': '이물질', 'cluster_id': '200', 'filename': 'KETI_SL_0000000342.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 489: {'\ufefflabel_name': '이웃집', 'cluster_id': '200', 'filename': 'KETI_SL_0000000345.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 490: {'\ufefflabel_name': '차밖', 'cluster_id': '200', 'filename': 'KETI_SL_0000000369.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 491: {'\ufefflabel_name': '할머니', 'cluster_id': '200', 'filename': 'KETI_SL_0000000400.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 492: {'\ufefflabel_name': '해(연)', 'cluster_id': '200', 'filename': 'KETI_SL_0000000403.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 493: {'\ufefflabel_name': '현관', 'cluster_id': '200', 'filename': 'KETI_SL_0000000408.AVI'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 494: {'\ufefflabel_name': '감전 사고가 났어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008444.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 495: {'\ufefflabel_name': '강아지가 뼈를 삼켰어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008393.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 496: {'\ufefflabel_name': '고압선이 끊어져 있어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008432.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 497: {'\ufefflabel_name': '광견병에 걸린 개에게 물렸어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008412.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 498: {'\ufefflabel_name': '너무 아파요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008385.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 499: {'\ufefflabel_name': '눈에 이물질이 들어갔어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008414.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 500: {'\ufefflabel_name': '문에 몸이 끼었어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008429.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 501: {'\ufefflabel_name': '아랫집에 불이 났어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008441.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 502: {'\ufefflabel_name': '어떤 사람한테 납치당했어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008410.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 503: {'\ufefflabel_name': '어지러워서 서있을 수 없어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008470.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 504: {'\ufefflabel_name': '엄마가 신장병에 있는데 쓰러지셨어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008485.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 505: {'\ufefflabel_name': '지하철 역 안에서 화재가 발생했어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008403.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 506: {'\ufefflabel_name': '할머니가 갑자기 쓰러지셨어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008391.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 507: {'\ufefflabel_name': '해안가에 해파리가 나타났어요', 'cluster_id': '201', 'filename': 'KETI_SL_0000008382.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 508: {'\ufefflabel_name': '음식을 하다가 손가락을 칼에 베였어요', 'cluster_id': '202', 'filename': 'KETI_SL_0000008480.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 509: {'\ufefflabel_name': '내가 방에 갇혔어요', 'cluster_id': '203', 'filename': 'KETI_SL_0000008459.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 510: {'\ufefflabel_name': '유리가 깨져서 발을 다쳤어요', 'cluster_id': '204', 'filename': 'KETI_SL_0000008462.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 511: {'\ufefflabel_name': '급류에 친구가 휩쓸렸어요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008417.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 512: {'\ufefflabel_name': '몸이 결박 당해있어요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008434.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 513: {'\ufefflabel_name': '비행기가 추락하고 있어요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008418.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 514: {'\ufefflabel_name': '아기를 낳을것 같아요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008447.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 515: {'\ufefflabel_name': '아이가 장난감을 삼켰어요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008454.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 516: {'\ufefflabel_name': '옆집에 불이 났어요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008440.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 517: {'\ufefflabel_name': '해파리에게 쏘였어요', 'cluster_id': '205', 'filename': 'KETI_SL_0000008424.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 518: {'\ufefflabel_name': '아이를 모르는 사람이 데려갔어요', 'cluster_id': '206', 'filename': 'KETI_SL_0000008451.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 519: {'\ufefflabel_name': '여기 서대문구 홍제동 한양아파트인데 옥상에서 사람이 떨어지려고해요', 'cluster_id': '206', 'filename': 'KETI_SL_0000008383.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 520: {'\ufefflabel_name': '윗집에 불이 났어요', 'cluster_id': '206', 'filename': 'KETI_SL_0000008439.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 521: {'\ufefflabel_name': '스키를 타다가 넘어져서 못 일어나겠어요', 'cluster_id': '207', 'filename': 'KETI_SL_0000008421.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 522: {'\ufefflabel_name': '복통이 심해요', 'cluster_id': '208', 'filename': 'KETI_SL_0000008455.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - WARNING - Missing data in row 523: {'\ufefflabel_name': '가스가 새고 있어요', 'cluster_id': '209', 'filename': 'KETI_SL_0000008443.MOV'}
+2025-07-03 19:42:48 - VideoClusterCategorizer - INFO - Successfully loaded with encoding: utf-8
+2025-07-03 19:42:48 - VideoClusterCategorizer - INFO - Loaded 0 clusters
+2025-07-03 19:42:48 - VideoClusterCategorizer - INFO - Total unique labels: 0

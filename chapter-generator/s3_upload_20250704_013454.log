@@ -1,0 +1,96 @@
+2025-07-04 01:34:54 - S3Uploader - INFO - Using AWS credentials from environment variables
+2025-07-04 01:34:55 - S3Uploader - INFO - Successfully connected to S3 bucket: waterandfish-s3
+2025-07-04 01:34:55 - S3Uploader - INFO - S3Uploader initialized for bucket: waterandfish-s3
+2025-07-04 01:34:55 - S3Uploader - INFO - AWS Profile: default
+2025-07-04 01:34:55 - S3Uploader - INFO - AWS Region: ap-northeast-2
+2025-07-04 01:34:55 - S3Uploader - INFO - ================================================================================
+2025-07-04 01:34:55 - S3Uploader - INFO - Starting S3 upload and delete process
+2025-07-04 01:34:55 - S3Uploader - INFO - Directory: cache
+2025-07-04 01:34:55 - S3Uploader - INFO - S3 Bucket: waterandfish-s3
+2025-07-04 01:34:55 - S3Uploader - INFO - S3 Prefix: (root)
+2025-07-04 01:34:55 - S3Uploader - INFO - ================================================================================
+2025-07-04 01:34:55 - S3Uploader - INFO - Starting upload of directory: cache
+2025-07-04 01:34:55 - S3Uploader - INFO - Scanning directory: cache
+2025-07-04 01:34:56 - S3Uploader - INFO - Found 23 files to upload
+2025-07-04 01:34:56 - S3Uploader - INFO - Uploading: 22_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/22_seq30_aug3_max40_min40.pkl
+2025-07-04 01:34:59 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 22_seq30_aug3_max40_min40.pkl
+2025-07-04 01:34:59 - S3Uploader - INFO - Uploading: 창백하다_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/창백하다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:02 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 창백하다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:02 - S3Uploader - INFO - Uploading: 배고프다_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/배고프다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:05 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 배고프다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:05 - S3Uploader - INFO - Uploading: 납치_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/납치_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:08 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 납치_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:08 - S3Uploader - INFO - Uploading: 해안가에_해파리가_나타났어요_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/해안가에_해파리가_나타났어요_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:11 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 해안가에_해파리가_나타났어요_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:11 - S3Uploader - INFO - Uploading: 28_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/28_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:13 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 28_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:13 - S3Uploader - INFO - Uploading: 동전_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/동전_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:15 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 동전_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:15 - S3Uploader - INFO - Uploading: 도둑_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/도둑_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:17 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 도둑_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:17 - S3Uploader - INFO - Uploading: 두드러기생기다_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/두드러기생기다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:20 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 두드러기생기다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:20 - S3Uploader - INFO - Uploading: 곰_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/곰_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:23 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 곰_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:23 - S3Uploader - INFO - Uploading: 23_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/23_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:25 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 23_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:25 - S3Uploader - INFO - Uploading: 윗집사람_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/윗집사람_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:28 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 윗집사람_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:28 - S3Uploader - INFO - Uploading: 옆집사람_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/옆집사람_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:32 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 옆집사람_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:32 - S3Uploader - INFO - Uploading: 가렵다_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/가렵다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:36 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 가렵다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:36 - S3Uploader - INFO - Uploading: 옆집_할아버지_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/옆집_할아버지_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:39 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 옆집_할아버지_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:39 - S3Uploader - INFO - Uploading: 26_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/26_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:42 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 26_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:42 - S3Uploader - INFO - Uploading: None_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/None_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:44 - S3Uploader - INFO - ✅ Successfully uploaded and verified: None_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:44 - S3Uploader - INFO - Uploading: 해파리에게_쏘였어요_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/해파리에게_쏘였어요_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:48 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 해파리에게_쏘였어요_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:48 - S3Uploader - INFO - Uploading: 발작_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/발작_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:51 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 발작_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:51 - S3Uploader - INFO - Uploading: 옆집_아저씨_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/옆집_아저씨_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:53 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 옆집_아저씨_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:53 - S3Uploader - INFO - Uploading: 절도_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/절도_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:56 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 절도_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:56 - S3Uploader - INFO - Uploading: 27_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/27_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:59 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 27_seq30_aug3_max40_min40.pkl
+2025-07-04 01:35:59 - S3Uploader - INFO - Uploading: 반점생기다_seq30_aug3_max40_min40.pkl -> s3://waterandfish-s3/반점생기다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:36:02 - S3Uploader - INFO - ✅ Successfully uploaded and verified: 반점생기다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:36:02 - S3Uploader - INFO - 
+Upload Summary:
+2025-07-04 01:36:02 - S3Uploader - INFO -   Total files: 23
+2025-07-04 01:36:02 - S3Uploader - INFO -   Successful: 23
+2025-07-04 01:36:02 - S3Uploader - INFO -   Failed: 0
+2025-07-04 01:36:02 - S3Uploader - INFO -   Success rate: 100.0%
+2025-07-04 01:36:02 - S3Uploader - INFO - 📋 Upload report saved: upload_report_20250704_013602.json
+2025-07-04 01:47:43 - S3Uploader - INFO - Starting deletion of successfully uploaded files
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 22_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 창백하다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 배고프다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 납치_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 해안가에_해파리가_나타났어요_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 28_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 동전_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 도둑_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 두드러기생기다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 곰_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 23_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 윗집사람_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 옆집사람_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 가렵다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 옆집_할아버지_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 26_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: None_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 해파리에게_쏘였어요_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 발작_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 옆집_아저씨_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:43 - S3Uploader - INFO - 🗑️  Deleted: 절도_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:44 - S3Uploader - INFO - 🗑️  Deleted: 27_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:44 - S3Uploader - INFO - 🗑️  Deleted: 반점생기다_seq30_aug3_max40_min40.pkl
+2025-07-04 01:47:44 - S3Uploader - INFO - 
+Deletion Summary:
+2025-07-04 01:47:44 - S3Uploader - INFO -   Files deleted: 23
+2025-07-04 01:47:44 - S3Uploader - INFO -   Failed deletions: 0
+2025-07-04 01:47:44 - S3Uploader - INFO - 🎉 Upload and delete process completed successfully!

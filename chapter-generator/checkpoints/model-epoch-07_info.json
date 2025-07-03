@@ -1,0 +1,52 @@
+{
+  "model_path": "checkpoints/model-epoch-07.keras",
+  "created_at": "2025-07-04T01:34:33.836143",
+  "labels": [
+    "옆집 아저씨",
+    "옆집 할아버지",
+    "옆집사람",
+    "윗집사람",
+    "None"
+  ],
+  "label_mapping": {
+    "옆집 아저씨": 0,
+    "옆집 할아버지": 1,
+    "옆집사람": 2,
+    "윗집사람": 3,
+    "None": 4
+  },
+  "num_classes": 5,
+  "input_shape": [
+    30,
+    675
+  ],
+  "training_stats": {
+    "total_samples": 800,
+    "train_samples": 640,
+    "test_samples": 160,
+    "augmentations_per_video": 3,
+    "target_sequence_length": 30,
+    "model_parameters": {
+      "lstm_units_1": 128,
+      "lstm_units_2": 64,
+      "dense_units": 32,
+      "dropout_rate": 0.3,
+      "l2_regularization": true,
+      "batch_normalization": true
+    },
+    "training_parameters": {
+      "learning_rate": 0.001,
+      "batch_size": 8,
+      "early_stopping_patience": 10,
+      "early_stopping_min_delta": 0.001,
+      "reduce_lr_patience": 3
+    },
+    "checkpoint_epoch": 7,
+    "checkpoint_accuracy": 0.8203125,
+    "checkpoint_val_accuracy": 0.925000011920929,
+    "checkpoint_loss": 0.5915061235427856,
+    "checkpoint_val_loss": 0.29202184081077576
+  },
+  "model_type": "LSTM",
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 7, Val Acc: 0.9250)"
+}

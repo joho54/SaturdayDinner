@@ -32,7 +32,7 @@ TEST_SIZE = 0.2
 RANDOM_STATE = 42
 
 # 캐시 설정
-CACHE_DIR = "cache"
+CACHE_DIR = "s3://waterandfish-s3/cache/"
 CHECKPOINT_DIR = "checkpoints"
 MODELS_DIR = "models"
 INFO_DIR = "info"
