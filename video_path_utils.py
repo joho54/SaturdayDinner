@@ -28,7 +28,7 @@ VIDEO_ROOTS = {
 }
 
 # 지원하는 비디오 확장자
-VIDEO_EXTENSIONS = [".mp4", ".MP4", ".MOV", ".MTS", ".AVI"]
+VIDEO_EXTENSIONS = [".mp4", ".MP4", ".MOV", ".MTS", ".AVI", ".avi"]
 
 def get_video_number(filename: str) -> Optional[int]:
     """파일명에서 비디오 번호를 추출합니다."""
