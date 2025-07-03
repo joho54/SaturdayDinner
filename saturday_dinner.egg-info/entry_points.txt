@@ -1,0 +1,3 @@
+[console_scripts]
+saturday-quiz = saturday_dinner.core.sign_quiz:main
+saturday-train = saturday_dinner.core.main:main

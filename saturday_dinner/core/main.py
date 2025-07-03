@@ -31,7 +31,7 @@ import pickle
 from datetime import datetime
 import logging
 from collections import defaultdict
-from config import LABEL_MAX_SAMPLES_PER_CLASS, MIN_SAMPLES_PER_CLASS
+from saturday_dinner.utils.config import LABEL_MAX_SAMPLES_PER_CLASS, MIN_SAMPLES_PER_CLASS
 
 # MediaPipe 및 TensorFlow 로깅 완전 억제
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "3"  # ERROR만 출력
@@ -41,7 +41,7 @@ logging.getLogger("tensorflow").setLevel(logging.ERROR)
 logging.getLogger("absl").setLevel(logging.ERROR)
 
 # 설정 파일에서 파라미터 import
-from config import *
+from saturday_dinner.utils.config import *
 
 # MediaPipe 초기화
 mp_holistic = mp.solutions.holistic
