@@ -1,11 +1,16 @@
 {
   "model_path": "checkpoints/model-epoch-51.keras",
   "created_at": "2025-07-03T13:29:44.131609",
+  "created_at": "2025-07-02T21:52:29.676203",
   "labels": [
     "낯선남자",
     "낯선사람",
     "낯선여자",
     "밖에 모르는 사람이 서성거려요",
+    "부엌",
+    "앞집",
+    "우리집",
+    "집",
     "None"
   ],
   "label_mapping": {
@@ -13,6 +18,10 @@
     "낯선사람": 1,
     "낯선여자": 2,
     "밖에 모르는 사람이 서성거려요": 3,
+    "부엌": 0,
+    "앞집": 1,
+    "우리집": 2,
+    "집": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -46,7 +55,12 @@
     "checkpoint_val_accuracy": 0.637499988079071,
     "checkpoint_loss": 1.7656421661376953,
     "checkpoint_val_loss": 0.841679573059082
+    "checkpoint_accuracy": 0.28593748807907104,
+    "checkpoint_val_accuracy": 0.5562499761581421,
+    "checkpoint_loss": 2.308579206466675,
+    "checkpoint_val_loss": 0.9651244878768921
   },
   "model_type": "LSTM",
   "description": "수어 인식 모델 - LSTM 기반 (Epoch 51, Val Acc: 0.6375)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 51, Val Acc: 0.5562)"
 }

@@ -1,18 +1,18 @@
 {
-  "model_path": "checkpoints/model-epoch-49.keras",
-  "created_at": "2025-07-02T21:52:29.675756",
+  "model_path": "models/sign_language_model_20250702_213150.keras",
+  "created_at": "2025-07-02T21:37:34.979377",
   "labels": [
-    "부엌",
-    "앞집",
-    "우리집",
-    "집",
+    "급류",
+    "물",
+    "배",
+    "수영장",
     "None"
   ],
   "label_mapping": {
-    "부엌": 0,
-    "앞집": 1,
-    "우리집": 2,
-    "집": 3,
+    "급류": 0,
+    "물": 1,
+    "배": 2,
+    "수영장": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -41,12 +41,16 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 49,
-    "checkpoint_accuracy": 0.28593748807907104,
-    "checkpoint_val_accuracy": 0.5562499761581421,
-    "checkpoint_loss": 2.308579206466675,
-    "checkpoint_val_loss": 0.9651244878768921
+    "test_loss": 0.12316091358661652,
+    "test_accuracy": 0.987500011920929,
+    "class_accuracies": {
+      "급류": 1.0,
+      "물": 1.0,
+      "배": 0.9375,
+      "수영장": 1.0,
+      "None": 1.0
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 49, Val Acc: 0.5562)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }
