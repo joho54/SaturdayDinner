@@ -2614,3 +2614,16 @@
 2025-07-03 17:31:49 - ChapterGenerator - INFO - Created spec file for chapter_76: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_76.json
 2025-07-03 17:31:49 - ChapterGenerator - INFO - Starting training for chapter_76
 2025-07-03 17:31:49 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_76.json
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Successfully completed training for chapter_76
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_173153.keras -> sign_language_model_chapter_76_20250703.keras
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_1_20250703.keras -> sign_language_model_chapter_76_chapter.keras
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Renamed info file: model-info-20250703_173153.json -> model-info-chapter_76-20250703_173153.json
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Renamed info file: model-info-chapter_1-20250703_172641.json -> model-info-chapter_76-chapter_1.json
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_76.json
+2025-07-03 17:40:33 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Processing chapter 2/91: chapter_77
+2025-07-03 17:40:33 - ChapterGenerator - INFO - ============================================================
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Created spec file for chapter_77: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_77.json
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Starting training for chapter_77
+2025-07-03 17:40:33 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_77.json

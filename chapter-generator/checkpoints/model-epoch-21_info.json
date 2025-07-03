@@ -1,18 +1,18 @@
 {
   "model_path": "checkpoints/model-epoch-21.keras",
-  "created_at": "2025-07-03T17:30:16.650818",
+  "created_at": "2025-07-03T17:45:59.290321",
   "labels": [
-    "너무 아파요",
-    "몸에 열이 많이 나고 두통이 심해요",
-    "복통이 심해요",
-    "숨이 안 쉬어져요",
+    "독버섯",
+    "벌",
+    "엽총",
+    "의사",
     "None"
   ],
   "label_mapping": {
-    "너무 아파요": 0,
-    "몸에 열이 많이 나고 두통이 심해요": 1,
-    "복통이 심해요": 2,
-    "숨이 안 쉬어져요": 3,
+    "독버섯": 0,
+    "벌": 1,
+    "엽총": 2,
+    "의사": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -42,11 +42,11 @@
       "reduce_lr_patience": 3
     },
     "checkpoint_epoch": 21,
-    "checkpoint_accuracy": 0.19374999403953552,
-    "checkpoint_val_accuracy": 0.25,
-    "checkpoint_loss": 1.6696102619171143,
-    "checkpoint_val_loss": 1.5931246280670166
+    "checkpoint_accuracy": 0.9703124761581421,
+    "checkpoint_val_accuracy": 0.9937499761581421,
+    "checkpoint_loss": 0.13876736164093018,
+    "checkpoint_val_loss": 0.0805475190281868
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 21, Val Acc: 0.2500)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 21, Val Acc: 0.9937)"
 }

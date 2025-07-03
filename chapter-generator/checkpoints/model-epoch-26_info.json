@@ -1,6 +1,6 @@
 {
-  "model_path": "checkpoints/model-epoch-18.keras",
-  "created_at": "2025-07-03T17:45:32.080165",
+  "model_path": "checkpoints/model-epoch-26.keras",
+  "created_at": "2025-07-03T17:46:39.906839",
   "labels": [
     "독버섯",
     "벌",
@@ -41,12 +41,12 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 18,
-    "checkpoint_accuracy": 0.9515625238418579,
-    "checkpoint_val_accuracy": 0.96875,
-    "checkpoint_loss": 0.1630355417728424,
-    "checkpoint_val_loss": 0.14708733558654785
+    "checkpoint_epoch": 26,
+    "checkpoint_accuracy": 0.9781249761581421,
+    "checkpoint_val_accuracy": 0.9937499761581421,
+    "checkpoint_loss": 0.14025358855724335,
+    "checkpoint_val_loss": 0.08160869777202606
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 18, Val Acc: 0.9688)"
+  "description": "수어 인식 모델 - LSTM 기반 (Epoch 26, Val Acc: 0.9937)"
 }

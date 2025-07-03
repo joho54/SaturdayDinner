@@ -1,18 +1,18 @@
 {
-  "model_path": "checkpoints/model-epoch-13.keras",
-  "created_at": "2025-07-03T17:29:19.215103",
+  "model_path": "models/sign_language_model_20250703_173153.keras",
+  "created_at": "2025-07-03T17:40:32.472921",
   "labels": [
-    "너무 아파요",
-    "몸에 열이 많이 나고 두통이 심해요",
-    "복통이 심해요",
-    "숨이 안 쉬어져요",
+    "남편",
+    "누나",
+    "딸",
+    "아내",
     "None"
   ],
   "label_mapping": {
-    "너무 아파요": 0,
-    "몸에 열이 많이 나고 두통이 심해요": 1,
-    "복통이 심해요": 2,
-    "숨이 안 쉬어져요": 3,
+    "남편": 0,
+    "누나": 1,
+    "딸": 2,
+    "아내": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -41,12 +41,16 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 13,
-    "checkpoint_accuracy": 0.19218750298023224,
-    "checkpoint_val_accuracy": 0.20000000298023224,
-    "checkpoint_loss": 1.66781747341156,
-    "checkpoint_val_loss": 1.6015743017196655
+    "test_loss": 0.34263142943382263,
+    "test_accuracy": 0.800000011920929,
+    "class_accuracies": {
+      "남편": 0.40625,
+      "누나": 1.0,
+      "딸": 1.0,
+      "아내": 0.6875,
+      "None": 0.90625
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 13, Val Acc: 0.2000)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }
