@@ -200,21 +200,11 @@ class CrossCategorizer:
                 "labels": chapter_labels
             }
         
-        # None 라벨 추가
-        if self.chapters:
-            # 마지막 챕터에 None 추가 (공간이 있으면)
-            last_chapter = list(self.chapters.values())[-1]
-            if len(last_chapter["labels"]) < self.max_labels_per_chapter:
-                none_idx = len(last_chapter["labels"])
-                last_chapter["label_dict"]["None"] = none_idx
-                last_chapter["labels"].append("None")
-            else:
-                # 새 챕터에 None만 추가
-                new_chapter_name = f"chapter_{len(self.chapters)+1}"
-                self.chapters[new_chapter_name] = {
-                    "label_dict": {"None": 0},
-                    "labels": ["None"]
-                }
+        # 모든 챕터에 None 라벨을 마지막 요소로 추가
+        for chapter_name, chapter_data in self.chapters.items():
+            none_idx = len(chapter_data["labels"])
+            chapter_data["label_dict"]["None"] = none_idx
+            chapter_data["labels"].append("None")
         
         return self.chapters
     
@@ -281,7 +271,7 @@ class CrossCategorizer:
             "chapters": [],
             "summary": {
                 "total_chapters": len(self.chapters),
-                "total_labels": sum(len(ch["labels"]) for ch in self.chapters.values()) - 1,  # None 제외
+                "total_labels": sum(len(ch["labels"]) for ch in self.chapters.values()) - len(self.chapters),  # 각 챕터의 None 제외
                 "chapter_sizes": {name: len(ch["labels"]) for name, ch in self.chapters.items()}
             }
         }
