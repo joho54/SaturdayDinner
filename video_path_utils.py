@@ -33,9 +33,13 @@ VIDEO_EXTENSIONS = [".mp4", ".MP4", ".MOV", ".MTS", ".AVI", ".avi"]
 def get_video_number(filename: str) -> Optional[int]:
     """파일명에서 비디오 번호를 추출합니다."""
     try:
+        # filename이 문자열이 아닌 경우 문자열로 변환
+        if not isinstance(filename, str):
+            filename = str(filename)
+        
         num_str = filename.split("_")[-1].split(".")[0]
         return int(num_str)
-    except (ValueError, IndexError):
+    except (ValueError, IndexError, AttributeError):
         return None
 
 def get_root_path_for_number(num: int) -> Optional[str]:

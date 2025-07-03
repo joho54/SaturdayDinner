@@ -832,7 +832,7 @@ class MotionClusterer:
         
         return best_k
     
-    def cluster_motions(self, sequences: List[KeypointSequence], max_cluster_size: int = 20) -> Dict[str, Any]:
+    def cluster_motions(self, sequences: List[KeypointSequence], max_cluster_size: int = 4) -> Dict[str, Any]:
         """동작 클러스터링 수행 (클러스터 크기 제한 포함)"""
         print(f"\n🎯 동작 클러스터링 시작 (최대 클러스터 크기: {max_cluster_size}개)...")
         
@@ -1030,15 +1030,15 @@ def main():
     extractor = MotionExtractor()
     labels_dict = extractor.extract_unique_labels_with_first_files("labels.csv")
     
-    # # 2. 키포인트 시퀸스 추출 및 저장
-    # extracted_sequences = extractor.extract_all_sequences(labels_dict)
+    # 2. 키포인트 시퀸스 추출 및 저장
+    extracted_sequences = extractor.extract_all_sequences(labels_dict)
     
-    # if not extracted_sequences:
-    #     print("❌ 추출된 시퀸스가 없습니다. 프로그램을 종료합니다.")
-    #     return
+    if not extracted_sequences:
+        print("❌ 추출된 시퀸스가 없습니다. 프로그램을 종료합니다.")
+        return
     
     # compose extracted sequences from current files in the output directory
-    extracted_sequences = extractor.compose_extracted_sequences()
+    # extracted_sequences = extractor.compose_extracted_sequences()
     
     if not extracted_sequences:
         print("❌ 추출된 시퀸스가 없습니다. 프로그램을 종료합니다.")

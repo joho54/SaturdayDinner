@@ -302,8 +302,8 @@ def main():
     
     # 데이터 로드
     categorizer.load_data(
-        'clustered_labels_with_filenames.csv',
-        'clustering_results_20250702_195813.csv'
+        'two-clusters/clustered_labels_with_filenames.csv',
+        'two-clusters/clustering_results_20250703_115812.csv'
     )
     
     # 제약 조건 분석
