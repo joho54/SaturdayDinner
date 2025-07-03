@@ -1,0 +1,184 @@
+
+================================================================================
+챕터 생성 완료 보고서
+================================================================================
+
+📊 전체 통계:
+   - 총 챕터 수: 166
+   - 성공: 0
+   - 실패: 166
+   - 성공률: 0.0%
+
+📁 출력 디렉토리:
+   - 모델: chapter-models/
+   - 정보: chapter-info/
+
+❌ 실패한 챕터:
+   - chapter_1
+   - chapter_2
+   - chapter_3
+   - chapter_4
+   - chapter_5
+   - chapter_6
+   - chapter_7
+   - chapter_8
+   - chapter_9
+   - chapter_10
+   - chapter_11
+   - chapter_12
+   - chapter_13
+   - chapter_14
+   - chapter_15
+   - chapter_16
+   - chapter_17
+   - chapter_18
+   - chapter_19
+   - chapter_20
+   - chapter_21
+   - chapter_22
+   - chapter_23
+   - chapter_24
+   - chapter_25
+   - chapter_26
+   - chapter_27
+   - chapter_28
+   - chapter_29
+   - chapter_30
+   - chapter_31
+   - chapter_32
+   - chapter_33
+   - chapter_34
+   - chapter_35
+   - chapter_36
+   - chapter_37
+   - chapter_38
+   - chapter_39
+   - chapter_40
+   - chapter_41
+   - chapter_42
+   - chapter_43
+   - chapter_44
+   - chapter_45
+   - chapter_46
+   - chapter_47
+   - chapter_48
+   - chapter_49
+   - chapter_50
+   - chapter_51
+   - chapter_52
+   - chapter_53
+   - chapter_54
+   - chapter_55
+   - chapter_56
+   - chapter_57
+   - chapter_58
+   - chapter_59
+   - chapter_60
+   - chapter_61
+   - chapter_62
+   - chapter_63
+   - chapter_64
+   - chapter_65
+   - chapter_66
+   - chapter_67
+   - chapter_68
+   - chapter_69
+   - chapter_70
+   - chapter_71
+   - chapter_72
+   - chapter_73
+   - chapter_74
+   - chapter_75
+   - chapter_76
+   - chapter_77
+   - chapter_78
+   - chapter_79
+   - chapter_80
+   - chapter_81
+   - chapter_82
+   - chapter_83
+   - chapter_84
+   - chapter_85
+   - chapter_86
+   - chapter_87
+   - chapter_88
+   - chapter_89
+   - chapter_90
+   - chapter_91
+   - chapter_92
+   - chapter_93
+   - chapter_94
+   - chapter_95
+   - chapter_96
+   - chapter_97
+   - chapter_98
+   - chapter_99
+   - chapter_100
+   - chapter_101
+   - chapter_102
+   - chapter_103
+   - chapter_104
+   - chapter_105
+   - chapter_106
+   - chapter_107
+   - chapter_108
+   - chapter_109
+   - chapter_110
+   - chapter_111
+   - chapter_112
+   - chapter_113
+   - chapter_114
+   - chapter_115
+   - chapter_116
+   - chapter_117
+   - chapter_118
+   - chapter_119
+   - chapter_120
+   - chapter_121
+   - chapter_122
+   - chapter_123
+   - chapter_124
+   - chapter_125
+   - chapter_126
+   - chapter_127
+   - chapter_128
+   - chapter_129
+   - chapter_130
+   - chapter_131
+   - chapter_132
+   - chapter_133
+   - chapter_134
+   - chapter_135
+   - chapter_136
+   - chapter_137
+   - chapter_138
+   - chapter_139
+   - chapter_140
+   - chapter_141
+   - chapter_142
+   - chapter_143
+   - chapter_144
+   - chapter_145
+   - chapter_146
+   - chapter_147
+   - chapter_148
+   - chapter_149
+   - chapter_150
+   - chapter_151
+   - chapter_152
+   - chapter_153
+   - chapter_154
+   - chapter_155
+   - chapter_156
+   - chapter_157
+   - chapter_158
+   - chapter_159
+   - chapter_160
+   - chapter_161
+   - chapter_162
+   - chapter_163
+   - chapter_164
+   - chapter_165
+   - chapter_166
+
+================================================================================

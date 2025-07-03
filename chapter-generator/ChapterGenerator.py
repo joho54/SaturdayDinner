@@ -1,423 +1,403 @@
 #!/usr/bin/env python3
 """
-ChapterGenerator.py - 여러 챕터의 모델을 대량으로 생성하는 스크립트
+ChapterGenerator - 여러 챕터의 label_dict를 처리하여 각각의 모델을 생성하는 클래스
 
-명세:
-1. 입력파일: chapter_result.json
-2. main.py가 하던 일을 대량으로 처리할 수 있도록 리팩터링한 버전
-3. 결과를 chapter-models와 chapter-info에 각각 저장
-
-사용법:
-    python ChapterGenerator.py chapter_result.json
+이 클래스는 chapter_result.json 파일에서 여러 챕터를 읽어와서
+각 챕터별로 개별적인 모델을 학습시키고, 파일명에 챕터명을 포함하여 저장합니다.
 """
 
-import sys
 import os
 import json
-import shutil
-from pathlib import Path
-from typing import Dict, List, Optional
-import tempfile
 import subprocess
+import sys
 import logging
-
-# 로깅 설정
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s',
-    handlers=[
-        logging.StreamHandler(),
-        logging.FileHandler('chapter_generation.log')
-    ]
-)
-logger = logging.getLogger(__name__)
+from datetime import datetime
+from pathlib import Path
+import shutil
+from typing import Dict, List, Optional
 
 
 class ChapterGenerator:
-    """여러 챕터의 모델을 대량으로 생성하는 클래스"""
-    
-    def __init__(self, chapter_result_path: str):
+    """여러 챕터의 label_dict를 처리하여 각각의 모델을 생성하는 클래스"""
+
+    def __init__(self, chapter_file: str = "chapter_result.json", base_output_dir: str = None):
         """
         ChapterGenerator 초기화
         
         Args:
-            chapter_result_path (str): chapter_result.json 파일 경로
+            chapter_file: 챕터 정보가 포함된 JSON 파일 경로
+            base_output_dir: 출력 디렉토리 기본 경로 (기본값: chapter-generator)
         """
-        self.chapter_result_path = chapter_result_path
-        self.chapter_data = None
-        self.output_models_dir = "chapter-models"
-        self.output_info_dir = "chapter-info"
-        self.temp_dir = None
+        self.chapter_file = chapter_file
+        self.base_output_dir = base_output_dir or os.path.dirname(os.path.abspath(__file__))
+        self.main_py_path = os.path.join(self.base_output_dir, "main.py")
         
-        # 출력 디렉토리 생성
-        os.makedirs(self.output_models_dir, exist_ok=True)
-        os.makedirs(self.output_info_dir, exist_ok=True)
+        # 로깅 설정
+        self.setup_logging()
         
-        logger.info(f"ChapterGenerator 초기화 완료")
-        logger.info(f"모델 출력 디렉토리: {self.output_models_dir}")
-        logger.info(f"정보 출력 디렉토리: {self.output_info_dir}")
-    
-    def load_chapter_data(self) -> bool:
-        """
-        chapter_result.json 파일을 로드합니다.
+        # 기본 디렉토리 생성
+        self.setup_directories()
         
-        Returns:
-            bool: 로드 성공 여부
-        """
+        self.logger.info(f"ChapterGenerator 초기화 완료")
+        self.logger.info(f"Chapter file: {self.chapter_file}")
+        self.logger.info(f"Base output directory: {self.base_output_dir}")
+
+    def setup_logging(self):
+        """로깅 설정"""
+        log_file = os.path.join(self.base_output_dir, "chapter_generation.log")
+        
+        # 로거 설정
+        self.logger = logging.getLogger('ChapterGenerator')
+        self.logger.setLevel(logging.INFO)
+        
+        # 핸들러가 이미 있다면 제거 (중복 방지)
+        for handler in self.logger.handlers[:]:
+            self.logger.removeHandler(handler)
+        
+        # 파일 핸들러
+        file_handler = logging.FileHandler(log_file, encoding='utf-8')
+        file_handler.setLevel(logging.INFO)
+        
+        # 콘솔 핸들러
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.INFO)
+        
+        # 포매터
+        formatter = logging.Formatter(
+            '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            datefmt='%Y-%m-%d %H:%M:%S'
+        )
+        file_handler.setFormatter(formatter)
+        console_handler.setFormatter(formatter)
+        
+        self.logger.addHandler(file_handler)
+        self.logger.addHandler(console_handler)
+
+    def setup_directories(self):
+        """필요한 디렉토리 생성"""
+        os.makedirs(self.base_output_dir, exist_ok=True)
+        os.makedirs(os.path.join(self.base_output_dir, "models"), exist_ok=True)
+        os.makedirs(os.path.join(self.base_output_dir, "info"), exist_ok=True)
+        os.makedirs(os.path.join(self.base_output_dir, "cache"), exist_ok=True)
+
+    def load_chapters(self) -> Dict:
+        """chapter_result.json 파일을 로드"""
+        chapter_path = os.path.join(self.base_output_dir, self.chapter_file)
+        
+        if not os.path.exists(chapter_path):
+            raise FileNotFoundError(f"Chapter file not found: {chapter_path}")
+            
         try:
-            if not os.path.exists(self.chapter_result_path):
-                logger.error(f"입력 파일이 존재하지 않습니다: {self.chapter_result_path}")
-                return False
+            with open(chapter_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+            self.logger.info(f"Loaded chapter file: {len(data.get('chapters', []))} chapters found")
+            return data
             
-            with open(self.chapter_result_path, 'r', encoding='utf-8') as f:
-                self.chapter_data = json.load(f)
-            
-            if 'chapters' not in self.chapter_data:
-                logger.error("chapter_result.json에 'chapters' 키가 없습니다.")
-                return False
-            
-            chapters_count = len(self.chapter_data['chapters'])
-            logger.info(f"챕터 데이터 로드 완료: {chapters_count}개 챕터")
-            
-            return True
-            
+        except json.JSONDecodeError as e:
+            raise ValueError(f"Invalid JSON format in {chapter_path}: {e}")
         except Exception as e:
-            logger.error(f"챕터 데이터 로드 중 오류 발생: {e}")
-            return False
-    
+            raise RuntimeError(f"Error loading chapter file: {e}")
+
     def validate_chapter(self, chapter: Dict) -> bool:
-        """
-        개별 챕터 데이터의 유효성을 검증합니다.
+        """챕터 데이터 유효성 검사"""
+        required_fields = ['chapter_name', 'label_dict']
         
-        Args:
-            chapter (Dict): 챕터 데이터
-            
-        Returns:
-            bool: 유효성 검증 결과
-        """
-        if 'chapter_name' not in chapter:
-            logger.error("챕터에 'chapter_name'이 없습니다.")
-            return False
-        
-        if 'label_dict' not in chapter:
-            logger.error(f"챕터 {chapter['chapter_name']}에 'label_dict'가 없습니다.")
-            return False
+        for field in required_fields:
+            if field not in chapter:
+                self.logger.error(f"Missing required field '{field}' in chapter")
+                return False
         
         label_dict = chapter['label_dict']
         
-        # None 라벨이 반드시 포함되어야 함
-        if 'None' not in label_dict:
-            logger.error(f"챕터 {chapter['chapter_name']}에 'None' 라벨이 없습니다.")
+        # label_dict가 비어있지 않은지 확인
+        if not label_dict:
+            self.logger.error(f"Empty label_dict in chapter {chapter['chapter_name']}")
             return False
-        
-        # label_dict가 비어있지 않아야 함
-        if len(label_dict) == 0:
-            logger.error(f"챕터 {chapter['chapter_name']}의 label_dict가 비어있습니다.")
-            return False
-        
-        logger.debug(f"챕터 {chapter['chapter_name']} 검증 통과: {len(label_dict)}개 라벨")
-        return True
-    
-    def create_spec_file(self, chapter: Dict, temp_dir: str) -> str:
-        """
-        챕터 데이터로부터 spec.json 파일을 생성합니다.
-        
-        Args:
-            chapter (Dict): 챕터 데이터
-            temp_dir (str): 임시 디렉토리 경로
             
-        Returns:
-            str: 생성된 spec.json 파일 경로
-        """
+        # None 라벨이 포함되어 있는지 확인
+        if 'None' not in label_dict:
+            self.logger.error(f"'None' label missing in chapter {chapter['chapter_name']}")
+            return False
+            
+        # 라벨 값이 숫자인지 확인
+        for label, value in label_dict.items():
+            if not isinstance(value, int):
+                self.logger.error(f"Non-integer label value in chapter {chapter['chapter_name']}: {label}={value}")
+                return False
+                
+        return True
+
+    def create_spec_file(self, chapter: Dict) -> str:
+        """챕터 정보로부터 spec.json 파일 생성"""
+        chapter_name = chapter['chapter_name']
         spec_data = {
-            "chapter_name": chapter["chapter_name"],
-            "label_dict": chapter["label_dict"]
+            "label_dict": chapter['label_dict']
         }
         
-        spec_path = os.path.join(temp_dir, f"spec_{chapter['chapter_name']}.json")
+        spec_file = os.path.join(self.base_output_dir, f"spec_{chapter_name}.json")
         
-        with open(spec_path, 'w', encoding='utf-8') as f:
-            json.dump(spec_data, f, ensure_ascii=False, indent=2)
-        
-        logger.debug(f"Spec 파일 생성: {spec_path}")
-        return spec_path
-    
-    def run_main_for_chapter(self, spec_path: str, chapter_name: str) -> bool:
-        """
-        개별 챕터에 대해 main.py를 실행합니다.
-        
-        Args:
-            spec_path (str): spec.json 파일 경로
-            chapter_name (str): 챕터 이름
-            
-        Returns:
-            bool: 실행 성공 여부
-        """
         try:
-            logger.info(f"챕터 {chapter_name} 모델 학습 시작...")
+            with open(spec_file, 'w', encoding='utf-8') as f:
+                json.dump(spec_data, f, ensure_ascii=False, indent=2)
+                
+            self.logger.info(f"Created spec file for {chapter_name}: {spec_file}")
+            return spec_file
             
-            # main.py 실행
+        except Exception as e:
+            raise RuntimeError(f"Error creating spec file for {chapter_name}: {e}")
+
+
+
+    def run_main_for_chapter(self, spec_file: str, chapter_name: str) -> bool:
+        """특정 챕터에 대해 main.py 실행"""
+        if not os.path.exists(self.main_py_path):
+            self.logger.error(f"main.py not found at: {self.main_py_path}")
+            return False
+            
+        try:
+            # 현재 디렉토리를 chapter-generator로 변경
+            original_cwd = os.getcwd()
+            os.chdir(self.base_output_dir)
+            
+            self.logger.info(f"Starting training for {chapter_name}")
+            self.logger.info(f"Command: python main.py {spec_file}")
+            print(f"\n{'='*80}")
+            print(f"🚀 Starting training for {chapter_name}")
+            print(f"Command: python main.py {spec_file}")
+            print(f"{'='*80}")
+            
+            # main.py 실행 (실시간 출력)
             result = subprocess.run(
-                [sys.executable, "main.py", spec_path],
-                capture_output=True,
+                [sys.executable, "main.py", spec_file],               
                 text=True,
-                timeout=3600  # 1시간 타임아웃
+                encoding='utf-8'
             )
             
+            # 원래 디렉토리로 복귀
+            os.chdir(original_cwd)
+            
+            print(f"\n{'='*80}")
             if result.returncode == 0:
-                logger.info(f"챕터 {chapter_name} 모델 학습 완료")
+                print(f"✅ Successfully completed training for {chapter_name}")
+                self.logger.info(f"Successfully completed training for {chapter_name}")
                 return True
             else:
-                logger.error(f"챕터 {chapter_name} 모델 학습 실패:")
-                logger.error(f"stdout: {result.stdout}")
-                logger.error(f"stderr: {result.stderr}")
+                print(f"❌ Training failed for {chapter_name} (exit code: {result.returncode})")
+                self.logger.error(f"Training failed for {chapter_name} (exit code: {result.returncode})")
                 return False
                 
-        except subprocess.TimeoutExpired:
-            logger.error(f"챕터 {chapter_name} 모델 학습 타임아웃")
-            return False
         except Exception as e:
-            logger.error(f"챕터 {chapter_name} 모델 학습 중 오류: {e}")
+            # 원래 디렉토리로 복귀
+            os.chdir(original_cwd)
+            print(f"❌ Exception during training for {chapter_name}: {e}")
+            self.logger.error(f"Exception during training for {chapter_name}: {e}")
             return False
-    
-    def move_results(self, chapter_name: str) -> bool:
-        """
-        생성된 모델과 정보를 적절한 디렉토리로 이동합니다.
+
+    def rename_outputs_with_chapter_name(self, chapter_name: str):
+        """생성된 모델과 정보 파일명에 챕터명 추가"""
+        models_dir = os.path.join(self.base_output_dir, "models")
+        info_dir = os.path.join(self.base_output_dir, "info")
         
-        Args:
-            chapter_name (str): 챕터 이름
-            
-        Returns:
-            bool: 이동 성공 여부
-        """
         try:
-            # 모델 파일 이동
-            model_src = "models/sign_language_model.keras"
-            model_dst = os.path.join(self.output_models_dir, f"{chapter_name}_model.keras")
-            
-            if os.path.exists(model_src):
-                shutil.move(model_src, model_dst)
-                logger.info(f"모델 파일 이동: {model_src} -> {model_dst}")
-            else:
-                logger.warning(f"모델 파일이 존재하지 않습니다: {model_src}")
-                return False
-            
-            # 정보 파일 이동
-            info_src = "info/model_info.json"
-            info_dst = os.path.join(self.output_info_dir, f"{chapter_name}_info.json")
-            
-            if os.path.exists(info_src):
-                shutil.move(info_src, info_dst)
-                logger.info(f"정보 파일 이동: {info_src} -> {info_dst}")
-            else:
-                logger.warning(f"정보 파일이 존재하지 않습니다: {info_src}")
-            
-            return True
-            
-        except Exception as e:
-            logger.error(f"결과 파일 이동 중 오류: {e}")
-            return False
-    
-    def cleanup_temp_files(self):
-        """임시 파일들을 정리합니다."""
-        try:
-            # models/ 와 info/ 디렉토리의 파일들 정리
-            if os.path.exists("models/sign_language_model.keras"):
-                os.remove("models/sign_language_model.keras")
-            
-            if os.path.exists("info/model_info.json"):
-                os.remove("info/model_info.json")
-                
-            logger.debug("임시 파일 정리 완료")
-            
-        except Exception as e:
-            logger.warning(f"임시 파일 정리 중 오류: {e}")
-    
-    def process_single_chapter(self, chapter: Dict) -> bool:
-        """
-        단일 챕터를 처리합니다.
-        
-        Args:
-            chapter (Dict): 챕터 데이터
-            
-        Returns:
-            bool: 처리 성공 여부
-        """
-        chapter_name = chapter['chapter_name']
-        
-        logger.info(f"{'='*60}")
-        logger.info(f"챕터 처리 시작: {chapter_name}")
-        logger.info(f"라벨 개수: {len(chapter['label_dict'])}")
-        logger.info(f"{'='*60}")
-        
-        # 1. 챕터 유효성 검증
-        if not self.validate_chapter(chapter):
-            logger.error(f"챕터 {chapter_name} 유효성 검증 실패")
-            return False
-        
-        # 2. 임시 spec 파일 생성
-        with tempfile.TemporaryDirectory() as temp_dir:
-            spec_path = self.create_spec_file(chapter, temp_dir)
-            
-            # 3. main.py 실행
-            if not self.run_main_for_chapter(spec_path, chapter_name):
-                logger.error(f"챕터 {chapter_name} 처리 실패")
-                return False
-            
-            # 4. 결과 파일 이동
-            if not self.move_results(chapter_name):
-                logger.error(f"챕터 {chapter_name} 결과 파일 이동 실패")
-                return False
-            
-            # 5. 임시 파일 정리
-            self.cleanup_temp_files()
-        
-        logger.info(f"챕터 {chapter_name} 처리 완료")
-        return True
-    
-    def process_all_chapters(self) -> Dict[str, bool]:
-        """
-        모든 챕터를 처리합니다.
-        
-        Returns:
-            Dict[str, bool]: 각 챕터의 처리 결과
-        """
-        if not self.chapter_data:
-            logger.error("챕터 데이터가 로드되지 않았습니다.")
-            return {}
-        
-        results = {}
-        total_chapters = len(self.chapter_data['chapters'])
-        
-        logger.info(f"총 {total_chapters}개 챕터 처리 시작")
-        
-        for i, chapter in enumerate(self.chapter_data['chapters'], 1):
-            chapter_name = chapter.get('chapter_name', f'chapter_{i}')
-            
-            logger.info(f"\n진행률: {i}/{total_chapters} - {chapter_name}")
-            
-            try:
-                success = self.process_single_chapter(chapter)
-                results[chapter_name] = success
-                
-                if success:
-                    logger.info(f"✅ {chapter_name} 성공")
-                else:
-                    logger.error(f"❌ {chapter_name} 실패")
+            # 모델 파일들 이름 변경
+            for file in os.listdir(models_dir):
+                if file.endswith('.keras') and os.path.isfile(os.path.join(models_dir, file)):
+                    src = os.path.join(models_dir, file)
+                    # 파일명에 챕터명 추가: sign_language_model_timestamp.keras -> sign_language_model_chapter_name_timestamp.keras
+                    name_parts = file.replace('.keras', '').split('_')
+                    if len(name_parts) >= 3:  # sign_language_model_timestamp 형태
+                        new_name = f"{name_parts[0]}_{name_parts[1]}_{name_parts[2]}_{chapter_name}_{name_parts[3]}.keras"
+                    else:
+                        new_name = f"{chapter_name}_{file}"
+                    dst = os.path.join(models_dir, new_name)
+                    shutil.move(src, dst)
+                    self.logger.info(f"Renamed model file: {file} -> {new_name}")
                     
-            except Exception as e:
-                logger.error(f"❌ {chapter_name} 처리 중 예외 발생: {e}")
-                results[chapter_name] = False
-        
-        return results
-    
-    def generate_summary_report(self, results: Dict[str, bool]) -> str:
-        """
-        처리 결과 요약 리포트를 생성합니다.
-        
-        Args:
-            results (Dict[str, bool]): 각 챕터의 처리 결과
+            # 정보 파일들 이름 변경
+            for file in os.listdir(info_dir):
+                if file.startswith('model-info-') and file.endswith('.json') and os.path.isfile(os.path.join(info_dir, file)):
+                    src = os.path.join(info_dir, file)
+                    # 파일명에 챕터명 추가: model-info-timestamp.json -> model-info-chapter_name-timestamp.json
+                    name_parts = file.replace('.json', '').split('-')
+                    if len(name_parts) >= 3:  # model-info-timestamp 형태
+                        new_name = f"{name_parts[0]}-{name_parts[1]}-{chapter_name}-{name_parts[2]}.json"
+                    else:
+                        new_name = f"model-info-{chapter_name}-{file}"
+                    dst = os.path.join(info_dir, new_name)
+                    shutil.move(src, dst)
+                    self.logger.info(f"Renamed info file: {file} -> {new_name}")
+                    
+        except Exception as e:
+            self.logger.error(f"Error renaming outputs for {chapter_name}: {e}")
+
+    def cleanup_temp_files(self, spec_file: str):
+        """임시 파일 정리"""
+        try:
+            if os.path.exists(spec_file):
+                os.remove(spec_file)
+                self.logger.info(f"Removed temporary spec file: {spec_file}")
+        except Exception as e:
+            self.logger.warning(f"Error removing temporary file {spec_file}: {e}")
+
+    def process_all_chapters(self) -> Dict[str, bool]:
+        """모든 챕터를 처리"""
+        try:
+            # 챕터 데이터 로드
+            chapter_data = self.load_chapters()
+            chapters = chapter_data.get('chapters', [])
             
-        Returns:
-            str: 요약 리포트
-        """
-        total = len(results)
-        success_count = sum(1 for success in results.values() if success)
-        failure_count = total - success_count
-        
-        report = f"""
-{'='*80}
-챕터 생성 완료 보고서
-{'='*80}
-
-📊 전체 통계:
-   - 총 챕터 수: {total}
-   - 성공: {success_count}
-   - 실패: {failure_count}
-   - 성공률: {(success_count/total*100) if total > 0 else 0:.1f}%
-
-📁 출력 디렉토리:
-   - 모델: {self.output_models_dir}/
-   - 정보: {self.output_info_dir}/
-
-"""
-        
-        if failure_count > 0:
-            report += "❌ 실패한 챕터:\n"
+            if not chapters:
+                self.logger.error("No chapters found in the input file")
+                return {}
+                
+            results = {}
+            successful_chapters = 0
+            failed_chapters = 0
+            
+            self.logger.info(f"Processing {len(chapters)} chapters...")
+            
+            for i, chapter in enumerate(chapters, 1):
+                chapter_name = chapter.get('chapter_name', f'chapter_{i}')
+                self.logger.info(f"\n{'='*60}")
+                self.logger.info(f"Processing chapter {i}/{len(chapters)}: {chapter_name}")
+                self.logger.info(f"{'='*60}")
+                
+                try:
+                    # 챕터 유효성 검사
+                    if not self.validate_chapter(chapter):
+                        self.logger.error(f"Invalid chapter data for {chapter_name}")
+                        results[chapter_name] = False
+                        failed_chapters += 1
+                        continue
+                    
+                    # spec 파일 생성
+                    spec_file = self.create_spec_file(chapter)
+                    
+                    # main.py 실행
+                    success = self.run_main_for_chapter(spec_file, chapter_name)
+                    
+                    if success:
+                        # 출력 파일명에 챕터명 추가
+                        self.rename_outputs_with_chapter_name(chapter_name)
+                        successful_chapters += 1
+                    else:
+                        failed_chapters += 1
+                    
+                    results[chapter_name] = success
+                    
+                    # 임시 파일 정리
+                    self.cleanup_temp_files(spec_file)
+                    
+                except Exception as e:
+                    self.logger.error(f"Unexpected error processing {chapter_name}: {e}")
+                    results[chapter_name] = False
+                    failed_chapters += 1
+            
+            # 최종 결과 요약
+            self.logger.info(f"\n{'='*60}")
+            self.logger.info("CHAPTER GENERATION SUMMARY")
+            self.logger.info(f"{'='*60}")
+            self.logger.info(f"Total chapters: {len(chapters)}")
+            self.logger.info(f"Successful: {successful_chapters}")
+            self.logger.info(f"Failed: {failed_chapters}")
+            self.logger.info(f"Success rate: {(successful_chapters/len(chapters)*100):.1f}%")
+            
+            # 상세 결과
+            self.logger.info(f"\nDetailed results:")
             for chapter_name, success in results.items():
-                if not success:
-                    report += f"   - {chapter_name}\n"
+                status = "✅ SUCCESS" if success else "❌ FAILED"
+                self.logger.info(f"  {chapter_name}: {status}")
+            
+            return results
+            
+        except Exception as e:
+            self.logger.error(f"Critical error in process_all_chapters: {e}")
+            return {}
+
+    def generate_report(self, results: Dict[str, bool]):
+        """처리 결과 리포트 생성"""
+        report_file = os.path.join(self.base_output_dir, "chapter_generation_report.txt")
         
-        if success_count > 0:
-            report += "\n✅ 성공한 챕터:\n"
-            for chapter_name, success in results.items():
-                if success:
-                    report += f"   - {chapter_name}\n"
-        
-        report += f"\n{'='*80}"
-        
-        return report
-    
-    def run(self) -> bool:
-        """
-        전체 처리 과정을 실행합니다.
-        
-        Returns:
-            bool: 전체 처리 성공 여부
-        """
-        logger.info("ChapterGenerator 실행 시작")
-        
-        # 1. 챕터 데이터 로드
-        if not self.load_chapter_data():
-            return False
-        
-        # 2. 모든 챕터 처리
-        results = self.process_all_chapters()
-        
-        # 3. 결과 요약
-        report = self.generate_summary_report(results)
-        logger.info(report)
-        
-        # 4. 리포트 파일 저장
-        with open('chapter_generation_report.txt', 'w', encoding='utf-8') as f:
-            f.write(report)
-        
-        # 5. 성공 여부 판단
-        success_count = sum(1 for success in results.values() if success)
-        total_count = len(results)
-        
-        if success_count == total_count:
-            logger.info("🎉 모든 챕터 처리 완료!")
-            return True
-        else:
-            logger.warning(f"⚠️ 일부 챕터 처리 실패 ({success_count}/{total_count})")
-            return False
+        try:
+            with open(report_file, 'w', encoding='utf-8') as f:
+                f.write("CHAPTER GENERATION REPORT\n")
+                f.write("=" * 50 + "\n")
+                f.write(f"Generated on: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+                f.write(f"Total chapters processed: {len(results)}\n")
+                
+                successful = sum(1 for success in results.values() if success)
+                failed = len(results) - successful
+                
+                f.write(f"Successful: {successful}\n")
+                f.write(f"Failed: {failed}\n")
+                f.write(f"Success rate: {(successful/len(results)*100):.1f}%\n\n")
+                
+                f.write("DETAILED RESULTS:\n")
+                f.write("-" * 30 + "\n")
+                
+                for chapter_name, success in results.items():
+                    status = "SUCCESS" if success else "FAILED"
+                    f.write(f"{chapter_name}: {status}\n")
+                    
+                    if success:
+                        # 챕터별 출력 파일 정보 (파일명에서 챕터명으로 찾기)
+                        models_dir = os.path.join(self.base_output_dir, "models")
+                        info_dir = os.path.join(self.base_output_dir, "info")
+                        
+                        if os.path.exists(models_dir):
+                            model_files = [f for f in os.listdir(models_dir) 
+                                         if f.endswith('.keras') and chapter_name in f]
+                            f.write(f"  Model files: {len(model_files)}\n")
+                            for model_file in model_files:
+                                f.write(f"    - {model_file}\n")
+                        
+                        if os.path.exists(info_dir):
+                            info_files = [f for f in os.listdir(info_dir) 
+                                        if f.endswith('.json') and chapter_name in f]
+                            f.write(f"  Info files: {len(info_files)}\n")
+                            for info_file in info_files:
+                                f.write(f"    - {info_file}\n")
+                    
+                    f.write("\n")
+                
+            self.logger.info(f"Report generated: {report_file}")
+            
+        except Exception as e:
+            self.logger.error(f"Error generating report: {e}")
 
 
 def main():
     """메인 실행 함수"""
-    if len(sys.argv) != 2:
-        print("사용법: python ChapterGenerator.py chapter_result.json")
-        sys.exit(1)
-    
-    chapter_result_path = sys.argv[1]
+    generator = ChapterGenerator()
     
     try:
-        generator = ChapterGenerator(chapter_result_path)
-        success = generator.run()
+        # 모든 챕터 처리
+        results = generator.process_all_chapters()
         
-        if success:
-            sys.exit(0)
+        # 리포트 생성
+        generator.generate_report(results)
+        
+        # 성공적으로 완료된 경우
+        if results:
+            successful_count = sum(1 for success in results.values() if success)
+            total_count = len(results)
+            
+            if successful_count == total_count:
+                print(f"\n🎉 All {total_count} chapters processed successfully!")
+                sys.exit(0)
+            else:
+                print(f"\n⚠️  {successful_count}/{total_count} chapters processed successfully")
+                sys.exit(1)
         else:
+            print("\n❌ No chapters were processed")
             sys.exit(1)
             
     except KeyboardInterrupt:
-        logger.warning("사용자에 의해 중단됨")
+        print("\n⚠️ Process interrupted by user")
         sys.exit(1)
     except Exception as e:
-        logger.error(f"예상치 못한 오류 발생: {e}")
-        import traceback
-        traceback.print_exc()
+        print(f"\n❌ Critical error: {e}")
         sys.exit(1)
 
 

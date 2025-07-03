@@ -1,0 +1,2616 @@
+2025-07-03 16:44:37,398 - INFO - ChapterGenerator 초기화 완료
+2025-07-03 16:44:37,398 - INFO - 모델 출력 디렉토리: chapter-models
+2025-07-03 16:44:37,399 - INFO - 정보 출력 디렉토리: chapter-info
+2025-07-03 16:44:37,399 - INFO - ChapterGenerator 실행 시작
+2025-07-03 16:44:37,399 - INFO - 챕터 데이터 로드 완료: 166개 챕터
+2025-07-03 16:44:37,399 - INFO - 총 166개 챕터 처리 시작
+2025-07-03 16:44:37,399 - INFO - 
+진행률: 1/166 - chapter_1
+2025-07-03 16:44:37,399 - INFO - ============================================================
+2025-07-03 16:44:37,399 - INFO - 챕터 처리 시작: chapter_1
+2025-07-03 16:44:37,399 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,399 - INFO - ============================================================
+2025-07-03 16:44:37,400 - INFO - 챕터 chapter_1 모델 학습 시작...
+2025-07-03 16:44:37,412 - ERROR - 챕터 chapter_1 모델 학습 실패:
+2025-07-03 16:44:37,412 - ERROR - stdout: 
+2025-07-03 16:44:37,412 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,412 - ERROR - 챕터 chapter_1 처리 실패
+2025-07-03 16:44:37,412 - ERROR - ❌ chapter_1 실패
+2025-07-03 16:44:37,412 - INFO - 
+진행률: 2/166 - chapter_2
+2025-07-03 16:44:37,412 - INFO - ============================================================
+2025-07-03 16:44:37,412 - INFO - 챕터 처리 시작: chapter_2
+2025-07-03 16:44:37,412 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,412 - INFO - ============================================================
+2025-07-03 16:44:37,413 - INFO - 챕터 chapter_2 모델 학습 시작...
+2025-07-03 16:44:37,423 - ERROR - 챕터 chapter_2 모델 학습 실패:
+2025-07-03 16:44:37,423 - ERROR - stdout: 
+2025-07-03 16:44:37,423 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,423 - ERROR - 챕터 chapter_2 처리 실패
+2025-07-03 16:44:37,424 - ERROR - ❌ chapter_2 실패
+2025-07-03 16:44:37,424 - INFO - 
+진행률: 3/166 - chapter_3
+2025-07-03 16:44:37,424 - INFO - ============================================================
+2025-07-03 16:44:37,424 - INFO - 챕터 처리 시작: chapter_3
+2025-07-03 16:44:37,424 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,424 - INFO - ============================================================
+2025-07-03 16:44:37,424 - INFO - 챕터 chapter_3 모델 학습 시작...
+2025-07-03 16:44:37,435 - ERROR - 챕터 chapter_3 모델 학습 실패:
+2025-07-03 16:44:37,435 - ERROR - stdout: 
+2025-07-03 16:44:37,435 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,435 - ERROR - 챕터 chapter_3 처리 실패
+2025-07-03 16:44:37,435 - ERROR - ❌ chapter_3 실패
+2025-07-03 16:44:37,435 - INFO - 
+진행률: 4/166 - chapter_4
+2025-07-03 16:44:37,435 - INFO - ============================================================
+2025-07-03 16:44:37,435 - INFO - 챕터 처리 시작: chapter_4
+2025-07-03 16:44:37,435 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,435 - INFO - ============================================================
+2025-07-03 16:44:37,436 - INFO - 챕터 chapter_4 모델 학습 시작...
+2025-07-03 16:44:37,447 - ERROR - 챕터 chapter_4 모델 학습 실패:
+2025-07-03 16:44:37,447 - ERROR - stdout: 
+2025-07-03 16:44:37,447 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,447 - ERROR - 챕터 chapter_4 처리 실패
+2025-07-03 16:44:37,447 - ERROR - ❌ chapter_4 실패
+2025-07-03 16:44:37,447 - INFO - 
+진행률: 5/166 - chapter_5
+2025-07-03 16:44:37,447 - INFO - ============================================================
+2025-07-03 16:44:37,447 - INFO - 챕터 처리 시작: chapter_5
+2025-07-03 16:44:37,447 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,447 - INFO - ============================================================
+2025-07-03 16:44:37,448 - INFO - 챕터 chapter_5 모델 학습 시작...
+2025-07-03 16:44:37,458 - ERROR - 챕터 chapter_5 모델 학습 실패:
+2025-07-03 16:44:37,458 - ERROR - stdout: 
+2025-07-03 16:44:37,458 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,458 - ERROR - 챕터 chapter_5 처리 실패
+2025-07-03 16:44:37,459 - ERROR - ❌ chapter_5 실패
+2025-07-03 16:44:37,459 - INFO - 
+진행률: 6/166 - chapter_6
+2025-07-03 16:44:37,459 - INFO - ============================================================
+2025-07-03 16:44:37,459 - INFO - 챕터 처리 시작: chapter_6
+2025-07-03 16:44:37,459 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,459 - INFO - ============================================================
+2025-07-03 16:44:37,459 - INFO - 챕터 chapter_6 모델 학습 시작...
+2025-07-03 16:44:37,469 - ERROR - 챕터 chapter_6 모델 학습 실패:
+2025-07-03 16:44:37,469 - ERROR - stdout: 
+2025-07-03 16:44:37,469 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,469 - ERROR - 챕터 chapter_6 처리 실패
+2025-07-03 16:44:37,470 - ERROR - ❌ chapter_6 실패
+2025-07-03 16:44:37,470 - INFO - 
+진행률: 7/166 - chapter_7
+2025-07-03 16:44:37,470 - INFO - ============================================================
+2025-07-03 16:44:37,470 - INFO - 챕터 처리 시작: chapter_7
+2025-07-03 16:44:37,470 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,470 - INFO - ============================================================
+2025-07-03 16:44:37,470 - INFO - 챕터 chapter_7 모델 학습 시작...
+2025-07-03 16:44:37,481 - ERROR - 챕터 chapter_7 모델 학습 실패:
+2025-07-03 16:44:37,481 - ERROR - stdout: 
+2025-07-03 16:44:37,481 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,481 - ERROR - 챕터 chapter_7 처리 실패
+2025-07-03 16:44:37,481 - ERROR - ❌ chapter_7 실패
+2025-07-03 16:44:37,481 - INFO - 
+진행률: 8/166 - chapter_8
+2025-07-03 16:44:37,481 - INFO - ============================================================
+2025-07-03 16:44:37,481 - INFO - 챕터 처리 시작: chapter_8
+2025-07-03 16:44:37,481 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,481 - INFO - ============================================================
+2025-07-03 16:44:37,482 - INFO - 챕터 chapter_8 모델 학습 시작...
+2025-07-03 16:44:37,493 - ERROR - 챕터 chapter_8 모델 학습 실패:
+2025-07-03 16:44:37,493 - ERROR - stdout: 
+2025-07-03 16:44:37,493 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,493 - ERROR - 챕터 chapter_8 처리 실패
+2025-07-03 16:44:37,493 - ERROR - ❌ chapter_8 실패
+2025-07-03 16:44:37,493 - INFO - 
+진행률: 9/166 - chapter_9
+2025-07-03 16:44:37,493 - INFO - ============================================================
+2025-07-03 16:44:37,493 - INFO - 챕터 처리 시작: chapter_9
+2025-07-03 16:44:37,493 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,493 - INFO - ============================================================
+2025-07-03 16:44:37,494 - INFO - 챕터 chapter_9 모델 학습 시작...
+2025-07-03 16:44:37,503 - ERROR - 챕터 chapter_9 모델 학습 실패:
+2025-07-03 16:44:37,504 - ERROR - stdout: 
+2025-07-03 16:44:37,504 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,504 - ERROR - 챕터 chapter_9 처리 실패
+2025-07-03 16:44:37,504 - ERROR - ❌ chapter_9 실패
+2025-07-03 16:44:37,504 - INFO - 
+진행률: 10/166 - chapter_10
+2025-07-03 16:44:37,504 - INFO - ============================================================
+2025-07-03 16:44:37,504 - INFO - 챕터 처리 시작: chapter_10
+2025-07-03 16:44:37,504 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,504 - INFO - ============================================================
+2025-07-03 16:44:37,504 - INFO - 챕터 chapter_10 모델 학습 시작...
+2025-07-03 16:44:37,515 - ERROR - 챕터 chapter_10 모델 학습 실패:
+2025-07-03 16:44:37,515 - ERROR - stdout: 
+2025-07-03 16:44:37,515 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,515 - ERROR - 챕터 chapter_10 처리 실패
+2025-07-03 16:44:37,515 - ERROR - ❌ chapter_10 실패
+2025-07-03 16:44:37,515 - INFO - 
+진행률: 11/166 - chapter_11
+2025-07-03 16:44:37,515 - INFO - ============================================================
+2025-07-03 16:44:37,515 - INFO - 챕터 처리 시작: chapter_11
+2025-07-03 16:44:37,515 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,515 - INFO - ============================================================
+2025-07-03 16:44:37,516 - INFO - 챕터 chapter_11 모델 학습 시작...
+2025-07-03 16:44:37,527 - ERROR - 챕터 chapter_11 모델 학습 실패:
+2025-07-03 16:44:37,527 - ERROR - stdout: 
+2025-07-03 16:44:37,527 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,527 - ERROR - 챕터 chapter_11 처리 실패
+2025-07-03 16:44:37,527 - ERROR - ❌ chapter_11 실패
+2025-07-03 16:44:37,527 - INFO - 
+진행률: 12/166 - chapter_12
+2025-07-03 16:44:37,527 - INFO - ============================================================
+2025-07-03 16:44:37,527 - INFO - 챕터 처리 시작: chapter_12
+2025-07-03 16:44:37,527 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,527 - INFO - ============================================================
+2025-07-03 16:44:37,527 - INFO - 챕터 chapter_12 모델 학습 시작...
+2025-07-03 16:44:37,538 - ERROR - 챕터 chapter_12 모델 학습 실패:
+2025-07-03 16:44:37,538 - ERROR - stdout: 
+2025-07-03 16:44:37,538 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,538 - ERROR - 챕터 chapter_12 처리 실패
+2025-07-03 16:44:37,538 - ERROR - ❌ chapter_12 실패
+2025-07-03 16:44:37,538 - INFO - 
+진행률: 13/166 - chapter_13
+2025-07-03 16:44:37,538 - INFO - ============================================================
+2025-07-03 16:44:37,538 - INFO - 챕터 처리 시작: chapter_13
+2025-07-03 16:44:37,538 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,538 - INFO - ============================================================
+2025-07-03 16:44:37,538 - INFO - 챕터 chapter_13 모델 학습 시작...
+2025-07-03 16:44:37,549 - ERROR - 챕터 chapter_13 모델 학습 실패:
+2025-07-03 16:44:37,549 - ERROR - stdout: 
+2025-07-03 16:44:37,549 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,549 - ERROR - 챕터 chapter_13 처리 실패
+2025-07-03 16:44:37,549 - ERROR - ❌ chapter_13 실패
+2025-07-03 16:44:37,549 - INFO - 
+진행률: 14/166 - chapter_14
+2025-07-03 16:44:37,549 - INFO - ============================================================
+2025-07-03 16:44:37,549 - INFO - 챕터 처리 시작: chapter_14
+2025-07-03 16:44:37,549 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,549 - INFO - ============================================================
+2025-07-03 16:44:37,550 - INFO - 챕터 chapter_14 모델 학습 시작...
+2025-07-03 16:44:37,560 - ERROR - 챕터 chapter_14 모델 학습 실패:
+2025-07-03 16:44:37,560 - ERROR - stdout: 
+2025-07-03 16:44:37,560 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,560 - ERROR - 챕터 chapter_14 처리 실패
+2025-07-03 16:44:37,560 - ERROR - ❌ chapter_14 실패
+2025-07-03 16:44:37,561 - INFO - 
+진행률: 15/166 - chapter_15
+2025-07-03 16:44:37,561 - INFO - ============================================================
+2025-07-03 16:44:37,561 - INFO - 챕터 처리 시작: chapter_15
+2025-07-03 16:44:37,561 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,561 - INFO - ============================================================
+2025-07-03 16:44:37,561 - INFO - 챕터 chapter_15 모델 학습 시작...
+2025-07-03 16:44:37,571 - ERROR - 챕터 chapter_15 모델 학습 실패:
+2025-07-03 16:44:37,571 - ERROR - stdout: 
+2025-07-03 16:44:37,571 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,571 - ERROR - 챕터 chapter_15 처리 실패
+2025-07-03 16:44:37,571 - ERROR - ❌ chapter_15 실패
+2025-07-03 16:44:37,571 - INFO - 
+진행률: 16/166 - chapter_16
+2025-07-03 16:44:37,571 - INFO - ============================================================
+2025-07-03 16:44:37,571 - INFO - 챕터 처리 시작: chapter_16
+2025-07-03 16:44:37,572 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,572 - INFO - ============================================================
+2025-07-03 16:44:37,572 - INFO - 챕터 chapter_16 모델 학습 시작...
+2025-07-03 16:44:37,583 - ERROR - 챕터 chapter_16 모델 학습 실패:
+2025-07-03 16:44:37,583 - ERROR - stdout: 
+2025-07-03 16:44:37,583 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,583 - ERROR - 챕터 chapter_16 처리 실패
+2025-07-03 16:44:37,583 - ERROR - ❌ chapter_16 실패
+2025-07-03 16:44:37,583 - INFO - 
+진행률: 17/166 - chapter_17
+2025-07-03 16:44:37,583 - INFO - ============================================================
+2025-07-03 16:44:37,583 - INFO - 챕터 처리 시작: chapter_17
+2025-07-03 16:44:37,583 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,583 - INFO - ============================================================
+2025-07-03 16:44:37,584 - INFO - 챕터 chapter_17 모델 학습 시작...
+2025-07-03 16:44:37,594 - ERROR - 챕터 chapter_17 모델 학습 실패:
+2025-07-03 16:44:37,594 - ERROR - stdout: 
+2025-07-03 16:44:37,594 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,594 - ERROR - 챕터 chapter_17 처리 실패
+2025-07-03 16:44:37,595 - ERROR - ❌ chapter_17 실패
+2025-07-03 16:44:37,595 - INFO - 
+진행률: 18/166 - chapter_18
+2025-07-03 16:44:37,595 - INFO - ============================================================
+2025-07-03 16:44:37,595 - INFO - 챕터 처리 시작: chapter_18
+2025-07-03 16:44:37,595 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,595 - INFO - ============================================================
+2025-07-03 16:44:37,595 - INFO - 챕터 chapter_18 모델 학습 시작...
+2025-07-03 16:44:37,605 - ERROR - 챕터 chapter_18 모델 학습 실패:
+2025-07-03 16:44:37,605 - ERROR - stdout: 
+2025-07-03 16:44:37,605 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,605 - ERROR - 챕터 chapter_18 처리 실패
+2025-07-03 16:44:37,606 - ERROR - ❌ chapter_18 실패
+2025-07-03 16:44:37,606 - INFO - 
+진행률: 19/166 - chapter_19
+2025-07-03 16:44:37,606 - INFO - ============================================================
+2025-07-03 16:44:37,606 - INFO - 챕터 처리 시작: chapter_19
+2025-07-03 16:44:37,606 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,606 - INFO - ============================================================
+2025-07-03 16:44:37,606 - INFO - 챕터 chapter_19 모델 학습 시작...
+2025-07-03 16:44:37,616 - ERROR - 챕터 chapter_19 모델 학습 실패:
+2025-07-03 16:44:37,617 - ERROR - stdout: 
+2025-07-03 16:44:37,617 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,617 - ERROR - 챕터 chapter_19 처리 실패
+2025-07-03 16:44:37,617 - ERROR - ❌ chapter_19 실패
+2025-07-03 16:44:37,617 - INFO - 
+진행률: 20/166 - chapter_20
+2025-07-03 16:44:37,617 - INFO - ============================================================
+2025-07-03 16:44:37,617 - INFO - 챕터 처리 시작: chapter_20
+2025-07-03 16:44:37,617 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,617 - INFO - ============================================================
+2025-07-03 16:44:37,617 - INFO - 챕터 chapter_20 모델 학습 시작...
+2025-07-03 16:44:37,628 - ERROR - 챕터 chapter_20 모델 학습 실패:
+2025-07-03 16:44:37,628 - ERROR - stdout: 
+2025-07-03 16:44:37,628 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,628 - ERROR - 챕터 chapter_20 처리 실패
+2025-07-03 16:44:37,628 - ERROR - ❌ chapter_20 실패
+2025-07-03 16:44:37,628 - INFO - 
+진행률: 21/166 - chapter_21
+2025-07-03 16:44:37,628 - INFO - ============================================================
+2025-07-03 16:44:37,628 - INFO - 챕터 처리 시작: chapter_21
+2025-07-03 16:44:37,628 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,628 - INFO - ============================================================
+2025-07-03 16:44:37,629 - INFO - 챕터 chapter_21 모델 학습 시작...
+2025-07-03 16:44:37,639 - ERROR - 챕터 chapter_21 모델 학습 실패:
+2025-07-03 16:44:37,639 - ERROR - stdout: 
+2025-07-03 16:44:37,639 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,639 - ERROR - 챕터 chapter_21 처리 실패
+2025-07-03 16:44:37,639 - ERROR - ❌ chapter_21 실패
+2025-07-03 16:44:37,639 - INFO - 
+진행률: 22/166 - chapter_22
+2025-07-03 16:44:37,639 - INFO - ============================================================
+2025-07-03 16:44:37,639 - INFO - 챕터 처리 시작: chapter_22
+2025-07-03 16:44:37,639 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,639 - INFO - ============================================================
+2025-07-03 16:44:37,640 - INFO - 챕터 chapter_22 모델 학습 시작...
+2025-07-03 16:44:37,650 - ERROR - 챕터 chapter_22 모델 학습 실패:
+2025-07-03 16:44:37,651 - ERROR - stdout: 
+2025-07-03 16:44:37,651 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,651 - ERROR - 챕터 chapter_22 처리 실패
+2025-07-03 16:44:37,651 - ERROR - ❌ chapter_22 실패
+2025-07-03 16:44:37,651 - INFO - 
+진행률: 23/166 - chapter_23
+2025-07-03 16:44:37,651 - INFO - ============================================================
+2025-07-03 16:44:37,651 - INFO - 챕터 처리 시작: chapter_23
+2025-07-03 16:44:37,651 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,651 - INFO - ============================================================
+2025-07-03 16:44:37,651 - INFO - 챕터 chapter_23 모델 학습 시작...
+2025-07-03 16:44:37,662 - ERROR - 챕터 chapter_23 모델 학습 실패:
+2025-07-03 16:44:37,662 - ERROR - stdout: 
+2025-07-03 16:44:37,662 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,662 - ERROR - 챕터 chapter_23 처리 실패
+2025-07-03 16:44:37,662 - ERROR - ❌ chapter_23 실패
+2025-07-03 16:44:37,662 - INFO - 
+진행률: 24/166 - chapter_24
+2025-07-03 16:44:37,662 - INFO - ============================================================
+2025-07-03 16:44:37,662 - INFO - 챕터 처리 시작: chapter_24
+2025-07-03 16:44:37,662 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,663 - INFO - ============================================================
+2025-07-03 16:44:37,663 - INFO - 챕터 chapter_24 모델 학습 시작...
+2025-07-03 16:44:37,673 - ERROR - 챕터 chapter_24 모델 학습 실패:
+2025-07-03 16:44:37,674 - ERROR - stdout: 
+2025-07-03 16:44:37,674 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,674 - ERROR - 챕터 chapter_24 처리 실패
+2025-07-03 16:44:37,674 - ERROR - ❌ chapter_24 실패
+2025-07-03 16:44:37,674 - INFO - 
+진행률: 25/166 - chapter_25
+2025-07-03 16:44:37,674 - INFO - ============================================================
+2025-07-03 16:44:37,674 - INFO - 챕터 처리 시작: chapter_25
+2025-07-03 16:44:37,674 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,674 - INFO - ============================================================
+2025-07-03 16:44:37,674 - INFO - 챕터 chapter_25 모델 학습 시작...
+2025-07-03 16:44:37,685 - ERROR - 챕터 chapter_25 모델 학습 실패:
+2025-07-03 16:44:37,685 - ERROR - stdout: 
+2025-07-03 16:44:37,685 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,685 - ERROR - 챕터 chapter_25 처리 실패
+2025-07-03 16:44:37,686 - ERROR - ❌ chapter_25 실패
+2025-07-03 16:44:37,686 - INFO - 
+진행률: 26/166 - chapter_26
+2025-07-03 16:44:37,686 - INFO - ============================================================
+2025-07-03 16:44:37,686 - INFO - 챕터 처리 시작: chapter_26
+2025-07-03 16:44:37,686 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,686 - INFO - ============================================================
+2025-07-03 16:44:37,686 - INFO - 챕터 chapter_26 모델 학습 시작...
+2025-07-03 16:44:37,697 - ERROR - 챕터 chapter_26 모델 학습 실패:
+2025-07-03 16:44:37,697 - ERROR - stdout: 
+2025-07-03 16:44:37,697 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,697 - ERROR - 챕터 chapter_26 처리 실패
+2025-07-03 16:44:37,697 - ERROR - ❌ chapter_26 실패
+2025-07-03 16:44:37,697 - INFO - 
+진행률: 27/166 - chapter_27
+2025-07-03 16:44:37,697 - INFO - ============================================================
+2025-07-03 16:44:37,697 - INFO - 챕터 처리 시작: chapter_27
+2025-07-03 16:44:37,697 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,697 - INFO - ============================================================
+2025-07-03 16:44:37,698 - INFO - 챕터 chapter_27 모델 학습 시작...
+2025-07-03 16:44:37,708 - ERROR - 챕터 chapter_27 모델 학습 실패:
+2025-07-03 16:44:37,708 - ERROR - stdout: 
+2025-07-03 16:44:37,708 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,708 - ERROR - 챕터 chapter_27 처리 실패
+2025-07-03 16:44:37,708 - ERROR - ❌ chapter_27 실패
+2025-07-03 16:44:37,708 - INFO - 
+진행률: 28/166 - chapter_28
+2025-07-03 16:44:37,708 - INFO - ============================================================
+2025-07-03 16:44:37,708 - INFO - 챕터 처리 시작: chapter_28
+2025-07-03 16:44:37,708 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,708 - INFO - ============================================================
+2025-07-03 16:44:37,709 - INFO - 챕터 chapter_28 모델 학습 시작...
+2025-07-03 16:44:37,718 - ERROR - 챕터 chapter_28 모델 학습 실패:
+2025-07-03 16:44:37,719 - ERROR - stdout: 
+2025-07-03 16:44:37,719 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,719 - ERROR - 챕터 chapter_28 처리 실패
+2025-07-03 16:44:37,719 - ERROR - ❌ chapter_28 실패
+2025-07-03 16:44:37,719 - INFO - 
+진행률: 29/166 - chapter_29
+2025-07-03 16:44:37,719 - INFO - ============================================================
+2025-07-03 16:44:37,719 - INFO - 챕터 처리 시작: chapter_29
+2025-07-03 16:44:37,719 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,719 - INFO - ============================================================
+2025-07-03 16:44:37,719 - INFO - 챕터 chapter_29 모델 학습 시작...
+2025-07-03 16:44:37,729 - ERROR - 챕터 chapter_29 모델 학습 실패:
+2025-07-03 16:44:37,730 - ERROR - stdout: 
+2025-07-03 16:44:37,730 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,730 - ERROR - 챕터 chapter_29 처리 실패
+2025-07-03 16:44:37,730 - ERROR - ❌ chapter_29 실패
+2025-07-03 16:44:37,730 - INFO - 
+진행률: 30/166 - chapter_30
+2025-07-03 16:44:37,730 - INFO - ============================================================
+2025-07-03 16:44:37,730 - INFO - 챕터 처리 시작: chapter_30
+2025-07-03 16:44:37,730 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,730 - INFO - ============================================================
+2025-07-03 16:44:37,730 - INFO - 챕터 chapter_30 모델 학습 시작...
+2025-07-03 16:44:37,741 - ERROR - 챕터 chapter_30 모델 학습 실패:
+2025-07-03 16:44:37,741 - ERROR - stdout: 
+2025-07-03 16:44:37,741 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,741 - ERROR - 챕터 chapter_30 처리 실패
+2025-07-03 16:44:37,741 - ERROR - ❌ chapter_30 실패
+2025-07-03 16:44:37,741 - INFO - 
+진행률: 31/166 - chapter_31
+2025-07-03 16:44:37,741 - INFO - ============================================================
+2025-07-03 16:44:37,741 - INFO - 챕터 처리 시작: chapter_31
+2025-07-03 16:44:37,741 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,741 - INFO - ============================================================
+2025-07-03 16:44:37,742 - INFO - 챕터 chapter_31 모델 학습 시작...
+2025-07-03 16:44:37,752 - ERROR - 챕터 chapter_31 모델 학습 실패:
+2025-07-03 16:44:37,752 - ERROR - stdout: 
+2025-07-03 16:44:37,752 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,752 - ERROR - 챕터 chapter_31 처리 실패
+2025-07-03 16:44:37,752 - ERROR - ❌ chapter_31 실패
+2025-07-03 16:44:37,752 - INFO - 
+진행률: 32/166 - chapter_32
+2025-07-03 16:44:37,752 - INFO - ============================================================
+2025-07-03 16:44:37,752 - INFO - 챕터 처리 시작: chapter_32
+2025-07-03 16:44:37,752 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,752 - INFO - ============================================================
+2025-07-03 16:44:37,753 - INFO - 챕터 chapter_32 모델 학습 시작...
+2025-07-03 16:44:37,763 - ERROR - 챕터 chapter_32 모델 학습 실패:
+2025-07-03 16:44:37,763 - ERROR - stdout: 
+2025-07-03 16:44:37,763 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,764 - ERROR - 챕터 chapter_32 처리 실패
+2025-07-03 16:44:37,764 - ERROR - ❌ chapter_32 실패
+2025-07-03 16:44:37,764 - INFO - 
+진행률: 33/166 - chapter_33
+2025-07-03 16:44:37,764 - INFO - ============================================================
+2025-07-03 16:44:37,764 - INFO - 챕터 처리 시작: chapter_33
+2025-07-03 16:44:37,764 - INFO - 라벨 개수: 4
+2025-07-03 16:44:37,764 - INFO - ============================================================
+2025-07-03 16:44:37,764 - INFO - 챕터 chapter_33 모델 학습 시작...
+2025-07-03 16:44:37,775 - ERROR - 챕터 chapter_33 모델 학습 실패:
+2025-07-03 16:44:37,775 - ERROR - stdout: 
+2025-07-03 16:44:37,775 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,775 - ERROR - 챕터 chapter_33 처리 실패
+2025-07-03 16:44:37,775 - ERROR - ❌ chapter_33 실패
+2025-07-03 16:44:37,775 - INFO - 
+진행률: 34/166 - chapter_34
+2025-07-03 16:44:37,775 - INFO - ============================================================
+2025-07-03 16:44:37,775 - INFO - 챕터 처리 시작: chapter_34
+2025-07-03 16:44:37,775 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,775 - INFO - ============================================================
+2025-07-03 16:44:37,776 - INFO - 챕터 chapter_34 모델 학습 시작...
+2025-07-03 16:44:37,785 - ERROR - 챕터 chapter_34 모델 학습 실패:
+2025-07-03 16:44:37,786 - ERROR - stdout: 
+2025-07-03 16:44:37,786 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,786 - ERROR - 챕터 chapter_34 처리 실패
+2025-07-03 16:44:37,786 - ERROR - ❌ chapter_34 실패
+2025-07-03 16:44:37,786 - INFO - 
+진행률: 35/166 - chapter_35
+2025-07-03 16:44:37,786 - INFO - ============================================================
+2025-07-03 16:44:37,786 - INFO - 챕터 처리 시작: chapter_35
+2025-07-03 16:44:37,786 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,786 - INFO - ============================================================
+2025-07-03 16:44:37,786 - INFO - 챕터 chapter_35 모델 학습 시작...
+2025-07-03 16:44:37,796 - ERROR - 챕터 chapter_35 모델 학습 실패:
+2025-07-03 16:44:37,797 - ERROR - stdout: 
+2025-07-03 16:44:37,797 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,797 - ERROR - 챕터 chapter_35 처리 실패
+2025-07-03 16:44:37,797 - ERROR - ❌ chapter_35 실패
+2025-07-03 16:44:37,797 - INFO - 
+진행률: 36/166 - chapter_36
+2025-07-03 16:44:37,797 - INFO - ============================================================
+2025-07-03 16:44:37,797 - INFO - 챕터 처리 시작: chapter_36
+2025-07-03 16:44:37,797 - INFO - 라벨 개수: 3
+2025-07-03 16:44:37,797 - INFO - ============================================================
+2025-07-03 16:44:37,797 - INFO - 챕터 chapter_36 모델 학습 시작...
+2025-07-03 16:44:37,808 - ERROR - 챕터 chapter_36 모델 학습 실패:
+2025-07-03 16:44:37,808 - ERROR - stdout: 
+2025-07-03 16:44:37,808 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,808 - ERROR - 챕터 chapter_36 처리 실패
+2025-07-03 16:44:37,808 - ERROR - ❌ chapter_36 실패
+2025-07-03 16:44:37,808 - INFO - 
+진행률: 37/166 - chapter_37
+2025-07-03 16:44:37,808 - INFO - ============================================================
+2025-07-03 16:44:37,808 - INFO - 챕터 처리 시작: chapter_37
+2025-07-03 16:44:37,808 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,808 - INFO - ============================================================
+2025-07-03 16:44:37,809 - INFO - 챕터 chapter_37 모델 학습 시작...
+2025-07-03 16:44:37,819 - ERROR - 챕터 chapter_37 모델 학습 실패:
+2025-07-03 16:44:37,819 - ERROR - stdout: 
+2025-07-03 16:44:37,819 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,819 - ERROR - 챕터 chapter_37 처리 실패
+2025-07-03 16:44:37,819 - ERROR - ❌ chapter_37 실패
+2025-07-03 16:44:37,819 - INFO - 
+진행률: 38/166 - chapter_38
+2025-07-03 16:44:37,819 - INFO - ============================================================
+2025-07-03 16:44:37,819 - INFO - 챕터 처리 시작: chapter_38
+2025-07-03 16:44:37,819 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,819 - INFO - ============================================================
+2025-07-03 16:44:37,819 - INFO - 챕터 chapter_38 모델 학습 시작...
+2025-07-03 16:44:37,830 - ERROR - 챕터 chapter_38 모델 학습 실패:
+2025-07-03 16:44:37,830 - ERROR - stdout: 
+2025-07-03 16:44:37,830 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,830 - ERROR - 챕터 chapter_38 처리 실패
+2025-07-03 16:44:37,830 - ERROR - ❌ chapter_38 실패
+2025-07-03 16:44:37,830 - INFO - 
+진행률: 39/166 - chapter_39
+2025-07-03 16:44:37,830 - INFO - ============================================================
+2025-07-03 16:44:37,830 - INFO - 챕터 처리 시작: chapter_39
+2025-07-03 16:44:37,830 - INFO - 라벨 개수: 3
+2025-07-03 16:44:37,830 - INFO - ============================================================
+2025-07-03 16:44:37,831 - INFO - 챕터 chapter_39 모델 학습 시작...
+2025-07-03 16:44:37,841 - ERROR - 챕터 chapter_39 모델 학습 실패:
+2025-07-03 16:44:37,841 - ERROR - stdout: 
+2025-07-03 16:44:37,841 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,841 - ERROR - 챕터 chapter_39 처리 실패
+2025-07-03 16:44:37,841 - ERROR - ❌ chapter_39 실패
+2025-07-03 16:44:37,842 - INFO - 
+진행률: 40/166 - chapter_40
+2025-07-03 16:44:37,842 - INFO - ============================================================
+2025-07-03 16:44:37,842 - INFO - 챕터 처리 시작: chapter_40
+2025-07-03 16:44:37,842 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,842 - INFO - ============================================================
+2025-07-03 16:44:37,842 - INFO - 챕터 chapter_40 모델 학습 시작...
+2025-07-03 16:44:37,852 - ERROR - 챕터 chapter_40 모델 학습 실패:
+2025-07-03 16:44:37,852 - ERROR - stdout: 
+2025-07-03 16:44:37,852 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,852 - ERROR - 챕터 chapter_40 처리 실패
+2025-07-03 16:44:37,852 - ERROR - ❌ chapter_40 실패
+2025-07-03 16:44:37,852 - INFO - 
+진행률: 41/166 - chapter_41
+2025-07-03 16:44:37,852 - INFO - ============================================================
+2025-07-03 16:44:37,852 - INFO - 챕터 처리 시작: chapter_41
+2025-07-03 16:44:37,852 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,852 - INFO - ============================================================
+2025-07-03 16:44:37,853 - INFO - 챕터 chapter_41 모델 학습 시작...
+2025-07-03 16:44:37,863 - ERROR - 챕터 chapter_41 모델 학습 실패:
+2025-07-03 16:44:37,863 - ERROR - stdout: 
+2025-07-03 16:44:37,863 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,863 - ERROR - 챕터 chapter_41 처리 실패
+2025-07-03 16:44:37,863 - ERROR - ❌ chapter_41 실패
+2025-07-03 16:44:37,863 - INFO - 
+진행률: 42/166 - chapter_42
+2025-07-03 16:44:37,863 - INFO - ============================================================
+2025-07-03 16:44:37,863 - INFO - 챕터 처리 시작: chapter_42
+2025-07-03 16:44:37,863 - INFO - 라벨 개수: 2
+2025-07-03 16:44:37,863 - INFO - ============================================================
+2025-07-03 16:44:37,864 - INFO - 챕터 chapter_42 모델 학습 시작...
+2025-07-03 16:44:37,874 - ERROR - 챕터 chapter_42 모델 학습 실패:
+2025-07-03 16:44:37,874 - ERROR - stdout: 
+2025-07-03 16:44:37,874 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,874 - ERROR - 챕터 chapter_42 처리 실패
+2025-07-03 16:44:37,875 - ERROR - ❌ chapter_42 실패
+2025-07-03 16:44:37,875 - INFO - 
+진행률: 43/166 - chapter_43
+2025-07-03 16:44:37,875 - INFO - ============================================================
+2025-07-03 16:44:37,875 - INFO - 챕터 처리 시작: chapter_43
+2025-07-03 16:44:37,875 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,875 - INFO - ============================================================
+2025-07-03 16:44:37,875 - INFO - 챕터 chapter_43 모델 학습 시작...
+2025-07-03 16:44:37,885 - ERROR - 챕터 chapter_43 모델 학습 실패:
+2025-07-03 16:44:37,885 - ERROR - stdout: 
+2025-07-03 16:44:37,885 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,885 - ERROR - 챕터 chapter_43 처리 실패
+2025-07-03 16:44:37,885 - ERROR - ❌ chapter_43 실패
+2025-07-03 16:44:37,885 - INFO - 
+진행률: 44/166 - chapter_44
+2025-07-03 16:44:37,885 - INFO - ============================================================
+2025-07-03 16:44:37,885 - INFO - 챕터 처리 시작: chapter_44
+2025-07-03 16:44:37,885 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,885 - INFO - ============================================================
+2025-07-03 16:44:37,886 - INFO - 챕터 chapter_44 모델 학습 시작...
+2025-07-03 16:44:37,896 - ERROR - 챕터 chapter_44 모델 학습 실패:
+2025-07-03 16:44:37,896 - ERROR - stdout: 
+2025-07-03 16:44:37,896 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,896 - ERROR - 챕터 chapter_44 처리 실패
+2025-07-03 16:44:37,896 - ERROR - ❌ chapter_44 실패
+2025-07-03 16:44:37,896 - INFO - 
+진행률: 45/166 - chapter_45
+2025-07-03 16:44:37,896 - INFO - ============================================================
+2025-07-03 16:44:37,896 - INFO - 챕터 처리 시작: chapter_45
+2025-07-03 16:44:37,896 - INFO - 라벨 개수: 2
+2025-07-03 16:44:37,896 - INFO - ============================================================
+2025-07-03 16:44:37,897 - INFO - 챕터 chapter_45 모델 학습 시작...
+2025-07-03 16:44:37,908 - ERROR - 챕터 chapter_45 모델 학습 실패:
+2025-07-03 16:44:37,908 - ERROR - stdout: 
+2025-07-03 16:44:37,908 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,908 - ERROR - 챕터 chapter_45 처리 실패
+2025-07-03 16:44:37,908 - ERROR - ❌ chapter_45 실패
+2025-07-03 16:44:37,908 - INFO - 
+진행률: 46/166 - chapter_46
+2025-07-03 16:44:37,908 - INFO - ============================================================
+2025-07-03 16:44:37,908 - INFO - 챕터 처리 시작: chapter_46
+2025-07-03 16:44:37,908 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,908 - INFO - ============================================================
+2025-07-03 16:44:37,909 - INFO - 챕터 chapter_46 모델 학습 시작...
+2025-07-03 16:44:37,920 - ERROR - 챕터 chapter_46 모델 학습 실패:
+2025-07-03 16:44:37,920 - ERROR - stdout: 
+2025-07-03 16:44:37,920 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,920 - ERROR - 챕터 chapter_46 처리 실패
+2025-07-03 16:44:37,920 - ERROR - ❌ chapter_46 실패
+2025-07-03 16:44:37,920 - INFO - 
+진행률: 47/166 - chapter_47
+2025-07-03 16:44:37,920 - INFO - ============================================================
+2025-07-03 16:44:37,920 - INFO - 챕터 처리 시작: chapter_47
+2025-07-03 16:44:37,920 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,920 - INFO - ============================================================
+2025-07-03 16:44:37,921 - INFO - 챕터 chapter_47 모델 학습 시작...
+2025-07-03 16:44:37,931 - ERROR - 챕터 chapter_47 모델 학습 실패:
+2025-07-03 16:44:37,932 - ERROR - stdout: 
+2025-07-03 16:44:37,932 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,932 - ERROR - 챕터 chapter_47 처리 실패
+2025-07-03 16:44:37,932 - ERROR - ❌ chapter_47 실패
+2025-07-03 16:44:37,932 - INFO - 
+진행률: 48/166 - chapter_48
+2025-07-03 16:44:37,932 - INFO - ============================================================
+2025-07-03 16:44:37,932 - INFO - 챕터 처리 시작: chapter_48
+2025-07-03 16:44:37,932 - INFO - 라벨 개수: 2
+2025-07-03 16:44:37,932 - INFO - ============================================================
+2025-07-03 16:44:37,932 - INFO - 챕터 chapter_48 모델 학습 시작...
+2025-07-03 16:44:37,943 - ERROR - 챕터 chapter_48 모델 학습 실패:
+2025-07-03 16:44:37,943 - ERROR - stdout: 
+2025-07-03 16:44:37,943 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,943 - ERROR - 챕터 chapter_48 처리 실패
+2025-07-03 16:44:37,943 - ERROR - ❌ chapter_48 실패
+2025-07-03 16:44:37,943 - INFO - 
+진행률: 49/166 - chapter_49
+2025-07-03 16:44:37,943 - INFO - ============================================================
+2025-07-03 16:44:37,943 - INFO - 챕터 처리 시작: chapter_49
+2025-07-03 16:44:37,943 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,943 - INFO - ============================================================
+2025-07-03 16:44:37,944 - INFO - 챕터 chapter_49 모델 학습 시작...
+2025-07-03 16:44:37,954 - ERROR - 챕터 chapter_49 모델 학습 실패:
+2025-07-03 16:44:37,954 - ERROR - stdout: 
+2025-07-03 16:44:37,954 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,954 - ERROR - 챕터 chapter_49 처리 실패
+2025-07-03 16:44:37,954 - ERROR - ❌ chapter_49 실패
+2025-07-03 16:44:37,954 - INFO - 
+진행률: 50/166 - chapter_50
+2025-07-03 16:44:37,954 - INFO - ============================================================
+2025-07-03 16:44:37,954 - INFO - 챕터 처리 시작: chapter_50
+2025-07-03 16:44:37,954 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,954 - INFO - ============================================================
+2025-07-03 16:44:37,955 - INFO - 챕터 chapter_50 모델 학습 시작...
+2025-07-03 16:44:37,965 - ERROR - 챕터 chapter_50 모델 학습 실패:
+2025-07-03 16:44:37,965 - ERROR - stdout: 
+2025-07-03 16:44:37,965 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,965 - ERROR - 챕터 chapter_50 처리 실패
+2025-07-03 16:44:37,965 - ERROR - ❌ chapter_50 실패
+2025-07-03 16:44:37,965 - INFO - 
+진행률: 51/166 - chapter_51
+2025-07-03 16:44:37,965 - INFO - ============================================================
+2025-07-03 16:44:37,965 - INFO - 챕터 처리 시작: chapter_51
+2025-07-03 16:44:37,966 - INFO - 라벨 개수: 2
+2025-07-03 16:44:37,966 - INFO - ============================================================
+2025-07-03 16:44:37,966 - INFO - 챕터 chapter_51 모델 학습 시작...
+2025-07-03 16:44:37,976 - ERROR - 챕터 chapter_51 모델 학습 실패:
+2025-07-03 16:44:37,977 - ERROR - stdout: 
+2025-07-03 16:44:37,977 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,977 - ERROR - 챕터 chapter_51 처리 실패
+2025-07-03 16:44:37,977 - ERROR - ❌ chapter_51 실패
+2025-07-03 16:44:37,977 - INFO - 
+진행률: 52/166 - chapter_52
+2025-07-03 16:44:37,977 - INFO - ============================================================
+2025-07-03 16:44:37,977 - INFO - 챕터 처리 시작: chapter_52
+2025-07-03 16:44:37,977 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,977 - INFO - ============================================================
+2025-07-03 16:44:37,977 - INFO - 챕터 chapter_52 모델 학습 시작...
+2025-07-03 16:44:37,987 - ERROR - 챕터 chapter_52 모델 학습 실패:
+2025-07-03 16:44:37,987 - ERROR - stdout: 
+2025-07-03 16:44:37,987 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,987 - ERROR - 챕터 chapter_52 처리 실패
+2025-07-03 16:44:37,988 - ERROR - ❌ chapter_52 실패
+2025-07-03 16:44:37,988 - INFO - 
+진행률: 53/166 - chapter_53
+2025-07-03 16:44:37,988 - INFO - ============================================================
+2025-07-03 16:44:37,988 - INFO - 챕터 처리 시작: chapter_53
+2025-07-03 16:44:37,988 - INFO - 라벨 개수: 5
+2025-07-03 16:44:37,988 - INFO - ============================================================
+2025-07-03 16:44:37,988 - INFO - 챕터 chapter_53 모델 학습 시작...
+2025-07-03 16:44:37,999 - ERROR - 챕터 chapter_53 모델 학습 실패:
+2025-07-03 16:44:37,999 - ERROR - stdout: 
+2025-07-03 16:44:37,999 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:37,999 - ERROR - 챕터 chapter_53 처리 실패
+2025-07-03 16:44:37,999 - ERROR - ❌ chapter_53 실패
+2025-07-03 16:44:37,999 - INFO - 
+진행률: 54/166 - chapter_54
+2025-07-03 16:44:37,999 - INFO - ============================================================
+2025-07-03 16:44:37,999 - INFO - 챕터 처리 시작: chapter_54
+2025-07-03 16:44:37,999 - INFO - 라벨 개수: 2
+2025-07-03 16:44:37,999 - INFO - ============================================================
+2025-07-03 16:44:37,999 - INFO - 챕터 chapter_54 모델 학습 시작...
+2025-07-03 16:44:38,010 - ERROR - 챕터 chapter_54 모델 학습 실패:
+2025-07-03 16:44:38,010 - ERROR - stdout: 
+2025-07-03 16:44:38,010 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,010 - ERROR - 챕터 chapter_54 처리 실패
+2025-07-03 16:44:38,010 - ERROR - ❌ chapter_54 실패
+2025-07-03 16:44:38,010 - INFO - 
+진행률: 55/166 - chapter_55
+2025-07-03 16:44:38,010 - INFO - ============================================================
+2025-07-03 16:44:38,010 - INFO - 챕터 처리 시작: chapter_55
+2025-07-03 16:44:38,010 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,010 - INFO - ============================================================
+2025-07-03 16:44:38,011 - INFO - 챕터 chapter_55 모델 학습 시작...
+2025-07-03 16:44:38,021 - ERROR - 챕터 chapter_55 모델 학습 실패:
+2025-07-03 16:44:38,021 - ERROR - stdout: 
+2025-07-03 16:44:38,021 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,021 - ERROR - 챕터 chapter_55 처리 실패
+2025-07-03 16:44:38,021 - ERROR - ❌ chapter_55 실패
+2025-07-03 16:44:38,021 - INFO - 
+진행률: 56/166 - chapter_56
+2025-07-03 16:44:38,021 - INFO - ============================================================
+2025-07-03 16:44:38,021 - INFO - 챕터 처리 시작: chapter_56
+2025-07-03 16:44:38,021 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,021 - INFO - ============================================================
+2025-07-03 16:44:38,022 - INFO - 챕터 chapter_56 모델 학습 시작...
+2025-07-03 16:44:38,032 - ERROR - 챕터 chapter_56 모델 학습 실패:
+2025-07-03 16:44:38,032 - ERROR - stdout: 
+2025-07-03 16:44:38,032 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,032 - ERROR - 챕터 chapter_56 처리 실패
+2025-07-03 16:44:38,032 - ERROR - ❌ chapter_56 실패
+2025-07-03 16:44:38,032 - INFO - 
+진행률: 57/166 - chapter_57
+2025-07-03 16:44:38,032 - INFO - ============================================================
+2025-07-03 16:44:38,033 - INFO - 챕터 처리 시작: chapter_57
+2025-07-03 16:44:38,033 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,033 - INFO - ============================================================
+2025-07-03 16:44:38,033 - INFO - 챕터 chapter_57 모델 학습 시작...
+2025-07-03 16:44:38,043 - ERROR - 챕터 chapter_57 모델 학습 실패:
+2025-07-03 16:44:38,043 - ERROR - stdout: 
+2025-07-03 16:44:38,043 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,043 - ERROR - 챕터 chapter_57 처리 실패
+2025-07-03 16:44:38,043 - ERROR - ❌ chapter_57 실패
+2025-07-03 16:44:38,044 - INFO - 
+진행률: 58/166 - chapter_58
+2025-07-03 16:44:38,044 - INFO - ============================================================
+2025-07-03 16:44:38,044 - INFO - 챕터 처리 시작: chapter_58
+2025-07-03 16:44:38,044 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,044 - INFO - ============================================================
+2025-07-03 16:44:38,044 - INFO - 챕터 chapter_58 모델 학습 시작...
+2025-07-03 16:44:38,054 - ERROR - 챕터 chapter_58 모델 학습 실패:
+2025-07-03 16:44:38,054 - ERROR - stdout: 
+2025-07-03 16:44:38,054 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,054 - ERROR - 챕터 chapter_58 처리 실패
+2025-07-03 16:44:38,054 - ERROR - ❌ chapter_58 실패
+2025-07-03 16:44:38,054 - INFO - 
+진행률: 59/166 - chapter_59
+2025-07-03 16:44:38,054 - INFO - ============================================================
+2025-07-03 16:44:38,054 - INFO - 챕터 처리 시작: chapter_59
+2025-07-03 16:44:38,054 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,054 - INFO - ============================================================
+2025-07-03 16:44:38,055 - INFO - 챕터 chapter_59 모델 학습 시작...
+2025-07-03 16:44:38,065 - ERROR - 챕터 chapter_59 모델 학습 실패:
+2025-07-03 16:44:38,065 - ERROR - stdout: 
+2025-07-03 16:44:38,065 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,065 - ERROR - 챕터 chapter_59 처리 실패
+2025-07-03 16:44:38,065 - ERROR - ❌ chapter_59 실패
+2025-07-03 16:44:38,065 - INFO - 
+진행률: 60/166 - chapter_60
+2025-07-03 16:44:38,065 - INFO - ============================================================
+2025-07-03 16:44:38,065 - INFO - 챕터 처리 시작: chapter_60
+2025-07-03 16:44:38,065 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,065 - INFO - ============================================================
+2025-07-03 16:44:38,066 - INFO - 챕터 chapter_60 모델 학습 시작...
+2025-07-03 16:44:38,076 - ERROR - 챕터 chapter_60 모델 학습 실패:
+2025-07-03 16:44:38,077 - ERROR - stdout: 
+2025-07-03 16:44:38,077 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,077 - ERROR - 챕터 chapter_60 처리 실패
+2025-07-03 16:44:38,077 - ERROR - ❌ chapter_60 실패
+2025-07-03 16:44:38,077 - INFO - 
+진행률: 61/166 - chapter_61
+2025-07-03 16:44:38,077 - INFO - ============================================================
+2025-07-03 16:44:38,077 - INFO - 챕터 처리 시작: chapter_61
+2025-07-03 16:44:38,077 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,077 - INFO - ============================================================
+2025-07-03 16:44:38,077 - INFO - 챕터 chapter_61 모델 학습 시작...
+2025-07-03 16:44:38,087 - ERROR - 챕터 chapter_61 모델 학습 실패:
+2025-07-03 16:44:38,087 - ERROR - stdout: 
+2025-07-03 16:44:38,087 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,087 - ERROR - 챕터 chapter_61 처리 실패
+2025-07-03 16:44:38,087 - ERROR - ❌ chapter_61 실패
+2025-07-03 16:44:38,087 - INFO - 
+진행률: 62/166 - chapter_62
+2025-07-03 16:44:38,087 - INFO - ============================================================
+2025-07-03 16:44:38,087 - INFO - 챕터 처리 시작: chapter_62
+2025-07-03 16:44:38,087 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,087 - INFO - ============================================================
+2025-07-03 16:44:38,088 - INFO - 챕터 chapter_62 모델 학습 시작...
+2025-07-03 16:44:38,098 - ERROR - 챕터 chapter_62 모델 학습 실패:
+2025-07-03 16:44:38,098 - ERROR - stdout: 
+2025-07-03 16:44:38,098 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,099 - ERROR - 챕터 chapter_62 처리 실패
+2025-07-03 16:44:38,099 - ERROR - ❌ chapter_62 실패
+2025-07-03 16:44:38,099 - INFO - 
+진행률: 63/166 - chapter_63
+2025-07-03 16:44:38,099 - INFO - ============================================================
+2025-07-03 16:44:38,099 - INFO - 챕터 처리 시작: chapter_63
+2025-07-03 16:44:38,099 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,099 - INFO - ============================================================
+2025-07-03 16:44:38,099 - INFO - 챕터 chapter_63 모델 학습 시작...
+2025-07-03 16:44:38,110 - ERROR - 챕터 chapter_63 모델 학습 실패:
+2025-07-03 16:44:38,110 - ERROR - stdout: 
+2025-07-03 16:44:38,110 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,110 - ERROR - 챕터 chapter_63 처리 실패
+2025-07-03 16:44:38,110 - ERROR - ❌ chapter_63 실패
+2025-07-03 16:44:38,110 - INFO - 
+진행률: 64/166 - chapter_64
+2025-07-03 16:44:38,110 - INFO - ============================================================
+2025-07-03 16:44:38,110 - INFO - 챕터 처리 시작: chapter_64
+2025-07-03 16:44:38,110 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,110 - INFO - ============================================================
+2025-07-03 16:44:38,111 - INFO - 챕터 chapter_64 모델 학습 시작...
+2025-07-03 16:44:38,121 - ERROR - 챕터 chapter_64 모델 학습 실패:
+2025-07-03 16:44:38,121 - ERROR - stdout: 
+2025-07-03 16:44:38,121 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,121 - ERROR - 챕터 chapter_64 처리 실패
+2025-07-03 16:44:38,121 - ERROR - ❌ chapter_64 실패
+2025-07-03 16:44:38,121 - INFO - 
+진행률: 65/166 - chapter_65
+2025-07-03 16:44:38,121 - INFO - ============================================================
+2025-07-03 16:44:38,121 - INFO - 챕터 처리 시작: chapter_65
+2025-07-03 16:44:38,121 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,121 - INFO - ============================================================
+2025-07-03 16:44:38,121 - INFO - 챕터 chapter_65 모델 학습 시작...
+2025-07-03 16:44:38,131 - ERROR - 챕터 chapter_65 모델 학습 실패:
+2025-07-03 16:44:38,131 - ERROR - stdout: 
+2025-07-03 16:44:38,131 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,132 - ERROR - 챕터 chapter_65 처리 실패
+2025-07-03 16:44:38,132 - ERROR - ❌ chapter_65 실패
+2025-07-03 16:44:38,132 - INFO - 
+진행률: 66/166 - chapter_66
+2025-07-03 16:44:38,132 - INFO - ============================================================
+2025-07-03 16:44:38,132 - INFO - 챕터 처리 시작: chapter_66
+2025-07-03 16:44:38,132 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,132 - INFO - ============================================================
+2025-07-03 16:44:38,132 - INFO - 챕터 chapter_66 모델 학습 시작...
+2025-07-03 16:44:38,142 - ERROR - 챕터 chapter_66 모델 학습 실패:
+2025-07-03 16:44:38,143 - ERROR - stdout: 
+2025-07-03 16:44:38,143 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,143 - ERROR - 챕터 chapter_66 처리 실패
+2025-07-03 16:44:38,143 - ERROR - ❌ chapter_66 실패
+2025-07-03 16:44:38,143 - INFO - 
+진행률: 67/166 - chapter_67
+2025-07-03 16:44:38,143 - INFO - ============================================================
+2025-07-03 16:44:38,143 - INFO - 챕터 처리 시작: chapter_67
+2025-07-03 16:44:38,143 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,143 - INFO - ============================================================
+2025-07-03 16:44:38,143 - INFO - 챕터 chapter_67 모델 학습 시작...
+2025-07-03 16:44:38,153 - ERROR - 챕터 chapter_67 모델 학습 실패:
+2025-07-03 16:44:38,153 - ERROR - stdout: 
+2025-07-03 16:44:38,153 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,153 - ERROR - 챕터 chapter_67 처리 실패
+2025-07-03 16:44:38,153 - ERROR - ❌ chapter_67 실패
+2025-07-03 16:44:38,153 - INFO - 
+진행률: 68/166 - chapter_68
+2025-07-03 16:44:38,153 - INFO - ============================================================
+2025-07-03 16:44:38,153 - INFO - 챕터 처리 시작: chapter_68
+2025-07-03 16:44:38,153 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,153 - INFO - ============================================================
+2025-07-03 16:44:38,154 - INFO - 챕터 chapter_68 모델 학습 시작...
+2025-07-03 16:44:38,164 - ERROR - 챕터 chapter_68 모델 학습 실패:
+2025-07-03 16:44:38,164 - ERROR - stdout: 
+2025-07-03 16:44:38,164 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,164 - ERROR - 챕터 chapter_68 처리 실패
+2025-07-03 16:44:38,164 - ERROR - ❌ chapter_68 실패
+2025-07-03 16:44:38,164 - INFO - 
+진행률: 69/166 - chapter_69
+2025-07-03 16:44:38,164 - INFO - ============================================================
+2025-07-03 16:44:38,164 - INFO - 챕터 처리 시작: chapter_69
+2025-07-03 16:44:38,164 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,164 - INFO - ============================================================
+2025-07-03 16:44:38,165 - INFO - 챕터 chapter_69 모델 학습 시작...
+2025-07-03 16:44:38,175 - ERROR - 챕터 chapter_69 모델 학습 실패:
+2025-07-03 16:44:38,175 - ERROR - stdout: 
+2025-07-03 16:44:38,176 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,176 - ERROR - 챕터 chapter_69 처리 실패
+2025-07-03 16:44:38,176 - ERROR - ❌ chapter_69 실패
+2025-07-03 16:44:38,176 - INFO - 
+진행률: 70/166 - chapter_70
+2025-07-03 16:44:38,176 - INFO - ============================================================
+2025-07-03 16:44:38,176 - INFO - 챕터 처리 시작: chapter_70
+2025-07-03 16:44:38,176 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,176 - INFO - ============================================================
+2025-07-03 16:44:38,176 - INFO - 챕터 chapter_70 모델 학습 시작...
+2025-07-03 16:44:38,186 - ERROR - 챕터 chapter_70 모델 학습 실패:
+2025-07-03 16:44:38,186 - ERROR - stdout: 
+2025-07-03 16:44:38,187 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,187 - ERROR - 챕터 chapter_70 처리 실패
+2025-07-03 16:44:38,187 - ERROR - ❌ chapter_70 실패
+2025-07-03 16:44:38,187 - INFO - 
+진행률: 71/166 - chapter_71
+2025-07-03 16:44:38,187 - INFO - ============================================================
+2025-07-03 16:44:38,187 - INFO - 챕터 처리 시작: chapter_71
+2025-07-03 16:44:38,187 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,187 - INFO - ============================================================
+2025-07-03 16:44:38,187 - INFO - 챕터 chapter_71 모델 학습 시작...
+2025-07-03 16:44:38,198 - ERROR - 챕터 chapter_71 모델 학습 실패:
+2025-07-03 16:44:38,198 - ERROR - stdout: 
+2025-07-03 16:44:38,198 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,198 - ERROR - 챕터 chapter_71 처리 실패
+2025-07-03 16:44:38,198 - ERROR - ❌ chapter_71 실패
+2025-07-03 16:44:38,198 - INFO - 
+진행률: 72/166 - chapter_72
+2025-07-03 16:44:38,198 - INFO - ============================================================
+2025-07-03 16:44:38,198 - INFO - 챕터 처리 시작: chapter_72
+2025-07-03 16:44:38,198 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,198 - INFO - ============================================================
+2025-07-03 16:44:38,198 - INFO - 챕터 chapter_72 모델 학습 시작...
+2025-07-03 16:44:38,209 - ERROR - 챕터 chapter_72 모델 학습 실패:
+2025-07-03 16:44:38,209 - ERROR - stdout: 
+2025-07-03 16:44:38,209 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,209 - ERROR - 챕터 chapter_72 처리 실패
+2025-07-03 16:44:38,209 - ERROR - ❌ chapter_72 실패
+2025-07-03 16:44:38,209 - INFO - 
+진행률: 73/166 - chapter_73
+2025-07-03 16:44:38,209 - INFO - ============================================================
+2025-07-03 16:44:38,209 - INFO - 챕터 처리 시작: chapter_73
+2025-07-03 16:44:38,209 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,210 - INFO - ============================================================
+2025-07-03 16:44:38,210 - INFO - 챕터 chapter_73 모델 학습 시작...
+2025-07-03 16:44:38,220 - ERROR - 챕터 chapter_73 모델 학습 실패:
+2025-07-03 16:44:38,220 - ERROR - stdout: 
+2025-07-03 16:44:38,220 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,220 - ERROR - 챕터 chapter_73 처리 실패
+2025-07-03 16:44:38,220 - ERROR - ❌ chapter_73 실패
+2025-07-03 16:44:38,220 - INFO - 
+진행률: 74/166 - chapter_74
+2025-07-03 16:44:38,220 - INFO - ============================================================
+2025-07-03 16:44:38,220 - INFO - 챕터 처리 시작: chapter_74
+2025-07-03 16:44:38,220 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,220 - INFO - ============================================================
+2025-07-03 16:44:38,221 - INFO - 챕터 chapter_74 모델 학습 시작...
+2025-07-03 16:44:38,231 - ERROR - 챕터 chapter_74 모델 학습 실패:
+2025-07-03 16:44:38,231 - ERROR - stdout: 
+2025-07-03 16:44:38,231 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,231 - ERROR - 챕터 chapter_74 처리 실패
+2025-07-03 16:44:38,231 - ERROR - ❌ chapter_74 실패
+2025-07-03 16:44:38,231 - INFO - 
+진행률: 75/166 - chapter_75
+2025-07-03 16:44:38,231 - INFO - ============================================================
+2025-07-03 16:44:38,231 - INFO - 챕터 처리 시작: chapter_75
+2025-07-03 16:44:38,231 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,231 - INFO - ============================================================
+2025-07-03 16:44:38,232 - INFO - 챕터 chapter_75 모델 학습 시작...
+2025-07-03 16:44:38,242 - ERROR - 챕터 chapter_75 모델 학습 실패:
+2025-07-03 16:44:38,242 - ERROR - stdout: 
+2025-07-03 16:44:38,242 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,242 - ERROR - 챕터 chapter_75 처리 실패
+2025-07-03 16:44:38,242 - ERROR - ❌ chapter_75 실패
+2025-07-03 16:44:38,242 - INFO - 
+진행률: 76/166 - chapter_76
+2025-07-03 16:44:38,242 - INFO - ============================================================
+2025-07-03 16:44:38,242 - INFO - 챕터 처리 시작: chapter_76
+2025-07-03 16:44:38,242 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,242 - INFO - ============================================================
+2025-07-03 16:44:38,243 - INFO - 챕터 chapter_76 모델 학습 시작...
+2025-07-03 16:44:38,253 - ERROR - 챕터 chapter_76 모델 학습 실패:
+2025-07-03 16:44:38,253 - ERROR - stdout: 
+2025-07-03 16:44:38,253 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,253 - ERROR - 챕터 chapter_76 처리 실패
+2025-07-03 16:44:38,253 - ERROR - ❌ chapter_76 실패
+2025-07-03 16:44:38,253 - INFO - 
+진행률: 77/166 - chapter_77
+2025-07-03 16:44:38,253 - INFO - ============================================================
+2025-07-03 16:44:38,253 - INFO - 챕터 처리 시작: chapter_77
+2025-07-03 16:44:38,253 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,253 - INFO - ============================================================
+2025-07-03 16:44:38,254 - INFO - 챕터 chapter_77 모델 학습 시작...
+2025-07-03 16:44:38,264 - ERROR - 챕터 chapter_77 모델 학습 실패:
+2025-07-03 16:44:38,264 - ERROR - stdout: 
+2025-07-03 16:44:38,264 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,264 - ERROR - 챕터 chapter_77 처리 실패
+2025-07-03 16:44:38,264 - ERROR - ❌ chapter_77 실패
+2025-07-03 16:44:38,264 - INFO - 
+진행률: 78/166 - chapter_78
+2025-07-03 16:44:38,264 - INFO - ============================================================
+2025-07-03 16:44:38,264 - INFO - 챕터 처리 시작: chapter_78
+2025-07-03 16:44:38,264 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,264 - INFO - ============================================================
+2025-07-03 16:44:38,264 - INFO - 챕터 chapter_78 모델 학습 시작...
+2025-07-03 16:44:38,275 - ERROR - 챕터 chapter_78 모델 학습 실패:
+2025-07-03 16:44:38,275 - ERROR - stdout: 
+2025-07-03 16:44:38,275 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,275 - ERROR - 챕터 chapter_78 처리 실패
+2025-07-03 16:44:38,275 - ERROR - ❌ chapter_78 실패
+2025-07-03 16:44:38,275 - INFO - 
+진행률: 79/166 - chapter_79
+2025-07-03 16:44:38,275 - INFO - ============================================================
+2025-07-03 16:44:38,275 - INFO - 챕터 처리 시작: chapter_79
+2025-07-03 16:44:38,275 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,275 - INFO - ============================================================
+2025-07-03 16:44:38,276 - INFO - 챕터 chapter_79 모델 학습 시작...
+2025-07-03 16:44:38,286 - ERROR - 챕터 chapter_79 모델 학습 실패:
+2025-07-03 16:44:38,286 - ERROR - stdout: 
+2025-07-03 16:44:38,286 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,286 - ERROR - 챕터 chapter_79 처리 실패
+2025-07-03 16:44:38,287 - ERROR - ❌ chapter_79 실패
+2025-07-03 16:44:38,287 - INFO - 
+진행률: 80/166 - chapter_80
+2025-07-03 16:44:38,287 - INFO - ============================================================
+2025-07-03 16:44:38,287 - INFO - 챕터 처리 시작: chapter_80
+2025-07-03 16:44:38,287 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,287 - INFO - ============================================================
+2025-07-03 16:44:38,287 - INFO - 챕터 chapter_80 모델 학습 시작...
+2025-07-03 16:44:38,297 - ERROR - 챕터 chapter_80 모델 학습 실패:
+2025-07-03 16:44:38,297 - ERROR - stdout: 
+2025-07-03 16:44:38,297 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,297 - ERROR - 챕터 chapter_80 처리 실패
+2025-07-03 16:44:38,298 - ERROR - ❌ chapter_80 실패
+2025-07-03 16:44:38,298 - INFO - 
+진행률: 81/166 - chapter_81
+2025-07-03 16:44:38,298 - INFO - ============================================================
+2025-07-03 16:44:38,298 - INFO - 챕터 처리 시작: chapter_81
+2025-07-03 16:44:38,298 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,298 - INFO - ============================================================
+2025-07-03 16:44:38,298 - INFO - 챕터 chapter_81 모델 학습 시작...
+2025-07-03 16:44:38,308 - ERROR - 챕터 chapter_81 모델 학습 실패:
+2025-07-03 16:44:38,308 - ERROR - stdout: 
+2025-07-03 16:44:38,308 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,308 - ERROR - 챕터 chapter_81 처리 실패
+2025-07-03 16:44:38,309 - ERROR - ❌ chapter_81 실패
+2025-07-03 16:44:38,309 - INFO - 
+진행률: 82/166 - chapter_82
+2025-07-03 16:44:38,309 - INFO - ============================================================
+2025-07-03 16:44:38,309 - INFO - 챕터 처리 시작: chapter_82
+2025-07-03 16:44:38,309 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,309 - INFO - ============================================================
+2025-07-03 16:44:38,309 - INFO - 챕터 chapter_82 모델 학습 시작...
+2025-07-03 16:44:38,319 - ERROR - 챕터 chapter_82 모델 학습 실패:
+2025-07-03 16:44:38,319 - ERROR - stdout: 
+2025-07-03 16:44:38,319 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,319 - ERROR - 챕터 chapter_82 처리 실패
+2025-07-03 16:44:38,320 - ERROR - ❌ chapter_82 실패
+2025-07-03 16:44:38,320 - INFO - 
+진행률: 83/166 - chapter_83
+2025-07-03 16:44:38,320 - INFO - ============================================================
+2025-07-03 16:44:38,320 - INFO - 챕터 처리 시작: chapter_83
+2025-07-03 16:44:38,320 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,320 - INFO - ============================================================
+2025-07-03 16:44:38,320 - INFO - 챕터 chapter_83 모델 학습 시작...
+2025-07-03 16:44:38,331 - ERROR - 챕터 chapter_83 모델 학습 실패:
+2025-07-03 16:44:38,331 - ERROR - stdout: 
+2025-07-03 16:44:38,331 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,331 - ERROR - 챕터 chapter_83 처리 실패
+2025-07-03 16:44:38,331 - ERROR - ❌ chapter_83 실패
+2025-07-03 16:44:38,331 - INFO - 
+진행률: 84/166 - chapter_84
+2025-07-03 16:44:38,331 - INFO - ============================================================
+2025-07-03 16:44:38,331 - INFO - 챕터 처리 시작: chapter_84
+2025-07-03 16:44:38,331 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,331 - INFO - ============================================================
+2025-07-03 16:44:38,332 - INFO - 챕터 chapter_84 모델 학습 시작...
+2025-07-03 16:44:38,343 - ERROR - 챕터 chapter_84 모델 학습 실패:
+2025-07-03 16:44:38,343 - ERROR - stdout: 
+2025-07-03 16:44:38,343 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,343 - ERROR - 챕터 chapter_84 처리 실패
+2025-07-03 16:44:38,343 - ERROR - ❌ chapter_84 실패
+2025-07-03 16:44:38,343 - INFO - 
+진행률: 85/166 - chapter_85
+2025-07-03 16:44:38,343 - INFO - ============================================================
+2025-07-03 16:44:38,343 - INFO - 챕터 처리 시작: chapter_85
+2025-07-03 16:44:38,343 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,343 - INFO - ============================================================
+2025-07-03 16:44:38,344 - INFO - 챕터 chapter_85 모델 학습 시작...
+2025-07-03 16:44:38,354 - ERROR - 챕터 chapter_85 모델 학습 실패:
+2025-07-03 16:44:38,354 - ERROR - stdout: 
+2025-07-03 16:44:38,354 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,354 - ERROR - 챕터 chapter_85 처리 실패
+2025-07-03 16:44:38,355 - ERROR - ❌ chapter_85 실패
+2025-07-03 16:44:38,355 - INFO - 
+진행률: 86/166 - chapter_86
+2025-07-03 16:44:38,355 - INFO - ============================================================
+2025-07-03 16:44:38,355 - INFO - 챕터 처리 시작: chapter_86
+2025-07-03 16:44:38,355 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,355 - INFO - ============================================================
+2025-07-03 16:44:38,355 - INFO - 챕터 chapter_86 모델 학습 시작...
+2025-07-03 16:44:38,366 - ERROR - 챕터 chapter_86 모델 학습 실패:
+2025-07-03 16:44:38,366 - ERROR - stdout: 
+2025-07-03 16:44:38,366 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,366 - ERROR - 챕터 chapter_86 처리 실패
+2025-07-03 16:44:38,366 - ERROR - ❌ chapter_86 실패
+2025-07-03 16:44:38,366 - INFO - 
+진행률: 87/166 - chapter_87
+2025-07-03 16:44:38,366 - INFO - ============================================================
+2025-07-03 16:44:38,366 - INFO - 챕터 처리 시작: chapter_87
+2025-07-03 16:44:38,366 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,366 - INFO - ============================================================
+2025-07-03 16:44:38,366 - INFO - 챕터 chapter_87 모델 학습 시작...
+2025-07-03 16:44:38,376 - ERROR - 챕터 chapter_87 모델 학습 실패:
+2025-07-03 16:44:38,377 - ERROR - stdout: 
+2025-07-03 16:44:38,377 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,377 - ERROR - 챕터 chapter_87 처리 실패
+2025-07-03 16:44:38,377 - ERROR - ❌ chapter_87 실패
+2025-07-03 16:44:38,377 - INFO - 
+진행률: 88/166 - chapter_88
+2025-07-03 16:44:38,377 - INFO - ============================================================
+2025-07-03 16:44:38,377 - INFO - 챕터 처리 시작: chapter_88
+2025-07-03 16:44:38,377 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,377 - INFO - ============================================================
+2025-07-03 16:44:38,377 - INFO - 챕터 chapter_88 모델 학습 시작...
+2025-07-03 16:44:38,387 - ERROR - 챕터 chapter_88 모델 학습 실패:
+2025-07-03 16:44:38,387 - ERROR - stdout: 
+2025-07-03 16:44:38,387 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,387 - ERROR - 챕터 chapter_88 처리 실패
+2025-07-03 16:44:38,388 - ERROR - ❌ chapter_88 실패
+2025-07-03 16:44:38,388 - INFO - 
+진행률: 89/166 - chapter_89
+2025-07-03 16:44:38,388 - INFO - ============================================================
+2025-07-03 16:44:38,388 - INFO - 챕터 처리 시작: chapter_89
+2025-07-03 16:44:38,388 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,388 - INFO - ============================================================
+2025-07-03 16:44:38,388 - INFO - 챕터 chapter_89 모델 학습 시작...
+2025-07-03 16:44:38,398 - ERROR - 챕터 chapter_89 모델 학습 실패:
+2025-07-03 16:44:38,398 - ERROR - stdout: 
+2025-07-03 16:44:38,398 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,398 - ERROR - 챕터 chapter_89 처리 실패
+2025-07-03 16:44:38,398 - ERROR - ❌ chapter_89 실패
+2025-07-03 16:44:38,398 - INFO - 
+진행률: 90/166 - chapter_90
+2025-07-03 16:44:38,398 - INFO - ============================================================
+2025-07-03 16:44:38,399 - INFO - 챕터 처리 시작: chapter_90
+2025-07-03 16:44:38,399 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,399 - INFO - ============================================================
+2025-07-03 16:44:38,399 - INFO - 챕터 chapter_90 모델 학습 시작...
+2025-07-03 16:44:38,409 - ERROR - 챕터 chapter_90 모델 학습 실패:
+2025-07-03 16:44:38,409 - ERROR - stdout: 
+2025-07-03 16:44:38,409 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,409 - ERROR - 챕터 chapter_90 처리 실패
+2025-07-03 16:44:38,410 - ERROR - ❌ chapter_90 실패
+2025-07-03 16:44:38,410 - INFO - 
+진행률: 91/166 - chapter_91
+2025-07-03 16:44:38,410 - INFO - ============================================================
+2025-07-03 16:44:38,410 - INFO - 챕터 처리 시작: chapter_91
+2025-07-03 16:44:38,410 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,410 - INFO - ============================================================
+2025-07-03 16:44:38,410 - INFO - 챕터 chapter_91 모델 학습 시작...
+2025-07-03 16:44:38,420 - ERROR - 챕터 chapter_91 모델 학습 실패:
+2025-07-03 16:44:38,420 - ERROR - stdout: 
+2025-07-03 16:44:38,420 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,420 - ERROR - 챕터 chapter_91 처리 실패
+2025-07-03 16:44:38,420 - ERROR - ❌ chapter_91 실패
+2025-07-03 16:44:38,420 - INFO - 
+진행률: 92/166 - chapter_92
+2025-07-03 16:44:38,420 - INFO - ============================================================
+2025-07-03 16:44:38,420 - INFO - 챕터 처리 시작: chapter_92
+2025-07-03 16:44:38,420 - INFO - 라벨 개수: 4
+2025-07-03 16:44:38,420 - INFO - ============================================================
+2025-07-03 16:44:38,421 - INFO - 챕터 chapter_92 모델 학습 시작...
+2025-07-03 16:44:38,431 - ERROR - 챕터 chapter_92 모델 학습 실패:
+2025-07-03 16:44:38,431 - ERROR - stdout: 
+2025-07-03 16:44:38,431 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,431 - ERROR - 챕터 chapter_92 처리 실패
+2025-07-03 16:44:38,431 - ERROR - ❌ chapter_92 실패
+2025-07-03 16:44:38,431 - INFO - 
+진행률: 93/166 - chapter_93
+2025-07-03 16:44:38,431 - INFO - ============================================================
+2025-07-03 16:44:38,431 - INFO - 챕터 처리 시작: chapter_93
+2025-07-03 16:44:38,431 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,431 - INFO - ============================================================
+2025-07-03 16:44:38,432 - INFO - 챕터 chapter_93 모델 학습 시작...
+2025-07-03 16:44:38,442 - ERROR - 챕터 chapter_93 모델 학습 실패:
+2025-07-03 16:44:38,442 - ERROR - stdout: 
+2025-07-03 16:44:38,442 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,442 - ERROR - 챕터 chapter_93 처리 실패
+2025-07-03 16:44:38,442 - ERROR - ❌ chapter_93 실패
+2025-07-03 16:44:38,442 - INFO - 
+진행률: 94/166 - chapter_94
+2025-07-03 16:44:38,442 - INFO - ============================================================
+2025-07-03 16:44:38,442 - INFO - 챕터 처리 시작: chapter_94
+2025-07-03 16:44:38,442 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,442 - INFO - ============================================================
+2025-07-03 16:44:38,443 - INFO - 챕터 chapter_94 모델 학습 시작...
+2025-07-03 16:44:38,452 - ERROR - 챕터 chapter_94 모델 학습 실패:
+2025-07-03 16:44:38,452 - ERROR - stdout: 
+2025-07-03 16:44:38,452 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,453 - ERROR - 챕터 chapter_94 처리 실패
+2025-07-03 16:44:38,453 - ERROR - ❌ chapter_94 실패
+2025-07-03 16:44:38,453 - INFO - 
+진행률: 95/166 - chapter_95
+2025-07-03 16:44:38,453 - INFO - ============================================================
+2025-07-03 16:44:38,453 - INFO - 챕터 처리 시작: chapter_95
+2025-07-03 16:44:38,453 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,453 - INFO - ============================================================
+2025-07-03 16:44:38,453 - INFO - 챕터 chapter_95 모델 학습 시작...
+2025-07-03 16:44:38,464 - ERROR - 챕터 chapter_95 모델 학습 실패:
+2025-07-03 16:44:38,464 - ERROR - stdout: 
+2025-07-03 16:44:38,464 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,464 - ERROR - 챕터 chapter_95 처리 실패
+2025-07-03 16:44:38,464 - ERROR - ❌ chapter_95 실패
+2025-07-03 16:44:38,464 - INFO - 
+진행률: 96/166 - chapter_96
+2025-07-03 16:44:38,464 - INFO - ============================================================
+2025-07-03 16:44:38,464 - INFO - 챕터 처리 시작: chapter_96
+2025-07-03 16:44:38,464 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,464 - INFO - ============================================================
+2025-07-03 16:44:38,465 - INFO - 챕터 chapter_96 모델 학습 시작...
+2025-07-03 16:44:38,475 - ERROR - 챕터 chapter_96 모델 학습 실패:
+2025-07-03 16:44:38,475 - ERROR - stdout: 
+2025-07-03 16:44:38,475 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,475 - ERROR - 챕터 chapter_96 처리 실패
+2025-07-03 16:44:38,476 - ERROR - ❌ chapter_96 실패
+2025-07-03 16:44:38,476 - INFO - 
+진행률: 97/166 - chapter_97
+2025-07-03 16:44:38,476 - INFO - ============================================================
+2025-07-03 16:44:38,476 - INFO - 챕터 처리 시작: chapter_97
+2025-07-03 16:44:38,476 - INFO - 라벨 개수: 4
+2025-07-03 16:44:38,476 - INFO - ============================================================
+2025-07-03 16:44:38,476 - INFO - 챕터 chapter_97 모델 학습 시작...
+2025-07-03 16:44:38,486 - ERROR - 챕터 chapter_97 모델 학습 실패:
+2025-07-03 16:44:38,486 - ERROR - stdout: 
+2025-07-03 16:44:38,486 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,486 - ERROR - 챕터 chapter_97 처리 실패
+2025-07-03 16:44:38,486 - ERROR - ❌ chapter_97 실패
+2025-07-03 16:44:38,486 - INFO - 
+진행률: 98/166 - chapter_98
+2025-07-03 16:44:38,486 - INFO - ============================================================
+2025-07-03 16:44:38,486 - INFO - 챕터 처리 시작: chapter_98
+2025-07-03 16:44:38,486 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,486 - INFO - ============================================================
+2025-07-03 16:44:38,487 - INFO - 챕터 chapter_98 모델 학습 시작...
+2025-07-03 16:44:38,498 - ERROR - 챕터 chapter_98 모델 학습 실패:
+2025-07-03 16:44:38,498 - ERROR - stdout: 
+2025-07-03 16:44:38,498 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,498 - ERROR - 챕터 chapter_98 처리 실패
+2025-07-03 16:44:38,498 - ERROR - ❌ chapter_98 실패
+2025-07-03 16:44:38,498 - INFO - 
+진행률: 99/166 - chapter_99
+2025-07-03 16:44:38,498 - INFO - ============================================================
+2025-07-03 16:44:38,498 - INFO - 챕터 처리 시작: chapter_99
+2025-07-03 16:44:38,498 - INFO - 라벨 개수: 4
+2025-07-03 16:44:38,498 - INFO - ============================================================
+2025-07-03 16:44:38,499 - INFO - 챕터 chapter_99 모델 학습 시작...
+2025-07-03 16:44:38,510 - ERROR - 챕터 chapter_99 모델 학습 실패:
+2025-07-03 16:44:38,510 - ERROR - stdout: 
+2025-07-03 16:44:38,510 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,510 - ERROR - 챕터 chapter_99 처리 실패
+2025-07-03 16:44:38,511 - ERROR - ❌ chapter_99 실패
+2025-07-03 16:44:38,511 - INFO - 
+진행률: 100/166 - chapter_100
+2025-07-03 16:44:38,511 - INFO - ============================================================
+2025-07-03 16:44:38,511 - INFO - 챕터 처리 시작: chapter_100
+2025-07-03 16:44:38,511 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,511 - INFO - ============================================================
+2025-07-03 16:44:38,511 - INFO - 챕터 chapter_100 모델 학습 시작...
+2025-07-03 16:44:38,522 - ERROR - 챕터 chapter_100 모델 학습 실패:
+2025-07-03 16:44:38,522 - ERROR - stdout: 
+2025-07-03 16:44:38,522 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,523 - ERROR - 챕터 chapter_100 처리 실패
+2025-07-03 16:44:38,523 - ERROR - ❌ chapter_100 실패
+2025-07-03 16:44:38,523 - INFO - 
+진행률: 101/166 - chapter_101
+2025-07-03 16:44:38,523 - INFO - ============================================================
+2025-07-03 16:44:38,523 - INFO - 챕터 처리 시작: chapter_101
+2025-07-03 16:44:38,523 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,523 - INFO - ============================================================
+2025-07-03 16:44:38,523 - INFO - 챕터 chapter_101 모델 학습 시작...
+2025-07-03 16:44:38,534 - ERROR - 챕터 chapter_101 모델 학습 실패:
+2025-07-03 16:44:38,534 - ERROR - stdout: 
+2025-07-03 16:44:38,534 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,534 - ERROR - 챕터 chapter_101 처리 실패
+2025-07-03 16:44:38,535 - ERROR - ❌ chapter_101 실패
+2025-07-03 16:44:38,535 - INFO - 
+진행률: 102/166 - chapter_102
+2025-07-03 16:44:38,535 - INFO - ============================================================
+2025-07-03 16:44:38,535 - INFO - 챕터 처리 시작: chapter_102
+2025-07-03 16:44:38,535 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,535 - INFO - ============================================================
+2025-07-03 16:44:38,535 - INFO - 챕터 chapter_102 모델 학습 시작...
+2025-07-03 16:44:38,545 - ERROR - 챕터 chapter_102 모델 학습 실패:
+2025-07-03 16:44:38,546 - ERROR - stdout: 
+2025-07-03 16:44:38,546 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,546 - ERROR - 챕터 chapter_102 처리 실패
+2025-07-03 16:44:38,546 - ERROR - ❌ chapter_102 실패
+2025-07-03 16:44:38,546 - INFO - 
+진행률: 103/166 - chapter_103
+2025-07-03 16:44:38,546 - INFO - ============================================================
+2025-07-03 16:44:38,546 - INFO - 챕터 처리 시작: chapter_103
+2025-07-03 16:44:38,546 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,546 - INFO - ============================================================
+2025-07-03 16:44:38,546 - INFO - 챕터 chapter_103 모델 학습 시작...
+2025-07-03 16:44:38,556 - ERROR - 챕터 chapter_103 모델 학습 실패:
+2025-07-03 16:44:38,557 - ERROR - stdout: 
+2025-07-03 16:44:38,557 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,557 - ERROR - 챕터 chapter_103 처리 실패
+2025-07-03 16:44:38,557 - ERROR - ❌ chapter_103 실패
+2025-07-03 16:44:38,557 - INFO - 
+진행률: 104/166 - chapter_104
+2025-07-03 16:44:38,557 - INFO - ============================================================
+2025-07-03 16:44:38,557 - INFO - 챕터 처리 시작: chapter_104
+2025-07-03 16:44:38,557 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,557 - INFO - ============================================================
+2025-07-03 16:44:38,557 - INFO - 챕터 chapter_104 모델 학습 시작...
+2025-07-03 16:44:38,568 - ERROR - 챕터 chapter_104 모델 학습 실패:
+2025-07-03 16:44:38,568 - ERROR - stdout: 
+2025-07-03 16:44:38,568 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,568 - ERROR - 챕터 chapter_104 처리 실패
+2025-07-03 16:44:38,568 - ERROR - ❌ chapter_104 실패
+2025-07-03 16:44:38,568 - INFO - 
+진행률: 105/166 - chapter_105
+2025-07-03 16:44:38,568 - INFO - ============================================================
+2025-07-03 16:44:38,568 - INFO - 챕터 처리 시작: chapter_105
+2025-07-03 16:44:38,568 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,568 - INFO - ============================================================
+2025-07-03 16:44:38,568 - INFO - 챕터 chapter_105 모델 학습 시작...
+2025-07-03 16:44:38,579 - ERROR - 챕터 chapter_105 모델 학습 실패:
+2025-07-03 16:44:38,579 - ERROR - stdout: 
+2025-07-03 16:44:38,579 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,579 - ERROR - 챕터 chapter_105 처리 실패
+2025-07-03 16:44:38,579 - ERROR - ❌ chapter_105 실패
+2025-07-03 16:44:38,579 - INFO - 
+진행률: 106/166 - chapter_106
+2025-07-03 16:44:38,579 - INFO - ============================================================
+2025-07-03 16:44:38,579 - INFO - 챕터 처리 시작: chapter_106
+2025-07-03 16:44:38,579 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,579 - INFO - ============================================================
+2025-07-03 16:44:38,580 - INFO - 챕터 chapter_106 모델 학습 시작...
+2025-07-03 16:44:38,589 - ERROR - 챕터 chapter_106 모델 학습 실패:
+2025-07-03 16:44:38,590 - ERROR - stdout: 
+2025-07-03 16:44:38,590 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,590 - ERROR - 챕터 chapter_106 처리 실패
+2025-07-03 16:44:38,590 - ERROR - ❌ chapter_106 실패
+2025-07-03 16:44:38,590 - INFO - 
+진행률: 107/166 - chapter_107
+2025-07-03 16:44:38,590 - INFO - ============================================================
+2025-07-03 16:44:38,590 - INFO - 챕터 처리 시작: chapter_107
+2025-07-03 16:44:38,590 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,590 - INFO - ============================================================
+2025-07-03 16:44:38,590 - INFO - 챕터 chapter_107 모델 학습 시작...
+2025-07-03 16:44:38,600 - ERROR - 챕터 chapter_107 모델 학습 실패:
+2025-07-03 16:44:38,601 - ERROR - stdout: 
+2025-07-03 16:44:38,601 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,601 - ERROR - 챕터 chapter_107 처리 실패
+2025-07-03 16:44:38,601 - ERROR - ❌ chapter_107 실패
+2025-07-03 16:44:38,601 - INFO - 
+진행률: 108/166 - chapter_108
+2025-07-03 16:44:38,601 - INFO - ============================================================
+2025-07-03 16:44:38,601 - INFO - 챕터 처리 시작: chapter_108
+2025-07-03 16:44:38,601 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,601 - INFO - ============================================================
+2025-07-03 16:44:38,601 - INFO - 챕터 chapter_108 모델 학습 시작...
+2025-07-03 16:44:38,611 - ERROR - 챕터 chapter_108 모델 학습 실패:
+2025-07-03 16:44:38,612 - ERROR - stdout: 
+2025-07-03 16:44:38,612 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,612 - ERROR - 챕터 chapter_108 처리 실패
+2025-07-03 16:44:38,612 - ERROR - ❌ chapter_108 실패
+2025-07-03 16:44:38,612 - INFO - 
+진행률: 109/166 - chapter_109
+2025-07-03 16:44:38,612 - INFO - ============================================================
+2025-07-03 16:44:38,612 - INFO - 챕터 처리 시작: chapter_109
+2025-07-03 16:44:38,612 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,612 - INFO - ============================================================
+2025-07-03 16:44:38,612 - INFO - 챕터 chapter_109 모델 학습 시작...
+2025-07-03 16:44:38,623 - ERROR - 챕터 chapter_109 모델 학습 실패:
+2025-07-03 16:44:38,623 - ERROR - stdout: 
+2025-07-03 16:44:38,623 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,623 - ERROR - 챕터 chapter_109 처리 실패
+2025-07-03 16:44:38,623 - ERROR - ❌ chapter_109 실패
+2025-07-03 16:44:38,623 - INFO - 
+진행률: 110/166 - chapter_110
+2025-07-03 16:44:38,623 - INFO - ============================================================
+2025-07-03 16:44:38,623 - INFO - 챕터 처리 시작: chapter_110
+2025-07-03 16:44:38,623 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,623 - INFO - ============================================================
+2025-07-03 16:44:38,624 - INFO - 챕터 chapter_110 모델 학습 시작...
+2025-07-03 16:44:38,635 - ERROR - 챕터 chapter_110 모델 학습 실패:
+2025-07-03 16:44:38,635 - ERROR - stdout: 
+2025-07-03 16:44:38,635 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,635 - ERROR - 챕터 chapter_110 처리 실패
+2025-07-03 16:44:38,635 - ERROR - ❌ chapter_110 실패
+2025-07-03 16:44:38,635 - INFO - 
+진행률: 111/166 - chapter_111
+2025-07-03 16:44:38,635 - INFO - ============================================================
+2025-07-03 16:44:38,635 - INFO - 챕터 처리 시작: chapter_111
+2025-07-03 16:44:38,635 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,635 - INFO - ============================================================
+2025-07-03 16:44:38,635 - INFO - 챕터 chapter_111 모델 학습 시작...
+2025-07-03 16:44:38,646 - ERROR - 챕터 chapter_111 모델 학습 실패:
+2025-07-03 16:44:38,646 - ERROR - stdout: 
+2025-07-03 16:44:38,646 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,646 - ERROR - 챕터 chapter_111 처리 실패
+2025-07-03 16:44:38,647 - ERROR - ❌ chapter_111 실패
+2025-07-03 16:44:38,647 - INFO - 
+진행률: 112/166 - chapter_112
+2025-07-03 16:44:38,647 - INFO - ============================================================
+2025-07-03 16:44:38,647 - INFO - 챕터 처리 시작: chapter_112
+2025-07-03 16:44:38,647 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,647 - INFO - ============================================================
+2025-07-03 16:44:38,647 - INFO - 챕터 chapter_112 모델 학습 시작...
+2025-07-03 16:44:38,657 - ERROR - 챕터 chapter_112 모델 학습 실패:
+2025-07-03 16:44:38,658 - ERROR - stdout: 
+2025-07-03 16:44:38,658 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,658 - ERROR - 챕터 chapter_112 처리 실패
+2025-07-03 16:44:38,658 - ERROR - ❌ chapter_112 실패
+2025-07-03 16:44:38,658 - INFO - 
+진행률: 113/166 - chapter_113
+2025-07-03 16:44:38,658 - INFO - ============================================================
+2025-07-03 16:44:38,658 - INFO - 챕터 처리 시작: chapter_113
+2025-07-03 16:44:38,658 - INFO - 라벨 개수: 3
+2025-07-03 16:44:38,658 - INFO - ============================================================
+2025-07-03 16:44:38,658 - INFO - 챕터 chapter_113 모델 학습 시작...
+2025-07-03 16:44:38,668 - ERROR - 챕터 chapter_113 모델 학습 실패:
+2025-07-03 16:44:38,668 - ERROR - stdout: 
+2025-07-03 16:44:38,668 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,668 - ERROR - 챕터 chapter_113 처리 실패
+2025-07-03 16:44:38,668 - ERROR - ❌ chapter_113 실패
+2025-07-03 16:44:38,668 - INFO - 
+진행률: 114/166 - chapter_114
+2025-07-03 16:44:38,668 - INFO - ============================================================
+2025-07-03 16:44:38,669 - INFO - 챕터 처리 시작: chapter_114
+2025-07-03 16:44:38,669 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,669 - INFO - ============================================================
+2025-07-03 16:44:38,669 - INFO - 챕터 chapter_114 모델 학습 시작...
+2025-07-03 16:44:38,679 - ERROR - 챕터 chapter_114 모델 학습 실패:
+2025-07-03 16:44:38,679 - ERROR - stdout: 
+2025-07-03 16:44:38,679 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,679 - ERROR - 챕터 chapter_114 처리 실패
+2025-07-03 16:44:38,680 - ERROR - ❌ chapter_114 실패
+2025-07-03 16:44:38,680 - INFO - 
+진행률: 115/166 - chapter_115
+2025-07-03 16:44:38,680 - INFO - ============================================================
+2025-07-03 16:44:38,680 - INFO - 챕터 처리 시작: chapter_115
+2025-07-03 16:44:38,680 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,680 - INFO - ============================================================
+2025-07-03 16:44:38,680 - INFO - 챕터 chapter_115 모델 학습 시작...
+2025-07-03 16:44:38,690 - ERROR - 챕터 chapter_115 모델 학습 실패:
+2025-07-03 16:44:38,690 - ERROR - stdout: 
+2025-07-03 16:44:38,690 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,690 - ERROR - 챕터 chapter_115 처리 실패
+2025-07-03 16:44:38,690 - ERROR - ❌ chapter_115 실패
+2025-07-03 16:44:38,690 - INFO - 
+진행률: 116/166 - chapter_116
+2025-07-03 16:44:38,690 - INFO - ============================================================
+2025-07-03 16:44:38,690 - INFO - 챕터 처리 시작: chapter_116
+2025-07-03 16:44:38,691 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,691 - INFO - ============================================================
+2025-07-03 16:44:38,691 - INFO - 챕터 chapter_116 모델 학습 시작...
+2025-07-03 16:44:38,701 - ERROR - 챕터 chapter_116 모델 학습 실패:
+2025-07-03 16:44:38,701 - ERROR - stdout: 
+2025-07-03 16:44:38,701 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,701 - ERROR - 챕터 chapter_116 처리 실패
+2025-07-03 16:44:38,702 - ERROR - ❌ chapter_116 실패
+2025-07-03 16:44:38,702 - INFO - 
+진행률: 117/166 - chapter_117
+2025-07-03 16:44:38,702 - INFO - ============================================================
+2025-07-03 16:44:38,702 - INFO - 챕터 처리 시작: chapter_117
+2025-07-03 16:44:38,702 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,702 - INFO - ============================================================
+2025-07-03 16:44:38,702 - INFO - 챕터 chapter_117 모델 학습 시작...
+2025-07-03 16:44:38,712 - ERROR - 챕터 chapter_117 모델 학습 실패:
+2025-07-03 16:44:38,713 - ERROR - stdout: 
+2025-07-03 16:44:38,713 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,713 - ERROR - 챕터 chapter_117 처리 실패
+2025-07-03 16:44:38,713 - ERROR - ❌ chapter_117 실패
+2025-07-03 16:44:38,713 - INFO - 
+진행률: 118/166 - chapter_118
+2025-07-03 16:44:38,713 - INFO - ============================================================
+2025-07-03 16:44:38,713 - INFO - 챕터 처리 시작: chapter_118
+2025-07-03 16:44:38,713 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,713 - INFO - ============================================================
+2025-07-03 16:44:38,713 - INFO - 챕터 chapter_118 모델 학습 시작...
+2025-07-03 16:44:38,723 - ERROR - 챕터 chapter_118 모델 학습 실패:
+2025-07-03 16:44:38,723 - ERROR - stdout: 
+2025-07-03 16:44:38,723 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,723 - ERROR - 챕터 chapter_118 처리 실패
+2025-07-03 16:44:38,723 - ERROR - ❌ chapter_118 실패
+2025-07-03 16:44:38,724 - INFO - 
+진행률: 119/166 - chapter_119
+2025-07-03 16:44:38,724 - INFO - ============================================================
+2025-07-03 16:44:38,724 - INFO - 챕터 처리 시작: chapter_119
+2025-07-03 16:44:38,724 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,724 - INFO - ============================================================
+2025-07-03 16:44:38,724 - INFO - 챕터 chapter_119 모델 학습 시작...
+2025-07-03 16:44:38,734 - ERROR - 챕터 chapter_119 모델 학습 실패:
+2025-07-03 16:44:38,734 - ERROR - stdout: 
+2025-07-03 16:44:38,734 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,734 - ERROR - 챕터 chapter_119 처리 실패
+2025-07-03 16:44:38,735 - ERROR - ❌ chapter_119 실패
+2025-07-03 16:44:38,735 - INFO - 
+진행률: 120/166 - chapter_120
+2025-07-03 16:44:38,735 - INFO - ============================================================
+2025-07-03 16:44:38,735 - INFO - 챕터 처리 시작: chapter_120
+2025-07-03 16:44:38,735 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,735 - INFO - ============================================================
+2025-07-03 16:44:38,735 - INFO - 챕터 chapter_120 모델 학습 시작...
+2025-07-03 16:44:38,745 - ERROR - 챕터 chapter_120 모델 학습 실패:
+2025-07-03 16:44:38,745 - ERROR - stdout: 
+2025-07-03 16:44:38,745 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,745 - ERROR - 챕터 chapter_120 처리 실패
+2025-07-03 16:44:38,746 - ERROR - ❌ chapter_120 실패
+2025-07-03 16:44:38,746 - INFO - 
+진행률: 121/166 - chapter_121
+2025-07-03 16:44:38,746 - INFO - ============================================================
+2025-07-03 16:44:38,746 - INFO - 챕터 처리 시작: chapter_121
+2025-07-03 16:44:38,746 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,746 - INFO - ============================================================
+2025-07-03 16:44:38,746 - INFO - 챕터 chapter_121 모델 학습 시작...
+2025-07-03 16:44:38,756 - ERROR - 챕터 chapter_121 모델 학습 실패:
+2025-07-03 16:44:38,756 - ERROR - stdout: 
+2025-07-03 16:44:38,756 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,756 - ERROR - 챕터 chapter_121 처리 실패
+2025-07-03 16:44:38,756 - ERROR - ❌ chapter_121 실패
+2025-07-03 16:44:38,756 - INFO - 
+진행률: 122/166 - chapter_122
+2025-07-03 16:44:38,756 - INFO - ============================================================
+2025-07-03 16:44:38,756 - INFO - 챕터 처리 시작: chapter_122
+2025-07-03 16:44:38,757 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,757 - INFO - ============================================================
+2025-07-03 16:44:38,757 - INFO - 챕터 chapter_122 모델 학습 시작...
+2025-07-03 16:44:38,768 - ERROR - 챕터 chapter_122 모델 학습 실패:
+2025-07-03 16:44:38,768 - ERROR - stdout: 
+2025-07-03 16:44:38,768 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,768 - ERROR - 챕터 chapter_122 처리 실패
+2025-07-03 16:44:38,768 - ERROR - ❌ chapter_122 실패
+2025-07-03 16:44:38,768 - INFO - 
+진행률: 123/166 - chapter_123
+2025-07-03 16:44:38,768 - INFO - ============================================================
+2025-07-03 16:44:38,768 - INFO - 챕터 처리 시작: chapter_123
+2025-07-03 16:44:38,768 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,768 - INFO - ============================================================
+2025-07-03 16:44:38,768 - INFO - 챕터 chapter_123 모델 학습 시작...
+2025-07-03 16:44:38,779 - ERROR - 챕터 chapter_123 모델 학습 실패:
+2025-07-03 16:44:38,779 - ERROR - stdout: 
+2025-07-03 16:44:38,779 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,779 - ERROR - 챕터 chapter_123 처리 실패
+2025-07-03 16:44:38,779 - ERROR - ❌ chapter_123 실패
+2025-07-03 16:44:38,779 - INFO - 
+진행률: 124/166 - chapter_124
+2025-07-03 16:44:38,779 - INFO - ============================================================
+2025-07-03 16:44:38,779 - INFO - 챕터 처리 시작: chapter_124
+2025-07-03 16:44:38,779 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,779 - INFO - ============================================================
+2025-07-03 16:44:38,780 - INFO - 챕터 chapter_124 모델 학습 시작...
+2025-07-03 16:44:38,790 - ERROR - 챕터 chapter_124 모델 학습 실패:
+2025-07-03 16:44:38,790 - ERROR - stdout: 
+2025-07-03 16:44:38,790 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,790 - ERROR - 챕터 chapter_124 처리 실패
+2025-07-03 16:44:38,790 - ERROR - ❌ chapter_124 실패
+2025-07-03 16:44:38,790 - INFO - 
+진행률: 125/166 - chapter_125
+2025-07-03 16:44:38,790 - INFO - ============================================================
+2025-07-03 16:44:38,790 - INFO - 챕터 처리 시작: chapter_125
+2025-07-03 16:44:38,790 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,790 - INFO - ============================================================
+2025-07-03 16:44:38,790 - INFO - 챕터 chapter_125 모델 학습 시작...
+2025-07-03 16:44:38,801 - ERROR - 챕터 chapter_125 모델 학습 실패:
+2025-07-03 16:44:38,801 - ERROR - stdout: 
+2025-07-03 16:44:38,801 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,801 - ERROR - 챕터 chapter_125 처리 실패
+2025-07-03 16:44:38,801 - ERROR - ❌ chapter_125 실패
+2025-07-03 16:44:38,801 - INFO - 
+진행률: 126/166 - chapter_126
+2025-07-03 16:44:38,801 - INFO - ============================================================
+2025-07-03 16:44:38,801 - INFO - 챕터 처리 시작: chapter_126
+2025-07-03 16:44:38,801 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,801 - INFO - ============================================================
+2025-07-03 16:44:38,802 - INFO - 챕터 chapter_126 모델 학습 시작...
+2025-07-03 16:44:38,812 - ERROR - 챕터 chapter_126 모델 학습 실패:
+2025-07-03 16:44:38,812 - ERROR - stdout: 
+2025-07-03 16:44:38,812 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,813 - ERROR - 챕터 chapter_126 처리 실패
+2025-07-03 16:44:38,813 - ERROR - ❌ chapter_126 실패
+2025-07-03 16:44:38,813 - INFO - 
+진행률: 127/166 - chapter_127
+2025-07-03 16:44:38,813 - INFO - ============================================================
+2025-07-03 16:44:38,813 - INFO - 챕터 처리 시작: chapter_127
+2025-07-03 16:44:38,813 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,813 - INFO - ============================================================
+2025-07-03 16:44:38,813 - INFO - 챕터 chapter_127 모델 학습 시작...
+2025-07-03 16:44:38,823 - ERROR - 챕터 chapter_127 모델 학습 실패:
+2025-07-03 16:44:38,823 - ERROR - stdout: 
+2025-07-03 16:44:38,823 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,823 - ERROR - 챕터 chapter_127 처리 실패
+2025-07-03 16:44:38,824 - ERROR - ❌ chapter_127 실패
+2025-07-03 16:44:38,824 - INFO - 
+진행률: 128/166 - chapter_128
+2025-07-03 16:44:38,824 - INFO - ============================================================
+2025-07-03 16:44:38,824 - INFO - 챕터 처리 시작: chapter_128
+2025-07-03 16:44:38,824 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,824 - INFO - ============================================================
+2025-07-03 16:44:38,825 - INFO - 챕터 chapter_128 모델 학습 시작...
+2025-07-03 16:44:38,835 - ERROR - 챕터 chapter_128 모델 학습 실패:
+2025-07-03 16:44:38,835 - ERROR - stdout: 
+2025-07-03 16:44:38,835 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,835 - ERROR - 챕터 chapter_128 처리 실패
+2025-07-03 16:44:38,835 - ERROR - ❌ chapter_128 실패
+2025-07-03 16:44:38,835 - INFO - 
+진행률: 129/166 - chapter_129
+2025-07-03 16:44:38,835 - INFO - ============================================================
+2025-07-03 16:44:38,835 - INFO - 챕터 처리 시작: chapter_129
+2025-07-03 16:44:38,835 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,835 - INFO - ============================================================
+2025-07-03 16:44:38,835 - INFO - 챕터 chapter_129 모델 학습 시작...
+2025-07-03 16:44:38,846 - ERROR - 챕터 chapter_129 모델 학습 실패:
+2025-07-03 16:44:38,846 - ERROR - stdout: 
+2025-07-03 16:44:38,846 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,846 - ERROR - 챕터 chapter_129 처리 실패
+2025-07-03 16:44:38,846 - ERROR - ❌ chapter_129 실패
+2025-07-03 16:44:38,846 - INFO - 
+진행률: 130/166 - chapter_130
+2025-07-03 16:44:38,846 - INFO - ============================================================
+2025-07-03 16:44:38,846 - INFO - 챕터 처리 시작: chapter_130
+2025-07-03 16:44:38,846 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,846 - INFO - ============================================================
+2025-07-03 16:44:38,846 - INFO - 챕터 chapter_130 모델 학습 시작...
+2025-07-03 16:44:38,856 - ERROR - 챕터 chapter_130 모델 학습 실패:
+2025-07-03 16:44:38,856 - ERROR - stdout: 
+2025-07-03 16:44:38,856 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,856 - ERROR - 챕터 chapter_130 처리 실패
+2025-07-03 16:44:38,857 - ERROR - ❌ chapter_130 실패
+2025-07-03 16:44:38,857 - INFO - 
+진행률: 131/166 - chapter_131
+2025-07-03 16:44:38,857 - INFO - ============================================================
+2025-07-03 16:44:38,857 - INFO - 챕터 처리 시작: chapter_131
+2025-07-03 16:44:38,857 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,857 - INFO - ============================================================
+2025-07-03 16:44:38,857 - INFO - 챕터 chapter_131 모델 학습 시작...
+2025-07-03 16:44:38,867 - ERROR - 챕터 chapter_131 모델 학습 실패:
+2025-07-03 16:44:38,867 - ERROR - stdout: 
+2025-07-03 16:44:38,867 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,867 - ERROR - 챕터 chapter_131 처리 실패
+2025-07-03 16:44:38,867 - ERROR - ❌ chapter_131 실패
+2025-07-03 16:44:38,868 - INFO - 
+진행률: 132/166 - chapter_132
+2025-07-03 16:44:38,868 - INFO - ============================================================
+2025-07-03 16:44:38,868 - INFO - 챕터 처리 시작: chapter_132
+2025-07-03 16:44:38,868 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,868 - INFO - ============================================================
+2025-07-03 16:44:38,868 - INFO - 챕터 chapter_132 모델 학습 시작...
+2025-07-03 16:44:38,878 - ERROR - 챕터 chapter_132 모델 학습 실패:
+2025-07-03 16:44:38,878 - ERROR - stdout: 
+2025-07-03 16:44:38,878 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,878 - ERROR - 챕터 chapter_132 처리 실패
+2025-07-03 16:44:38,879 - ERROR - ❌ chapter_132 실패
+2025-07-03 16:44:38,879 - INFO - 
+진행률: 133/166 - chapter_133
+2025-07-03 16:44:38,879 - INFO - ============================================================
+2025-07-03 16:44:38,879 - INFO - 챕터 처리 시작: chapter_133
+2025-07-03 16:44:38,879 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,879 - INFO - ============================================================
+2025-07-03 16:44:38,879 - INFO - 챕터 chapter_133 모델 학습 시작...
+2025-07-03 16:44:38,889 - ERROR - 챕터 chapter_133 모델 학습 실패:
+2025-07-03 16:44:38,889 - ERROR - stdout: 
+2025-07-03 16:44:38,889 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,889 - ERROR - 챕터 chapter_133 처리 실패
+2025-07-03 16:44:38,889 - ERROR - ❌ chapter_133 실패
+2025-07-03 16:44:38,889 - INFO - 
+진행률: 134/166 - chapter_134
+2025-07-03 16:44:38,889 - INFO - ============================================================
+2025-07-03 16:44:38,889 - INFO - 챕터 처리 시작: chapter_134
+2025-07-03 16:44:38,890 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,890 - INFO - ============================================================
+2025-07-03 16:44:38,890 - INFO - 챕터 chapter_134 모델 학습 시작...
+2025-07-03 16:44:38,901 - ERROR - 챕터 chapter_134 모델 학습 실패:
+2025-07-03 16:44:38,901 - ERROR - stdout: 
+2025-07-03 16:44:38,901 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,901 - ERROR - 챕터 chapter_134 처리 실패
+2025-07-03 16:44:38,901 - ERROR - ❌ chapter_134 실패
+2025-07-03 16:44:38,901 - INFO - 
+진행률: 135/166 - chapter_135
+2025-07-03 16:44:38,901 - INFO - ============================================================
+2025-07-03 16:44:38,901 - INFO - 챕터 처리 시작: chapter_135
+2025-07-03 16:44:38,901 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,901 - INFO - ============================================================
+2025-07-03 16:44:38,901 - INFO - 챕터 chapter_135 모델 학습 시작...
+2025-07-03 16:44:38,912 - ERROR - 챕터 chapter_135 모델 학습 실패:
+2025-07-03 16:44:38,912 - ERROR - stdout: 
+2025-07-03 16:44:38,912 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,912 - ERROR - 챕터 chapter_135 처리 실패
+2025-07-03 16:44:38,912 - ERROR - ❌ chapter_135 실패
+2025-07-03 16:44:38,912 - INFO - 
+진행률: 136/166 - chapter_136
+2025-07-03 16:44:38,912 - INFO - ============================================================
+2025-07-03 16:44:38,912 - INFO - 챕터 처리 시작: chapter_136
+2025-07-03 16:44:38,912 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,912 - INFO - ============================================================
+2025-07-03 16:44:38,913 - INFO - 챕터 chapter_136 모델 학습 시작...
+2025-07-03 16:44:38,922 - ERROR - 챕터 chapter_136 모델 학습 실패:
+2025-07-03 16:44:38,923 - ERROR - stdout: 
+2025-07-03 16:44:38,923 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,923 - ERROR - 챕터 chapter_136 처리 실패
+2025-07-03 16:44:38,923 - ERROR - ❌ chapter_136 실패
+2025-07-03 16:44:38,923 - INFO - 
+진행률: 137/166 - chapter_137
+2025-07-03 16:44:38,923 - INFO - ============================================================
+2025-07-03 16:44:38,923 - INFO - 챕터 처리 시작: chapter_137
+2025-07-03 16:44:38,923 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,923 - INFO - ============================================================
+2025-07-03 16:44:38,923 - INFO - 챕터 chapter_137 모델 학습 시작...
+2025-07-03 16:44:38,933 - ERROR - 챕터 chapter_137 모델 학습 실패:
+2025-07-03 16:44:38,934 - ERROR - stdout: 
+2025-07-03 16:44:38,934 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,934 - ERROR - 챕터 chapter_137 처리 실패
+2025-07-03 16:44:38,934 - ERROR - ❌ chapter_137 실패
+2025-07-03 16:44:38,934 - INFO - 
+진행률: 138/166 - chapter_138
+2025-07-03 16:44:38,934 - INFO - ============================================================
+2025-07-03 16:44:38,934 - INFO - 챕터 처리 시작: chapter_138
+2025-07-03 16:44:38,934 - INFO - 라벨 개수: 4
+2025-07-03 16:44:38,934 - INFO - ============================================================
+2025-07-03 16:44:38,934 - INFO - 챕터 chapter_138 모델 학습 시작...
+2025-07-03 16:44:38,945 - ERROR - 챕터 chapter_138 모델 학습 실패:
+2025-07-03 16:44:38,945 - ERROR - stdout: 
+2025-07-03 16:44:38,945 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,945 - ERROR - 챕터 chapter_138 처리 실패
+2025-07-03 16:44:38,945 - ERROR - ❌ chapter_138 실패
+2025-07-03 16:44:38,945 - INFO - 
+진행률: 139/166 - chapter_139
+2025-07-03 16:44:38,945 - INFO - ============================================================
+2025-07-03 16:44:38,945 - INFO - 챕터 처리 시작: chapter_139
+2025-07-03 16:44:38,945 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,945 - INFO - ============================================================
+2025-07-03 16:44:38,945 - INFO - 챕터 chapter_139 모델 학습 시작...
+2025-07-03 16:44:38,955 - ERROR - 챕터 chapter_139 모델 학습 실패:
+2025-07-03 16:44:38,955 - ERROR - stdout: 
+2025-07-03 16:44:38,955 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,956 - ERROR - 챕터 chapter_139 처리 실패
+2025-07-03 16:44:38,956 - ERROR - ❌ chapter_139 실패
+2025-07-03 16:44:38,956 - INFO - 
+진행률: 140/166 - chapter_140
+2025-07-03 16:44:38,956 - INFO - ============================================================
+2025-07-03 16:44:38,956 - INFO - 챕터 처리 시작: chapter_140
+2025-07-03 16:44:38,956 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,956 - INFO - ============================================================
+2025-07-03 16:44:38,956 - INFO - 챕터 chapter_140 모델 학습 시작...
+2025-07-03 16:44:38,967 - ERROR - 챕터 chapter_140 모델 학습 실패:
+2025-07-03 16:44:38,967 - ERROR - stdout: 
+2025-07-03 16:44:38,967 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,967 - ERROR - 챕터 chapter_140 처리 실패
+2025-07-03 16:44:38,967 - ERROR - ❌ chapter_140 실패
+2025-07-03 16:44:38,967 - INFO - 
+진행률: 141/166 - chapter_141
+2025-07-03 16:44:38,967 - INFO - ============================================================
+2025-07-03 16:44:38,967 - INFO - 챕터 처리 시작: chapter_141
+2025-07-03 16:44:38,967 - INFO - 라벨 개수: 4
+2025-07-03 16:44:38,967 - INFO - ============================================================
+2025-07-03 16:44:38,968 - INFO - 챕터 chapter_141 모델 학습 시작...
+2025-07-03 16:44:38,978 - ERROR - 챕터 chapter_141 모델 학습 실패:
+2025-07-03 16:44:38,978 - ERROR - stdout: 
+2025-07-03 16:44:38,978 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,978 - ERROR - 챕터 chapter_141 처리 실패
+2025-07-03 16:44:38,979 - ERROR - ❌ chapter_141 실패
+2025-07-03 16:44:38,979 - INFO - 
+진행률: 142/166 - chapter_142
+2025-07-03 16:44:38,979 - INFO - ============================================================
+2025-07-03 16:44:38,979 - INFO - 챕터 처리 시작: chapter_142
+2025-07-03 16:44:38,979 - INFO - 라벨 개수: 2
+2025-07-03 16:44:38,979 - INFO - ============================================================
+2025-07-03 16:44:38,979 - INFO - 챕터 chapter_142 모델 학습 시작...
+2025-07-03 16:44:38,989 - ERROR - 챕터 chapter_142 모델 학습 실패:
+2025-07-03 16:44:38,989 - ERROR - stdout: 
+2025-07-03 16:44:38,989 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:38,989 - ERROR - 챕터 chapter_142 처리 실패
+2025-07-03 16:44:38,990 - ERROR - ❌ chapter_142 실패
+2025-07-03 16:44:38,990 - INFO - 
+진행률: 143/166 - chapter_143
+2025-07-03 16:44:38,990 - INFO - ============================================================
+2025-07-03 16:44:38,990 - INFO - 챕터 처리 시작: chapter_143
+2025-07-03 16:44:38,990 - INFO - 라벨 개수: 5
+2025-07-03 16:44:38,990 - INFO - ============================================================
+2025-07-03 16:44:38,990 - INFO - 챕터 chapter_143 모델 학습 시작...
+2025-07-03 16:44:39,001 - ERROR - 챕터 chapter_143 모델 학습 실패:
+2025-07-03 16:44:39,001 - ERROR - stdout: 
+2025-07-03 16:44:39,001 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,001 - ERROR - 챕터 chapter_143 처리 실패
+2025-07-03 16:44:39,001 - ERROR - ❌ chapter_143 실패
+2025-07-03 16:44:39,001 - INFO - 
+진행률: 144/166 - chapter_144
+2025-07-03 16:44:39,001 - INFO - ============================================================
+2025-07-03 16:44:39,001 - INFO - 챕터 처리 시작: chapter_144
+2025-07-03 16:44:39,001 - INFO - 라벨 개수: 5
+2025-07-03 16:44:39,001 - INFO - ============================================================
+2025-07-03 16:44:39,002 - INFO - 챕터 chapter_144 모델 학습 시작...
+2025-07-03 16:44:39,012 - ERROR - 챕터 chapter_144 모델 학습 실패:
+2025-07-03 16:44:39,012 - ERROR - stdout: 
+2025-07-03 16:44:39,012 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,012 - ERROR - 챕터 chapter_144 처리 실패
+2025-07-03 16:44:39,012 - ERROR - ❌ chapter_144 실패
+2025-07-03 16:44:39,012 - INFO - 
+진행률: 145/166 - chapter_145
+2025-07-03 16:44:39,012 - INFO - ============================================================
+2025-07-03 16:44:39,012 - INFO - 챕터 처리 시작: chapter_145
+2025-07-03 16:44:39,012 - INFO - 라벨 개수: 5
+2025-07-03 16:44:39,012 - INFO - ============================================================
+2025-07-03 16:44:39,013 - INFO - 챕터 chapter_145 모델 학습 시작...
+2025-07-03 16:44:39,024 - ERROR - 챕터 chapter_145 모델 학습 실패:
+2025-07-03 16:44:39,024 - ERROR - stdout: 
+2025-07-03 16:44:39,024 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,024 - ERROR - 챕터 chapter_145 처리 실패
+2025-07-03 16:44:39,024 - ERROR - ❌ chapter_145 실패
+2025-07-03 16:44:39,024 - INFO - 
+진행률: 146/166 - chapter_146
+2025-07-03 16:44:39,024 - INFO - ============================================================
+2025-07-03 16:44:39,024 - INFO - 챕터 처리 시작: chapter_146
+2025-07-03 16:44:39,024 - INFO - 라벨 개수: 5
+2025-07-03 16:44:39,024 - INFO - ============================================================
+2025-07-03 16:44:39,025 - INFO - 챕터 chapter_146 모델 학습 시작...
+2025-07-03 16:44:39,035 - ERROR - 챕터 chapter_146 모델 학습 실패:
+2025-07-03 16:44:39,036 - ERROR - stdout: 
+2025-07-03 16:44:39,036 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,036 - ERROR - 챕터 chapter_146 처리 실패
+2025-07-03 16:44:39,036 - ERROR - ❌ chapter_146 실패
+2025-07-03 16:44:39,036 - INFO - 
+진행률: 147/166 - chapter_147
+2025-07-03 16:44:39,036 - INFO - ============================================================
+2025-07-03 16:44:39,036 - INFO - 챕터 처리 시작: chapter_147
+2025-07-03 16:44:39,036 - INFO - 라벨 개수: 5
+2025-07-03 16:44:39,036 - INFO - ============================================================
+2025-07-03 16:44:39,036 - INFO - 챕터 chapter_147 모델 학습 시작...
+2025-07-03 16:44:39,047 - ERROR - 챕터 chapter_147 모델 학습 실패:
+2025-07-03 16:44:39,047 - ERROR - stdout: 
+2025-07-03 16:44:39,047 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,047 - ERROR - 챕터 chapter_147 처리 실패
+2025-07-03 16:44:39,047 - ERROR - ❌ chapter_147 실패
+2025-07-03 16:44:39,047 - INFO - 
+진행률: 148/166 - chapter_148
+2025-07-03 16:44:39,047 - INFO - ============================================================
+2025-07-03 16:44:39,047 - INFO - 챕터 처리 시작: chapter_148
+2025-07-03 16:44:39,047 - INFO - 라벨 개수: 5
+2025-07-03 16:44:39,047 - INFO - ============================================================
+2025-07-03 16:44:39,048 - INFO - 챕터 chapter_148 모델 학습 시작...
+2025-07-03 16:44:39,058 - ERROR - 챕터 chapter_148 모델 학습 실패:
+2025-07-03 16:44:39,058 - ERROR - stdout: 
+2025-07-03 16:44:39,058 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,058 - ERROR - 챕터 chapter_148 처리 실패
+2025-07-03 16:44:39,059 - ERROR - ❌ chapter_148 실패
+2025-07-03 16:44:39,059 - INFO - 
+진행률: 149/166 - chapter_149
+2025-07-03 16:44:39,059 - INFO - ============================================================
+2025-07-03 16:44:39,059 - INFO - 챕터 처리 시작: chapter_149
+2025-07-03 16:44:39,059 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,059 - INFO - ============================================================
+2025-07-03 16:44:39,059 - INFO - 챕터 chapter_149 모델 학습 시작...
+2025-07-03 16:44:39,069 - ERROR - 챕터 chapter_149 모델 학습 실패:
+2025-07-03 16:44:39,069 - ERROR - stdout: 
+2025-07-03 16:44:39,069 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,069 - ERROR - 챕터 chapter_149 처리 실패
+2025-07-03 16:44:39,069 - ERROR - ❌ chapter_149 실패
+2025-07-03 16:44:39,069 - INFO - 
+진행률: 150/166 - chapter_150
+2025-07-03 16:44:39,069 - INFO - ============================================================
+2025-07-03 16:44:39,069 - INFO - 챕터 처리 시작: chapter_150
+2025-07-03 16:44:39,069 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,069 - INFO - ============================================================
+2025-07-03 16:44:39,070 - INFO - 챕터 chapter_150 모델 학습 시작...
+2025-07-03 16:44:39,080 - ERROR - 챕터 chapter_150 모델 학습 실패:
+2025-07-03 16:44:39,080 - ERROR - stdout: 
+2025-07-03 16:44:39,080 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,080 - ERROR - 챕터 chapter_150 처리 실패
+2025-07-03 16:44:39,080 - ERROR - ❌ chapter_150 실패
+2025-07-03 16:44:39,080 - INFO - 
+진행률: 151/166 - chapter_151
+2025-07-03 16:44:39,080 - INFO - ============================================================
+2025-07-03 16:44:39,080 - INFO - 챕터 처리 시작: chapter_151
+2025-07-03 16:44:39,080 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,080 - INFO - ============================================================
+2025-07-03 16:44:39,081 - INFO - 챕터 chapter_151 모델 학습 시작...
+2025-07-03 16:44:39,091 - ERROR - 챕터 chapter_151 모델 학습 실패:
+2025-07-03 16:44:39,091 - ERROR - stdout: 
+2025-07-03 16:44:39,091 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,091 - ERROR - 챕터 chapter_151 처리 실패
+2025-07-03 16:44:39,091 - ERROR - ❌ chapter_151 실패
+2025-07-03 16:44:39,091 - INFO - 
+진행률: 152/166 - chapter_152
+2025-07-03 16:44:39,092 - INFO - ============================================================
+2025-07-03 16:44:39,092 - INFO - 챕터 처리 시작: chapter_152
+2025-07-03 16:44:39,092 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,092 - INFO - ============================================================
+2025-07-03 16:44:39,092 - INFO - 챕터 chapter_152 모델 학습 시작...
+2025-07-03 16:44:39,102 - ERROR - 챕터 chapter_152 모델 학습 실패:
+2025-07-03 16:44:39,102 - ERROR - stdout: 
+2025-07-03 16:44:39,102 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,102 - ERROR - 챕터 chapter_152 처리 실패
+2025-07-03 16:44:39,102 - ERROR - ❌ chapter_152 실패
+2025-07-03 16:44:39,102 - INFO - 
+진행률: 153/166 - chapter_153
+2025-07-03 16:44:39,102 - INFO - ============================================================
+2025-07-03 16:44:39,102 - INFO - 챕터 처리 시작: chapter_153
+2025-07-03 16:44:39,102 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,102 - INFO - ============================================================
+2025-07-03 16:44:39,103 - INFO - 챕터 chapter_153 모델 학습 시작...
+2025-07-03 16:44:39,113 - ERROR - 챕터 chapter_153 모델 학습 실패:
+2025-07-03 16:44:39,113 - ERROR - stdout: 
+2025-07-03 16:44:39,113 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,113 - ERROR - 챕터 chapter_153 처리 실패
+2025-07-03 16:44:39,114 - ERROR - ❌ chapter_153 실패
+2025-07-03 16:44:39,114 - INFO - 
+진행률: 154/166 - chapter_154
+2025-07-03 16:44:39,114 - INFO - ============================================================
+2025-07-03 16:44:39,114 - INFO - 챕터 처리 시작: chapter_154
+2025-07-03 16:44:39,114 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,114 - INFO - ============================================================
+2025-07-03 16:44:39,114 - INFO - 챕터 chapter_154 모델 학습 시작...
+2025-07-03 16:44:39,124 - ERROR - 챕터 chapter_154 모델 학습 실패:
+2025-07-03 16:44:39,124 - ERROR - stdout: 
+2025-07-03 16:44:39,124 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,124 - ERROR - 챕터 chapter_154 처리 실패
+2025-07-03 16:44:39,124 - ERROR - ❌ chapter_154 실패
+2025-07-03 16:44:39,124 - INFO - 
+진행률: 155/166 - chapter_155
+2025-07-03 16:44:39,124 - INFO - ============================================================
+2025-07-03 16:44:39,124 - INFO - 챕터 처리 시작: chapter_155
+2025-07-03 16:44:39,124 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,124 - INFO - ============================================================
+2025-07-03 16:44:39,125 - INFO - 챕터 chapter_155 모델 학습 시작...
+2025-07-03 16:44:39,135 - ERROR - 챕터 chapter_155 모델 학습 실패:
+2025-07-03 16:44:39,135 - ERROR - stdout: 
+2025-07-03 16:44:39,135 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,135 - ERROR - 챕터 chapter_155 처리 실패
+2025-07-03 16:44:39,135 - ERROR - ❌ chapter_155 실패
+2025-07-03 16:44:39,135 - INFO - 
+진행률: 156/166 - chapter_156
+2025-07-03 16:44:39,135 - INFO - ============================================================
+2025-07-03 16:44:39,135 - INFO - 챕터 처리 시작: chapter_156
+2025-07-03 16:44:39,135 - INFO - 라벨 개수: 4
+2025-07-03 16:44:39,135 - INFO - ============================================================
+2025-07-03 16:44:39,136 - INFO - 챕터 chapter_156 모델 학습 시작...
+2025-07-03 16:44:39,146 - ERROR - 챕터 chapter_156 모델 학습 실패:
+2025-07-03 16:44:39,146 - ERROR - stdout: 
+2025-07-03 16:44:39,146 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,146 - ERROR - 챕터 chapter_156 처리 실패
+2025-07-03 16:44:39,147 - ERROR - ❌ chapter_156 실패
+2025-07-03 16:44:39,147 - INFO - 
+진행률: 157/166 - chapter_157
+2025-07-03 16:44:39,147 - INFO - ============================================================
+2025-07-03 16:44:39,147 - INFO - 챕터 처리 시작: chapter_157
+2025-07-03 16:44:39,147 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,147 - INFO - ============================================================
+2025-07-03 16:44:39,147 - INFO - 챕터 chapter_157 모델 학습 시작...
+2025-07-03 16:44:39,157 - ERROR - 챕터 chapter_157 모델 학습 실패:
+2025-07-03 16:44:39,157 - ERROR - stdout: 
+2025-07-03 16:44:39,157 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,157 - ERROR - 챕터 chapter_157 처리 실패
+2025-07-03 16:44:39,158 - ERROR - ❌ chapter_157 실패
+2025-07-03 16:44:39,158 - INFO - 
+진행률: 158/166 - chapter_158
+2025-07-03 16:44:39,158 - INFO - ============================================================
+2025-07-03 16:44:39,158 - INFO - 챕터 처리 시작: chapter_158
+2025-07-03 16:44:39,158 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,158 - INFO - ============================================================
+2025-07-03 16:44:39,158 - INFO - 챕터 chapter_158 모델 학습 시작...
+2025-07-03 16:44:39,169 - ERROR - 챕터 chapter_158 모델 학습 실패:
+2025-07-03 16:44:39,169 - ERROR - stdout: 
+2025-07-03 16:44:39,169 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,169 - ERROR - 챕터 chapter_158 처리 실패
+2025-07-03 16:44:39,169 - ERROR - ❌ chapter_158 실패
+2025-07-03 16:44:39,169 - INFO - 
+진행률: 159/166 - chapter_159
+2025-07-03 16:44:39,169 - INFO - ============================================================
+2025-07-03 16:44:39,169 - INFO - 챕터 처리 시작: chapter_159
+2025-07-03 16:44:39,169 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,169 - INFO - ============================================================
+2025-07-03 16:44:39,170 - INFO - 챕터 chapter_159 모델 학습 시작...
+2025-07-03 16:44:39,180 - ERROR - 챕터 chapter_159 모델 학습 실패:
+2025-07-03 16:44:39,180 - ERROR - stdout: 
+2025-07-03 16:44:39,180 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,180 - ERROR - 챕터 chapter_159 처리 실패
+2025-07-03 16:44:39,180 - ERROR - ❌ chapter_159 실패
+2025-07-03 16:44:39,180 - INFO - 
+진행률: 160/166 - chapter_160
+2025-07-03 16:44:39,180 - INFO - ============================================================
+2025-07-03 16:44:39,180 - INFO - 챕터 처리 시작: chapter_160
+2025-07-03 16:44:39,180 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,180 - INFO - ============================================================
+2025-07-03 16:44:39,181 - INFO - 챕터 chapter_160 모델 학습 시작...
+2025-07-03 16:44:39,190 - ERROR - 챕터 chapter_160 모델 학습 실패:
+2025-07-03 16:44:39,190 - ERROR - stdout: 
+2025-07-03 16:44:39,190 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,190 - ERROR - 챕터 chapter_160 처리 실패
+2025-07-03 16:44:39,191 - ERROR - ❌ chapter_160 실패
+2025-07-03 16:44:39,191 - INFO - 
+진행률: 161/166 - chapter_161
+2025-07-03 16:44:39,191 - INFO - ============================================================
+2025-07-03 16:44:39,191 - INFO - 챕터 처리 시작: chapter_161
+2025-07-03 16:44:39,191 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,191 - INFO - ============================================================
+2025-07-03 16:44:39,191 - INFO - 챕터 chapter_161 모델 학습 시작...
+2025-07-03 16:44:39,202 - ERROR - 챕터 chapter_161 모델 학습 실패:
+2025-07-03 16:44:39,202 - ERROR - stdout: 
+2025-07-03 16:44:39,202 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,202 - ERROR - 챕터 chapter_161 처리 실패
+2025-07-03 16:44:39,202 - ERROR - ❌ chapter_161 실패
+2025-07-03 16:44:39,202 - INFO - 
+진행률: 162/166 - chapter_162
+2025-07-03 16:44:39,202 - INFO - ============================================================
+2025-07-03 16:44:39,202 - INFO - 챕터 처리 시작: chapter_162
+2025-07-03 16:44:39,202 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,202 - INFO - ============================================================
+2025-07-03 16:44:39,202 - INFO - 챕터 chapter_162 모델 학습 시작...
+2025-07-03 16:44:39,213 - ERROR - 챕터 chapter_162 모델 학습 실패:
+2025-07-03 16:44:39,213 - ERROR - stdout: 
+2025-07-03 16:44:39,213 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,213 - ERROR - 챕터 chapter_162 처리 실패
+2025-07-03 16:44:39,213 - ERROR - ❌ chapter_162 실패
+2025-07-03 16:44:39,213 - INFO - 
+진행률: 163/166 - chapter_163
+2025-07-03 16:44:39,213 - INFO - ============================================================
+2025-07-03 16:44:39,213 - INFO - 챕터 처리 시작: chapter_163
+2025-07-03 16:44:39,213 - INFO - 라벨 개수: 3
+2025-07-03 16:44:39,213 - INFO - ============================================================
+2025-07-03 16:44:39,214 - INFO - 챕터 chapter_163 모델 학습 시작...
+2025-07-03 16:44:39,224 - ERROR - 챕터 chapter_163 모델 학습 실패:
+2025-07-03 16:44:39,224 - ERROR - stdout: 
+2025-07-03 16:44:39,224 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,224 - ERROR - 챕터 chapter_163 처리 실패
+2025-07-03 16:44:39,224 - ERROR - ❌ chapter_163 실패
+2025-07-03 16:44:39,225 - INFO - 
+진행률: 164/166 - chapter_164
+2025-07-03 16:44:39,225 - INFO - ============================================================
+2025-07-03 16:44:39,225 - INFO - 챕터 처리 시작: chapter_164
+2025-07-03 16:44:39,225 - INFO - 라벨 개수: 2
+2025-07-03 16:44:39,225 - INFO - ============================================================
+2025-07-03 16:44:39,225 - INFO - 챕터 chapter_164 모델 학습 시작...
+2025-07-03 16:44:39,235 - ERROR - 챕터 chapter_164 모델 학습 실패:
+2025-07-03 16:44:39,235 - ERROR - stdout: 
+2025-07-03 16:44:39,235 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,235 - ERROR - 챕터 chapter_164 처리 실패
+2025-07-03 16:44:39,236 - ERROR - ❌ chapter_164 실패
+2025-07-03 16:44:39,236 - INFO - 
+진행률: 165/166 - chapter_165
+2025-07-03 16:44:39,236 - INFO - ============================================================
+2025-07-03 16:44:39,236 - INFO - 챕터 처리 시작: chapter_165
+2025-07-03 16:44:39,236 - INFO - 라벨 개수: 2
+2025-07-03 16:44:39,236 - INFO - ============================================================
+2025-07-03 16:44:39,236 - INFO - 챕터 chapter_165 모델 학습 시작...
+2025-07-03 16:44:39,246 - ERROR - 챕터 chapter_165 모델 학습 실패:
+2025-07-03 16:44:39,247 - ERROR - stdout: 
+2025-07-03 16:44:39,247 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,247 - ERROR - 챕터 chapter_165 처리 실패
+2025-07-03 16:44:39,247 - ERROR - ❌ chapter_165 실패
+2025-07-03 16:44:39,247 - INFO - 
+진행률: 166/166 - chapter_166
+2025-07-03 16:44:39,247 - INFO - ============================================================
+2025-07-03 16:44:39,247 - INFO - 챕터 처리 시작: chapter_166
+2025-07-03 16:44:39,247 - INFO - 라벨 개수: 2
+2025-07-03 16:44:39,247 - INFO - ============================================================
+2025-07-03 16:44:39,247 - INFO - 챕터 chapter_166 모델 학습 시작...
+2025-07-03 16:44:39,257 - ERROR - 챕터 chapter_166 모델 학습 실패:
+2025-07-03 16:44:39,257 - ERROR - stdout: 
+2025-07-03 16:44:39,257 - ERROR - stderr: /Users/johyeonho/SaturdayDinner/.conda/bin/python: can't open file '/Users/johyeonho/SaturdayDinner/chapter-generator/main.py': [Errno 2] No such file or directory
+
+2025-07-03 16:44:39,257 - ERROR - 챕터 chapter_166 처리 실패
+2025-07-03 16:44:39,258 - ERROR - ❌ chapter_166 실패
+2025-07-03 16:44:39,258 - INFO - 
+================================================================================
+챕터 생성 완료 보고서
+================================================================================
+
+📊 전체 통계:
+   - 총 챕터 수: 166
+   - 성공: 0
+   - 실패: 166
+   - 성공률: 0.0%
+
+📁 출력 디렉토리:
+   - 모델: chapter-models/
+   - 정보: chapter-info/
+
+❌ 실패한 챕터:
+   - chapter_1
+   - chapter_2
+   - chapter_3
+   - chapter_4
+   - chapter_5
+   - chapter_6
+   - chapter_7
+   - chapter_8
+   - chapter_9
+   - chapter_10
+   - chapter_11
+   - chapter_12
+   - chapter_13
+   - chapter_14
+   - chapter_15
+   - chapter_16
+   - chapter_17
+   - chapter_18
+   - chapter_19
+   - chapter_20
+   - chapter_21
+   - chapter_22
+   - chapter_23
+   - chapter_24
+   - chapter_25
+   - chapter_26
+   - chapter_27
+   - chapter_28
+   - chapter_29
+   - chapter_30
+   - chapter_31
+   - chapter_32
+   - chapter_33
+   - chapter_34
+   - chapter_35
+   - chapter_36
+   - chapter_37
+   - chapter_38
+   - chapter_39
+   - chapter_40
+   - chapter_41
+   - chapter_42
+   - chapter_43
+   - chapter_44
+   - chapter_45
+   - chapter_46
+   - chapter_47
+   - chapter_48
+   - chapter_49
+   - chapter_50
+   - chapter_51
+   - chapter_52
+   - chapter_53
+   - chapter_54
+   - chapter_55
+   - chapter_56
+   - chapter_57
+   - chapter_58
+   - chapter_59
+   - chapter_60
+   - chapter_61
+   - chapter_62
+   - chapter_63
+   - chapter_64
+   - chapter_65
+   - chapter_66
+   - chapter_67
+   - chapter_68
+   - chapter_69
+   - chapter_70
+   - chapter_71
+   - chapter_72
+   - chapter_73
+   - chapter_74
+   - chapter_75
+   - chapter_76
+   - chapter_77
+   - chapter_78
+   - chapter_79
+   - chapter_80
+   - chapter_81
+   - chapter_82
+   - chapter_83
+   - chapter_84
+   - chapter_85
+   - chapter_86
+   - chapter_87
+   - chapter_88
+   - chapter_89
+   - chapter_90
+   - chapter_91
+   - chapter_92
+   - chapter_93
+   - chapter_94
+   - chapter_95
+   - chapter_96
+   - chapter_97
+   - chapter_98
+   - chapter_99
+   - chapter_100
+   - chapter_101
+   - chapter_102
+   - chapter_103
+   - chapter_104
+   - chapter_105
+   - chapter_106
+   - chapter_107
+   - chapter_108
+   - chapter_109
+   - chapter_110
+   - chapter_111
+   - chapter_112
+   - chapter_113
+   - chapter_114
+   - chapter_115
+   - chapter_116
+   - chapter_117
+   - chapter_118
+   - chapter_119
+   - chapter_120
+   - chapter_121
+   - chapter_122
+   - chapter_123
+   - chapter_124
+   - chapter_125
+   - chapter_126
+   - chapter_127
+   - chapter_128
+   - chapter_129
+   - chapter_130
+   - chapter_131
+   - chapter_132
+   - chapter_133
+   - chapter_134
+   - chapter_135
+   - chapter_136
+   - chapter_137
+   - chapter_138
+   - chapter_139
+   - chapter_140
+   - chapter_141
+   - chapter_142
+   - chapter_143
+   - chapter_144
+   - chapter_145
+   - chapter_146
+   - chapter_147
+   - chapter_148
+   - chapter_149
+   - chapter_150
+   - chapter_151
+   - chapter_152
+   - chapter_153
+   - chapter_154
+   - chapter_155
+   - chapter_156
+   - chapter_157
+   - chapter_158
+   - chapter_159
+   - chapter_160
+   - chapter_161
+   - chapter_162
+   - chapter_163
+   - chapter_164
+   - chapter_165
+   - chapter_166
+
+================================================================================
+2025-07-03 16:44:39,258 - WARNING - ⚠️ 일부 챕터 처리 실패 (0/166)
+2025-07-03 16:45:42,525 - INFO - ChapterGenerator 초기화 완료
+2025-07-03 16:45:42,525 - INFO - 모델 출력 디렉토리: chapter-models
+2025-07-03 16:45:42,525 - INFO - 정보 출력 디렉토리: chapter-info
+2025-07-03 16:45:42,525 - INFO - ChapterGenerator 실행 시작
+2025-07-03 16:45:42,525 - INFO - 챕터 데이터 로드 완료: 166개 챕터
+2025-07-03 16:45:42,525 - INFO - 총 166개 챕터 처리 시작
+2025-07-03 16:45:42,525 - INFO - 
+진행률: 1/166 - chapter_1
+2025-07-03 16:45:42,525 - INFO - ============================================================
+2025-07-03 16:45:42,525 - INFO - 챕터 처리 시작: chapter_1
+2025-07-03 16:45:42,525 - INFO - 라벨 개수: 5
+2025-07-03 16:45:42,525 - INFO - ============================================================
+2025-07-03 16:45:42,526 - INFO - 챕터 chapter_1 모델 학습 시작...
+2025-07-03 16:45:49,228 - ERROR - 챕터 chapter_1 모델 학습 실패:
+2025-07-03 16:45:49,228 - ERROR - stdout: 🔧 학습 데이터 문제 해결 및 모델 재학습 시작
+🔧 라벨 목록: ['너무 아파요', '몸에 열이 많이 나고 두통이 심해요', '복통이 심해요', '숨이 안 쉬어져요', 'None']
+🔍 비디오 루트 디렉토리 검증 중...
+✅ 1~3000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/0001~3000(영상)
+✅ 3001~6000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/3001~6000(영상)
+✅ 6001~8280: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/6001~8280(영상)
+✅ 8381~9000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/8381~9000(영상)
+✅ 9001~9600: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9001~9600(영상)
+✅ 9601~10480: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9601~10480(영상)
+✅ 10481~12994: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/10481~12994
+✅ 12995~15508: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/12995~15508
+✅ 15509~18022: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/15509~18022
+✅ 18023~20536: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/18023~20536
+✅ 20537~23050: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/20537~23050
+✅ 23051~25564: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/23051~25564
+✅ 25565~28078: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/25565~28078
+✅ 28079~30592: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/28079~30592
+✅ 30593~33106: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/30593~33106
+✅ 33107~35620: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/33107~35620
+✅ 36878~40027: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/36878~40027
+✅ 40028~43177: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/40028~43177
+❌ labels.csv 파일이 없습니다.
+
+🧹 리소스 정리 완료
+
+2025-07-03 16:45:49,228 - ERROR - stderr: 
+2025-07-03 16:45:49,228 - ERROR - 챕터 chapter_1 처리 실패
+2025-07-03 16:45:49,229 - ERROR - ❌ chapter_1 실패
+2025-07-03 16:45:49,229 - INFO - 
+진행률: 2/166 - chapter_2
+2025-07-03 16:45:49,229 - INFO - ============================================================
+2025-07-03 16:45:49,229 - INFO - 챕터 처리 시작: chapter_2
+2025-07-03 16:45:49,229 - INFO - 라벨 개수: 5
+2025-07-03 16:45:49,229 - INFO - ============================================================
+2025-07-03 16:45:49,229 - INFO - 챕터 chapter_2 모델 학습 시작...
+2025-07-03 16:45:53,472 - ERROR - 챕터 chapter_2 모델 학습 실패:
+2025-07-03 16:45:53,473 - ERROR - stdout: 🔧 학습 데이터 문제 해결 및 모델 재학습 시작
+🔧 라벨 목록: ['식사를 하다가 목에 음식이 걸렸어요', '아기가 숨을 안 쉬어요', '아파서 못 참을것 같아요', '어지러워서 서있을 수 없어요', 'None']
+🔍 비디오 루트 디렉토리 검증 중...
+✅ 1~3000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/0001~3000(영상)
+✅ 3001~6000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/3001~6000(영상)
+✅ 6001~8280: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/6001~8280(영상)
+✅ 8381~9000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/8381~9000(영상)
+✅ 9001~9600: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9001~9600(영상)
+✅ 9601~10480: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9601~10480(영상)
+✅ 10481~12994: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/10481~12994
+✅ 12995~15508: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/12995~15508
+✅ 15509~18022: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/15509~18022
+✅ 18023~20536: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/18023~20536
+✅ 20537~23050: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/20537~23050
+✅ 23051~25564: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/23051~25564
+✅ 25565~28078: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/25565~28078
+✅ 28079~30592: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/28079~30592
+✅ 30593~33106: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/30593~33106
+✅ 33107~35620: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/33107~35620
+✅ 36878~40027: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/36878~40027
+✅ 40028~43177: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/40028~43177
+❌ labels.csv 파일이 없습니다.
+
+🧹 리소스 정리 완료
+
+2025-07-03 16:45:53,473 - ERROR - stderr: 
+2025-07-03 16:45:53,473 - ERROR - 챕터 chapter_2 처리 실패
+2025-07-03 16:45:53,473 - ERROR - ❌ chapter_2 실패
+2025-07-03 16:45:53,473 - INFO - 
+진행률: 3/166 - chapter_3
+2025-07-03 16:45:53,473 - INFO - ============================================================
+2025-07-03 16:45:53,473 - INFO - 챕터 처리 시작: chapter_3
+2025-07-03 16:45:53,473 - INFO - 라벨 개수: 5
+2025-07-03 16:45:53,473 - INFO - ============================================================
+2025-07-03 16:45:53,474 - INFO - 챕터 chapter_3 모델 학습 시작...
+2025-07-03 16:45:58,769 - ERROR - 챕터 chapter_3 모델 학습 실패:
+2025-07-03 16:45:58,769 - ERROR - stdout: 🔧 학습 데이터 문제 해결 및 모델 재학습 시작
+🔧 라벨 목록: ['주변 구조물이 무너져서 몸이 끼었어요 몸을 움직이지 못하겠어요', '친구가 숨을 안 쉬는 것 같아요', '허리가 아파서 일어날 수 없어요', '호흡곤란', 'None']
+🔍 비디오 루트 디렉토리 검증 중...
+✅ 1~3000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/0001~3000(영상)
+✅ 3001~6000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/3001~6000(영상)
+✅ 6001~8280: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/6001~8280(영상)
+✅ 8381~9000: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/8381~9000(영상)
+✅ 9001~9600: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9001~9600(영상)
+✅ 9601~10480: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/9601~10480(영상)
+✅ 10481~12994: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/10481~12994
+✅ 12995~15508: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/12995~15508
+✅ 15509~18022: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/15509~18022
+✅ 18023~20536: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/18023~20536
+✅ 20537~23050: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/20537~23050
+✅ 23051~25564: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/23051~25564
+✅ 25565~28078: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/25565~28078
+✅ 28079~30592: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/28079~30592
+✅ 30593~33106: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/30593~33106
+✅ 33107~35620: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/33107~35620
+✅ 36878~40027: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/36878~40027
+✅ 40028~43177: /Volumes/Sub_Storage/수어 데이터셋/수어 데이터셋/40028~43177
+❌ labels.csv 파일이 없습니다.
+
+🧹 리소스 정리 완료
+
+2025-07-03 16:45:58,770 - ERROR - stderr: 
+2025-07-03 16:45:58,770 - ERROR - 챕터 chapter_3 처리 실패
+2025-07-03 16:45:58,770 - ERROR - ❌ chapter_3 실패
+2025-07-03 16:45:58,770 - INFO - 
+진행률: 4/166 - chapter_4
+2025-07-03 16:45:58,770 - INFO - ============================================================
+2025-07-03 16:45:58,770 - INFO - 챕터 처리 시작: chapter_4
+2025-07-03 16:45:58,770 - INFO - 라벨 개수: 5
+2025-07-03 16:45:58,770 - INFO - ============================================================
+2025-07-03 16:45:58,771 - INFO - 챕터 chapter_4 모델 학습 시작...
+2025-07-03 16:46:03,319 - WARNING - 사용자에 의해 중단됨
+2025-07-03 16:46:04,031 - INFO - ChapterGenerator 초기화 완료
+2025-07-03 16:46:04,031 - INFO - 모델 출력 디렉토리: chapter-models
+2025-07-03 16:46:04,031 - INFO - 정보 출력 디렉토리: chapter-info
+2025-07-03 16:46:04,031 - INFO - ChapterGenerator 실행 시작
+2025-07-03 16:46:04,031 - INFO - 챕터 데이터 로드 완료: 166개 챕터
+2025-07-03 16:46:04,031 - INFO - 총 166개 챕터 처리 시작
+2025-07-03 16:46:04,031 - INFO - 
+진행률: 1/166 - chapter_1
+2025-07-03 16:46:04,031 - INFO - ============================================================
+2025-07-03 16:46:04,031 - INFO - 챕터 처리 시작: chapter_1
+2025-07-03 16:46:04,031 - INFO - 라벨 개수: 5
+2025-07-03 16:46:04,031 - INFO - ============================================================
+2025-07-03 16:46:04,032 - INFO - 챕터 chapter_1 모델 학습 시작...
+2025-07-03 16:50:50,124 - WARNING - 사용자에 의해 중단됨
+2025-07-03 16:50:58,969 - INFO - ChapterGenerator 초기화 완료
+2025-07-03 16:50:58,969 - INFO - 모델 출력 디렉토리: chapter-models
+2025-07-03 16:50:58,969 - INFO - 정보 출력 디렉토리: chapter-info
+2025-07-03 16:50:58,969 - INFO - ChapterGenerator 실행 시작
+2025-07-03 16:50:58,969 - INFO - 챕터 데이터 로드 완료: 166개 챕터
+2025-07-03 16:50:58,969 - INFO - 총 166개 챕터 처리 시작
+2025-07-03 16:50:59,069 - INFO - 
+진행률: 1/166 - chapter_1
+2025-07-03 16:50:59,069 - INFO - ============================================================
+2025-07-03 16:50:59,069 - INFO - 챕터 처리 시작: chapter_1
+2025-07-03 16:50:59,069 - INFO - 라벨 개수: 5
+2025-07-03 16:50:59,069 - INFO - 라벨 목록: ['너무 아파요', '몸에 열이 많이 나고 두통이 심해요', '복통이 심해요', '숨이 안 쉬어져요', 'None']
+2025-07-03 16:50:59,069 - INFO - ============================================================
+2025-07-03 16:50:59,069 - INFO - 📁 챕터 chapter_1 캐시 디렉토리: cache/chapter_chapter_1
+2025-07-03 16:50:59,069 - INFO - 🔄 캐시 디렉토리 변경: cache → cache/chapter_chapter_1
+2025-07-03 16:50:59,069 - INFO - 📊 캐시 상태 (시작): 0개 파일, 0.0MB
+2025-07-03 16:50:59,069 - INFO - 챕터 chapter_1 모델 학습 시작...
+2025-07-03 16:50:59,096 - INFO - labels.csv 로드 완료: 43889개 항목
+2025-07-03 16:50:59,617 - INFO - 찾은 파일: 320개, 누락된 파일: 12개
+2025-07-03 16:50:59,617 - INFO - 
+==================================================
+2025-07-03 16:50:59,617 - INFO - 📋 너무 아파요 라벨 처리 중...
+2025-07-03 16:50:59,617 - INFO - ==================================================
+2025-07-03 16:50:59,622 - INFO - ✅ 캐시 HIT: 너무 아파요 (160개 샘플)
+2025-07-03 16:50:59,622 - INFO - 📁 캐시 경로: cache/너무_아파요_seq30_aug3_max40_min40.pkl
+2025-07-03 16:50:59,622 - INFO - ✅ 너무 아파요: 160개 샘플 추가됨
+2025-07-03 16:50:59,622 - INFO - 
+==================================================
+2025-07-03 16:50:59,622 - INFO - 📋 몸에 열이 많이 나고 두통이 심해요 라벨 처리 중...
+2025-07-03 16:50:59,622 - INFO - ==================================================
+2025-07-03 16:50:59,622 - INFO - ❌ 캐시 MISS: 몸에 열이 많이 나고 두통이 심해요 - 새로 생성
+2025-07-03 16:50:59,622 - INFO - 📁 캐시 경로: cache/몸에_열이_많이_나고_두통이_심해요_seq30_aug3_max40_min40.pkl
+2025-07-03 16:56:50,102 - INFO - ✅ 새 데이터 생성 및 캐시 저장 성공: 160개
+2025-07-03 16:56:50,103 - INFO - ✅ 몸에 열이 많이 나고 두통이 심해요: 160개 샘플 추가됨
+2025-07-03 16:56:50,103 - INFO - 
+==================================================
+2025-07-03 16:56:50,103 - INFO - 📋 복통이 심해요 라벨 처리 중...
+2025-07-03 16:56:50,103 - INFO - ==================================================
+2025-07-03 16:56:50,103 - INFO - ❌ 캐시 MISS: 복통이 심해요 - 새로 생성
+2025-07-03 16:56:50,103 - INFO - 📁 캐시 경로: cache/복통이_심해요_seq30_aug3_max40_min40.pkl
+2025-07-03 17:02:04,065 - INFO - ✅ 새 데이터 생성 및 캐시 저장 성공: 160개
+2025-07-03 17:02:04,065 - INFO - ✅ 복통이 심해요: 160개 샘플 추가됨
+2025-07-03 17:02:04,065 - INFO - 
+==================================================
+2025-07-03 17:02:04,065 - INFO - 📋 숨이 안 쉬어져요 라벨 처리 중...
+2025-07-03 17:02:04,065 - INFO - ==================================================
+2025-07-03 17:02:04,066 - INFO - ❌ 캐시 MISS: 숨이 안 쉬어져요 - 새로 생성
+2025-07-03 17:02:04,066 - INFO - 📁 캐시 경로: cache/숨이_안_쉬어져요_seq30_aug3_max40_min40.pkl
+2025-07-03 17:06:58,955 - INFO - ✅ 새 데이터 생성 및 캐시 저장 성공: 160개
+2025-07-03 17:06:58,955 - INFO - ✅ 숨이 안 쉬어져요: 160개 샘플 추가됨
+2025-07-03 17:06:58,955 - INFO - 
+==================================================
+2025-07-03 17:06:58,955 - INFO - 📋 None 라벨 처리 중...
+2025-07-03 17:06:58,955 - INFO - ==================================================
+2025-07-03 17:06:58,955 - INFO - 🔍 None 클래스 데이터 생성 시도...
+2025-07-03 17:08:13,759 - INFO - 🔄 캐시 디렉토리 복원: cache/chapter_chapter_1 → cache
+2025-07-03 17:08:13,760 - WARNING - 사용자에 의해 중단됨
+2025-07-03 17:08:19,755 - INFO - ChapterGenerator 초기화 완료
+2025-07-03 17:08:19,755 - INFO - 모델 출력 디렉토리: chapter-models
+2025-07-03 17:08:19,755 - INFO - 정보 출력 디렉토리: chapter-info
+2025-07-03 17:08:19,755 - INFO - ChapterGenerator 실행 시작
+2025-07-03 17:08:19,756 - INFO - 챕터 데이터 로드 완료: 166개 챕터
+2025-07-03 17:08:19,756 - INFO - 총 166개 챕터 처리 시작
+2025-07-03 17:08:19,954 - INFO - 
+진행률: 1/166 - chapter_1
+2025-07-03 17:08:19,954 - INFO - ============================================================
+2025-07-03 17:08:19,954 - INFO - 챕터 처리 시작: chapter_1
+2025-07-03 17:08:19,954 - INFO - 라벨 개수: 5
+2025-07-03 17:08:19,954 - INFO - 라벨 목록: ['너무 아파요', '몸에 열이 많이 나고 두통이 심해요', '복통이 심해요', '숨이 안 쉬어져요', 'None']
+2025-07-03 17:08:19,954 - INFO - ============================================================
+2025-07-03 17:08:19,954 - INFO - 📁 챕터 chapter_1 캐시 디렉토리: cache
+2025-07-03 17:08:19,954 - INFO - 🔄 캐시 디렉토리 사용: cache
+2025-07-03 17:08:19,954 - INFO - 📊 캐시 상태 (시작): 0개 파일, 0.0MB
+2025-07-03 17:08:19,954 - INFO - 챕터 chapter_1 모델 학습 시작...
+2025-07-03 17:08:19,979 - INFO - labels.csv 로드 완료: 43889개 항목
+2025-07-03 17:08:20,531 - INFO - 찾은 파일: 320개, 누락된 파일: 12개
+2025-07-03 17:08:20,531 - INFO - 
+==================================================
+2025-07-03 17:08:20,531 - INFO - 📋 너무 아파요 라벨 처리 중...
+2025-07-03 17:08:20,531 - INFO - ==================================================
+2025-07-03 17:08:20,531 - INFO - ❌ 캐시 MISS: 너무 아파요 - 새로 생성
+2025-07-03 17:08:20,531 - INFO - 📁 캐시 경로: cache/chapter_1_너무_아파요_seq30_aug3_max40_min40.pkl
+2025-07-03 17:08:28,831 - INFO - 🔄 캐시 함수 복원 완료
+2025-07-03 17:08:28,831 - WARNING - 사용자에 의해 중단됨
+2025-07-03 17:25:10 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Loaded chapter file: 166 chapters found
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Processing 166 chapters...
+2025-07-03 17:25:10 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Processing chapter 1/166: chapter_1
+2025-07-03 17:25:10 - ChapterGenerator - INFO - ============================================================
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Created spec file for chapter_1: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_1.json
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Starting training for chapter_1
+2025-07-03 17:25:10 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_1.json
+2025-07-03 17:26:35 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Loaded chapter file: 166 chapters found
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Processing 166 chapters...
+2025-07-03 17:26:35 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Processing chapter 1/166: chapter_1
+2025-07-03 17:26:35 - ChapterGenerator - INFO - ============================================================
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Created spec file for chapter_1: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_1.json
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Starting training for chapter_1
+2025-07-03 17:26:35 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_1.json
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Successfully completed training for chapter_1
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_172641.keras -> sign_language_model_chapter_1_20250703.keras
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Renamed info file: model-info-20250703_172641.json -> model-info-chapter_1-20250703_172641.json
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_1.json
+2025-07-03 17:30:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Processing chapter 2/166: chapter_2
+2025-07-03 17:30:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Created spec file for chapter_2: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_2.json
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Starting training for chapter_2
+2025-07-03 17:30:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_2.json
+2025-07-03 17:31:49 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Loaded chapter file: 91 chapters found
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Processing 91 chapters...
+2025-07-03 17:31:49 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Processing chapter 1/91: chapter_76
+2025-07-03 17:31:49 - ChapterGenerator - INFO - ============================================================
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Created spec file for chapter_76: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_76.json
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Starting training for chapter_76
+2025-07-03 17:31:49 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_76.json
