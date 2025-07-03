@@ -2627,3 +2627,1052 @@
 2025-07-03 17:40:33 - ChapterGenerator - INFO - Created spec file for chapter_77: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_77.json
 2025-07-03 17:40:33 - ChapterGenerator - INFO - Starting training for chapter_77
 2025-07-03 17:40:33 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_77.json
+2025-07-03 22:34:19 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Loaded chapter file: 43 chapters found
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Processing 43 chapters...
+2025-07-03 22:34:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Processing chapter 1/43: chapter_124
+2025-07-03 22:34:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Created spec file for chapter_124: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Starting training for chapter_124
+2025-07-03 22:34:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Successfully completed training for chapter_124
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_76_20250703.keras -> sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_76_chapter.keras -> sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_174256.keras -> sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Renamed info file: model-info-chapter_76-chapter_1.json -> model-info-chapter_124-chapter_76.json
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Renamed info file: model-info-chapter_76-20250703_173153.json -> model-info-chapter_124-chapter_76.json
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Renamed info file: model-info-20250703_174256.json -> model-info-chapter_124-20250703_174256.json
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:34:28 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Processing chapter 2/43: chapter_125
+2025-07-03 22:34:28 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Created spec file for chapter_125: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Starting training for chapter_125
+2025-07-03 22:34:28 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:38:27 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:38:27 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:38:27 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:38:27 - ChapterGenerator - WARNING - No matching model file found for model-info-chapter_124-chapter_76.json (looking for: sign_language_model_20250703_173153.keras)
+2025-07-03 22:38:27 - ChapterGenerator - WARNING - No matching model file found for model-info-chapter_124-20250703_174256.json (looking for: sign_language_model_20250703_174256.keras)
+2025-07-03 22:38:48 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:38:48 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:38:48 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:38:48 - ChapterGenerator - WARNING - No matching model file found for model-info-chapter_124-chapter_76.json (looking for: sign_language_model_20250703_173153.keras)
+2025-07-03 22:38:48 - ChapterGenerator - WARNING - No matching model file found for model-info-chapter_124-20250703_174256.json (looking for: sign_language_model_20250703_174256.keras)
+2025-07-03 22:39:28 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:39:28 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:39:28 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:39:28 - ChapterGenerator - INFO - Fixed model_path in model-info-chapter_124-chapter_76.json: models/sign_language_model_20250703_173153.keras -> models/sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:39:28 - ChapterGenerator - INFO - Fixed model_path in model-info-chapter_124-20250703_174256.json: models/sign_language_model_20250703_174256.keras -> models/sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Loaded chapter file: 43 chapters found
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing 43 chapters...
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 1/43: chapter_124
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_124: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_124
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_124 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 2/43: chapter_125
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_125: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_125
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_125 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 3/43: chapter_126
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_126: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_126
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_126 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 4/43: chapter_127
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_127: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_127.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_127
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_127.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_127 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_127.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 5/43: chapter_128
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_128: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_128.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_128
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_128.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_128 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_128.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 6/43: chapter_129
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_129: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_129.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_129
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_129.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_129 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_129.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 7/43: chapter_130
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_130: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_130.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_130
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_130.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_130 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_130.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 8/43: chapter_131
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_131: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_131.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_131
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_131.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_131 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_131.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 9/43: chapter_132
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_132: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_132.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_132
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_132.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_132 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_132.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 10/43: chapter_133
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_133: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_133.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_133
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_133.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_133 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_133.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 11/43: chapter_134
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_134: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_134.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_134
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_134.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_134 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_134.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 12/43: chapter_135
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_135: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_135.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_135
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_135.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_135 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_135.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 13/43: chapter_136
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_136: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_136.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_136
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_136.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_136 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_136.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 14/43: chapter_137
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_137: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_137.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_137
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_137.json
+2025-07-03 22:40:05 - ChapterGenerator - ERROR - Training failed for chapter_137 (exit code: 1)
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_137.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Processing chapter 15/43: chapter_138
+2025-07-03 22:40:05 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Created spec file for chapter_138: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_138.json
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Starting training for chapter_138
+2025-07-03 22:40:05 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_138.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_138 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_138.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 16/43: chapter_139
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_139: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_139.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_139
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_139.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_139 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_139.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 17/43: chapter_140
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_140: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_140.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_140
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_140.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_140 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_140.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 18/43: chapter_141
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_141: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_141.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_141
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_141.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_141 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_141.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 19/43: chapter_142
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_142: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_142.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_142
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_142.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_142 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_142.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 20/43: chapter_143
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_143: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_143.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_143
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_143.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_143 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_143.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 21/43: chapter_144
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_144: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_144.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_144
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_144.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_144 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_144.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 22/43: chapter_145
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_145: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_145.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_145
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_145.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_145 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_145.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 23/43: chapter_146
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_146: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_146.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_146
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_146.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_146 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_146.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 24/43: chapter_147
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_147: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_147.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_147
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_147.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_147 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_147.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 25/43: chapter_148
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_148: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_148.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_148
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_148.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_148 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_148.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 26/43: chapter_149
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_149: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_149.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_149
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_149.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_149 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_149.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 27/43: chapter_150
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_150: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_150.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_150
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_150.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_150 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_150.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 28/43: chapter_151
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_151: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_151.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_151
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_151.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_151 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_151.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 29/43: chapter_152
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_152: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_152.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_152
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_152.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_152 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_152.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 30/43: chapter_153
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_153: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_153.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_153
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_153.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_153 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_153.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 31/43: chapter_154
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_154: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_154.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_154
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_154.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_154 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_154.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 32/43: chapter_155
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_155: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_155.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_155
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_155.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_155 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_155.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 33/43: chapter_156
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_156: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_156.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_156
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_156.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_156 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_156.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 34/43: chapter_157
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_157: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_157.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_157
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_157.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_157 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_157.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 35/43: chapter_158
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_158: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_158.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_158
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_158.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_158 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_158.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 36/43: chapter_159
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_159: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_159.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_159
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_159.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_159 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_159.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 37/43: chapter_160
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_160: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_160.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_160
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_160.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_160 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_160.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 38/43: chapter_161
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_161: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_161.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_161
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_161.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_161 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_161.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 39/43: chapter_162
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_162: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_162.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_162
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_162.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_162 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_162.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 40/43: chapter_163
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_163: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_163.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_163
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_163.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_163 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_163.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 41/43: chapter_164
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_164: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_164.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_164
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_164.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_164 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_164.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 42/43: chapter_165
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_165: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_165.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_165
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_165.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_165 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_165.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Processing chapter 43/43: chapter_166
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Created spec file for chapter_166: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_166.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Starting training for chapter_166
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_166.json
+2025-07-03 22:40:06 - ChapterGenerator - ERROR - Training failed for chapter_166 (exit code: 1)
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_166.json
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - CHAPTER GENERATION SUMMARY
+2025-07-03 22:40:06 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Total chapters: 43
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Successful: 0
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Failed: 43
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Success rate: 0.0%
+2025-07-03 22:40:06 - ChapterGenerator - INFO - 
+Detailed results:
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_124: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_125: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_126: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_127: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_128: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_129: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_130: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_131: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_132: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_133: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_134: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_135: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_136: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_137: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_138: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_139: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_140: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_141: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_142: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_143: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_144: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_145: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_146: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_147: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_148: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_149: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_150: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_151: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_152: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_153: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_154: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_155: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_156: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_157: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_158: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_159: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_160: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_161: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_162: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_163: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_164: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_165: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO -   chapter_166: ❌ FAILED
+2025-07-03 22:40:06 - ChapterGenerator - INFO - Report generated: /Users/johyeonho/SaturdayDinner/chapter-generator/chapter_generation_report.txt
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Loaded chapter file: 43 chapters found
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing 43 chapters...
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 1/43: chapter_124
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_124: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_124
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_124 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 2/43: chapter_125
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_125: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_125
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_125 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 3/43: chapter_126
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_126: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_126
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_126 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 4/43: chapter_127
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_127: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_127.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_127
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_127.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_127 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_127.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 5/43: chapter_128
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_128: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_128.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_128
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_128.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_128 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_128.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 6/43: chapter_129
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_129: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_129.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_129
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_129.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_129 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_129.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 7/43: chapter_130
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_130: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_130.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_130
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_130.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_130 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_130.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 8/43: chapter_131
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_131: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_131.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_131
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_131.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_131 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_131.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 9/43: chapter_132
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_132: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_132.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_132
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_132.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_132 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_132.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 10/43: chapter_133
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_133: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_133.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_133
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_133.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_133 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_133.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 11/43: chapter_134
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_134: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_134.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_134
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_134.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_134 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_134.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 12/43: chapter_135
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_135: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_135.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_135
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_135.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_135 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_135.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 13/43: chapter_136
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_136: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_136.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_136
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_136.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_136 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_136.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 14/43: chapter_137
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_137: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_137.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_137
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_137.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_137 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_137.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 15/43: chapter_138
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_138: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_138.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_138
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_138.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_138 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_138.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 16/43: chapter_139
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_139: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_139.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_139
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_139.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_139 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_139.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 17/43: chapter_140
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_140: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_140.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_140
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_140.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_140 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_140.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 18/43: chapter_141
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_141: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_141.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_141
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_141.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_141 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_141.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 19/43: chapter_142
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_142: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_142.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_142
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_142.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_142 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_142.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 20/43: chapter_143
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_143: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_143.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_143
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_143.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_143 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_143.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 21/43: chapter_144
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_144: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_144.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_144
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_144.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_144 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_144.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 22/43: chapter_145
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_145: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_145.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_145
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_145.json
+2025-07-03 22:40:19 - ChapterGenerator - ERROR - Training failed for chapter_145 (exit code: 1)
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_145.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Processing chapter 23/43: chapter_146
+2025-07-03 22:40:19 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Created spec file for chapter_146: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_146.json
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Starting training for chapter_146
+2025-07-03 22:40:19 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_146.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_146 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_146.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 24/43: chapter_147
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_147: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_147.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_147
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_147.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_147 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_147.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 25/43: chapter_148
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_148: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_148.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_148
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_148.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_148 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_148.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 26/43: chapter_149
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_149: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_149.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_149
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_149.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_149 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_149.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 27/43: chapter_150
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_150: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_150.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_150
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_150.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_150 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_150.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 28/43: chapter_151
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_151: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_151.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_151
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_151.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_151 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_151.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 29/43: chapter_152
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_152: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_152.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_152
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_152.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_152 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_152.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 30/43: chapter_153
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_153: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_153.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_153
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_153.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_153 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_153.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 31/43: chapter_154
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_154: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_154.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_154
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_154.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_154 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_154.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 32/43: chapter_155
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_155: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_155.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_155
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_155.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_155 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_155.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 33/43: chapter_156
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_156: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_156.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_156
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_156.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_156 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_156.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 34/43: chapter_157
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_157: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_157.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_157
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_157.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_157 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_157.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 35/43: chapter_158
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_158: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_158.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_158
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_158.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_158 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_158.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 36/43: chapter_159
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_159: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_159.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_159
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_159.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_159 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_159.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 37/43: chapter_160
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_160: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_160.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_160
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_160.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_160 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_160.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 38/43: chapter_161
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_161: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_161.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_161
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_161.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_161 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_161.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 39/43: chapter_162
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_162: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_162.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_162
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_162.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_162 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_162.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 40/43: chapter_163
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_163: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_163.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_163
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_163.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_163 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_163.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 41/43: chapter_164
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_164: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_164.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_164
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_164.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_164 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_164.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 42/43: chapter_165
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_165: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_165.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_165
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_165.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_165 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_165.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Processing chapter 43/43: chapter_166
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Created spec file for chapter_166: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_166.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Starting training for chapter_166
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_166.json
+2025-07-03 22:40:20 - ChapterGenerator - ERROR - Training failed for chapter_166 (exit code: 1)
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_166.json
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - CHAPTER GENERATION SUMMARY
+2025-07-03 22:40:20 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Total chapters: 43
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Successful: 0
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Failed: 43
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Success rate: 0.0%
+2025-07-03 22:40:20 - ChapterGenerator - INFO - 
+Detailed results:
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_124: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_125: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_126: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_127: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_128: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_129: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_130: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_131: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_132: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_133: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_134: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_135: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_136: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_137: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_138: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_139: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_140: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_141: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_142: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_143: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_144: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_145: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_146: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_147: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_148: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_149: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_150: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_151: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_152: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_153: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_154: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_155: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_156: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_157: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_158: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_159: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_160: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_161: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_162: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_163: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_164: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_165: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO -   chapter_166: ❌ FAILED
+2025-07-03 22:40:20 - ChapterGenerator - INFO - Report generated: /Users/johyeonho/SaturdayDinner/chapter-generator/chapter_generation_report.txt
+2025-07-03 22:40:33 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Loaded chapter file: 43 chapters found
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Processing 43 chapters...
+2025-07-03 22:40:33 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Processing chapter 1/43: chapter_124
+2025-07-03 22:40:33 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Created spec file for chapter_124: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Starting training for chapter_124
+2025-07-03 22:40:33 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Successfully completed training for chapter_125
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_223435.keras -> sign_language_model_chapter_125_20250703.keras
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Renamed info file: model-info-20250703_223435.json -> model-info-chapter_125-20250703_223435.json
+2025-07-03 22:40:52 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Processing chapter 3/43: chapter_126
+2025-07-03 22:40:52 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Created spec file for chapter_126: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Starting training for chapter_126
+2025-07-03 22:40:52 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Successfully completed training for chapter_124
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_125_20250703.keras -> sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_224040.keras -> sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Updated model_path in info file: models/sign_language_model_20250703_224040.keras -> models/sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Renamed and updated info file: model-info-20250703_224040.json -> model-info-chapter_124-20250703_224040.json
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Renamed and updated info file: model-info-chapter_125-20250703_223435.json -> model-info-chapter_124-chapter_125.json
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:43:46 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Processing chapter 2/43: chapter_125
+2025-07-03 22:43:46 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Created spec file for chapter_125: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Starting training for chapter_125
+2025-07-03 22:43:46 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Successfully completed training for chapter_125
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_224353.keras -> sign_language_model_chapter_125_20250703.keras
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_124_20250703.keras -> sign_language_model_chapter_125_chapter.keras
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_124_chapter.keras -> sign_language_model_chapter_125_chapter.keras
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Renamed and updated info file: model-info-chapter_124-chapter_125.json -> model-info-chapter_125-chapter_124.json
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Updated model_path in info file: models/sign_language_model_20250703_224353.keras -> models/sign_language_model_chapter_125_20250703.keras
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Renamed and updated info file: model-info-20250703_224353.json -> model-info-chapter_125-20250703_224353.json
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Updated model_path in info file: models/sign_language_model_chapter_124_20250703.keras -> models/sign_language_model_chapter_125_chapter.keras
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Renamed and updated info file: model-info-chapter_124-20250703_224040.json -> model-info-chapter_125-chapter_124.json
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:45:01 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Processing chapter 3/43: chapter_126
+2025-07-03 22:45:01 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Created spec file for chapter_126: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Starting training for chapter_126
+2025-07-03 22:45:01 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 22:49:34 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:49:34 - ChapterGenerator - WARNING - No matching model file found for model-info-chapter_125-chapter_124.json (looking for: sign_language_model_chapter_125_chapter.keras)
+2025-07-03 22:49:34 - ChapterGenerator - WARNING - No matching model file found for model-info-chapter_125-20250703_224353.json (looking for: sign_language_model_chapter_125_20250703.keras)
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Loaded chapter file: 43 chapters found
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Processing 43 chapters...
+2025-07-03 22:49:34 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Processing chapter 1/43: chapter_124
+2025-07-03 22:49:34 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Created spec file for chapter_124: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Starting training for chapter_124
+2025-07-03 22:49:34 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Successfully completed training for chapter_124
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_125_chapter.keras -> sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Renamed model file: sign_language_model_chapter_125_20250703.keras -> sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Renamed model file: sign_language_model_20250703_224941.keras -> sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Updated model_path in info file: models/sign_language_model_20250703_224941.keras -> models/sign_language_model_chapter_124_20250703.keras
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Renamed and updated info file: model-info-20250703_224941.json -> model-info-chapter_124-20250703_224941.json
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Updated model_path in info file: models/sign_language_model_chapter_125_chapter.keras -> models/sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Renamed and updated info file: model-info-chapter_125-chapter_124.json -> model-info-chapter_124-chapter_125.json
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Updated model_path in info file: models/sign_language_model_chapter_125_20250703.keras -> models/sign_language_model_chapter_124_chapter.keras
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Renamed and updated info file: model-info-chapter_125-20250703_224353.json -> model-info-chapter_124-chapter_125.json
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:52:36 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Processing chapter 2/43: chapter_125
+2025-07-03 22:52:36 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Created spec file for chapter_125: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Starting training for chapter_125
+2025-07-03 22:52:36 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:55:17 - ChapterGenerator - INFO - ChapterGenerator 초기화 완료
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Chapter file: chapter_result.json
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Base output directory: /Users/johyeonho/SaturdayDinner/chapter-generator
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Loaded chapter file: 43 chapters found
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Processing 43 chapters...
+2025-07-03 22:55:17 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Processing chapter 1/43: chapter_124
+2025-07-03 22:55:17 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Created spec file for chapter_124: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Starting training for chapter_124
+2025-07-03 22:55:17 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:59:02 - ChapterGenerator - INFO - Successfully completed training for chapter_124
+2025-07-03 22:59:02 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_124.json
+2025-07-03 22:59:02 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 22:59:02 - ChapterGenerator - INFO - Processing chapter 2/43: chapter_125
+2025-07-03 22:59:02 - ChapterGenerator - INFO - ============================================================
+2025-07-03 22:59:02 - ChapterGenerator - INFO - Created spec file for chapter_125: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 22:59:02 - ChapterGenerator - INFO - Starting training for chapter_125
+2025-07-03 22:59:02 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 23:00:04 - ChapterGenerator - INFO - Successfully completed training for chapter_125
+2025-07-03 23:00:04 - ChapterGenerator - INFO - Removed temporary spec file: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_125.json
+2025-07-03 23:00:04 - ChapterGenerator - INFO - 
+============================================================
+2025-07-03 23:00:04 - ChapterGenerator - INFO - Processing chapter 3/43: chapter_126
+2025-07-03 23:00:04 - ChapterGenerator - INFO - ============================================================
+2025-07-03 23:00:04 - ChapterGenerator - INFO - Created spec file for chapter_126: /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json
+2025-07-03 23:00:04 - ChapterGenerator - INFO - Starting training for chapter_126
+2025-07-03 23:00:04 - ChapterGenerator - INFO - Command: python main.py /Users/johyeonho/SaturdayDinner/chapter-generator/spec_chapter_126.json

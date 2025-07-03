@@ -193,40 +193,6 @@ class ChapterGenerator:
             print(f"❌ Exception during training for {chapter_name}: {e}")
             self.logger.error(f"Exception during training for {chapter_name}: {e}")
             return False
-
-    def rename_outputs_with_chapter_name(self, chapter_name: str):
-        """생성된 모델과 정보 파일명에 챕터명 추가"""
-        models_dir = os.path.join(self.base_output_dir, "models")
-        info_dir = os.path.join(self.base_output_dir, "info")
-        
-        try:
-            # 모델 파일들 이름 변경
-            for file in os.listdir(models_dir):
-                if file.endswith('.keras') and os.path.isfile(os.path.join(models_dir, file)):
-                    src = os.path.join(models_dir, file)
-                    # 파일명에 챕터명 추가: sign_language_model_timestamp.keras -> sign_language_model_chapter_name_timestamp.keras
-                    name_parts = file.replace('.keras', '').split('_')
-                    if len(name_parts) >= 3:  # sign_language_model_timestamp 형태
-                        new_name = f"{name_parts[0]}_{name_parts[1]}_{name_parts[2]}_{chapter_name}_{name_parts[3]}.keras"
-                    else:
-                        new_name = f"{chapter_name}_{file}"
-                    dst = os.path.join(models_dir, new_name)
-                    shutil.move(src, dst)
-                    self.logger.info(f"Renamed model file: {file} -> {new_name}")
-                    
-            # 정보 파일들 이름 변경
-            for file in os.listdir(info_dir):
-                if file.startswith('model-info-') and file.endswith('.json') and os.path.isfile(os.path.join(info_dir, file)):
-                    src = os.path.join(info_dir, file)
-                    # 파일명에 챕터명 추가: model-info-timestamp.json -> model-info-chapter_name-timestamp.json
-                    name_parts = file.replace('.json', '').split('-')
-                    if len(name_parts) >= 3:  # model-info-timestamp 형태
-                        new_name = f"{name_parts[0]}-{name_parts[1]}-{chapter_name}-{name_parts[2]}.json"
-                    else:
-                        new_name = f"model-info-{chapter_name}-{file}"
-                    dst = os.path.join(info_dir, new_name)
-                    shutil.move(src, dst)
-                    self.logger.info(f"Renamed info file: {file} -> {new_name}")
                     
         except Exception as e:
             self.logger.error(f"Error renaming outputs for {chapter_name}: {e}")
@@ -278,8 +244,6 @@ class ChapterGenerator:
                     success = self.run_main_for_chapter(spec_file, chapter_name)
                     
                     if success:
-                        # 출력 파일명에 챕터명 추가
-                        self.rename_outputs_with_chapter_name(chapter_name)
                         successful_chapters += 1
                     else:
                         failed_chapters += 1

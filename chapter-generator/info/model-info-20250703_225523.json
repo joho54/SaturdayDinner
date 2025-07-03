@@ -1,18 +1,18 @@
 {
-  "model_path": "models/sign_language_model_20250703_173153.keras",
-  "created_at": "2025-07-03T17:40:32.472921",
+  "model_path": "models/sign_language_model_20250703_225523.keras",
+  "created_at": "2025-07-03T22:59:00.983863",
   "labels": [
-    "남편",
-    "누나",
-    "딸",
-    "아내",
+    "독버섯",
+    "벌",
+    "엽총",
+    "의사",
     "None"
   ],
   "label_mapping": {
-    "남편": 0,
-    "누나": 1,
-    "딸": 2,
-    "아내": 3,
+    "독버섯": 0,
+    "벌": 1,
+    "엽총": 2,
+    "의사": 3,
     "None": 4
   },
   "num_classes": 5,
@@ -41,14 +41,14 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "test_loss": 0.34263142943382263,
-    "test_accuracy": 0.800000011920929,
+    "test_loss": 0.0022787225898355246,
+    "test_accuracy": 1.0,
     "class_accuracies": {
-      "남편": 0.40625,
-      "누나": 1.0,
-      "딸": 1.0,
-      "아내": 0.6875,
-      "None": 0.90625
+      "독버섯": 1.0,
+      "벌": 1.0,
+      "엽총": 1.0,
+      "의사": 1.0,
+      "None": 1.0
     }
   },
   "model_type": "LSTM",

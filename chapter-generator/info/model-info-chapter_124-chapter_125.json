@@ -1,6 +1,6 @@
 {
-  "model_path": "checkpoints/model-epoch-24.keras",
-  "created_at": "2025-07-03T22:59:26.723537",
+  "model_path": "models/sign_language_model_chapter_124_chapter.keras",
+  "created_at": "2025-07-03T22:44:59.527998",
   "labels": [
     "지혈대",
     "None"
@@ -35,12 +35,13 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 24,
-    "checkpoint_accuracy": 0.98046875,
-    "checkpoint_val_accuracy": 1.0,
-    "checkpoint_loss": 0.11799874156713486,
-    "checkpoint_val_loss": 0.0033090971410274506
+    "test_loss": 0.23107771575450897,
+    "test_accuracy": 0.984375,
+    "class_accuracies": {
+      "지혈대": 1.0,
+      "None": 0.96875
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 24, Val Acc: 1.0000)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }
