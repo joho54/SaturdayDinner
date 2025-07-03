@@ -4,7 +4,7 @@ Motion Extraction System - Test Script
 소수의 영상으로 시스템 테스트
 """
 
-from extractor import MotionExtractor, MotionEmbedder, MotionClusterer
+from categorizor.extractor import MotionExtractor, MotionEmbedder, MotionClusterer
 import pandas as pd
 
 def test_label_extraction():

@@ -1,6 +1,6 @@
 {
-  "model_path": "checkpoints/model-epoch-51.keras",
-  "created_at": "2025-07-03T13:29:44.131609",
+  "model_path": "models/sign_language_model_20250703_131005.keras",
+  "created_at": "2025-07-03T13:32:50.928914",
   "labels": [
     "낯선남자",
     "낯선사람",
@@ -41,12 +41,16 @@
       "early_stopping_min_delta": 0.001,
       "reduce_lr_patience": 3
     },
-    "checkpoint_epoch": 51,
-    "checkpoint_accuracy": 0.453125,
-    "checkpoint_val_accuracy": 0.637499988079071,
-    "checkpoint_loss": 1.7656421661376953,
-    "checkpoint_val_loss": 0.841679573059082
+    "test_loss": 0.33154940605163574,
+    "test_accuracy": 0.8125,
+    "class_accuracies": {
+      "낯선남자": 0.84375,
+      "낯선사람": 0.96875,
+      "낯선여자": 0.25,
+      "밖에 모르는 사람이 서성거려요": 1.0,
+      "None": 1.0
+    }
   },
   "model_type": "LSTM",
-  "description": "수어 인식 모델 - LSTM 기반 (Epoch 51, Val Acc: 0.6375)"
+  "description": "수어 인식 모델 - LSTM 기반"
 }

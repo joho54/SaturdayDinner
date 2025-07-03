@@ -19,6 +19,9 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import silhouette_score
 import matplotlib.pyplot as plt
 import seaborn as sns
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from video_path_utils import get_video_root_and_path
 import pickle
 from datetime import datetime
@@ -1063,10 +1066,9 @@ def main():
         
         # 클러스터링 결과 저장
         if clustering_results:
-            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             
             # CSV 파일로 저장
-            csv_path = f"clustering_results_{timestamp}.csv"
+            csv_path = f"two-clusters/video_clusters.csv"
             save_clustering_results_to_csv(clustering_results, csv_path)
     
     print("\n🎉 모든 작업 완료!")
