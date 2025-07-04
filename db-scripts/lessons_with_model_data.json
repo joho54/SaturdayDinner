@@ -1,0 +1,474 @@
+[
+    {
+        "sign_text": "추락",
+        "model_data_url": "model-info-20250704_110434.json"
+    },
+    {
+        "sign_text": "진통제",
+        "model_data_url": "model-info-20250704_094618.json"
+    },
+    {
+        "sign_text": "배",
+        "model_data_url": "model-info-20250704_033404.json"
+    },
+    {
+        "sign_text": "학생",
+        "model_data_url": "KETI_SL_0000000399.json"
+    },
+    {
+        "sign_text": "화약",
+        "model_data_url": "model-info-20250704_100018.json"
+    },
+    {
+        "sign_text": "홍수가 나서 집이 물에 잠기고 있어요",
+        "model_data_url": "model-info-20250704_061235.json"
+    },
+    {
+        "sign_text": "홍수",
+        "model_data_url": "model-info-20250704_034022.json"
+    },
+    {
+        "sign_text": "호흡곤란",
+        "model_data_url": "model-info-20250704_025826.json"
+    },
+    {
+        "sign_text": "함몰되다",
+        "model_data_url": "model-info-20250704_091004.json"
+    },
+    {
+        "sign_text": "피나다",
+        "model_data_url": "model-info-20250704_100018.json"
+    },
+    {
+        "sign_text": "폭탄",
+        "model_data_url": "model-info-20250704_091004.json"
+    },
+    {
+        "sign_text": "폭우",
+        "model_data_url": "model-info-20250704_034022.json"
+    },
+    {
+        "sign_text": "파도",
+        "model_data_url": "model-info-20250704_034022.json"
+    },
+    {
+        "sign_text": "트랙터",
+        "model_data_url": "model-info-20250704_044328.json"
+    },
+    {
+        "sign_text": "통학버스",
+        "model_data_url": "model-info-20250704_044328.json"
+    },
+    {
+        "sign_text": "토하다",
+        "model_data_url": "model-info-20250704_100018.json"
+    },
+    {
+        "sign_text": "터널이 무너져 갇혔어요",
+        "model_data_url": "model-info-20250704_091004.json"
+    },
+    {
+        "sign_text": "택시",
+        "model_data_url": "model-info-20250704_044328.json"
+    },
+    {
+        "sign_text": "친구가 음식을 먹다가 실수로 방부제를 같이 먹었어요",
+        "model_data_url": "model-info-20250704_073929.json"
+    },
+    {
+        "sign_text": "친구가 숨을 안 쉬는 것 같아요",
+        "model_data_url": "model-info-20250704_025826.json"
+    },
+    {
+        "sign_text": "친구가 감전 사고를 당했어요",
+        "model_data_url": "model-info-20250704_080939.json"
+    },
+    {
+        "sign_text": "출혈",
+        "model_data_url": "model-info-20250704_053658.json"
+    },
+    {
+        "sign_text": "창문",
+        "model_data_url": "model-info-20250704_084904.json"
+    },
+    {
+        "sign_text": "차안",
+        "model_data_url": "model-info-20250704_044328.json"
+    },
+    {
+        "sign_text": "차밖",
+        "model_data_url": "model-info-20250704_042250.json"
+    },
+    {
+        "sign_text": "집이 흔들려요",
+        "model_data_url": "model-info-20250704_064642.json"
+    },
+    {
+        "sign_text": "집에 전기가 나갔어요",
+        "model_data_url": "model-info-20250704_064642.json"
+    },
+    {
+        "sign_text": "집에 불이 났어요",
+        "model_data_url": "model-info-20250704_064642.json"
+    },
+    {
+        "sign_text": "집에 모르는 사람이 침입했어요",
+        "model_data_url": "model-info-20250704_061235.json"
+    },
+    {
+        "sign_text": "집에 도둑(강도)이 들어왔어요",
+        "model_data_url": "model-info-20250704_061235.json"
+    },
+    {
+        "sign_text": "집 벽이 무너질려고 해요",
+        "model_data_url": "model-info-20250704_061235.json"
+    },
+    {
+        "sign_text": "주변 구조물이 무너져서 몸이 끼었어요 몸을 움직이지 못하겠어요",
+        "model_data_url": "model-info-20250704_025826.json"
+    },
+    {
+        "sign_text": "장난감",
+        "model_data_url": "model-info-20250704_053658.json"
+    },
+    {
+        "sign_text": "자살",
+        "model_data_url": "model-info-20250704_110434.json"
+    },
+    {
+        "sign_text": "자동차",
+        "model_data_url": "model-info-20250704_042250.json"
+    },
+    {
+        "sign_text": "이상한 사람이 저를 쫓아와요",
+        "model_data_url": "model-info-20250704_080939.json"
+    },
+    {
+        "sign_text": "음식물",
+        "model_data_url": "model-info-20250704_094618.json"
+    },
+    {
+        "sign_text": "은평구",
+        "model_data_url": "model-info-20250704_113659.json"
+    },
+    {
+        "sign_text": "유리",
+        "model_data_url": "model-info-20250704_094618.json"
+    },
+    {
+        "sign_text": "윗집에 불이 났어요",
+        "model_data_url": "model-info-20250704_055029.json"
+    },
+    {
+        "sign_text": "우리 집에 불이 났어요",
+        "model_data_url": "model-info-20250704_055029.json"
+    },
+    {
+        "sign_text": "옆집에 불이 났어요",
+        "model_data_url": "model-info-20250704_055029.json"
+    },
+    {
+        "sign_text": "옆집",
+        "model_data_url": "model-info-20250704_053658.json"
+    },
+    {
+        "sign_text": "여기 서대문구 홍제동 한양아파트인데 옥상에서 사람이 떨어지려고해요",
+        "model_data_url": "model-info-20250704_110434.json"
+    },
+    {
+        "sign_text": "엘리베이터",
+        "model_data_url": "model-info-20250704_084904.json"
+    },
+    {
+        "sign_text": "어지러워서 서있을 수 없어요",
+        "model_data_url": "model-info-20250704_023527.json"
+    },
+    {
+        "sign_text": "어떤 사람한테 납치당했어요",
+        "model_data_url": "model-info-20250704_073929.json"
+    },
+    {
+        "sign_text": "어떤 사람이 저를 죽이려고 해요",
+        "model_data_url": "model-info-20250704_080939.json"
+    },
+    {
+        "sign_text": "어떤 사람이 자살을 시도하고 있어요",
+        "model_data_url": "model-info-20250704_103733.json"
+    },
+    {
+        "sign_text": "어떤 사람이 벼락을 맞았어요",
+        "model_data_url": "model-info-20250704_103733.json"
+    },
+    {
+        "sign_text": "어떤 사람이 교통사고를 당했어요",
+        "model_data_url": "model-info-20250704_042250.json"
+    },
+    {
+        "sign_text": "어떤 사람이 건물에서 추락했어요",
+        "model_data_url": "model-info-20250704_103733.json"
+    },
+    {
+        "sign_text": "아파서 못 참을것 같아요",
+        "model_data_url": "model-info-20250704_023527.json"
+    },
+    {
+        "sign_text": "아저씨",
+        "model_data_url": "model-info-20250704_051954.json"
+    },
+    {
+        "sign_text": "아이를 공원에서 잃어버렸어요",
+        "model_data_url": "model-info-20250704_073929.json"
+    },
+    {
+        "sign_text": "아랫집에 불이 났어요",
+        "model_data_url": "model-info-20250704_055029.json"
+    },
+    {
+        "sign_text": "아들이 놀이터에서 놀다가 팔이 부러졌어요",
+        "model_data_url": "model-info-20250704_073929.json"
+    },
+    {
+        "sign_text": "아기가 숨을 안 쉬어요",
+        "model_data_url": "model-info-20250704_023527.json"
+    },
+    {
+        "sign_text": "심장마비",
+        "model_data_url": "model-info-20250704_103733.json"
+    },
+    {
+        "sign_text": "식사를 하다가 목에 음식이 걸렸어요",
+        "model_data_url": "model-info-20250704_022235.json"
+    },
+    {
+        "sign_text": "숨이 안 쉬어져요",
+        "model_data_url": "model-info-20250704_023527.json"
+    },
+    {
+        "sign_text": "수요일",
+        "model_data_url": "model-info-20250704_051954.json"
+    },
+    {
+        "sign_text": "수영장",
+        "model_data_url": "model-info-20250704_033404.json"
+    },
+    {
+        "sign_text": "소화전",
+        "model_data_url": "model-info-20250704_094618.json"
+    },
+    {
+        "sign_text": "소화기",
+        "model_data_url": "model-info-20250704_092734.json"
+    },
+    {
+        "sign_text": "소방관",
+        "model_data_url": "model-info-20250704_051954.json"
+    },
+    {
+        "sign_text": "성북구",
+        "model_data_url": "model-info-20250704_113659.json"
+    },
+    {
+        "sign_text": "성동구",
+        "model_data_url": "model-info-20250704_113659.json"
+    },
+    {
+        "sign_text": "선반",
+        "model_data_url": "model-info-20250704_084904.json"
+    },
+    {
+        "sign_text": "서대문구",
+        "model_data_url": "model-info-20250704_113659.json"
+    },
+    {
+        "sign_text": "살충제",
+        "model_data_url": "model-info-20250704_092734.json"
+    },
+    {
+        "sign_text": "산에서 야생동물을 만났어요 저를 공격할 것 같아요",
+        "model_data_url": "model-info-20250704_070758.json"
+    },
+    {
+        "sign_text": "산에서 뱀에게 물렸어요",
+        "model_data_url": "model-info-20250704_070758.json"
+    },
+    {
+        "sign_text": "사람이 무거운 물건에 깔렸어요",
+        "model_data_url": "model-info-20250704_130251.json"
+    },
+    {
+        "sign_text": "빌라",
+        "model_data_url": "model-info-20250704_051954.json"
+    },
+    {
+        "sign_text": "비행기가 추락하고 있어요",
+        "model_data_url": "model-info-20250704_100935.json"
+    },
+    {
+        "sign_text": "비닐하우스",
+        "model_data_url": "model-info-20250704_083224.json"
+    },
+    {
+        "sign_text": "붕괴",
+        "model_data_url": "model-info-20250704_084904.json"
+    },
+    {
+        "sign_text": "복통이 심해요",
+        "model_data_url": "model-info-20250704_022235.json"
+    },
+    {
+        "sign_text": "복통",
+        "model_data_url": "model-info-20250704_050204.json"
+    },
+    {
+        "sign_text": "복부",
+        "model_data_url": "model-info-20250704_092734.json"
+    },
+    {
+        "sign_text": "범람",
+        "model_data_url": "model-info-20250704_050204.json"
+    },
+    {
+        "sign_text": "배가 침몰하고 있어요",
+        "model_data_url": "model-info-20250704_100935.json"
+    },
+    {
+        "sign_text": "바다",
+        "model_data_url": "model-info-20250704_034022.json"
+    },
+    {
+        "sign_text": "물",
+        "model_data_url": "model-info-20250704_033404.json"
+    },
+    {
+        "sign_text": "무너지다",
+        "model_data_url": "model-info-20250704_083224.json"
+    },
+    {
+        "sign_text": "몸이 결박 당해있어요",
+        "model_data_url": "model-info-20250704_130251.json"
+    },
+    {
+        "sign_text": "몸에 열이 많이 나고 두통이 심해요",
+        "model_data_url": "model-info-20250704_022235.json"
+    },
+    {
+        "sign_text": "뜨거운물",
+        "model_data_url": "model-info-20250704_033404.json"
+    },
+    {
+        "sign_text": "떨어지다",
+        "model_data_url": "model-info-20250704_100935.json"
+    },
+    {
+        "sign_text": "동대문구",
+        "model_data_url": "model-info-20250704_112249.json"
+    },
+    {
+        "sign_text": "독버섯을 먹은 것 같아요",
+        "model_data_url": "model-info-20250704_070758.json"
+    },
+    {
+        "sign_text": "도봉구",
+        "model_data_url": "model-info-20250704_112249.json"
+    },
+    {
+        "sign_text": "도로",
+        "model_data_url": "model-info-20250704_042250.json"
+    },
+    {
+        "sign_text": "농약",
+        "model_data_url": "model-info-20250704_050204.json"
+    },
+    {
+        "sign_text": "놀이터",
+        "model_data_url": "model-info-20250704_083224.json"
+    },
+    {
+        "sign_text": "노원구",
+        "model_data_url": "model-info-20250704_050204.json"
+    },
+    {
+        "sign_text": "너무 아파요",
+        "model_data_url": "model-info-20250704_022235.json"
+    },
+    {
+        "sign_text": "냄새나다",
+        "model_data_url": "model-info-20250704_132946.json"
+    },
+    {
+        "sign_text": "낫",
+        "model_data_url": "model-info-20250704_132946.json"
+    },
+    {
+        "sign_text": "끓는물",
+        "model_data_url": "model-info-20250704_031902.json"
+    },
+    {
+        "sign_text": "깔리다",
+        "model_data_url": "model-info-20250704_132946.json"
+    },
+    {
+        "sign_text": "기절",
+        "model_data_url": "model-info-20250704_130251.json"
+    },
+    {
+        "sign_text": "급류에 친구가 휩쓸렸어요",
+        "model_data_url": "model-info-20250704_070758.json"
+    },
+    {
+        "sign_text": "급류",
+        "model_data_url": "model-info-20250704_031902.json"
+    },
+    {
+        "sign_text": "근처에 있는 건물이 붕괴되고 있어요",
+        "model_data_url": "model-info-20250704_100935.json"
+    },
+    {
+        "sign_text": "구청",
+        "model_data_url": "model-info-20250704_112249.json"
+    },
+    {
+        "sign_text": "교통사고",
+        "model_data_url": "model-info-20250704_040112.json"
+    },
+    {
+        "sign_text": "고속도로에서 자동차가 갑자기 멈췄어요",
+        "model_data_url": "model-info-20250704_040112.json"
+    },
+    {
+        "sign_text": "고속도로",
+        "model_data_url": "model-info-20250704_040112.json"
+    },
+    {
+        "sign_text": "계단",
+        "model_data_url": "model-info-20250704_083224.json"
+    },
+    {
+        "sign_text": "계곡",
+        "model_data_url": "model-info-20250704_031902.json"
+    },
+    {
+        "sign_text": "경찰차",
+        "model_data_url": "model-info-20250704_040112.json"
+    },
+    {
+        "sign_text": "경운기",
+        "model_data_url": "model-info-20250704_132946.json"
+    },
+    {
+        "sign_text": "강북구",
+        "model_data_url": "model-info-20250704_112249.json"
+    },
+    {
+        "sign_text": "강",
+        "model_data_url": "model-info-20250704_031902.json"
+    },
+    {
+        "sign_text": "감금",
+        "model_data_url": "model-info-20250704_130251.json"
+    },
+    {
+        "sign_text": "가스",
+        "model_data_url": "model-info-20250704_092734.json"
+    }
+]

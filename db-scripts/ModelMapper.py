@@ -8,7 +8,7 @@ import json
 import os
 import sys
 from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError
+from pymongo.errors import ConnectionFailure, ServerSelectionTimeoutError, PyMongoError
 from dotenv import load_dotenv
 
 def load_mapping_file(file_path="label_model_mapping.json"):
@@ -50,74 +50,82 @@ def connect_to_mongodb(mongodb_url):
 
 def update_lessons_with_model_urls(db, mapping):
     """Update Lessons collection with model_data_url"""
-    lessons_collection = db['Lessons']
-    print("lessons_collection", lessons_collection)
-    # Get all lessons
-    lessons = list(lessons_collection.find({}))
-    print(f"Found {len(lessons)} lessons in database")
-    
-    updated_count = 0
-    not_found_count = 0
-    not_found_signs = []
-    
-    for lesson in lessons:
-        sign_text = lesson.get('sign_text', '')
+    try:
+        lessons_collection = db['Lessons']
+        print("lessons_collection", lessons_collection)
+        # Get all lessons
+        lessons = list(lessons_collection.find({}))
+        print(f"Found {len(lessons)} lessons in database")
         
-        if sign_text in mapping:
-            # Update the lesson with model_data_url
-            result = lessons_collection.update_one(
-                {'_id': lesson['_id']},
-                {'$set': {'model_data_url': mapping[sign_text]}}
-            )
+        updated_count = 0
+        not_found_count = 0
+        not_found_signs = []
+        
+        for lesson in lessons:
+            sign_text = lesson.get('sign_text', '')
             
-            if result.modified_count > 0:
-                updated_count += 1
-                print(f"Updated lesson: {sign_text} -> {mapping[sign_text]}")
+            if sign_text in mapping:
+                # Update the lesson with model_data_url
+                result = lessons_collection.update_one(
+                    {'_id': lesson['_id']},
+                    {'$set': {'model_data_url': mapping[sign_text]}}
+                )
+                
+                if result.modified_count > 0:
+                    updated_count += 1
+                    print(f"Updated lesson: {sign_text} -> {mapping[sign_text]}")
+                else:
+                    print(f"No changes made for lesson: {sign_text}")
             else:
-                print(f"No changes made for lesson: {sign_text}")
-        else:
-            not_found_count += 1
-            not_found_signs.append(sign_text)
-            print(f"Warning: No mapping found for sign_text: '{sign_text}'")
-    
-    print(f"\nUpdate Summary:")
-    print(f"- Successfully updated: {updated_count} lessons")
-    print(f"- No mapping found: {not_found_count} lessons")
-    
-    if not_found_signs:
-        print(f"\nLessons without mapping:")
-        for sign in not_found_signs:
-            print(f"  - '{sign}'")
+                not_found_count += 1
+                not_found_signs.append(sign_text)
+                print(f"Warning: No mapping found for sign_text: '{sign_text}'")
+        
+        print(f"\nUpdate Summary:")
+        print(f"- Successfully updated: {updated_count} lessons")
+        print(f"- No mapping found: {not_found_count} lessons")
+        
+        if not_found_signs:
+            print(f"\nLessons without mapping:")
+            for sign in not_found_signs:
+                print(f"  - '{sign}'")
+    except PyMongoError as e:
+        print(f"An error occurred during the update: {e}")
+        sys.exit(1)
 
 def main():
     """Main function"""
-    # Load environment variables
-    load_dotenv()
-    
-    # Get MongoDB URL from environment
-    mongodb_url = os.getenv('MONGODB_URL')
-    if not mongodb_url:
-        print("Error: MONGODB_URL not found in environment variables")
-        print("Please create a .env file with MONGODB_URL=your_mongodb_connection_string")
-        sys.exit(1)
-    
-    print("Loading label to model mapping...")
-    mapping = load_mapping_file()
-    print(f"Loaded {len(mapping)} mappings")
-    
-    print("Connecting to MongoDB...")
-    client, db = connect_to_mongodb(mongodb_url)
-    
     try:
-        print("Updating lessons with model URLs...")
-        update_lessons_with_model_urls(db, mapping)
-        print("Update completed successfully!")
+        # Load environment variables
+        load_dotenv()
+        
+        # Get MongoDB URL from environment
+        mongodb_url = os.getenv('MONGODB_URL')
+        if not mongodb_url:
+            print("Error: MONGODB_URL not found in environment variables")
+            print("Please create a .env file with MONGODB_URL=your_mongodb_connection_string")
+            sys.exit(1)
+        
+        print("Loading label to model mapping...")
+        mapping = load_mapping_file()
+        print(f"Loaded {len(mapping)} mappings")
+        
+        print("Connecting to MongoDB...")
+        client, db = connect_to_mongodb(mongodb_url)
+        
+        try:
+            print("Updating lessons with model URLs...")
+            update_lessons_with_model_urls(db, mapping)
+            print("Update completed successfully!")
+        except Exception as e:
+            print(f"Error during update: {e}")
+            sys.exit(1)
+        finally:
+            client.close()
+            print("MongoDB connection closed")
     except Exception as e:
-        print(f"Error during update: {e}")
+        print(f"An unexpected error occurred: {e}")
         sys.exit(1)
-    finally:
-        client.close()
-        print("MongoDB connection closed")
 
 if __name__ == "__main__":
     main()
