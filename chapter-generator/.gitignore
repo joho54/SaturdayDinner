@@ -1,1 +1,13 @@
 .env
+/cache/
+chapter_generation.log
+checkpoints/
+info/
+models/
+chapter_result_missed.json
+label_model_mapping.json
+spec_chapter_76.json
+spec_chapter_1.json
+../categorizer/.gitinore
+*.keras
+*.json
